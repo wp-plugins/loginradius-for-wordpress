@@ -1,4 +1,4 @@
-=== LoginRadius(SocialLogin for wordpress) ==
+=== LoginRadius(Social Login) for wordpress ===
 Contributors: loginradius
 Donate link: http://www.loginradius.com/
 Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post
