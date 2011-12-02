@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== LoginRadius(SocialLogin for wordpress) ==
 Contributors: loginradius
 Donate link: http://www.loginradius.com/
 Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post
@@ -45,14 +45,14 @@ this option setting user has to register first or login using social provider an
 
 = coding instructions =
 
-If you want ‘LoginRadius interface’ to appear on any other page or post, then call function - ‘Login_Radius_Connect_button();’ 
+If you want LoginRadius interface to appear on any other page or post, then call function - Login_Radius_Connect_button();
 after configuring LoginRadius plugin in your wordpress website.
 
 == Frequently Asked Questions ==
 
 = What is LoginRadius =
 
-LoginRadius is a Software As A Service (SAAS) which allows users to log in to a third party website via popular open IDs/oAuths such as Google, Facebook, Yahoo, AOL and over 20 more. =
+LoginRadius is a Software As A Service (SAAS) which allows users to log in to a third party website via popular open IDs/oAuths such as Google, Facebook, Yahoo, AOL and over 20 more.
 
 = How long can I keep my account? =
 
@@ -60,7 +60,7 @@ How long you use LoginRadius is completely up to you. You may remove LoginRadius
 
 = What is the best way to reach the LoginRadius Team? =
 
-If you have any questions or concerns regarding LoginRadius, please write us at hello@loginradius.com
+If you have any questions or concerns regarding LoginRadius, please write us at hello@loginradius.com.
 
 = How much you charge for this service? =
 
@@ -68,9 +68,9 @@ It is FREE and will remain free, but for advanced features and customized soluti
 
 == Screenshots ==
 
-1. Screenshot-1: This screenshot displays loginradius interface for login section. Its showing all select provider with a slider option.
-2. Screenshot-2: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider option.
-3. Screenshot-3: This screenshot shows the default wordpress login with LoginRadius interface attached to it.
+1. Screenshot-1: This screenshot displays loginradius interface for login section. Its showing all select provider with a slider option./tags/1.0/screenshot-1.png
+2. Screenshot-2: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider option./tags/1.0/screenshot-2.png
+3. Screenshot-3: This screenshot shows the default wordpress login with LoginRadius interface attached to it./tags/1.0/screenshot-3.png
 
 == Changelog ==
 
