@@ -10,7 +10,7 @@ if( $display_label != false ) : ?>
 			<div style="margin-bottom: 3px;"><label><?php _e( 'Please Login With', 'LoginRadius' );?>:</label></div>
 		<?php endif; ?>
 		<?php if( $LoginRadius_apikey!= "") : ?>
-		<iframe src="https://hub.loginradius.com/Control/JoomlaSlider.aspx?apikey=<?php echo $LoginRadius_apikey;?>" width="169" height="49" frameborder="0" scrolling="no" ></iframe>
+		<iframe src="https://hub.loginradius.com/Control/PluginSlider.aspx?apikey=<?php echo $LoginRadius_apikey;?>" width="169" height="49" frameborder="0" scrolling="no" ></iframe>
 		<?php endif; ?>
 <?php }
 if (is_user_logged_in() && !is_admin()) {
