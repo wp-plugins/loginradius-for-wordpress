@@ -1,12 +1,16 @@
-=== LoginRadius(Social Login) for wordpress ===
+=== LoginRadius (Social Login) for wordpress ===
 Contributors: loginradius
 Donate link: http://www.loginradius.com/
-Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post
+Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post, open authentication, facebook connect, Social Login,
+OpenID integration, Open Authentication, User Profile Data, Social Analytics, oAuth integration, Online Identity, Social Profile storage,
+single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook Connect, Google, Yahoo OpenID, Hyves openid,Linkedin openid,
+Mixi opendID, Virgilio OpenID
+
 Requires at least: 2.5.0
 Tested up to: 3.2.1
 Stable tag: 1.0
 
-LoginRadius enables social login on wordpress website.
+LoginRadius enables social login on wordpress websites.
 
 == Description ==
 
@@ -15,6 +19,48 @@ existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eli
 registration process i.e. filling up a long registration form, verifying email ID, remembering 
 another username and password so your users are just one click away from logging in to your website. 
 Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
+
+Features:
++Social login
++User profile data
++Social analytics
++FREE service
++No programming skills required
++White label & premium solutions available
++Available for non-CMS websites as well
++24x7 support
+
+
+List of ID Providers:
+Facebook
+Google
+Twitter
+AOL
+Flickr
+Yahoo
+Linkedin
+Wordpress
+Blogger
+MyOpenID
+LiveJournal
+VeriSign
+OpenID
+Hyves
+Mixi
+MySpace
+Orange
+StackExchange
+SteamCommunity
+Virgilio
+
+
+Important links:
+1) Website: http://www.loginradius.com
+2) Wordpress live demo: http://wordpressdemo.loginradius.com
+2) Other live demo: http://www.loginradius.com/demo
+3) Press/Media page: http://www.loginradius.com/press
+4) Blog: blog.loginradius.com
+5) Our video: http://www.youtube.com/loginradius
 
 == Installation ==
 
@@ -43,7 +89,7 @@ If you want that only registered users can comment, then go to discussion
 setting and check 'Users must be registered and logged in to comment' option. With
 this option setting user has to register first or login using social provider and then only they can post comments.
 
-= coding instructions =
+= Coding instructions =
 
 If you want LoginRadius interface to appear on any other page or post, then call function - Login_Radius_Connect_button();
 after configuring LoginRadius plugin in your wordpress website.
@@ -65,6 +111,10 @@ If you have any questions or concerns regarding LoginRadius, please write us at 
 = How much you charge for this service? =
 
 It is FREE and will remain free, but for advanced features and customized solutions, there are various packages available. Please contact us for further details.
+
+= Do you have a live demo site? =
+
+Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradius.com Try logging in and commenting :)
 
 == Screenshots ==
 
