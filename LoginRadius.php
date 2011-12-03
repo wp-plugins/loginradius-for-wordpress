@@ -226,6 +226,7 @@ $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta
 					else {  
 					if (!empty($email)) {
 					  $user_id = wp_create_user( $username,$user_pass, $email );
+					  wp_new_user_notification($username, $user_pass);
 					  }
                       if (! is_wp_error($user_id) ) 
 					  {
