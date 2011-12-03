@@ -7,7 +7,7 @@ single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook C
 Mixi opendID, Virgilio OpenID
 Requires at least: 2.5.0
 Tested up to: 3.2.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 LoginRadius enables social login on wordpress websites.
 
@@ -126,7 +126,13 @@ Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradi
 = 1.0 =
 * This is the first version of the application.
 
+= 1.0.1 =
+* Added js directory
+
 == Upgrade Notice ==
 
 = 1.0 =
 This is the first version of the application.
+
+= 1.0.1 = 
+Added js directory
