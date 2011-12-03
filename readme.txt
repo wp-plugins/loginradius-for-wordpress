@@ -20,47 +20,47 @@ registration process i.e. filling up a long registration form, verifying email I
 another username and password so your users are just one click away from logging in to your website. 
 Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
 
-Features:
-+Social login
-+User profile data
-+Social analytics
-+FREE service
-+No programming skills required
-+White label & premium solutions available
-+Available for non-CMS websites as well
-+24x7 support
+= Features =
+1. Social login
+2. User profile data
+3. Social analytics
+4. FREE service
+5. No programming skills required
+6. White label & premium solutions available
+7. Available for non-CMS websites as well
+8. 24x7 support
 
 
-List of ID Providers:
-Facebook
-Google
-Twitter
-AOL
-Flickr
-Yahoo
-Linkedin
-Wordpress
-Blogger
-MyOpenID
-LiveJournal
-VeriSign
-OpenID
-Hyves
-Mixi
-MySpace
-Orange
-StackExchange
-SteamCommunity
-Virgilio
+= List of ID Providers =
+1. Facebook
+2. Google
+3. Twitter
+4. AOL
+5. Flickr
+6. Yahoo
+7. Linkedin
+8. Wordpress
+9. Blogger
+10. MyOpenID
+11. LiveJournal
+12. VeriSign
+13. OpenID
+14. Hyves
+15. Mixi
+16. MySpace
+17. Orange
+18. StackExchange
+19. SteamCommunity
+20. Virgilio
 
 
-Important links:
-1) Website: http://www.loginradius.com
-2) Wordpress live demo: http://wordpressdemo.loginradius.com
-2) Other live demo: http://www.loginradius.com/demo
-3) Press/Media page: http://www.loginradius.com/press
-4) Blog: blog.loginradius.com
-5) Our video: http://www.youtube.com/loginradius
+= Important links =
+1. Website: http://www.loginradius.com
+2. Wordpress live demo: http://wordpressdemo.loginradius.com
+2. Other live demo: http://www.loginradius.com/demo
+3. Press/Media page: http://www.loginradius.com/press
+4. Blog: blog.loginradius.com
+5. Our video: http://www.youtube.com/loginradius
 
 == Installation ==
 
