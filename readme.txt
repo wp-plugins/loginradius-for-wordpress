@@ -5,7 +5,6 @@ Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post,
 OpenID integration, Open Authentication, User Profile Data, Social Analytics, oAuth integration, Online Identity, Social Profile storage,
 single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook Connect, Google, Yahoo OpenID, Hyves openid,Linkedin openid,
 Mixi opendID, Virgilio OpenID
-
 Requires at least: 2.5.0
 Tested up to: 3.2.1
 Stable tag: 1.0
@@ -59,7 +58,7 @@ Other than social login, LoginRadius plugin also include User Profile Data and S
 2. Wordpress live demo: http://wordpressdemo.loginradius.com
 2. Other live demo: http://www.loginradius.com/demo
 3. Press/Media page: http://www.loginradius.com/press
-4. Blog: blog.loginradius.com
+4. Blog: http://blog.loginradius.com
 5. Our video: http://www.youtube.com/loginradius
 
 == Installation ==
