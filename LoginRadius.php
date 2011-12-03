@@ -1,7 +1,11 @@
 <?php
 /*Plugin Name:LoginRadius for Wordpress  
-Plugin URI: http://www.LoginRadius.com
-Description: Imaging, users need not to go through long registration process but log in via their existing IDs. Now, it is possible through LoginRadius which enables social login such as Facebook, Twitter, Google and over 15 more on a Wordpress website. Users can directly log in through these IDs. It also fetches User Profile Data and store them in your database. An advance social analytics is also available in your LoginRadius. To understand the concept of LoginRadius, please watch our <a href='http://www.youtube.com/LoginRadius' target='_blank'>2 min video</a> and browse <a href='http://www.loginradius.com/developers/gettingstarted' target='_blank'>developers section</a> for technical assistance.
+Plugin URI: http://wordpress.org/extend/plugins/loginradius-for-wordpress/
+Description: LoginRadius plugin enables social login on a wordpress website letting users log in through their 
+existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long 
+registration process i.e. filling up a long registration form, verifying email ID, remembering 
+another username and password so your users are just one click away from logging in to your website. 
+Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics. To understand the concept of LoginRadius, please watch our <a href='http://www.youtube.com/LoginRadius' target='_blank'>2 min video</a> and browse <a href='http://www.loginradius.com/developers/gettingstarted' target='_blank'>developers section</a> for technical assistance.
 Version: 1.0
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
@@ -11,7 +15,7 @@ include('function.php');
 include('header.php');
 include('LoginRadiusSDK.php');
 define('LOGINRADIUS_PATH_ROOT', dirname(__FILE__));
-define('LOGINRADIUS_FILES_URL', plugins_url('LoginRadius/js/', LOGINRADIUS_PATH_ROOT));
+define('LOGINRADIUS_FILES_URL', plugins_url('loginradius-for-wordpress/js/', LOGINRADIUS_PATH_ROOT));
 @ini_set('display_errors',0);
 $LoginRadiuspluginpath = WP_CONTENT_URL.'/plugins/'.plugin_basename(dirname(__FILE__)).'/';
 
