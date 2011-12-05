@@ -1,8 +1,12 @@
 <?php
 /*Plugin Name:LoginRadius for Wordpress  
 Plugin URI: http://www.LoginRadius.com
-Description: Imaging, users need not to go through long registration process but log in via their existing IDs. Now, it is possible through LoginRadius which enables social login such as Facebook, Twitter, Google and over 15 more on a Wordpress website. Users can directly log in through these IDs. It also fetches User Profile Data and store them in your database. An advance social analytics is also available in your LoginRadius. To understand the concept of LoginRadius, please watch our <a href='http://www.youtube.com/LoginRadius' target='_blank'>2 min video</a> and browse <a href='http://www.loginradius.com/developers/gettingstarted' target='_blank'>developers section</a> for technical assistance.
-Version: 1.0
+Description: LoginRadius plugin enables social login on a wordpress website letting users log in through their 
+existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long 
+registration process i.e. filling up a long registration form, verifying email ID, remembering 
+another username and password so your users are just one click away from logging in to your website. 
+Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
+Version: 1.0.2
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -11,16 +15,28 @@ include('function.php');
 include('header.php');
 include('LoginRadiusSDK.php');
 define('LOGINRADIUS_PATH_ROOT', dirname(__FILE__));
-define('LOGINRADIUS_FILES_URL', plugins_url('LoginRadius/js/', LOGINRADIUS_PATH_ROOT));
+define('LOGINRADIUS_FILES_URL', plugins_url('loginradius-for-wordpress/js/', LOGINRADIUS_PATH_ROOT));
 @ini_set('display_errors',0);
 $LoginRadiuspluginpath = WP_CONTENT_URL.'/plugins/'.plugin_basename(dirname(__FILE__)).'/';
 
 class Login_Radius_Connect {
 public static function init() {
 			add_action( 'parse_request', array(get_class(), 'connect') );
-		    //add_action( 'wp_enqueue_scripts', array(get_class(), 'enqueue' ) );
+		   // add_action( 'wp_enqueue_scripts', array(get_class(), 'enqueue' ) );
 			add_filter( 'LR_logout_url' , array(get_class(), 'log_out_url'), 20, 2);
 					}
+/*public static function enqueue()
+{
+   $LoginRadius_js_url = WP_PLUGIN_URL . '/loginradius-for-wordpress/js/jquery.bpopup-0.5.1.min.js';
+  $LoginRadius_js_file = WP_PLUGIN_DIR . '/loginradius-for-wordpress/js/jquery.bpopup-0.5.1.min.js';
+    wp_register_script('LoginRadius_javascript', $LoginRadius_js_url);
+    wp_enqueue_script('LoginRadius_javascript');
+    $LoginRadius_jquery_url = WP_PLUGIN_URL . '/loginradius-for-wordpress/js/jquery.js';
+    $LoginRadius_jquery_file = WP_PLUGIN_DIR . '/loginradius-for-wordpress/js/jquery.js';
+   wp_register_script('LoginRadius_javascript_jquery', $LoginRadius_jquery_url);
+      wp_enqueue_script('LoginRadius_javascript_jquery');
+  }	*/				
+
 public static function log_out_url() {
 				$redirect= get_permalink();
 			    $link = '<a href="' . wp_logout_url($redirect) . '" title="'.e__('Logout').'">'.e__('Logout').'</a>';
@@ -43,18 +59,20 @@ public static function connect() {
 										 $id=$userprofile->ID;
 										 $Provider=$userprofile->Provider;
 										 $user_pass=wp_generate_password();	
+							self::add_user($Email,$FullName,$ProfileName,$Fname,$Lname,$id,$Provider,$user_pass);
 						}
                      if (empty($userprofile->Email[0]->Value) && $dummyemail==false)
-						{?>
-											<script type="text/javascript" src='<?php echo LOGINRADIUS_FILES_URL;?>jquery.js'></script>
-											<script  type="text/javascript" src='<?php echo LOGINRADIUS_FILES_URL;?>jquery.bpopup-0.5.1.min.js'></script>
+						{
+						?>
+								<script type="text/javascript" src='<?php echo LOGINRADIUS_FILES_URL;?>jquery.js'></script>
+					<script  type="text/javascript" src='<?php echo LOGINRADIUS_FILES_URL;?>jquery.bpopup-0.5.1.min.js'></script>
 											<script type="text/javascript">
 											$(document).ready(function () {
 											$('body').append('<style>#LoginRadiusRedSlider{display:none;}</style>');
 											$('#LoginRadiusRedSlider').bPopup();
 											});
 											</script>
-							<div id="LoginRadiusRedSlider" style="padding:20px;height:120px; width:300px; background:#FFFFFF; border:2px solid #00CCFF;">
+	<div id="LoginRadiusRedSlider" style="padding:20px;height:120px; width:300px; background:#FFFFFF; border:2px solid #00CCFF;">
 							<p><b>Please enter your email address to proceed further</b></p><br />
 							<form id="wp_login_form"  method="post" enctype="multipart/form-data" action="">
 							<input type="text" name="email" id="email" />
@@ -62,12 +80,12 @@ public static function connect() {
 							<input type="hidden" name="provider" id="provider" value="<?php echo $userprofile->Provider;?>" />
 							<input type="hidden" name="fname" id="fname" value="<?php echo $userprofile->FirstName;?>" />
 							<input type="hidden" name="lname" id="lname" value="<?php echo $userprofile->LastName;?>" />
-							<input type="hidden" name="profileName" id="profileName" value="<?php echo $userprofile->ProfileName;?>" />
+						<input type="hidden" name="profileName" id="profileName" value="<?php echo $userprofile->ProfileName;?>" />
 							<input type="hidden" name="fullName" id="fullName" value="<?php echo $userprofile->FullName;?>" />
 							<input type="hidden" name="Id" id="Id" value="<?php echo $userprofile->ID;?>" />
 							</form></div>
                         <?php } 
-                             self::add_user($Email,$FullName,$ProfileName,$Fname,$Lname,$id,$Provider,$user_pass);
+                            
                     }//autantication ends
 if($_POST['Id'] && !is_user_logged_in() && !is_admin())
 				  {
@@ -181,8 +199,8 @@ switch( $Provider ){
                break;
               }
 global $wpdb;
-$dummyemail=get_option('dummyemail');
-//look for user with username match	
+ $dummyemail=get_option('dummyemail');
+ //look for user with username match	
  						  $nameexists = true;
 						  $index = 0;
 						  $userName = $username;
@@ -226,7 +244,7 @@ $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta
 					else {  
 					if (!empty($email)) {
 					  $user_id = wp_create_user( $username,$user_pass, $email );
-					  wp_new_user_notification($username, $user_pass);
+					  wp_new_user_notification($username,$user_pass);
 					  }
                       if (! is_wp_error($user_id) ) 
 					  {
