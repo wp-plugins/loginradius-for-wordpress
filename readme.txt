@@ -19,47 +19,49 @@ registration process i.e. filling up a long registration form, verifying email I
 another username and password so your users are just one click away from logging in to your website. 
 Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
 
+Check out <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">LoginRadius video</a>
+[youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
+
 = Features =
-1. Social login
-2. User profile data
-3. Social analytics
-4. FREE service
-5. No programming skills required
-6. White label & premium solutions available
-7. Available for non-CMS websites as well
-8. 24x7 support
+* Social login
+* User profile data
+* Social analytics
+* FREE service
+* No programming skills required
+* White label & premium solutions available
+* Available for non-CMS websites as well
+* 24x7 support
 
 
 = List of ID Providers =
-1. Facebook
-2. Google
-3. Twitter
-4. AOL
-5. Flickr
-6. Yahoo
-7. Linkedin
-8. Wordpress
-9. Blogger
-10. MyOpenID
-11. LiveJournal
-12. VeriSign
-13. OpenID
-14. Hyves
-15. Mixi
-16. MySpace
-17. Orange
-18. StackExchange
-19. SteamCommunity
-20. Virgilio
-
+* Facebook
+* Google
+* Twitter
+* AOL
+* Flickr
+* Yahoo
+* Linkedin
+* Wordpress
+* Blogger
+* MyOpenID
+* LiveJournal
+* VeriSign
+* OpenID
+* Hyves
+* Mixi
+* MySpace
+* Orange
+* StackExchange
+* SteamCommunity
+* Virgilio
 
 = Important links =
-1. Website: http://www.loginradius.com
-2. Wordpress live demo: http://wordpressdemo.loginradius.com
-2. Other live demo: http://www.loginradius.com/demo
-3. Press/Media page: http://www.loginradius.com/press
-4. Blog: http://blog.loginradius.com
-5. Our video: http://www.youtube.com/loginradius
+* Website: http://www.loginradius.com
+* Wordpress live demo: http://wordpressdemo.loginradius.com
+* Other live demo: http://www.loginradius.com/demo
+* Press/Media page: http://www.loginradius.com/press
+* Blog: http://blog.loginradius.com
+* Our video: http://www.youtube.com/loginradius
 
 == Installation ==
 
@@ -83,13 +85,11 @@ you can select the providers you want to use on your wodpress website and genera
 10. Copy and Paste API Key in LoginRadius plug-in box for 'API key'.
 
 = Comment setting =
-
 If you want that only registered users can comment, then go to discussion
 setting and check 'Users must be registered and logged in to comment' option. With
 this option setting user has to register first or login using social provider and then only they can post comments.
 
 = Coding instructions =
-
 If you want LoginRadius interface to appear on any other page or post, then call function - Login_Radius_Connect_button();
 after configuring LoginRadius plugin in your wordpress website.
 
@@ -97,7 +97,8 @@ after configuring LoginRadius plugin in your wordpress website.
 
 = What is LoginRadius =
 
-LoginRadius is a Software As A Service (SAAS) which allows users to log in to a third party website via popular open IDs/oAuths such as Google, Facebook, Yahoo, AOL and over 20 more.
+LoginRadius is a Software As A Service (SAAS) which allows users to log in to a third party website via popular open IDs/oAuths such as Google, Facebook, 
+Yahoo, AOL and over 20 more.
 
 = How long can I keep my account? =
 
@@ -109,7 +110,8 @@ If you have any questions or concerns regarding LoginRadius, please write us at 
 
 = How much you charge for this service? =
 
-It is FREE and will remain free, but for advanced features and customized solutions, there are various packages available. Please contact us for further details.
+It is FREE and will remain free, but for advanced features and customized solutions, there are various packages available. Please contact us for further 
+details.
 
 = Do you have a live demo site? =
 
@@ -117,8 +119,10 @@ Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradi
 
 == Screenshots ==
 
-1. Screenshot-1: This screenshot displays loginradius interface for login section. Its showing all select provider with a slider option./tags/1.0/screenshot-1.png
-2. Screenshot-2: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider option./tags/1.0/screenshot-2.png
+1. Screenshot-1: This screenshot displays loginradius interface for login section. Its showing all select provider with a slider 
+option./tags/1.0/screenshot-1.png
+2. Screenshot-2: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider 
+option./tags/1.0/screenshot-2.png
 3. Screenshot-3: This screenshot shows the default wordpress login with LoginRadius interface attached to it./tags/1.0/screenshot-3.png
 
 == Changelog ==
