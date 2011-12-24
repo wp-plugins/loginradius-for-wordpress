@@ -16,7 +16,7 @@ This plugin enables social login on a wordpress website letting users log in thr
 existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long 
 registration process i.e. filling up a long registration form, verifying email ID, remembering 
 another username and password so your users are just one click away from logging in to your website. 
-Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
+Other than social login, This plugin also provides User Profile Data and Social Analytics.
 
 'Social Login for WordPress' plugin is developed by LoginRadius, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
@@ -127,11 +127,11 @@ Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradi
 
 == Screenshots ==
 
-1. Screenshot-1: This screenshot displays loginradius interface for login section. Its showing all select provider with a slider 
-option./tags/1.0/screenshot-1.png
+1. Screenshot-1: This screenshot displays loginradius interface for login section. Its showing all the selected providers with a slider 
+option./tags/2.0/screenshot-1.png
 2. Screenshot-2: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider 
-option./tags/1.0/screenshot-2.png
-3. Screenshot-3: This screenshot shows the default wordpress login with LoginRadius interface attached to it./tags/1.0/screenshot-3.png
+option./tags/2.0/screenshot-2.png
+3. Screenshot-3: This screenshot shows the default wordpress login with LoginRadius interface attached to it./tags/2.0/screenshot-3.png
 
 == Changelog ==
 
