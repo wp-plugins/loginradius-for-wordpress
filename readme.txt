@@ -12,7 +12,6 @@ Stable tag: 2.0
 Let your users log in and comment via their existing ID from popular  ID providers such as Facebook, Google, Twitter, Yahoo, Live and over 15 more!
 
 == Description ==
-
 This plugin enables social login on a wordpress website letting users log in through their 
 existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long 
 registration process i.e. filling up a long registration form, verifying email ID, remembering 
@@ -22,7 +21,16 @@ Other than social login, LoginRadius plugin also include User Profile Data and S
 'Social Login for WordPress' plugin is developed by LoginRadius, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
 
-= Features =
+= Plugin Features =
+* Social Login
+* Post comment with existing ID
+* Get user profile data
+* Select desired providers
+* Manage plugin from WP admin account
+* Highly secure through REST API
+* Get social analytics of your users
+
+= LoginRadius Service Features =
 * Social login
 * User profile data
 * Social analytics
