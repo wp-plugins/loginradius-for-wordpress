@@ -23,4 +23,49 @@ if (is_user_logged_in() && !is_admin()) {
 add_action( 'login_form','Login_Radius_Connect_button');
 add_action( 'register_form', 'Login_Radius_Connect_button');
 add_action( 'after_signup_form','Login_Radius_Connect_button');
-add_action( 'comment_form_must_log_in_after','Login_Radius_Connect_button');?>
+if ( get_option('comment_registration') && !$user_ID )
+{
+add_action( 'comment_form_must_log_in_after','Login_Radius_Connect_button');
+}else{
+add_action( 'comment_form_top','Login_Radius_Connect_button');}
+function LoginRadius_redirect()
+{
+$LoginRadius_redirect=get_option('LoginRadius_redirect');
+$LoginRadius_redirect_custom_redirect=get_option('LoginRadius_redirect_custom_redirect');
+$redirect_to = site_url();
+$redirect_to_safe = false;
+if ( ! empty ($_GET['redirect_to']))
+{
+$redirect_to = $_GET['redirect_to'];
+$redirect_to_safe = true;
+}
+else
+{
+ if (isset($LoginRadius_redirect))
+	{
+		switch (strtolower($LoginRadius_redirect))
+			{
+				case 'dashboard':
+				$redirect_to = admin_url();
+				break;
+				case 'custom':
+				if ( isset ($LoginRadius_redirect) && strlen(trim($LoginRadius_redirect_custom_redirect)) > 0)
+				{
+				$redirect_to = trim($LoginRadius_redirect_custom_redirect);
+				}
+				break;
+				default:
+				case 'homepage':
+				$redirect_to = site_url();
+				break;
+	}
+}		}
+if ($redirect_to_safe)
+{
+wp_redirect($redirect_to);
+}
+else
+{
+wp_safe_redirect($redirect_to);
+}
+}?>
