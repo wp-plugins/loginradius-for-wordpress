@@ -1,4 +1,4 @@
-=== Social Login for wordpress ===
+=== Social Login for Wordpress ===
 Contributors: loginradius
 Donate link: http://www.loginradius.com/
 Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post, open authentication, facebook connect, Social Login,
@@ -9,17 +9,17 @@ Requires at least: 2.5.0
 Tested up to: 3.2.1
 Stable tag: 2.0
 
-LoginRadius enables social login on wordpress websites.
+Let your users log in and comment via their existing ID from popular  ID providers such as Facebook, Google, Twitter, Yahoo, Live and over 15 more!
 
 == Description ==
 
-LoginRadius plugin enables social login on a wordpress website letting users log in through their 
+This plugin enables social login on a wordpress website letting users log in through their 
 existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long 
 registration process i.e. filling up a long registration form, verifying email ID, remembering 
 another username and password so your users are just one click away from logging in to your website. 
 Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
 
-Check out <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">LoginRadius video</a>
+'Social Login for WordPress' plugin is developed by LoginRadius, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
 
 = Features =
@@ -128,7 +128,7 @@ option./tags/1.0/screenshot-2.png
 == Changelog ==
 
 = 2.0 =
-* Most stable release
+* Stable release
 * Bug fixes and Admin enhancements
 
 = 1.0.3 =
