@@ -17,8 +17,11 @@ if ( $force or !( get_option('dummyemail')) ) {
 if ( $force or !( get_option('LoginRadius_redirect')) ) {
 		update_option('LoginRadius_redirect',false);
 	}	
-	}
-	/**
+if ( $force or !( get_option('title')) ) {
+		update_option('title',false);
+	}	
+}
+/**
  * Displays the LoginRadius admin menu, first section (re)stores the settings.
  */
 function LoginRadius_submenu() {
@@ -40,12 +43,21 @@ function LoginRadius_submenu() {
 		} else {
 			LoginRadius_message(__("You Must Need a Login Radius Api Secret For Login Process.", 'LoginRadius'));
 		}
+		if (isset($_POST['title']) && $_POST['title']!="") {
+			update_option('title',$_POST['title']);
+		} else {
+			update_option('title',$_POST['title']=='Please Login with');
+		}
 		if (isset($_POST['dummyemail'])==true && $_POST['dummyemail']!="") {
 			update_option('dummyemail',$_POST['dummyemail']==true);
 		} else {
 			update_option('dummyemail',$_POST['dummyemail']==false);
 		}
 		$LoginRadius_redirect = $_POST['LoginRadius_redirect'];
+		if ($LoginRadius_redirect=='samepage' && $LoginRadius_redirect!="") {
+		$samepage = 'checked';
+			update_option('LoginRadius_redirect',$LoginRadius_redirect);
+		} 
 		if ($LoginRadius_redirect=='homepage' && $LoginRadius_redirect!="") {
 		$homepage = 'checked';
 			update_option('LoginRadius_redirect',$LoginRadius_redirect);
@@ -59,7 +71,7 @@ function LoginRadius_submenu() {
 			update_option('LoginRadius_redirect',$LoginRadius_redirect);
 		}
 		else{
-		update_option('LoginRadius_redirect',$LoginRadius_redirect=='homepage');
+		update_option('LoginRadius_redirect',$LoginRadius_redirect=='samepage');
 		}
 		if($LoginRadius_redirect=='custom' && $custom == 'checked' && isset($_POST['LoginRadius_redirect_custom_redirect'])!="")
 		{
@@ -85,9 +97,9 @@ function LoginRadius_submenu() {
 	<h2><?php _e("<b style='color:#00ccff;'>Login</b><b>Radius</b> Settings", 'LoginRadius'); ?></h2>
 	<div class="LoginRadius_container_outer">
 		<div class="LoginRadius_container">
-			<h3>Thank you for installing LoginRadius Plugin!</h3><p>
-You can select desired settings for your plugin on this page. Though you can choose ID Providers and can get <strong> LoginRadius API Key & Secret </strong>by logging into <a href="http://www.LoginRadius.com" target="_blank">www.LoginRadius.com.</a> In order to make whole login process highly secure, we require you to manage it from your LoginRadius account.</p>
-<p><strong>LoginRadius</strong> is a North America based technology company that offers social login through popular hosts such as Facebook, Twitter, Google and over 15 more! For tech support or any questions, please contact us at <strong>hello@loginradius.com.</strong></p><h3>We are up 24x7 to assist our clients!</h3>
+			<h3>Thank you for installing the LoginRadius plugin!</h3><p>
+You can customize the settings for your plugin on this page, though you will have to choose your desired ID providers and get your unique <strong> LoginRadius API Key & Secret </strong>from <a href="http://www.LoginRadius.com" target="_blank">www.LoginRadius.com.</a> In order to make the login process secure, we require you to manage it from your LoginRadius account.</p>
+<p><strong>LoginRadius</strong> LoginRadius is a North America based technology company that offers social login through popular hosts such as Facebook, Twitter, Google and over 15 more! For tech support or if you have any questions, please contact us at <strong>hello@loginradius.com.</strong></p><h3>We are available 24/7 to assist our clients!</h3>
 <p>
 <a class="button-secondary" href="http://www.loginradius.com/" target="_blank"><strong>Create your FREE account now!</strong></a>
 </p>
@@ -103,7 +115,7 @@ You can select desired settings for your plugin on this page. Though you can cho
 		<li><a href="http://www.loginradius.com/loginradius/plugins.aspx" target="_blank">Other LoginRadius plugins</a></li>
 		
 		<li><a href="http://www.loginradius.com/loginradius/writetous.aspx" target="_blank">Tech Support</a></li>
-		<br />
+		<br /><br />
 		</ul>
         </p>
 		</div>
@@ -121,7 +133,7 @@ You can select desired settings for your plugin on this page. Though you can cho
 	<tr >
 	<th scope="row">LoginRadius<br /><small>API Secret</small></th>
 	<td><?php _e("Paste LoginRadius API Secret here. To get the API Secret, log in to <a href='http://www.LoginRadius.com/' target='_blank'>LoginRadius.</a>", 'LoginRadius'); ?><br/>
-		<input size="60" type="text" name="LoginRadius_secret" id="LoginRadius_secret" value="<?php echo get_option('LoginRadius_secret' ); ?>" /></td>
+		<input size="60" type="text" name="LoginRadius_secret" id="LoginRadius_secret" value="<?php echo get_option('LoginRadius_secret'); ?>" /></td>
 	</tr>
 	</table>
 	<table class="form-table LoginRadius_table">
@@ -129,8 +141,15 @@ You can select desired settings for your plugin on this page. Though you can cho
 	<th class="head" colspan="2">LoginRadius Basic Settings</small></th>
 	</tr>
 	<tr>
+	<th scope="row">Title</th>
+	<td><?php _e("This text displyed above the Social login button.", 'LoginRadius'); ?>
+	<br />
+<input type="text"  name="title" size="60" value="<?php if(htmlspecialchars(get_option('title'))){echo htmlspecialchars(get_option('title'));}else{echo 'Please Login with';} ?>" />
+</td>
+	</tr>
+	<tr>
 	<th scope="row">Email Required</th>
-	<td><?php _e("Few ID providers do not provide user's Email ID. Select YES if you want a email pop-up after login or select NO if you want to auto generate the email address.", 'LoginRadius'); ?>
+	<td><?php _e("A few ID providers do not provide user's Email ID. Select YES if you would like an email pop-up after login or select NO if you would like to auto-generate the email address.", 'LoginRadius'); ?>
 	</td></tr>
 	<tr class="row_white">
 	<th></th>
@@ -142,8 +161,9 @@ No&nbsp;&nbsp;<input name="dummyemail" type="radio" value="1" <?php checked( '1'
 	<tr >
 	<th scope="row">Setting for Redirect after login</th>
 	<td>
+<input type="radio" name="LoginRadius_redirect" value="samepage" <?php checked( 'samepage', get_option( 'LoginRadius_redirect' )); ?> checked /> <?php _e ('Redirect to Same Page of blog'); ?> <strong>(<?php _e ('Default') ?>)</strong><br />
 
-<input type="radio" name="LoginRadius_redirect" value="homepage" <?php checked( 'homepage', get_option( 'LoginRadius_redirect' )); ?> checked /> <?php _e ('Redirect to homepage of blog'); ?> <strong>(<?php _e ('Default') ?>)</strong>
+<input type="radio" name="LoginRadius_redirect" value="homepage" <?php checked( 'homepage', get_option( 'LoginRadius_redirect' )); ?> /> <?php _e ('Redirect to homepage of blog'); ?> 
 <br />
 <input type="radio" name="LoginRadius_redirect" value="dashboard" <?php checked( 'dashboard', get_option( 'LoginRadius_redirect' )); ?> /> <?php _e ('Redirect to account dashboard'); ?>
 <br />

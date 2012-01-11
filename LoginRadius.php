@@ -1,8 +1,8 @@
 <?php
 /*Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
-Description: This plugin enables social login on a wordpress website letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long registration process i.e. filling up a long registration form, verifying email ID, remembering another username and password so your users are just one click away from logging in to your website. Other than social login, This plugin also provides User Profile Data and Social Analytics.
-Version: 2.0
+Description: LoginRadius plugin enables social login on a wordpress website letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long registration process i.e. filling up a long registration form, verifying email ID, remembering another username and password so your users are just one click away from logging in to your website. Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
+Version: 2.1
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -56,23 +56,24 @@ $Fname=$userprofile->FirstName;
 $Lname=$userprofile->LastName;
 $id=$userprofile->ID;
 $Provider=$userprofile->Provider;
-$msg="<p>Please enter your email address to proceed further</p>";
-      // look for users with the id match
+$msg="<p>Please enter your email address to proceed </p>";
+// look for users with the id match
 $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='id' AND meta_value = %s",$id));
 	if ( !empty($wp_user_id) ){
-	            // set cookies manually since 
-					self::set_cookies($wp_user_id);
-				    $redirect=LoginRadius_redirect();
-				   wp_redirect($redirect);
-				   }
+	     // set cookies manually since 
+		self::set_cookies($wp_user_id);
+		$redirect=LoginRadius_redirect();
+		wp_redirect($redirect);
+	}
 else{ self::popup($FullName,$ProfileName,$Fname,$Lname,$id,$Provider,$msg); } 
    } //check email ends
 }//autantication ends
 if(isset($_POST['LoginRadiusRedSliderClick']))
 {
-   if(email_exists($_REQUEST['email']))
+$user_email=urldecode($_POST['email']);
+   if (! is_email($user_email) OR email_exists ($user_email))
     {
-		 $msg="<p style='color:red;'>The email you have entered is already exists! Please enter another email.</p>";
+		 $msg="<p style='color:red;'>This email is already registered or invalid , please choose another one.</p>";
 		 $id=$_POST['Id'];  
 		 $Fname=$_POST['fname'];
 		 $Lname=$_POST['lname'];
@@ -97,6 +98,7 @@ else{
 private static function add_user($Email,$FullName,$ProfileName,$Fname,$Lname,$id,$Provider,$user_pass)
 {
 //if anything not found correctly
+
 $dummyemail=get_option('dummyemail'); 
 $Email_id=substr($id,7);
 $Email_id2=str_replace("/","_",$Email_id);
@@ -146,9 +148,9 @@ switch( $Provider ){
 					$email=$Email;
 		            break;
 		case 'hyves':
-					$username=$Fname.$Lname;
-					$fname=$Fname;
-					$lname=$Lname;
+					$username=$FullName;
+					$fname=$FullName;
+					$lname=$FullName;
 					$email=$Email;
 					break;
 		default:
@@ -236,7 +238,7 @@ $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta
 					}
 					else {  
 					if (!empty($email)) {
-					  $user_id = wp_create_user( $username,$user_pass, $email );
+					  $user_id = wp_create_user( $username,$user_pass,$email );
 					  wp_new_user_notification($username,$user_pass);
 					  }
                       if (! is_wp_error($user_id) ) 
@@ -270,19 +272,22 @@ else {
 private static function popup($FullName,$ProfileName,$Fname,$Lname,$id,$Provider,$msg)
 {?>
 <div id="fade" class="LoginRadius_overlay" class="LoginRadius_content_IE">
-<div class="LoginRadius_DivPopHeader">
-<div style="float:right; border:1px solid #00CCFF;padding:2px;"><a href="" title='close' onclick="javascript:document.LoginRadius_popupDiv.style.display = 'none'">X</a></div>
-<div class="LoginRadius_popupDiv"><?php if($msg){echo "<b>".$msg."</b><br />";}?>
-					<form id="wp_login_form"  method="post"  action="">
-					<input type="text" name="email" id="email" />
-					<input type="submit" id="LoginRadiusRedSliderClick" name="LoginRadiusRedSliderClick" value="Submit">
+<div id="popupouter">
+  <div id="popupinner">
+    <div id="textmatter"><?php if($msg){echo "<b>".$msg."</b>";}?></div> 
+		<form id="wp_login_form"  method="post"  action="">
+					<div><input type="text" name="email" id="email" class="inputtxt" /></div><div>
+<input type="submit" id="LoginRadiusRedSliderClick" name="LoginRadiusRedSliderClick" value="Submit" class="inputbutton">
+<input type="submit" value="cancel" class="inputbutton" onClick="history.back()" />
 					<input type="hidden" name="provider" id="provider" value="<?php echo $Provider;?>" />
 					<input type="hidden" name="fname" id="fname" value="<?php echo $Fname;?>" />
 					<input type="hidden" name="lname" id="lname" value="<?php echo $Lname;?>" />
 					<input type="hidden" name="profileName" id="profileName" value="<?php echo $ProfileName;?>" />
 					<input type="hidden" name="fullName" id="fullName" value="<?php echo $FullName;?>" />
-					<input type="hidden" name="Id" id="Id" value="<?php echo $id;?>" />
-					</form></div></div></div>
+					<input type="hidden" name="Id" id="Id" value="<?php echo $id;?>" /></div>
+					</form>
+					<div id="textdiv">Poweredby <span class="span">Login</span><span class="span1">Radius</span></div>
+					</div></div></div>
 <?php }
 private static function set_cookies( $user_id = 0, $remember = true ) 
 			{   

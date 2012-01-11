@@ -4,19 +4,15 @@ Donate link: http://www.loginradius.com/
 Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post, open authentication, facebook connect, Social Login,
 OpenID integration, Open Authentication, User Profile Data, Social Analytics, oAuth integration, Online Identity, Social Profile storage,
 single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook Connect, Google, Yahoo OpenID, Hyves openid,Linkedin openid,
-Mixi opendID, Virgilio OpenID, BuddyPress
+Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare
 Requires at least: 2.5.0
 Tested up to: 3.2.1
-Stable tag: 2.0
+Stable tag: 2.1
 
-Let your users log in and comment via their existing ID from popular  ID providers such as Facebook, Google, Twitter, Yahoo, Live and over 15 more!
+Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Live, and over 15 more!
 
 == Description ==
-This plugin enables social login on a wordpress website letting users log in through their 
-existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long 
-registration process i.e. filling up a long registration form, verifying email ID, remembering 
-another username and password so your users are just one click away from logging in to your website. 
-Other than social login, This plugin also provides User Profile Data and Social Analytics.
+This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics.
 
 'Social Login for WordPress' plugin is developed by LoginRadius, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
@@ -49,6 +45,7 @@ Other than social login, This plugin also provides User Profile Data and Social 
 * Flickr
 * Yahoo
 * Linkedin
+* FourSquare
 * Wordpress
 * Blogger
 * MyOpenID
@@ -70,20 +67,22 @@ Other than social login, This plugin also provides User Profile Data and Social 
 * Press/Media page: http://www.loginradius.com/press
 * Blog: http://blog.loginradius.com
 * Our video: http://www.youtube.com/loginradius
+* Social Login for WordPress in Italian: http://wordpress.org/extend/plugins/loginradius-social-login-for-wordpress-in-italian-language/
+* Social Login for WordPress in franch: http://wordpress.org/extend/plugins/social-login-for-wordpress-in-french-language-francais/
+
 
 == Installation ==
 
-1. Download the plug-in zip file and extract the contents.
-2. Upload the folder contents to your wordpress plugins directory (wp-content/plugins/).
-3. Activate the plugin through the 'plugins' page in wordpress.
-4. After you activate the plug in, you will see a new option called 'Login/Share with LoginRadius'.
+1. Download the plugin zip file and extract the contents. 
+2. Upload the folder contents to your Wordpress plugin's directory (wp-content/plugins/). 
+3. Activate the plugin through the 'Plugins' page in Wordpress. 
+4. After activation you will see a new option called 'Social Login for Wordpress'.
 
 = Configuring the Widget =
 
-5. Once you activate the plugin, go to the 'Widgets' section in the 'Design' or 'Appearance' menu.
-6. Look for the 'LoginRadius' widget and click on the 'add' link. Or you can also drag and drop the 
-widget on widget area, where you want to add.
-7. After adding LoginRadius widget, you would set and change options (title, text show before, text show after) for it.
+5. Once you activate the plugin, go to the 'Widgets' section in the 'Design' or 'Appearance' menu. 
+6. Look for the 'LoginRadius' widget and click on the 'Add' link, or drag and drop the widget to the widget area on the right. 
+7. After adding the LoginRadius widget, customize it by changing the title, text show before, text show after, etc.
 
 = Settings =
 
@@ -93,9 +92,7 @@ you can select the providers you want to use on your wodpress website and genera
 10. Copy and Paste API Key in LoginRadius plug-in box for 'API key'.
 
 = Comment setting =
-If you want that only registered users can comment, then go to discussion
-setting and check 'Users must be registered and logged in to comment' option. With
-this option setting user has to register first or login using social provider and then only they can post comments.
+If you want to allow only registered users to comment, go to Settings > Discussion and check the box for 'Users must be registered and logged in to comment'. With this option turned on, users must first register or login using a social provider before posting comments.
 
 = Coding instructions =
 If you want LoginRadius interface to appear on any other page or post, then call function - Login_Radius_Connect_button();
@@ -110,11 +107,11 @@ Yahoo, AOL and over 20 more.
 
 = How long can I keep my account? =
 
-How long you use LoginRadius is completely up to you. You may remove LoginRadius from your website and delete your account at any time.
+You can keep your account for as long as you wish--you may remove LoginRadius from your website and delete your account at any time.
 
 = What is the best way to reach the LoginRadius Team? =
 
-If you have any questions or concerns regarding LoginRadius, please write us at hello@loginradius.com.
+If you have any questions or concerns regarding LoginRadius, please let us know at hello@loginradius.com.
 
 = How much you charge for this service? =
 
@@ -128,12 +125,21 @@ Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradi
 == Screenshots ==
 
 1. Screenshot-1: This screenshot displays loginradius interface for login section. Its showing all the selected providers with a slider 
-option./tags/2.0/screenshot-1.png
+option./tags/2.1/screenshot-1.png
 2. Screenshot-2: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider 
-option./tags/2.0/screenshot-2.png
-3. Screenshot-3: This screenshot shows the default wordpress login with LoginRadius interface attached to it./tags/2.0/screenshot-3.png
+option./tags/2.1/screenshot-2.png
+3. Screenshot-3: This screenshot shows the default wordpress login with LoginRadius interface attached to it./tags/2.1/screenshot-3.png
 
 == Changelog ==
+
+= 2.1 =
+* Stable release
+* Added foursquare social login in provider list
+* Redirect selection option in admin.
+* Existance of email validation.
+* Popup design enhancements.
+* New interface on comment box for login.
+* Admin interface design enhancements.
 
 = 2.0 =
 * Stable release
@@ -167,3 +173,11 @@ Bug fixed - Registered user email notification issue
 
 = 2.0 =
 Bug fixes and Admin interface enhancements
+
+= 2.1 =
+Enhancements:
+1. Redirect selection option in admin.
+2. Existance of email validation.
+3. Popup design enhancements.
+4. New interface on comment box for login.
+5. Admin interface design enhancements.
