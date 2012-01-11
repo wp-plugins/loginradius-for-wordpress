@@ -68,7 +68,7 @@ This plugin enables social login on Wordpress websites by letting users log in t
 * Blog: http://blog.loginradius.com
 * Our video: http://www.youtube.com/loginradius
 * Social Login for WordPress in Italian: http://wordpress.org/extend/plugins/loginradius-social-login-for-wordpress-in-italian-language/
-* Social Login for WordPress in franch: http://wordpress.org/extend/plugins/social-login-for-wordpress-in-french-language-francais/
+* Social Login for WordPress in French: http://wordpress.org/extend/plugins/social-login-for-wordpress-in-french-language-francais/
 
 
 == Installation ==
@@ -134,7 +134,7 @@ option./tags/2.1/screenshot-2.png
 
 = 2.1 =
 * Stable release
-* Added foursquare social login in provider list
+* Added FourSquare as login provider
 * Redirect selection option in admin.
 * Existance of email validation.
 * Popup design enhancements.
@@ -181,3 +181,4 @@ Enhancements:
 3. Popup design enhancements.
 4. New interface on comment box for login.
 5. Admin interface design enhancements.
+6. Added FourSquare as login provider.
