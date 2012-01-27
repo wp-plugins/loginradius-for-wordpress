@@ -125,11 +125,13 @@ Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradi
 
 == Screenshots ==
 
-1. Screenshot-1: This screenshot displays loginradius interface for login section. Its showing all the selected providers with a slider 
-option./tags/2.1/screenshot-1.png
-2. Screenshot-2: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider 
-option./tags/2.1/screenshot-2.png
-3. Screenshot-3: This screenshot shows the default wordpress login with LoginRadius interface attached to it./tags/2.1/screenshot-3.png
+1. Wordpress Social Login Slider: This screenshot displays Social Login Slider for Wordpress./tags/2.2/Wordpress Social Login Slider.png
+2. Wordpress Login Box: This screenshot displays loginradius interface for wordpress Login box. Its showing all select provider with a slider 
+option./tags/2.2/Wordpress Login Box.png
+3. Wordpress LoginRadius page: This screenshot shows the LoginRadius user account for wordpress users./tags/2.2/Wordpress LoginRadius page.png
+4. Wordpress admin panel: This screenshot shows the wordpress Admin panel with various options. /tags/2.2/Wordpress admin panel.png
+5. Wordpress commentbox: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider 
+option. /tags/2.2/Wordpress commentbox.png
 
 == Changelog ==
 
