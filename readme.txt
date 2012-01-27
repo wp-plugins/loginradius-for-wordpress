@@ -68,9 +68,6 @@ This plugin enables social login on Wordpress websites by letting users log in t
 * Press/Media page: http://www.loginradius.com/press
 * Blog: http://blog.loginradius.com
 * Our video: http://www.youtube.com/loginradius
-* Social Login for WordPress in Italian: http://wordpress.org/extend/plugins/loginradius-social-login-for-wordpress-in-italian-language/
-* Social Login for WordPress in franch: http://wordpress.org/extend/plugins/social-login-for-wordpress-in-french-language-francais/
-
 
 == Installation ==
 
@@ -125,13 +122,13 @@ Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradi
 
 == Screenshots ==
 
-1. Wordpress Social Login Slider: This screenshot displays Social Login Slider for Wordpress./tags/2.2/Wordpress Social Login Slider.png
-2. Wordpress LoginRadius page: This screenshot shows the LoginRadius user account for wordpress users./tags/2.2/Wordpress LoginRadius page.png
-3. Wordpress admin panel: This screenshot shows the wordpress Admin panel with various options./tags/2.2/Wordpress admin panel.png
+1. Wordpress Social Login Slider: This screenshot displays Social Login Slider for Wordpress./tags/2.2/WordpressSocialLoginSlider.png
+2. Wordpress LoginRadius page: This screenshot shows the LoginRadius user account for wordpress users./tags/2.2/WordpressLoginRadiuspage.png
+3. Wordpress admin panel: This screenshot shows the wordpress Admin panel with various options./tags/2.2/WordpressAdminPanel.png
 4. Wordpress commentbox: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider 
-option./tags/2.2/Wordpress commentbox.png
+option./tags/2.2/WordpressCommentbox.png
 5. Wordpress Login Box: This screenshot displays loginradius interface for wordpress Login box. Its showing all select provider with a slider 
-option./tags/2.2/Wordpress Login Box.png
+option./tags/2.2/WordpressLoginBox.png
 
 == Changelog ==
 
