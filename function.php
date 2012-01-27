@@ -27,10 +27,10 @@ if( $display_label != false ) : ?>
 <?php }
 if (is_user_logged_in() && !is_admin()) {
 	global $user_ID; $user = get_userdata( $user_ID );
-	echo "Welcome! "."".$user->user_login ;
+	_e("Welcome! "."".$user->user_login, 'LoginRadius');
 	$redirect= get_permalink();?>
 	<br />
-<a href="<?php echo wp_logout_url($redirect);?>">Log Out</a><?php }
+<a href="<?php echo wp_logout_url($redirect);?>"><?php _e('Log Out', 'LoginRadius');?></a><?php }
 }
 add_action( 'login_form','Login_Radius_Connect_button');
 add_action( 'register_form', 'Login_Radius_Connect_button');

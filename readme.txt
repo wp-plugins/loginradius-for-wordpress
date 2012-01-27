@@ -1,18 +1,18 @@
 === Social Login for Wordpress ===
-Contributors: loginradius
+Contributors: LoginRadius team, Italian Language Translator-Test: Michelangelo Giannino.com, Russian Language Translator: Rob (www.prestigecarpet.ru), Spanish Language Translator: Daniel Iturbe (www.telibera.com), Chinese & Japanese Language Translator: Wenxuan Hu
 Donate link: http://www.loginradius.com/
 Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post, open authentication, facebook connect, Social Login,
 OpenID integration, Open Authentication, User Profile Data, Social Analytics, oAuth integration, Online Identity, Social Profile storage,
 single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook Connect, Google, Yahoo OpenID, Hyves openid,Linkedin openid,
-Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare
+Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish, Russian, Chinese, Japanese
 Requires at least: 2.5.0
 Tested up to: 3.2.1
-Stable tag: 2.1
+Stable tag: 2.2
 
 Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Live, and over 15 more!
 
 == Description ==
-This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics.
+This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. This plugin is available in 7 different languages - English, French, Spanish, Italian, Chinese and Japanese
 
 'Social Login for WordPress' plugin is developed by LoginRadius, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
@@ -25,6 +25,7 @@ This plugin enables social login on Wordpress websites by letting users log in t
 * Manage plugin from WP admin account
 * Highly secure through REST API
 * Get social analytics of your users
+* Availalbe in 7 languages (English, French, Spanish, Italian, Russian, Chinese, Japanese)
 
 = LoginRadius Service Features =
 * Social login
@@ -68,7 +69,7 @@ This plugin enables social login on Wordpress websites by letting users log in t
 * Blog: http://blog.loginradius.com
 * Our video: http://www.youtube.com/loginradius
 * Social Login for WordPress in Italian: http://wordpress.org/extend/plugins/loginradius-social-login-for-wordpress-in-italian-language/
-* Social Login for WordPress in French: http://wordpress.org/extend/plugins/social-login-for-wordpress-in-french-language-francais/
+* Social Login for WordPress in franch: http://wordpress.org/extend/plugins/social-login-for-wordpress-in-french-language-francais/
 
 
 == Installation ==
@@ -132,9 +133,13 @@ option./tags/2.1/screenshot-2.png
 
 == Changelog ==
 
+= 2.2 =
+* Stable release
+* Added 6 more languages - Italian, Russian, Spanish, Chinese, Japanese, French
+
 = 2.1 =
 * Stable release
-* Added FourSquare as login provider
+* Added foursquare social login in provider list
 * Redirect selection option in admin.
 * Existance of email validation.
 * Popup design enhancements.
@@ -181,4 +186,6 @@ Enhancements:
 3. Popup design enhancements.
 4. New interface on comment box for login.
 5. Admin interface design enhancements.
-6. Added FourSquare as login provider.
+
+= 2.2 =
+Added 6 more languages with English

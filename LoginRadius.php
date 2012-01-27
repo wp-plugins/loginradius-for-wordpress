@@ -2,7 +2,7 @@
 /*Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
 Description: LoginRadius plugin enables social login on a wordpress website letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long registration process i.e. filling up a long registration form, verifying email ID, remembering another username and password so your users are just one click away from logging in to your website. Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
-Version: 2.1
+Version: 2.2
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -25,7 +25,7 @@ public static function LoginRadius_front_css_custom_page() {
  }			
 public static function log_out_url() {
 				$redirect= get_permalink();
-			    $link = '<a href="' . wp_logout_url($redirect) . '" title="'.e__('Logout').'">'.e__('Logout').'</a>';
+			    $link = '<a href="' . wp_logout_url($redirect) . '" title="'.e__('Logout', 'LoginRadius').'">'.e__('Logout', 'LoginRadius').'</a>';
 			    echo apply_filters('Login_Radius_log_out_url',$link);
 		                 }
 public static function connect() {
@@ -56,7 +56,7 @@ $Fname=$userprofile->FirstName;
 $Lname=$userprofile->LastName;
 $id=$userprofile->ID;
 $Provider=$userprofile->Provider;
-$msg="<p>Please enter your email address to proceed </p>";
+$msg = "<p>" . trim(strip_tags(get_option('msg_email'))) . "</p>";
 // look for users with the id match
 $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='id' AND meta_value = %s",$id));
 	if ( !empty($wp_user_id) ){
@@ -73,7 +73,7 @@ if(isset($_POST['LoginRadiusRedSliderClick']))
 $user_email=urldecode($_POST['email']);
    if (! is_email($user_email) OR email_exists ($user_email))
     {
-		 $msg="<p style='color:red;'>This email is already registered or invalid , please choose another one.</p>";
+		 $msg="<p style='color:red;'>" . trim(strip_tags(get_option('msg_existemail'))) ."</p>";
 		 $id=$_POST['Id'];  
 		 $Fname=$_POST['fname'];
 		 $Lname=$_POST['lname'];
@@ -274,11 +274,11 @@ private static function popup($FullName,$ProfileName,$Fname,$Lname,$id,$Provider
 <div id="fade" class="LoginRadius_overlay" class="LoginRadius_content_IE">
 <div id="popupouter">
   <div id="popupinner">
-    <div id="textmatter"><?php if($msg){echo "<b>".$msg."</b>";}?></div> 
+    <div id="textmatter"><?php if($msg){ echo "<b>".$msg."</b>";}?></div> 
 		<form id="wp_login_form"  method="post"  action="">
 					<div><input type="text" name="email" id="email" class="inputtxt" /></div><div>
 <input type="submit" id="LoginRadiusRedSliderClick" name="LoginRadiusRedSliderClick" value="Submit" class="inputbutton">
-<input type="submit" value="cancel" class="inputbutton" onClick="history.back()" />
+<input type="submit" value="Cancel" class="inputbutton" onClick="history.back()" />
 					<input type="hidden" name="provider" id="provider" value="<?php echo $Provider;?>" />
 					<input type="hidden" name="fname" id="fname" value="<?php echo $Fname;?>" />
 					<input type="hidden" name="lname" id="lname" value="<?php echo $Lname;?>" />
@@ -286,7 +286,7 @@ private static function popup($FullName,$ProfileName,$Fname,$Lname,$id,$Provider
 					<input type="hidden" name="fullName" id="fullName" value="<?php echo $FullName;?>" />
 					<input type="hidden" name="Id" id="Id" value="<?php echo $id;?>" /></div>
 					</form>
-					<div id="textdiv">Poweredby <span class="span">Login</span><span class="span1">Radius</span></div>
+					<div id="textdiv">Powered by <span class="span">Login</span><span class="span1">Radius</span></div>
 					</div></div></div>
 <?php }
 private static function set_cookies( $user_id = 0, $remember = true ) 
@@ -312,6 +312,15 @@ function esc_attr( $text ) {
 return attribute_escape( $text );
 }
 }
+/**
+ * This function makes sure is able to load the different language files from
+ * the i18n subfolder 
+ **/
+function LoginRadius_init_locale(){
+	global $LoginRadiuspluginpath;
+	load_plugin_textdomain('LoginRadius', false, basename( dirname( __FILE__ ) ) . '/i18n');
+}
+add_filter('init', 'LoginRadius_init_locale');
 /**
  * Set the default settings on activation on the plugin.
  */
