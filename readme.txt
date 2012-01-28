@@ -124,7 +124,7 @@ Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradi
 
 = My website is not in English, what should i do? =
 
-LoginRadius Wordpress plugin is available in 7 differnet langugages - English, French, Spanish, Russian, Japanese, Chinese and Italian. So you can pick your own language.
+LoginRadius Wordpress plugin is available in 7 different languages - English, French, Spanish, Russian, Japanese, Chinese and Italian. So you can pick your own language.
 
 == Screenshots ==
 
