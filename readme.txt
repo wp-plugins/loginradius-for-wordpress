@@ -136,19 +136,19 @@ option.
 
 == Testimonials ==
 
-<em>After spending 3 days searching for tutorials I wasnt able to find any help to connect my website with other social website such as facebook, twitter etc. but LoginRadius was my saviour after 20 min I had facebook, twitter and google connect with my wordpress. The best part is when that when I asked a question, 5 min later I received answer. So I can say that the "27/7 support" is true! If there are other people who need help to connect they sites with facebook or twitter or any other social website, give it a try. Im sure LoginRadius is the thing your searching for.</em><br>
+<em>"After spending 3 days searching for tutorials I wasnt able to find any help to connect my website with other social website such as facebook, twitter etc. but LoginRadius was my saviour after 20 min I had facebook, twitter and google connect with my wordpress. The best part is when that when I asked a question, 5 min later I received answer. So I can say that the "27/7 support" is true! If there are other people who need help to connect they sites with facebook or twitter or any other social website, give it a try. Im sure LoginRadius is the thing your searching for."</em><br>
 <strong>Kristian Tonev</strong>
 
-<em>I want to say thanks to you guys for doing this, making it free and for helping me in many ways.In my businesses I want things to work simply, correctly and fast. For this, I didn't rtfm enough and thought I'd delete my account. The info about what will happen next was right in front of me, but I pressed delete anyway. On re-joining, I found I'd not entirely understood the impact.. the only domain I want - I cannot get.Frustrated, I sent a support request in 2 clicks, which was honestly answered in 2 minutes, telling me the steps they took and what steps I need to take.These guys knew exactly what I'd done and what was happening, they had total situational awareness of my issue. My issue was fixed immediately, and I like that. Well done guys.</em><br>
+<em>"I want to say thanks to you guys for doing this, making it free and for helping me in many ways.In my businesses I want things to work simply, correctly and fast. For this, I didn't rtfm enough and thought I'd delete my account. The info about what will happen next was right in front of me, but I pressed delete anyway. On re-joining, I found I'd not entirely understood the impact.. the only domain I want - I cannot get.Frustrated, I sent a support request in 2 clicks, which was honestly answered in 2 minutes, telling me the steps they took and what steps I need to take.These guys knew exactly what I'd done and what was happening, they had total situational awareness of my issue. My issue was fixed immediately, and I like that. Well done guys."</em><br>
 <strong>Dr Gregory Uppington</strong><br>
 <em>Managing Director</em><br>
 <em>YouSoGetMe</em>
 
-<em>Really impressed with the service and the customer service, really quick turn around on responses and is a perfect system for my website as customers can now register on my website using their social login details, saves a lot of time - well done guys - keep up the good work.</em><br>
-<strong> Ian Haney</strong><br>
-<em>Irh Media</em>
+<em>"Really impressed with the service and the customer service, really quick turn around on responses and is a perfect system for my website as customers can now register on my website using their social login details, saves a lot of time - well done guys - keep up the good work."</em><br>
+<div align="right"><strong> Ian Haney</strong><br>
+<em>Irh Media</em></div>
 
-<em>LoginRadius is by far the best one-click login solution for websites. You have a fast and friendly support team at your disposal 24/7.</em><br>
+<em>"LoginRadius is by far the best one-click login solution for websites. You have a fast and friendly support team at your disposal 24/7."</em><br>
 <strong>Sinisa Juresic</strong><br>
 <em>Founder</em><br>
 <em>StreetsCrack</em>
@@ -162,12 +162,12 @@ option.
 <strong>Diego A. De Giorgio</strong><br>
 <em>GeekTronix</em>
 
-<em>I am a person who has a large collection of passwords and logins and constantly have to be checking my password program to access sites. If only I could use just a few that would work for a whole list of sites and forums I visit it would make things a lot easier. With browsers now allowing users to save password and sync between pcs has helped. And I’m now seeing more and more social sites letting users use logins for other sites like facebook and others. I know there are countless others that feel the same way I do.With an ap like what you provide at LoginRadius, I think you have taken it a step further by allowing users to have more choices. A use can decide which of their login is more appropriate, twitter, facebooks or any other. They can get away from the long drawn out process of a sign up page where ever your app is hosted. As a site owner I think making your site user friendly and easy to access with high security is a plus. I also think signup pages on some site could get a bit intrusive and I’m sure that I’m not the only person that thinks this way. Why should it be mandatory for a person to state if they are a male or female just to buy a product from your site or become a member? Signup pages are a big turn off for a lot of would be customers.Your ap is a welcome piece of software as I have been seriously considering making drastic changes to my signup page to make it more appealing. And I think I might still make the changes any way. </em><br>
+<em>I am a person who has a large collection of passwords and logins and constantly have to be checking my password program to access sites. If only I could use just a few that would work for a whole list of sites and forums I visit it would make things a lot easier. With browsers now allowing users to save password and sync between pcs has helped. And I'm now seeing more and more social sites letting users use logins for other sites like facebook and others. I know there are countless others that feel the same way I do.With an ap like what you provide at LoginRadius, I think you have taken it a step further by allowing users to have more choices. A use can decide which of their login is more appropriate, twitter, facebooks or any other. They can get away from the long drawn out process of a sign up page where ever your app is hosted. As a site owner I think making your site user friendly and easy to access with high security is a plus. I also think signup pages on some site could get a bit intrusive and I'm sure that I’m not the only person that thinks this way. Why should it be mandatory for a person to state if they are a male or female just to buy a product from your site or become a member? Signup pages are a big turn off for a lot of would be customers.Your ap is a welcome piece of software as I have been seriously considering making drastic changes to my signup page to make it more appealing. And I think I might still make the changes any way. </em><br>
 <strong>Rudy Rawlins</strong><br>
 <em>Caribprints</em>
 
-<em>El modulo trabaja grandioso, aunque tuve algunos problemas porque al ingresar una cuenta el usuario permanecía conectado permanentemente sin poder cerrar sesión, contacte al servicio de soporte de loginradius y rápidamente se comunicaron conmigo dándome un par de soluciones, y no dejaron de comunicarse conmigo hasta que el problema fue resuelto, estoy muy satisfecho con el servicio y con el modulo.</em><br>
-<strong>Juan Luis Gomez</strong><br>
+<em>El modulo trabaja grandioso, aunque tuve algunos problemas porque al ingresar una cuenta el usuario permanecía conectado permanentemente sin poder cerrar sesio'n, contacte al servicio de soporte de loginradius y ra'pidamente se comunicaron conmigo dándome un par de soluciones, y no dejaron de comunicarse conmigo hasta que el problema fue resuelto, estoy muy satisfecho con el servicio y con el modulo.</em><br>
+<strong>Juan Luis Gomez'</strong><br>
 <em>Webmaster</em><br>
 <em>Delachona</em>
 
