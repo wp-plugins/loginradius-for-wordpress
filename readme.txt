@@ -69,6 +69,8 @@ This plugin enables social login on Wordpress websites by letting users log in t
 * Blog: http://blog.loginradius.com
 * Our video: http://www.youtube.com/loginradius
 
+Please share your comments and feedback at hello@loginradius.com
+
 == Installation ==
 
 1. Download the plugin zip file and extract the contents. 
@@ -145,31 +147,33 @@ option.
 <em>YouSoGetMe</em>
 
 <em>"Really impressed with the service and the customer service, really quick turn around on responses and is a perfect system for my website as customers can now register on my website using their social login details, saves a lot of time - well done guys - keep up the good work."</em><br>
-<div align="right"><strong> Ian Haney</strong><br>
-<em>Irh Media</em></div>
+<strong> Ian Haney</strong><br>
+<em>Irh Media</em>
 
 <em>"LoginRadius is by far the best one-click login solution for websites. You have a fast and friendly support team at your disposal 24/7."</em><br>
 <strong>Sinisa Juresic</strong><br>
 <em>Founder</em><br>
 <em>StreetsCrack</em>
 
-<em>We are very Happy with loginradius, it made the registration process on the web site hassle free,especially for novice users,Have a website ?you should have loginradius!</em><br>
+<em>"We are very Happy with loginradius, it made the registration process on the web site hassle free,especially for novice users,Have a website ?you should have loginradius!"</em><br>
 <strong>Ahmad Shaarawy</strong><br>
 <em>Ass. Researcher</em><br>
 <em>Research Institute of Ophthalmology</em>
 
-<em>Have you ever thought possible to achieve registration-free access for the visitors to your pages, but with the privileges of a member? The system designed by the people at LoginRadius is unbeatable, it will save to your customers and visitors a precious time, time surely they can invest more profitably for them and for you, checking your company catalog or browsing your site. And they will be surely very grateful for having you avoided them to fill out yet another form into their lives! Our warm and sincere congratulations for the impressive work and achievement, and our deepest gratitude for the tech support from LoginRadius, which helped us to implement their system on our site, providing us with accurate clues all the time to do it right!</em><br>
+<em>"Have you ever thought possible to achieve registration-free access for the visitors to your pages, but with the privileges of a member? The system designed by the people at LoginRadius is unbeatable, it will save to your customers and visitors a precious time, time surely they can invest more profitably for them and for you, checking your company catalog or browsing your site. And they will be surely very grateful for having you avoided them to fill out yet another form into their lives! Our warm and sincere congratulations for the impressive work and achievement, and our deepest gratitude for the tech support from LoginRadius, which helped us to implement their system on our site, providing us with accurate clues all the time to do it right!"</em><br>
 <strong>Diego A. De Giorgio</strong><br>
 <em>GeekTronix</em>
 
-<em>I am a person who has a large collection of passwords and logins and constantly have to be checking my password program to access sites. If only I could use just a few that would work for a whole list of sites and forums I visit it would make things a lot easier. With browsers now allowing users to save password and sync between pcs has helped. And I'm now seeing more and more social sites letting users use logins for other sites like facebook and others. I know there are countless others that feel the same way I do.With an ap like what you provide at LoginRadius, I think you have taken it a step further by allowing users to have more choices. A use can decide which of their login is more appropriate, twitter, facebooks or any other. They can get away from the long drawn out process of a sign up page where ever your app is hosted. As a site owner I think making your site user friendly and easy to access with high security is a plus. I also think signup pages on some site could get a bit intrusive and I'm sure that I’m not the only person that thinks this way. Why should it be mandatory for a person to state if they are a male or female just to buy a product from your site or become a member? Signup pages are a big turn off for a lot of would be customers.Your ap is a welcome piece of software as I have been seriously considering making drastic changes to my signup page to make it more appealing. And I think I might still make the changes any way. </em><br>
+<em>"I am a person who has a large collection of passwords and logins and constantly have to be checking my password program to access sites. If only I could use just a few that would work for a whole list of sites and forums I visit it would make things a lot easier. With browsers now allowing users to save password and sync between pcs has helped. And I'm now seeing more and more social sites letting users use logins for other sites like facebook and others. I know there are countless others that feel the same way I do.With an ap like what you provide at LoginRadius, I think you have taken it a step further by allowing users to have more choices. A use can decide which of their login is more appropriate, twitter, facebooks or any other. They can get away from the long drawn out process of a sign up page where ever your app is hosted. As a site owner I think making your site user friendly and easy to access with high security is a plus. I also think signup pages on some site could get a bit intrusive and I'm sure that I'm not the only person that thinks this way. Why should it be mandatory for a person to state if they are a male or female just to buy a product from your site or become a member? Signup pages are a big turn off for a lot of would be customers.Your ap is a welcome piece of software as I have been seriously considering making drastic changes to my signup page to make it more appealing. And I think I might still make the changes any way."</em><br>
 <strong>Rudy Rawlins</strong><br>
 <em>Caribprints</em>
 
-<em>El modulo trabaja grandioso, aunque tuve algunos problemas porque al ingresar una cuenta el usuario permanecía conectado permanentemente sin poder cerrar sesio'n, contacte al servicio de soporte de loginradius y ra'pidamente se comunicaron conmigo dándome un par de soluciones, y no dejaron de comunicarse conmigo hasta que el problema fue resuelto, estoy muy satisfecho con el servicio y con el modulo.</em><br>
+<em>"El modulo trabaja grandioso, aunque tuve algunos problemas porque al ingresar una cuenta el usuario permaneci'a conectado permanentemente sin poder cerrar sesio'n, contacte al servicio de soporte de loginradius y ra'pidamente se comunicaron conmigo da'ndome un par de soluciones, y no dejaron de comunicarse conmigo hasta que el problema fue resuelto, estoy muy satisfecho con el servicio y con el modulo."</em><br>
 <strong>Juan Luis Gomez'</strong><br>
 <em>Webmaster</em><br>
 <em>Delachona</em>
+
+<strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
 
