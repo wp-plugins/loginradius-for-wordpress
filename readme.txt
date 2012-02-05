@@ -4,7 +4,7 @@ Donate link: http://www.loginradius.com/
 Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post, open authentication, facebook connect, Social Login,
 OpenID integration, Open Authentication, User Profile Data, Social Analytics, oAuth integration, Online Identity, Social Profile storage,
 single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook Connect, Google, Yahoo OpenID, Hyves openid,Linkedin openid,
-Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish, Russian, Chinese, Japanese,Vkontakte
+Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish, Russian, Chinese, Japanese, Vkontakte
 Requires at least: 2.5.0
 Tested up to: 3.2.1
 Stable tag: 2.2
@@ -148,8 +148,7 @@ option.
 <em>Data Migrators</em><br>
 
 <em>Good doc. I like it when _everything_ is on _one_ page. Also I like that your info is very concise. Keep it small and straight so we can do our job instead of reading and reading and reading like I have to do in other web services! Good theming/design. The first social id provider knowing taste is important. Keep it up Apple! :) Good job! </em><br>
-<strong></strong><br>
-<em>Johnny Luu</em><br>
+<strong>Johnny Luu</strong><br>
 
 <em>"After spending 3 days searching for tutorials I wasnt able to find any help to connect my website with other social website such as facebook, twitter etc. but LoginRadius was my saviour after 20 min I had facebook, twitter and google connect with my wordpress. The best part is when that when I asked a question, 5 min later I received answer. So I can say that the "27/7 support" is true! If there are other people who need help to connect they sites with facebook or twitter or any other social website, give it a try. Im sure LoginRadius is the thing your searching for."</em><br>
 <strong>Kristian Tonev</strong><br>
