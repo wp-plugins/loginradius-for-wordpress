@@ -10,7 +10,7 @@ if (!is_user_logged_in()) {
 if( $display_label != false ) : ?>
 			<div style="margin-bottom: 3px;"><label><?php _e( $title, 'LoginRadius' );?>:</label></div>
 		<?php endif; ?>
-		<?php if( $LoginRadius_apikey!= "") : 
+		<?php if( $LoginRadius_apikey != "") : 
 	    $loc="http://".$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 		if($_SERVER["REQUEST_URI"]=='/wp-login.php?action=register' 
 		OR $_SERVER["REQUEST_URI"]=='/wp-login.php' OR $_SERVER["REQUEST_URI"]=='/wp-login.php?loggedout=true' ) {
@@ -21,9 +21,16 @@ if( $display_label != false ) : ?>
 		}
 		if(urldecode($_GET['redirect_to'])==admin_url()) {
 		$loc="http://".$_SERVER["HTTP_HOST"];
-		}?>
+		}
+		require_once('LoginRadiusSDK.php');
+		$obj_auth = new LoginRadius_auth();
+        $UserAuth = $obj_auth->auth($LoginRadius_apikey, $LoginRadius_secret);
+	    $IsHttps=$UserAuth->IsHttps;
+		if($IsHttps == 1) {?>
 		<iframe src="https://hub.loginradius.com/Control/PluginSlider.aspx?apikey=<?php echo $LoginRadius_apikey;?>&callback=<?php echo $loc;?>" width="169" height="49" frameborder="0" scrolling="no" ></iframe>
-		<?php endif; ?>
+		<?php } else {?>
+		<iframe src="http://hub.loginradius.com/Control/PluginSlider.aspx?apikey=<?php echo $LoginRadius_apikey;?>&callback=<?php echo $loc;?>" width="169" height="49" frameborder="0" scrolling="no" ></iframe>
+		<?php } endif; ?>
 <?php }
 if (is_user_logged_in() && !is_admin()) {
 	global $user_ID; $user = get_userdata( $user_ID );
