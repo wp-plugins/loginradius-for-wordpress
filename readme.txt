@@ -185,6 +185,7 @@ option.
 == Changelog ==
 = 2.2.1 =
 * Auto detection for Http and Https websites to remove IE and chrome warning message
+* User profile data fetch for international languages support
 
 = 2.2 =
 * Stable release
