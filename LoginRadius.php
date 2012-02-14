@@ -2,7 +2,7 @@
 /*Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
 Description: LoginRadius plugin enables social login on a wordpress website letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long registration process i.e. filling up a long registration form, verifying email ID, remembering another username and password so your users are just one click away from logging in to your website. Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
-Version: 2.2.1
+Version: 2.2.2
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -197,6 +197,7 @@ switch( $Provider ){
               }
 global $wpdb;
  $dummyemail=get_option('dummyemail');
+ $role = get_option('default_role');
  //look for user with username match	
  						  $nameexists = true;
 						  $index = 0;
@@ -219,8 +220,9 @@ global $wpdb;
 							   'display_name' => $fname,
                                'nickname' => $fname,
                                'first_name' => $fname,
+							   'last_name' => $lname,
 							   'user_url' => home_url(),
-							   'role' => 'Subscriber'
+							   'role' => $role
 							   );
 // look for users with the id match
 $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='id' AND meta_value = %s",$id));
@@ -238,7 +240,8 @@ $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta
 					}
 					else {  
 					if (!empty($email)) {
-					  $user_id = wp_create_user( $username,$user_pass,$email );
+					  //$user_id = wp_create_user( $username,$user_pass,$email );
+					  $user_id = wp_insert_user( $userdata);
 					  wp_new_user_notification($username,$user_pass);
 					  }
                       if (! is_wp_error($user_id) ) 

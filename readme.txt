@@ -7,7 +7,7 @@ single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook C
 Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish, Russian, Chinese, Japanese, Vkontakte
 Requires at least: 2.5.0
 Tested up to: 3.2.1
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 
 Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Live, Vkontakte and over 15 more!
 
@@ -183,6 +183,10 @@ option.
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+= 2.2.2 =
+* Bug fixed for First Name and Last Name
+* Enhcancemnet to set default user role for social login
+
 = 2.2.1 =
 * Auto detection for Http and Https websites to remove IE and chrome warning message
 * User profile data fetch for international languages support

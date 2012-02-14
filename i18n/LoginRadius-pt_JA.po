@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loginradius\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-06 18:10+0530\n"
-"PO-Revision-Date: 2012-02-06 18:10+0530\n"
+"POT-Creation-Date: 2012-02-14 10:54+0530\n"
+"PO-Revision-Date: 2012-02-14 10:54+0530\n"
 "Last-Translator: rakesh <rsharma@nyaconcepts.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "ウィジェットコンテンツの後に："
 msgid "Hide for logged in users:"
 msgstr "ログインユーザーは、非表示にする："
 
-#: ../LoginRadius.php:365
+#: ../LoginRadius.php:368
 #: ../LoginRadius_admin.php:113
 msgid "Settings"
 msgstr "設定"
