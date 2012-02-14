@@ -185,7 +185,7 @@ option.
 == Changelog ==
 = 2.2.2 =
 * Bug fixed for First Name and Last Name
-* Enhcancemnet to set default user role for social login
+* Enhancement to set default user role for social login
 
 = 2.2.1 =
 * Auto detection for Http and Https websites to remove IE and chrome warning message
