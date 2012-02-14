@@ -9,7 +9,7 @@ Requires at least: 2.5.0
 Tested up to: 3.2.1
 Stable tag: 2.2.2
 
-Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Live, Vkontakte and over 15 more!
+Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
 == Description ==
 This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. This plugin is available in 7 different languages - English, French, Spanish, Russian, Italian, Chinese and Japanese
