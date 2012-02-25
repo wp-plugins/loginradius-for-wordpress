@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: LoginRadius\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-02-14 10:54+0530\n"
-"PO-Revision-Date: 2012-02-14 10:54+0530\n"
+"POT-Creation-Date: 2012-02-25 17:25+0530\n"
+"PO-Revision-Date: 2012-02-25 17:25+0530\n"
 "Last-Translator: rakesh <rsharma@nyaconcepts.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,11 +13,11 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../function.php:37
+#: ../function.php:54
 msgid "Welcome! "
 msgstr "Bienvenue"
 
-#: ../function.php:40
+#: ../function.php:57
 msgid "Log Out"
 msgstr "Déconnexion"
 
@@ -41,188 +41,207 @@ msgstr "Une fois le contenu du widget:"
 msgid "Hide for logged in users:"
 msgstr "Cacher pour les utilisateurs connectés:"
 
-#: ../LoginRadius.php:368
-#: ../LoginRadius_admin.php:113
+#: ../LoginRadius.php:370
+#: ../LoginRadius_admin.php:121
 msgid "Settings"
 msgstr "réglages"
 
-#: ../LoginRadius_admin.php:38
+#: ../LoginRadius_admin.php:41
 msgid "Restored all settings to defaults."
 msgstr "Restauré tous les paramètres par défaut."
 
-#: ../LoginRadius_admin.php:45
+#: ../LoginRadius_admin.php:48
 msgid "You Must Need a Login Radius Api Key For Login Process."
 msgstr "Vous devez avoir besoin une clé API LoginRadius Pour processus de login."
 
-#: ../LoginRadius_admin.php:50
+#: ../LoginRadius_admin.php:53
 msgid "You Must Need a Login Radius Api Secret For Login Process."
 msgstr "Vous devez avoir besoin d'un secret Api LoginRadius Pour processus de login."
 
-#: ../LoginRadius_admin.php:98
+#: ../LoginRadius_admin.php:107
 msgid "You Need a Redirect url for Login Redirection."
 msgstr "Vous avez besoin d'un URL de redirection pour la redirection de connexion."
 
-#: ../LoginRadius_admin.php:102
+#: ../LoginRadius_admin.php:110
 msgid "Saved changes."
 msgstr "Modifications enregistrées."
 
-#: ../LoginRadius_admin.php:116
+#: ../LoginRadius_admin.php:124
 msgid "Thank you for installing the LoginRadius plugin!"
 msgstr "Merci pour l'installation de plugin LoginRadius!"
 
-#: ../LoginRadius_admin.php:117
+#: ../LoginRadius_admin.php:125
 msgid "You can customize the settings for your plugin on this page, though you will have to choose your desired ID providers and get your unique"
 msgstr "Vous pouvez sélectionner les paramètres souhaités pour votre plugin sur cette page. Bien que vous pouvez choisir les fournisseurs d'identité et peut obtenir la clé"
 
-#: ../LoginRadius_admin.php:117
+#: ../LoginRadius_admin.php:125
 msgid "LoginRadius API Key & Secret"
 msgstr "API LoginRadius and Secret"
 
-#: ../LoginRadius_admin.php:117
+#: ../LoginRadius_admin.php:125
 msgid "from"
 msgstr "en vous connectant à"
 
-#: ../LoginRadius_admin.php:117
+#: ../LoginRadius_admin.php:125
 msgid "In order to make the login process secure, we require you to manage it from your LoginRadius account."
 msgstr "Afin de rendre le processus de connexion hautement sécurisée l'ensemble, nous vous demandons de le gérer depuis votre compte LoginRadius"
 
-#: ../LoginRadius_admin.php:118
+#: ../LoginRadius_admin.php:126
 msgid "is a North America based technology company that offers social login through popular hosts such as Facebook, Twitter, Google and over 15 more! For tech support or if you have any questions, please contact us at"
 msgstr "est une société en Amérique du Nord la technologie qui offre de connexion sociale à travers hôtes populaires tels que Facebook, Twitter, Google et plus de 15 autres! Pour le support technique ou des questions, s'il vous plaît contactez-nous au"
 
-#: ../LoginRadius_admin.php:118
+#: ../LoginRadius_admin.php:126
 msgid "We are available 24/7 to assist our clients!"
 msgstr "Nous sommes jusqu'à 24x7 pour aider nos clients!"
 
-#: ../LoginRadius_admin.php:120
+#: ../LoginRadius_admin.php:128
 msgid "Create your FREE account now!"
 msgstr "Créez votre compte gratuit!"
 
-#: ../LoginRadius_admin.php:124
+#: ../LoginRadius_admin.php:132
 msgid "Plugin Help"
 msgstr "Aide plugin"
 
-#: ../LoginRadius_admin.php:126
+#: ../LoginRadius_admin.php:134
 msgid "Documentation"
 msgstr "Documentation"
 
-#: ../LoginRadius_admin.php:127
+#: ../LoginRadius_admin.php:135
 msgid "Plugin webpage"
 msgstr "page plugin"
 
-#: ../LoginRadius_admin.php:128
+#: ../LoginRadius_admin.php:136
 msgid "Live Demo site"
 msgstr "Site de Live Demo"
 
-#: ../LoginRadius_admin.php:129
+#: ../LoginRadius_admin.php:137
 msgid "About LoginRadius"
 msgstr "À propos LoginRadius"
 
-#: ../LoginRadius_admin.php:130
+#: ../LoginRadius_admin.php:138
 msgid "LoginRadius Blog"
 msgstr "Blog LoginRadius"
 
-#: ../LoginRadius_admin.php:131
+#: ../LoginRadius_admin.php:139
 msgid "Other LoginRadius plugins"
 msgstr "Autres plugins LoginRadius"
 
-#: ../LoginRadius_admin.php:133
+#: ../LoginRadius_admin.php:141
 msgid "Tech Support"
 msgstr "Tech Support"
 
-#: ../LoginRadius_admin.php:141
+#: ../LoginRadius_admin.php:149
 msgid "LoginRadius API Settings"
 msgstr "LoginRadius Settings API"
 
-#: ../LoginRadius_admin.php:145
+#: ../LoginRadius_admin.php:153
 msgid "Paste LoginRadius API Key here. To get the API Key, log in to"
 msgstr "Coller clés API LoginRadius ici. Pour obtenir la clé API, connectez-vous à"
 
-#: ../LoginRadius_admin.php:150
+#: ../LoginRadius_admin.php:158
 msgid "API Secret"
 msgstr " Secret API"
 
-#: ../LoginRadius_admin.php:151
+#: ../LoginRadius_admin.php:159
 msgid "Paste LoginRadius API Secret here. To get the API Secret, log in to "
 msgstr "Coller LoginRadius API secret ici. Pour obtenir le secret de l'API, connectez-vous à"
 
-#: ../LoginRadius_admin.php:157
+#: ../LoginRadius_admin.php:165
 msgid "LoginRadius Basic Settings"
 msgstr "LoginRadius Paramètres de base"
 
-#: ../LoginRadius_admin.php:160
+#: ../LoginRadius_admin.php:168
 msgid "Title"
 msgstr "Titre"
 
-#: ../LoginRadius_admin.php:161
+#: ../LoginRadius_admin.php:169
 msgid "This text displyed above the Social login button."
 msgstr "Ce texte displyed au-dessus du bouton de connexion sociale."
 
-#: ../LoginRadius_admin.php:163
+#: ../LoginRadius_admin.php:171
 msgid "Please Login with"
 msgstr "S'il vous plaît Connexion avec"
 
-#: ../LoginRadius_admin.php:167
-msgid "Email Required"
-msgstr "courriel Requis"
+#: ../LoginRadius_admin.php:175
+msgid "Send Email"
+msgstr "Envoyer un email"
 
-#: ../LoginRadius_admin.php:168
-msgid "A few ID providers do not provide user's Email ID. Select YES if you would like an email pop-up after login or select NO if you would like to auto-generate the email address."
-msgstr "A quelques fournisseurs d'identité ne fournissent Email ID utilisateur. Sélectionnez OUI si vous souhaitez un email pop-up après identification ou Sélectionnez Non si vous souhaitez générer automatiquement l'adresse de courriel."
+#: ../LoginRadius_admin.php:175
+msgid "After user register"
+msgstr "Après utilisateur inscrire"
 
-#: ../LoginRadius_admin.php:173
+#: ../LoginRadius_admin.php:176
+msgid "Select YES if you would to like send an email to user after register."
+msgstr "Sélectionnez Oui si vous souhaitez d'aimer envoyer un email à l'utilisateur après le registre."
+
+#: ../LoginRadius_admin.php:178
+#: ../LoginRadius_admin.php:190
 msgid "Yes"
 msgstr "Oui"
 
-#: ../LoginRadius_admin.php:174
+#: ../LoginRadius_admin.php:179
+#: ../LoginRadius_admin.php:191
 msgid "No"
 msgstr "Non"
 
-#: ../LoginRadius_admin.php:178
+#: ../LoginRadius_admin.php:183
+msgid "Email Required"
+msgstr "courriel Requis"
+
+#: ../LoginRadius_admin.php:184
+msgid "A few ID providers do not provide user's Email ID. Select YES if you would like an email pop-up after login or select NO if you would like to auto-generate the email address."
+msgstr "A quelques fournisseurs d'identité ne fournissent Email ID utilisateur. Sélectionnez OUI si vous souhaitez un email pop-up après identification ou Sélectionnez Non si vous souhaitez générer automatiquement l'adresse de courriel."
+
+#: ../LoginRadius_admin.php:199
 msgid "This text will be displyed above the popup box for entering email."
 msgstr "Ce texte sera displyed-dessus de la boîte de popup pour entrer courriel."
 
-#: ../LoginRadius_admin.php:179
+#: ../LoginRadius_admin.php:200
 msgid "Please enter your email address to proceed."
 msgstr "S'il vous plaît, entrez votre adresse email pour continuer."
 
-#: ../LoginRadius_admin.php:180
+#: ../LoginRadius_admin.php:201
 msgid "This text will be displyed above the popup box if email already registered or invalid."
 msgstr "Ce texte sera displyed dessus de la boîte courriel popup si déjà enregistré ou non valide."
 
-#: ../LoginRadius_admin.php:181
+#: ../LoginRadius_admin.php:202
 msgid "This email is already registered or invalid , please choose another one."
 msgstr "Cet email est déjà enregistré ou non valide, s'il vous plaît choisir un autre."
 
-#: ../LoginRadius_admin.php:186
-msgid "Setting for Redirect after login"
+#: ../LoginRadius_admin.php:207
+msgid "Redirection Setting"
+msgstr "Réglage de redirection"
+
+#: ../LoginRadius_admin.php:207
+#, fuzzy
+msgid "Redirect user After login"
 msgstr "Réglage pour redirection après la connexion"
 
-#: ../LoginRadius_admin.php:188
+#: ../LoginRadius_admin.php:209
 msgid "Redirect to Same Page of blog"
 msgstr "Redirection vers une même page du blog"
 
-#: ../LoginRadius_admin.php:188
+#: ../LoginRadius_admin.php:209
 msgid "Default"
 msgstr "par défaut"
 
-#: ../LoginRadius_admin.php:190
+#: ../LoginRadius_admin.php:211
 msgid "Redirect to homepage of blog"
 msgstr "Redirection vers une page d'accueil du blogue"
 
-#: ../LoginRadius_admin.php:192
+#: ../LoginRadius_admin.php:213
 msgid "Redirect to account dashboard"
 msgstr "Redirection vers une planche de bord en compte"
 
-#: ../LoginRadius_admin.php:194
+#: ../LoginRadius_admin.php:215
 msgid "Redirect to the following url:"
 msgstr "Redirection vers l'URL suivante:"
 
-#: ../LoginRadius_admin.php:204
+#: ../LoginRadius_admin.php:225
 msgid "Save Changes"
 msgstr "Enregistrer les modifications"
 
-#: ../LoginRadius_admin.php:205
+#: ../LoginRadius_admin.php:226
 msgid "Restore Defaults"
 msgstr "Restore Defaults"
 

@@ -1,7 +1,6 @@
 <?php 
 /**
  * Add the LoginRadius menu to the Settings menu
- * @param boolean $force if set to true, force updates the settings.
  */
 function LoginRadius_restore_config($force=false) {
 if ( $force or !( get_option('LoginRadius_apikey')) ) {
@@ -11,12 +10,16 @@ if ( $force or !( get_option('LoginRadius_apikey')) ) {
 if ( $force or !( get_option('LoginRadius_secret')) ) {
 		update_option('LoginRadius_secret',false);
 	}
+if ( $force or !( get_option('sendemail')) ) {
+		update_option('sendemail',false);
+	}	
 if ( $force or !( get_option('dummyemail')) ) {
 		update_option('dummyemail',false);
 	}	
 if ( $force or !( get_option('LoginRadius_redirect')) ) {
 		update_option('LoginRadius_redirect',false);
-	}	
+	}
+
 if ( $force or !( get_option('title')) ) {
 		update_option('title',false);
 	}	
@@ -54,6 +57,12 @@ function LoginRadius_submenu() {
 		} else {
 			update_option('title',$_POST['title']=='Please Login with');
 		}
+		if (isset($_POST['sendemail'])==true && $_POST['sendemail']!="") {
+			update_option('sendemail',$_POST['sendemail']==true);
+		} else {
+			update_option('sendemail',$_POST['sendemail']==false);
+		}
+		
 		if (isset($_POST['dummyemail'])==true && $_POST['dummyemail']!="") {
 			update_option('dummyemail',$_POST['dummyemail']==true);
 		} else {
@@ -87,7 +96,7 @@ function LoginRadius_submenu() {
 			update_option('LoginRadius_redirect',$LoginRadius_redirect);
 		}
 		else{
-		update_option('LoginRadius_redirect',$LoginRadius_redirect=='samepage');
+		update_option('LoginRadius_redirect',$LoginRadius_redirect == 'samepage');
 		}
 		if($LoginRadius_redirect=='custom' && $custom == 'checked' && isset($_POST['LoginRadius_redirect_custom_redirect'])!="")
 		{
@@ -97,7 +106,6 @@ function LoginRadius_submenu() {
 		{
 			LoginRadius_message(__("You Need a Redirect url for Login Redirection.", 'LoginRadius'));
 		}
-		
 		check_admin_referer('LoginRadius-config');
 		LoginRadius_message(__("Saved changes.", 'LoginRadius'));
 	}
@@ -163,16 +171,29 @@ function LoginRadius_submenu() {
 <input type="text"  name="title" size="60" value="<?php if(htmlspecialchars(get_option('title'))){echo htmlspecialchars(get_option('title'));}else{ _e('Please Login with', 'LoginRadius');} ?>" />
 </td>
 	</tr>
+	<tr class="row_white">
+	<th scope="row"><?php _e("Send Email", 'LoginRadius'); ?><br /><small><?php _e("After user register", 'LoginRadius'); ?></small></th>
+	<td><?php _e("Select YES if you would to like send an email to user after register.", 'LoginRadius'); ?>
+	<br />
+<?php _e("Yes", 'LoginRadius'); ?> <input name="sendemail" type="radio"  value="0" <?php checked( '0', get_option( 'sendemail' ) ); ?> checked />&nbsp;&nbsp;&nbsp;&nbsp;
+<?php _e("No", 'LoginRadius'); ?> <input name="sendemail" type="radio" value="1" <?php checked( '1', get_option( 'sendemail' ) ); ?>  />
+</td>
+	</tr>
 	<tr>
 	<th scope="row"><?php _e("Email Required", 'LoginRadius'); ?></th>
 	<td><?php _e("A few ID providers do not provide user's Email ID. Select YES if you would like an email pop-up after login or select NO if you would like to auto-generate the email address.", 'LoginRadius'); ?>
-	</td></tr>
+	</td>
+	</tr>
+	<tr>
+	<th></th>
+	<td>
+	<?php _e("Yes", 'LoginRadius'); ?> <input name="dummyemail" type="radio"  value="0" <?php checked( '0', get_option( 'dummyemail' ) ); ?> checked />&nbsp;&nbsp;&nbsp;&nbsp;
+<?php _e("No", 'LoginRadius'); ?> <input name="dummyemail" type="radio" value="1" <?php checked( '1', get_option( 'dummyemail' ) ); ?>  />
+	</td>
+	</tr>
 	<tr class="row_white">
 	<th></th>
 	<td> 
-<?php _e("Yes", 'LoginRadius'); ?> <input name="dummyemail" type="radio"  value="0" <?php checked( '0', get_option( 'dummyemail' ) ); ?> checked /><br />
-<?php _e("No", 'LoginRadius'); ?> <input name="dummyemail" type="radio" value="1" <?php checked( '1', get_option( 'dummyemail' ) ); ?>  />
-<br />
 <?php if($_POST['dummyemail'] == '1') {}
 else {
  _e("This text will be displyed above the popup box for entering email.", 'LoginRadius'); ?> <br/>
@@ -183,7 +204,7 @@ else {
 </td>
 	</tr>
 	<tr >
-	<th scope="row"><?php _e("Setting for Redirect after login", 'LoginRadius'); ?></th>
+<th scope="row"><?php _e("Redirection Setting", 'LoginRadius'); ?><br /><small><?php _e("Redirect user After login", 'LoginRadius'); ?></small></th>
 	<td>
 <input type="radio" name="LoginRadius_redirect" value="samepage" <?php checked( 'samepage', get_option( 'LoginRadius_redirect' )); ?> checked /> <?php _e ('Redirect to Same Page of blog', 'LoginRadius'); ?> <strong>(<?php _e ('Default', 'LoginRadius') ?>)</strong><br />
 
