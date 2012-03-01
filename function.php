@@ -12,35 +12,25 @@ function Login_Radius_Connect_button() {
       <div style="margin-bottom: 3px;"><label><?php _e( $title, 'LoginRadius' );?>:</label></div>
     <?php endif; ?>
 <?php if ($LoginRadius_apikey != "") :
-          if(isset($_SERVER['HTTPS'])) {
+        require_once('LoginRadiusSDK.php');
+		$obj_auth = new LoginRadiusAuth();
+        $UserAuth = $obj_auth->auth($LoginRadius_apikey, $LoginRadius_secret);
+	    $IsHttps = $UserAuth->IsHttps;
+		if($IsHttps == 1) {
 		    $loc = urlencode("https://".$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 		  }
 		  else {
             $loc=urlencode("http://".$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 		  }
-		if ($_SERVER["REQUEST_URI"] == '/wp-login.php?action=register' OR $_SERVER["REQUEST_URI"] == '/wp-login.php' OR $_SERVER["REQUEST_URI"] == '/wp-login.php?loggedout=true' OR wp_login_url()) {
-		 if(isset($_SERVER['HTTPS'])) {
-		     $loc = urlencode("https://".$_SERVER["HTTP_HOST"]);
-		  }
-		  else {
-		     $loc = urlencode("http://".$_SERVER["HTTP_HOST"]);
-		  }
-		}
+         if(wp_login_url()) {
+		    $loc = site_url();
+			}
 		if (isset($_GET['redirect_to'])) {
 		  $loc = $_GET['redirect_to'];
 		}
-		if (urldecode($_GET['redirect_to']) == admin_url()) {
-		  if(isset($_SERVER['HTTPS'])) {
-		     $loc = urlencode("https://".$_SERVER["HTTP_HOST"]);
-		  }
-		  else {
-		     $loc = urlencode("http://".$_SERVER["HTTP_HOST"]);
-		  }
+	     if (urldecode($_GET['redirect_to']) == admin_url()) {
+		  $loc = site_url();
         }
-		require_once('LoginRadiusSDK.php');
-		$obj_auth = new LoginRadiusAuth();
-        $UserAuth = $obj_auth->auth($LoginRadius_apikey, $LoginRadius_secret);
-	    $IsHttps = $UserAuth->IsHttps;
 		if ($IsHttps == 1) {?>
 		  <iframe src="https://hub.loginradius.com/Control/PluginSlider.aspx?apikey=<?php echo $LoginRadius_apikey;?>&callback=<?php echo $loc;?>" width="169" height="49" frameborder="0" scrolling="no" ></iframe>
   <?php } 

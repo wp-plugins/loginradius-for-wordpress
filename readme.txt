@@ -1,5 +1,5 @@
 === Social Login for Wordpress ===
-Contributors: LoginRadius team, Italian Language Translator: Michelangelo Giannino.com, Russian Language Translator: Rob (www.prestigecarpet.ru), Spanish Language Translator: Daniel Iturbe (www.telibera.com), Chinese & Japanese Language Translator: Wenxuan Hu
+Contributors: LoginRadius team, Italian Language Translator: Michelangelo Giannino.com, Russian Language Translator: Rob (www.prestigecarpet.ru), Spanish Language Translator: Daniel Iturbe (www.telibera.com), Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
 Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post, open authentication, facebook connect, Social Login,
 OpenID integration, Open Authentication, User Profile Data, Social Analytics, oAuth integration, Online Identity, Social Profile storage,
@@ -7,7 +7,7 @@ single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook C
 Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish, Russian, Chinese, Japanese, Vkontakte
 Requires at least: 2.5.0
 Tested up to: 3.3.1
-Stable tag: 2.2.3
+Stable tag: 2.2.4
 
 Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
@@ -183,6 +183,11 @@ option.
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+= 2.2.4 =
+* Callback Https redirection issue fixed
+* German language added
+* Redirection issue fixed(wordpress installed in sub-root)
+
 = 2.2.3 =
 * Enhance feature for First Name and Last Name
 * Enhancement to send email to new user
@@ -261,3 +266,8 @@ CURLOPT_FOLLOWLOCATION Bug fixed
 Enhancement to send email to new user
 Bug fixed for redirection issue
 Bug fixed for popup in IE
+
+= 2.2.4 =
+* Callback Https redirection issue fixed
+* German language added
+* Redirection issue fixed(wordpress installed in sub-root)
