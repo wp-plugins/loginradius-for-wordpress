@@ -7,12 +7,12 @@ single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook C
 Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish, Russian, Chinese, Japanese, Vkontakte
 Requires at least: 2.5.0
 Tested up to: 3.3.1
-Stable tag: 2.2.4
+Stable tag: 2.2.5
 
 Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
 == Description ==
-This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. This plugin is available in 7 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
+This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. This plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
 
 'Social Login for WordPress' plugin is developed by <a href="http://www.loginradius.com" target="_blank">LoginRadius</a>, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
@@ -25,7 +25,7 @@ This plugin enables social login on Wordpress websites by letting users log in t
 * Manage plugin from WP admin account
 * Highly secure through REST API
 * Get social analytics of your users
-* Availalbe in 7 languages (English, French, Spanish, Italian, Russian, Chinese, Japanese)
+* Availalbe in 8 languages (English, French, Spanish, Italian, Russian, Chinese, Japanese, German)
 
 = LoginRadius Service Features =
 * Social login
@@ -183,6 +183,10 @@ option.
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+= 2.2.5 =
+* Popup issue Fixed
+* Redirection issue fixed(same page)
+
 = 2.2.4 =
 * Callback Https redirection issue fixed
 * German language added
@@ -271,3 +275,7 @@ Bug fixed for popup in IE
 * Callback Https redirection issue fixed
 * German language added
 * Redirection issue fixed(wordpress installed in sub-root)
+
+= 2.2.5 =
+* Popup issue Fixed
+* Redirection issue fixed(same page)
