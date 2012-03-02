@@ -22,15 +22,23 @@ function Login_Radius_Connect_button() {
 		  else {
             $loc=urlencode("http://".$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
 		  }
-         if(wp_login_url()) {
-		    $loc = site_url();
+		if(urldecode($loc) == wp_login_url() OR urldecode($loc) == site_url().'/wp-login.php?action=register' OR urldecode($loc) ==site_url().'/wp-login.php?loggedout=true') {
+		    $loc = site_url().'/';
 			}
-		if (isset($_GET['redirect_to'])) {
+		elseif (isset($_GET['redirect_to'])) {
 		  $loc = $_GET['redirect_to'];
 		}
-	     if (urldecode($_GET['redirect_to']) == admin_url()) {
-		  $loc = site_url();
+	    elseif (urldecode($_GET['redirect_to']) == admin_url()) {
+		  $loc = site_url().'/';
         }
+		else {
+		  if($IsHttps == 1) {
+		    $loc = urlencode("https://".$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+		  }
+		  else {
+            $loc = urlencode("http://".$_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+		  }
+		}
 		if ($IsHttps == 1) {?>
 		  <iframe src="https://hub.loginradius.com/Control/PluginSlider.aspx?apikey=<?php echo $LoginRadius_apikey;?>&callback=<?php echo $loc;?>" width="169" height="49" frameborder="0" scrolling="no" ></iframe>
   <?php } 
@@ -69,7 +77,7 @@ function LoginRadius_redirect() {
     if (isset($LoginRadius_redirect)) {
       switch (strtolower($LoginRadius_redirect)) {
         case 'homepage':
-          $redirect_to = site_url();
+          $redirect_to = site_url().'/';
 		break;
 		case 'dashboard':
 		  $redirect_to = admin_url();
