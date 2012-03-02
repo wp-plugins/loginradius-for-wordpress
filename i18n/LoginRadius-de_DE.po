@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loginradius\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-01 16:44+0530\n"
-"PO-Revision-Date: 2012-03-01 16:44+0530\n"
+"POT-Creation-Date: 2012-03-02 15:27+0530\n"
+"PO-Revision-Date: 2012-03-02 15:27+0530\n"
 "Last-Translator: loginradius <hello@loginradius.com>\n"
 "Language-Team:  <hello@loginradius.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,11 +13,11 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../function.php:44
+#: ../function.php:52
 msgid "Welcome! "
 msgstr "Willkommen!"
 
-#: ../function.php:47
+#: ../function.php:55
 msgid "Log Out"
 msgstr "Abmelden"
 
