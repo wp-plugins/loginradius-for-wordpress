@@ -288,7 +288,7 @@ private static function add_user($Email, $FullName, $ProfileName, $Fname, $Lname
   }
 }
 private static function popup($FullName, $ProfileName, $Fname, $Lname, $id, $Provider, $aboutme, $website, $thumbnail, $msg) {?>
-  <div id="popupouter">
+  <div id="fade" class="LoginRadius_overlay" class="LoginRadius_content_IE"><div id="popupouter">
   <div id="popupinner">
   <div id="textmatter"><?php if($msg){ echo "<b>".$msg."</b>";}?></div> 
   <form id="wp_login_form"  method="post"  action="">
@@ -308,7 +308,7 @@ private static function popup($FullName, $ProfileName, $Fname, $Lname, $id, $Pro
   </div>
   </form>
   </div>
-  </div><?php }
+  </div></div><?php }
 private static function set_cookies($user_id = 0, $remember = true) {   
   if (!function_exists('wp_set_auth_cookie'))
     return false;
