@@ -7,7 +7,7 @@ single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook C
 Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish, Russian, Chinese, Japanese, Vkontakte
 Requires at least: 2.5.0
 Tested up to: 3.3.1
-Stable tag: 2.2.5
+Stable tag: 2.3
 
 Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
@@ -183,6 +183,16 @@ option.
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+= 2.3 =
+* Interface customization for language, social icon set and theme
+* Social Avatar added.
+* Wordpress Admin interface enhanced
+* More user profile data added like about,avatar and website name etc.
+* Curl and fskopen option added in wordpress admin
+* Option to choose social icon login, register,comment page in admin interface.
+* Bug Fixed - filename conflict fixed.
+* Bug fixed - redirection issue from admin login page fixed.
+
 = 2.2.5 =
 * Popup issue Fixed
 * Redirection issue fixed(same page)
@@ -279,3 +289,13 @@ Bug fixed for popup in IE
 = 2.2.5 =
 * Popup issue Fixed
 * Redirection issue fixed(same page)
+
+= 2.3 =
+* Interface customization for language, social icon set and theme
+* Social Avatar added.
+* Wordpress Admin interface enhanced
+* More user profile data added like about,avatar and website name etc.
+* Curl and fskopen option added in wordpress admin
+* Option to choose social icon login, register,comment page in admin interface.
+* Bug Fixed - filename conflict fixed.
+* Bug fixed - redirection issue from admin login page fixed.

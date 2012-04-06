@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loginradius\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-02 15:28+0530\n"
-"PO-Revision-Date: 2012-03-02 15:28+0530\n"
+"POT-Creation-Date: 2012-03-29 09:48+0530\n"
+"PO-Revision-Date: 2012-03-29 09:48+0530\n"
 "Last-Translator: loginradius <hello@loginradius.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -13,235 +13,290 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../function.php:52
-msgid "Welcome! "
-msgstr "ようこそ！"
-
-#: ../function.php:55
-msgid "Log Out"
-msgstr "ログアウト"
-
-#: ../header.php:9
-msgid "Login or register with Facebook, Twitter, Yahoo, Google and many more"
-msgstr "ログインまたはFacebookやTwitterやYahoo、Googleと多くに登録"
-
-#: ../header.php:66
-msgid "Title:"
-msgstr "タイトル"
-
-#: ../header.php:68
-msgid "Before widget content:"
-msgstr "ウィジェットコンテンツの前に："
-
-#: ../header.php:70
-msgid "After widget content:"
-msgstr "ウィジェットコンテンツの後に："
-
-#: ../header.php:72
-msgid "Hide for logged in users:"
-msgstr "ログインユーザーは、非表示にする："
-
-#: ../LoginRadius.php:370
-#: ../LoginRadius_admin.php:121
+#: ../LoginRadius.php:410
+#: ../LoginRadius_admin.php:141
 msgid "Settings"
 msgstr "設定"
 
-#: ../LoginRadius_admin.php:41
+#: ../LoginRadius_admin.php:45
 msgid "Restored all settings to defaults."
 msgstr "デフォルトにすべての設定を復元。"
 
-#: ../LoginRadius_admin.php:48
+#: ../LoginRadius_admin.php:52
 msgid "You Must Need a Login Radius Api Key For Login Process."
 msgstr "あなたがログインプロセスのLoginRadiusのAPIキーが必要です必要があります。"
 
-#: ../LoginRadius_admin.php:53
+#: ../LoginRadius_admin.php:57
 msgid "You Must Need a Login Radius Api Secret For Login Process."
 msgstr "あなたがログインプロセスのLoginRadius APIのシークレットが必要です必要があります。"
 
-#: ../LoginRadius_admin.php:107
+#: ../LoginRadius_admin.php:127
 msgid "You Need a Redirect url for Login Redirection."
 msgstr "あなたはログインリダイレクトのリダイレクトURLが必要です。"
 
-#: ../LoginRadius_admin.php:110
+#: ../LoginRadius_admin.php:130
 msgid "Saved changes."
 msgstr "変更を保存。"
 
-#: ../LoginRadius_admin.php:124
+#: ../LoginRadius_admin.php:144
 msgid "Thank you for installing the LoginRadius plugin!"
 msgstr "LoginRadiusのプラグインをインストールしていただきありがとうございます！"
 
-#: ../LoginRadius_admin.php:125
+#: ../LoginRadius_admin.php:145
 msgid "You can customize the settings for your plugin on this page, though you will have to choose your desired ID providers and get your unique"
 msgstr "あなたは、あなたの希望するIDプロバイダを選択する必要があるでしょうが、このページ上にプラグインの設定をカスタマイズし、独自に取得することができます"
 
-#: ../LoginRadius_admin.php:125
+#: ../LoginRadius_admin.php:145
 msgid "LoginRadius API Key & Secret"
 msgstr "LoginRadius APIキーと秘密"
 
-#: ../LoginRadius_admin.php:125
+#: ../LoginRadius_admin.php:145
 msgid "from"
 msgstr "からの"
 
-#: ../LoginRadius_admin.php:125
+#: ../LoginRadius_admin.php:145
 msgid "In order to make the login process secure, we require you to manage it from your LoginRadius account."
 msgstr "ログインプロセスを安全にするために、我々は、あなたのLoginRadiusのアカウントから管理する必要があります。"
 
-#: ../LoginRadius_admin.php:126
+#: ../LoginRadius_admin.php:146
 msgid "is a North America based technology company that offers social login through popular hosts such as Facebook, Twitter, Google and over 15 more! For tech support or if you have any questions, please contact us at"
 msgstr "このようなFacebookやTwitter、Googleと15以上より、人気のホストを経由して社会的なログインを提供する北米ベースの技術会社です！技術サポート用やご質問がある場合は、お問い合わせください"
 
-#: ../LoginRadius_admin.php:126
+#: ../LoginRadius_admin.php:146
 msgid "We are available 24/7 to assist our clients!"
 msgstr "にお問い合わせください。サポート・センターは24時間営業です。"
 
-#: ../LoginRadius_admin.php:128
+#: ../LoginRadius_admin.php:148
 msgid "Create your FREE account now!"
 msgstr "今すぐ無料のアカウントを作りましょう！"
 
-#: ../LoginRadius_admin.php:132
+#: ../LoginRadius_admin.php:152
 msgid "Plugin Help"
 msgstr "プラグインのヘルプ"
 
-#: ../LoginRadius_admin.php:134
+#: ../LoginRadius_admin.php:154
 msgid "Documentation"
 msgstr "ドキュメント"
 
-#: ../LoginRadius_admin.php:135
+#: ../LoginRadius_admin.php:155
 msgid "Plugin webpage"
 msgstr "プラグインのウェブページ"
 
-#: ../LoginRadius_admin.php:136
+#: ../LoginRadius_admin.php:156
 msgid "Live Demo site"
 msgstr "ライブデモサイト"
 
-#: ../LoginRadius_admin.php:137
+#: ../LoginRadius_admin.php:157
 msgid "About LoginRadius"
 msgstr "LoginRadiusについて"
 
-#: ../LoginRadius_admin.php:138
+#: ../LoginRadius_admin.php:158
 msgid "LoginRadius Blog"
 msgstr "LoginRadiusブログ"
 
-#: ../LoginRadius_admin.php:139
+#: ../LoginRadius_admin.php:159
 msgid "Other LoginRadius plugins"
 msgstr "他のLoginRadiusプラグイン"
 
-#: ../LoginRadius_admin.php:141
+#: ../LoginRadius_admin.php:161
 msgid "Tech Support"
 msgstr "技術サポート"
 
-#: ../LoginRadius_admin.php:149
+#: ../LoginRadius_admin.php:169
 msgid "LoginRadius API Settings"
 msgstr "LoginRadiusのAPI設定"
 
-#: ../LoginRadius_admin.php:153
+#: ../LoginRadius_admin.php:173
 msgid "Paste LoginRadius API Key here. To get the API Key, log in to"
 msgstr "ここにLoginRadiusのAPIキー貼り付けてください。 APIキーを取得するには、LoginRadiusにログインします。"
 
-#: ../LoginRadius_admin.php:158
+#: ../LoginRadius_admin.php:178
 msgid "API Secret"
 msgstr "APIの秘密"
 
-#: ../LoginRadius_admin.php:159
+#: ../LoginRadius_admin.php:179
 msgid "Paste LoginRadius API Secret here. To get the API Secret, log in to "
 msgstr "ここにLoginRadius APIの秘密を貼り付けます。 APIの秘密を取得するには、LoginRadiusにログインします。"
 
-#: ../LoginRadius_admin.php:165
-msgid "LoginRadius Basic Settings"
-msgstr "LoginRadius基本設定"
-
-#: ../LoginRadius_admin.php:168
-msgid "Title"
-msgstr "タイトル"
-
-#: ../LoginRadius_admin.php:169
-msgid "This text displyed above the Social login button."
-msgstr "このテキストは、社会のログインボタンの上に表示されます。"
-
-#: ../LoginRadius_admin.php:171
-msgid "Please Login with"
-msgstr "してログインしてください"
-
-#: ../LoginRadius_admin.php:175
-msgid "Send Email"
-msgstr "電子メールを送信"
-
-#: ../LoginRadius_admin.php:175
-msgid "After user register"
-msgstr "ユーザーが登録した後"
-
-#: ../LoginRadius_admin.php:176
-msgid "Select YES if you would to like send an email to user after register."
-msgstr "登録後、ユーザーに電子メールを送信気に入ってくれればYESを選択します。"
-
-#: ../LoginRadius_admin.php:178
-#: ../LoginRadius_admin.php:190
-msgid "Yes"
-msgstr "はい"
-
-#: ../LoginRadius_admin.php:179
-#: ../LoginRadius_admin.php:191
-msgid "No"
-msgstr "いいえ"
+#: ../LoginRadius_admin.php:183
+msgid "Select API Credential"
+msgstr "APIの資格情報を選択します。"
 
 #: ../LoginRadius_admin.php:183
-msgid "Email Required"
-msgstr "必要な電子メール"
+msgid "To Communicate with API"
+msgstr "APIと通信するには"
 
-#: ../LoginRadius_admin.php:184
-msgid "A few ID providers do not provide user's Email ID. Select YES if you would like an email pop-up after login or select NO if you would like to auto-generate the email address."
-msgstr "いくつかのIDプロバイダは、ユーザーの電子メールIDを提供していません。必要に応じてYESを選択した電子メールのポップアップログイン後、または自動でメールアドレスを生成する場合はNOを選択します。"
+#: ../LoginRadius_admin.php:185
+msgid "Use cURL (Require cURL support = enabled in your php.ini settings)"
+msgstr "cURLに（requireを使う cURL support = enabled php.iniの設定で）"
 
-#: ../LoginRadius_admin.php:199
-msgid "This text will be displyed above the popup box for entering email."
-msgstr "このテキストは、電子メールを入力するためのポップアップボックスの上に画面中央に表示されます。"
+#: ../LoginRadius_admin.php:186
+msgid "Use FSOCKOPEN (Require allow_url_fopen = On and safemode = off in your php.ini settings)"
+msgstr "すぐにわかるの（requireを使う allow_url_fopen = On と safemode = off php.iniの設定で）"
+
+#: ../LoginRadius_admin.php:193
+msgid "LoginRadius Login & Redirection Settings"
+msgstr "LoginRadiusログインとリダイレクト設定"
+
+#: ../LoginRadius_admin.php:196
+msgid "Show Social Icons On"
+msgstr "で、社会のアイコンを表示する"
+
+#: ../LoginRadius_admin.php:196
+msgid "where to show social icons"
+msgstr "社会的なアイコンを表示する場所"
+
+#: ../LoginRadius_admin.php:198
+msgid "Show on Login Form"
+msgstr "ログインフォームに表示"
 
 #: ../LoginRadius_admin.php:200
-msgid "Please enter your email address to proceed."
-msgstr "続行するには、メールアドレスを入力してください。"
-
-#: ../LoginRadius_admin.php:201
-msgid "This text will be displyed above the popup box if email already registered or invalid."
-msgstr "電子メールはすでに登録済みまたは無効な場合、このテキストがポップアップボックスの上に画面中央に表示されます。"
+msgid "Show on Register Form"
+msgstr "登録フォームに表示"
 
 #: ../LoginRadius_admin.php:202
-msgid "This email is already registered or invalid , please choose another one."
-msgstr "このメールはすでに登録済みまたは無効な場合、別のいずれかを選択してください。"
+msgid "Show on Comment Form"
+msgstr "コメントフォームに表示"
 
-#: ../LoginRadius_admin.php:207
+#: ../LoginRadius_admin.php:206
+msgid "Show Social Avatar"
+msgstr "社会アバターを表示する"
+
+#: ../LoginRadius_admin.php:206
+msgid "social provider avatar image on comment"
+msgstr "コメント上で社会的なプロバイダーのアバター画像"
+
+#: ../LoginRadius_admin.php:208
+msgid "Use Social provider avatar (if provide)"
+msgstr "（提供している場合）社会プロバイダのアバターを使用します。"
+
+#: ../LoginRadius_admin.php:209
+msgid "Use default avatar"
+msgstr "デフォルトのアバターを使用します。"
+
+#: ../LoginRadius_admin.php:213
 msgid "Redirection Setting"
 msgstr "リダイレクションの設定"
 
-#: ../LoginRadius_admin.php:207
-#, fuzzy
+#: ../LoginRadius_admin.php:213
 msgid "Redirect user After login"
-msgstr "ログイン後にリダイレクトするための設定"
+msgstr "ログイン後にユーザーをリダイレクト"
 
-#: ../LoginRadius_admin.php:209
+#: ../LoginRadius_admin.php:215
 msgid "Redirect to Same Page of blog"
 msgstr "ブログの同じページにリダイレクトする"
 
-#: ../LoginRadius_admin.php:209
+#: ../LoginRadius_admin.php:215
 msgid "Default"
 msgstr "デフォルト"
 
-#: ../LoginRadius_admin.php:211
+#: ../LoginRadius_admin.php:217
 msgid "Redirect to homepage of blog"
 msgstr "ブログのホームページにリダイレクト"
 
-#: ../LoginRadius_admin.php:213
+#: ../LoginRadius_admin.php:219
 msgid "Redirect to account dashboard"
 msgstr "アカウントのダッシュボードへのリダイレクト"
 
-#: ../LoginRadius_admin.php:215
+#: ../LoginRadius_admin.php:221
 msgid "Redirect to the following url:"
 msgstr "次のURLにリダイレクトします。"
 
-#: ../LoginRadius_admin.php:225
+#: ../LoginRadius_admin.php:229
+msgid "LoginRadius Basic Settings"
+msgstr "LoginRadius基本設定"
+
+#: ../LoginRadius_admin.php:232
+msgid "Title"
+msgstr "タイトル"
+
+#: ../LoginRadius_admin.php:233
+msgid "This text displyed above the Social login button."
+msgstr "このテキストは、社会のログインボタンの上に表示されます。"
+
+#: ../LoginRadius_admin.php:235
+msgid "Please Login with"
+msgstr "してログインしてください"
+
+#: ../LoginRadius_admin.php:239
+msgid "Send Email"
+msgstr "電子メールを送信"
+
+#: ../LoginRadius_admin.php:239
+msgid "After user register"
+msgstr "ユーザーが登録した後"
+
+#: ../LoginRadius_admin.php:240
+msgid "Select YES if you would to like send an email to user after register."
+msgstr "登録後、ユーザーに電子メールを送信気に入ってくれればYESを選択します。"
+
+#: ../LoginRadius_admin.php:242
+#: ../LoginRadius_admin.php:254
+msgid "Yes"
+msgstr "はい"
+
+#: ../LoginRadius_admin.php:243
+#: ../LoginRadius_admin.php:255
+msgid "No"
+msgstr "いいえ"
+
+#: ../LoginRadius_admin.php:247
+msgid "Email Required"
+msgstr "必要な電子メール"
+
+#: ../LoginRadius_admin.php:248
+msgid "A few ID providers do not provide user's Email ID. Select YES if you would like an email pop-up after login or select NO if you would like to auto-generate the email address."
+msgstr "いくつかのIDプロバイダは、ユーザーの電子メールIDを提供していません。必要に応じてYESを選択した電子メールのポップアップログイン後、または自動でメールアドレスを生成する場合はNOを選択します。"
+
+#: ../LoginRadius_admin.php:263
+msgid "This text will be displyed above the popup box for entering email."
+msgstr "このテキストは、電子メールを入力するためのポップアップボックスの上に画面中央に表示されます。"
+
+#: ../LoginRadius_admin.php:264
+msgid "Please enter your email address to proceed."
+msgstr "続行するには、メールアドレスを入力してください。"
+
+#: ../LoginRadius_admin.php:265
+msgid "This text will be displyed above the popup box if email already registered or invalid."
+msgstr "電子メールはすでに登録済みまたは無効な場合、このテキストがポップアップボックスの上に画面中央に表示されます。"
+
+#: ../LoginRadius_admin.php:266
+msgid "This email is already registered or invalid , please choose another one."
+msgstr "このメールはすでに登録済みまたは無効な場合、別のいずれかを選択してください。"
+
+#: ../LoginRadius_admin.php:274
 msgid "Save Changes"
 msgstr "変更を保存"
 
-#: ../LoginRadius_admin.php:226
+#: ../LoginRadius_admin.php:275
 msgid "Restore Defaults"
 msgstr "デフォルトの復元"
+
+#: ../LoginRadius_function.php:57
+msgid "Welcome! "
+msgstr "ようこそ！"
+
+#: ../LoginRadius_function.php:60
+msgid "Log Out"
+msgstr "ログアウト"
+
+#: ../LoginRadius_header.php:9
+msgid "Login or register with Facebook, Twitter, Yahoo, Google and many more"
+msgstr "ログインまたはFacebookやTwitterやYahoo、Googleと多くに登録"
+
+#: ../LoginRadius_header.php:66
+msgid "Title:"
+msgstr "タイトル"
+
+#: ../LoginRadius_header.php:68
+msgid "Before widget content:"
+msgstr "ウィジェットコンテンツの前に："
+
+#: ../LoginRadius_header.php:70
+msgid "After widget content:"
+msgstr "ウィジェットコンテンツの後に："
+
+#: ../LoginRadius_header.php:72
+msgid "Hide for logged in users:"
+msgstr "ログインユーザーは、非表示にする："
 

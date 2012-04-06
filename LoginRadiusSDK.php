@@ -3,14 +3,15 @@ class LoginRadius {
   public $IsAuthenticated, $JsonResponse, $UserProfile; 
   public function construct($ApiSecrete) {
     $IsAuthenticated = false;
+	$useapi = get_option('useapi');
     if (isset($_REQUEST['token'])) {
-      $ValidateUrl = "http://hub.loginradius.com/userprofile.ashx?token=".$_REQUEST['token']."&apisecrete=".$ApiSecrete."";
-      if (in_array('curl', get_loaded_extensions())) {
+      $ValidateUrl = "https://hub.loginradius.com/userprofile.ashx?token=".$_REQUEST['token']."&apisecrete=".$ApiSecrete."";
+      if ($useapi == false ) {
         $curl_handle = curl_init();
         curl_setopt($curl_handle, CURLOPT_URL, $ValidateUrl);
         curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 3);
-        curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, true);
-        if (ini_get('open_basedir') == '' && ini_get('safe_mode' == 'Off')) {
+        curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, false);
+        if (ini_get('open_basedir') == '' && (ini_get('safe_mode') == 'Off' or !ini_get('safe_mode'))) {
           curl_setopt($curl_handle, CURLOPT_FOLLOWLOCATION, 1);
           curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
           $JsonResponse = curl_exec($curl_handle);
@@ -28,12 +29,9 @@ class LoginRadius {
         }
         $UserProfile = json_decode($JsonResponse);
       }
-      else if (ini_get('allow_url_fopen') == 1) {
+      else {
         $JsonResponse = file_get_contents($ValidateUrl);
         $UserProfile = json_decode($JsonResponse);
-      }
-      else {
-        echo "Please check php.ini settings<br><b>cURL support = enabled <br>or<br>allow_url_fopen = On</b>";
       }
       if (isset($UserProfile->ID) && $UserProfile->ID != ''){ 
         $this->IsAuthenticated = true;
@@ -46,16 +44,17 @@ class LoginRadiusAuth {
   public $IsAuth, $JsonResponse, $UserAuth; 
   public function auth($ApiKey, $ApiSecrete){
     $IsAuth = false;
+	$useapi = get_option('useapi');
     if (isset($ApiKey)) {
       $ApiKey = trim($ApiKey);
       $ApiSecrete = trim($ApiSecrete);
       $ValidateUrl = "https://hub.loginradius.com/getappinfo/$ApiKey/$ApiSecrete";
-      if (in_array('curl', get_loaded_extensions())) {
+      if ($useapi == false ) {
         $curl_handle = curl_init();
         curl_setopt($curl_handle, CURLOPT_URL, $ValidateUrl);
         curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 3);
-        curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, true);
-        if (ini_get('open_basedir') == '' && ini_get('safe_mode' == 'Off')) {
+        curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, false);
+        if (ini_get('open_basedir') == '' && (ini_get('safe_mode') == 'Off' or !ini_get('safe_mode'))) {
           curl_setopt($curl_handle, CURLOPT_FOLLOWLOCATION, 1);
           curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
           $JsonResponse = curl_exec($curl_handle);
@@ -73,12 +72,9 @@ class LoginRadiusAuth {
         }
         $UserAuth = json_decode($JsonResponse);
       }
-      else if (ini_get('allow_url_fopen') == 1) {
+      else {
         $JsonResponse = file_get_contents($ValidateUrl);
         $UserAuth = json_decode($JsonResponse);
-      }
-      else {
-        echo "Please check php.ini settings<br><b>cURL support = enabled <br>or<br>allow_url_fopen = On</b>";
       }
       if (isset( $UserAuth->IsValid)){ 
         $this->IsAuth = true;

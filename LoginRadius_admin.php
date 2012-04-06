@@ -6,12 +6,17 @@ function LoginRadius_restore_config($force=false) {
 if ( $force or !( get_option('LoginRadius_apikey')) ) {
 		update_option('LoginRadius_apikey',false);
 	}
-	
 if ( $force or !( get_option('LoginRadius_secret')) ) {
 		update_option('LoginRadius_secret',false);
 	}
 if ( $force or !( get_option('sendemail')) ) {
 		update_option('sendemail',false);
+	}
+if ( $force or !( get_option('useapi')) ) {
+		update_option('useapi',false);
+	}
+if ( $force or !( get_option('socialavatar')) ) {
+		update_option('socialavatar',false);
 	}	
 if ( $force or !( get_option('dummyemail')) ) {
 		update_option('dummyemail',false);
@@ -19,7 +24,6 @@ if ( $force or !( get_option('dummyemail')) ) {
 if ( $force or !( get_option('LoginRadius_redirect')) ) {
 		update_option('LoginRadius_redirect',false);
 	}
-
 if ( $force or !( get_option('title')) ) {
 		update_option('title',false);
 	}	
@@ -31,7 +35,7 @@ if ( $force or !( get_option('msg_existemail')) ) {
 	}	
 }
 /**
- * Displays the LoginRadius admin menu, first section (re)stores the settings.
+ * Displays the LoginRadius admin menu, restores the settings.
  */
 function LoginRadius_submenu() {
 	global $LoginRadius_known_sites, $LoginRadius_date, $LoginRadiuspluginpath;
@@ -62,12 +66,28 @@ function LoginRadius_submenu() {
 		} else {
 			update_option('sendemail',$_POST['sendemail']==false);
 		}
+		if (isset($_POST['socialavatar'])==true && $_POST['socialavatar']!="") {
+			update_option('socialavatar',$_POST['socialavatar']==true);
+		} else {
+			update_option('socialavatar',$_POST['socialavatar']==false);
+		}
 		
 		if (isset($_POST['dummyemail'])==true && $_POST['dummyemail']!="") {
 			update_option('dummyemail',$_POST['dummyemail']==true);
 		} else {
 			update_option('dummyemail',$_POST['dummyemail']==false);
 		}
+		if (isset($_POST['useapi']) == true && $_POST['useapi'] != "") {
+			update_option('useapi',$_POST['useapi']==true);
+		} else {
+			update_option('useapi',$_POST['useapi']==false);
+		}
+		foreach ( array('LoginRadius_loginform', 'LoginRadius_regform', 'LoginRadius_commentform') as $val ) {
+			if ( isset($_POST[$val]) && $_POST[$val] )
+				update_option($val,true);
+			else
+				update_option($val,false);
+		    }
 		if (isset($_POST['msg_email']) && $_POST['msg_email']!="") {
 			update_option('msg_email',$_POST['msg_email']);
 		} else {
@@ -159,8 +179,52 @@ function LoginRadius_submenu() {
 	<td><?php _e("Paste LoginRadius API Secret here. To get the API Secret, log in to ", 'LoginRadius'); ?><a href='http://www.LoginRadius.com/' target='_blank'>LoginRadius.</a><br/>
 		<input size="60" type="text" name="LoginRadius_secret" id="LoginRadius_secret" value="<?php echo get_option('LoginRadius_secret'); ?>" /></td>
 	</tr>
+	<tr>
+	<th scope="row"><?php _e("Select API Credential", 'LoginRadius'); ?><br /><small><?php _e("To Communicate with API", 'LoginRadius'); ?></small></th>
+	<td>
+<input name="useapi" type="radio"  value="0" <?php checked( '0', get_option( 'useapi' ) ); ?> checked /><?php _e("Use cURL (Require cURL support = enabled in your php.ini settings)", 'LoginRadius'); ?> <br />
+<input name="useapi" type="radio" value="1" <?php checked( '1', get_option( 'useapi') ); ?>  /><?php _e("Use FSOCKOPEN (Require allow_url_fopen = On and safemode = off in your php.ini settings)", 'LoginRadius'); ?> 
+</td>
+	</tr>
 	</table>
-	<table class="form-table LoginRadius_table">
+	</table>
+<table class="form-table LoginRadius_table">
+	<tr>
+	<th class="head" colspan="2"><?php _e('LoginRadius Login & Redirection Settings', 'LoginRadius');?></small></th>
+	</tr>
+<tr >
+<th scope="row"><?php _e("Show Social Icons On", 'LoginRadius'); ?><br /><small><?php _e("where to show social icons", 'LoginRadius'); ?></small></th>
+	<td>
+<input type="checkbox" name="LoginRadius_loginform" <?php checked( get_option('LoginRadius_loginform'), true ) ; ?> /> <?php _e ('Show on Login Form', 'LoginRadius'); ?> <br />
+
+<input type="checkbox" name="LoginRadius_regform" <?php checked( get_option('LoginRadius_regform'), true ) ; ?> /> <?php _e ('Show on Register Form', 'LoginRadius'); ?> 
+<br />
+<input type="checkbox" name="LoginRadius_commentform" <?php checked( get_option('LoginRadius_commentform'), true ) ; ?> /> <?php _e ('Show on Comment Form', 'LoginRadius'); ?> 
+</td>
+</tr>
+<tr class="row_white">
+	<th scope="row"><?php _e("Show Social Avatar", 'LoginRadius'); ?><br /><small><?php _e("social provider avatar image on comment", 'LoginRadius'); ?></small></th>
+	<td>
+<input name="socialavatar" type="radio"  value="0" <?php checked( '0', get_option( 'socialavatar' ) ); ?> checked /><?php _e("Use Social provider avatar (if provide)", 'LoginRadius'); ?> <br />
+<input name="socialavatar" type="radio" value="1" <?php checked( '1', get_option( 'socialavatar') ); ?>  /><?php _e("Use default avatar", 'LoginRadius'); ?> 
+</td>
+	</tr>
+	<tr >
+<th scope="row"><?php _e("Redirection Setting", 'LoginRadius'); ?><br /><small><?php _e("Redirect user After login", 'LoginRadius'); ?></small></th>
+	<td>
+<input type="radio" name="LoginRadius_redirect" value="samepage" <?php checked( 'samepage', get_option( 'LoginRadius_redirect' )); ?> checked /> <?php _e ('Redirect to Same Page of blog', 'LoginRadius'); ?> <strong>(<?php _e ('Default', 'LoginRadius') ?>)</strong><br />
+
+<input type="radio" name="LoginRadius_redirect" value="homepage" <?php checked( 'homepage', get_option( 'LoginRadius_redirect' )); ?> /> <?php _e ('Redirect to homepage of blog', 'LoginRadius'); ?> 
+<br />
+<input type="radio" name="LoginRadius_redirect" value="dashboard" <?php checked( 'dashboard', get_option( 'LoginRadius_redirect' )); ?> /> <?php _e ('Redirect to account dashboard', 'LoginRadius'); ?>
+<br />
+<input type="radio" name="LoginRadius_redirect" value="custom" <?php checked( 'custom', get_option( 'LoginRadius_redirect' )); ?> /> <?php _e ('Redirect to the following url:', 'LoginRadius'); ?>
+<br />
+<input type="text"  name="LoginRadius_redirect_custom_redirect" size="60" value="<?php if($LoginRadius_redirect=='custom' && $custom == 'checked'){echo htmlspecialchars(get_option('LoginRadius_redirect_custom_redirect'));}else{} ?>" />
+</td>
+</tr>
+</table>
+<table class="form-table LoginRadius_table">
 	<tr>
 	<th class="head" colspan="2"><?php _e("LoginRadius Basic Settings", 'LoginRadius'); ?></small></th>
 	</tr>
@@ -202,22 +266,7 @@ else {
 <input size="60" type="text" name="msg_existemail" id="msg_existemail" value="<?php if(htmlspecialchars(get_option('msg_existemail'))){echo htmlspecialchars(get_option('msg_existemail'));}else{ _e('This email is already registered or invalid , please choose another one.', 'LoginRadius');} ?>" />
 <?php }?>
 </td>
-	</tr>
-	<tr >
-<th scope="row"><?php _e("Redirection Setting", 'LoginRadius'); ?><br /><small><?php _e("Redirect user After login", 'LoginRadius'); ?></small></th>
-	<td>
-<input type="radio" name="LoginRadius_redirect" value="samepage" <?php checked( 'samepage', get_option( 'LoginRadius_redirect' )); ?> checked /> <?php _e ('Redirect to Same Page of blog', 'LoginRadius'); ?> <strong>(<?php _e ('Default', 'LoginRadius') ?>)</strong><br />
-
-<input type="radio" name="LoginRadius_redirect" value="homepage" <?php checked( 'homepage', get_option( 'LoginRadius_redirect' )); ?> /> <?php _e ('Redirect to homepage of blog', 'LoginRadius'); ?> 
-<br />
-<input type="radio" name="LoginRadius_redirect" value="dashboard" <?php checked( 'dashboard', get_option( 'LoginRadius_redirect' )); ?> /> <?php _e ('Redirect to account dashboard', 'LoginRadius'); ?>
-<br />
-<input type="radio" name="LoginRadius_redirect" value="custom" <?php checked( 'custom', get_option( 'LoginRadius_redirect' )); ?> /> <?php _e ('Redirect to the following url:', 'LoginRadius'); ?>
-<br />
-<input type="text"  name="LoginRadius_redirect_custom_redirect" size="60" value="<?php if($LoginRadius_redirect=='custom' && $custom == 'checked'){echo htmlspecialchars(get_option('LoginRadius_redirect_custom_redirect'));}else{} ?>" />
-</td>
 </tr>
-</table>
 <table>
 <tr>
 <td>&nbsp;</td>

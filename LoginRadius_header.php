@@ -9,7 +9,7 @@
 				'description' => __( 'Login or register with Facebook, Twitter, Yahoo, Google and many more', 'LoginRadius' ))
 			);
 	}
-	/** This is rendered widget content */
+	/**  widget content */
 	function widget( $args, $instance ) {
 		if( $args == NULL )
 		$display_label = true;
@@ -40,7 +40,7 @@
 		echo $after_widget;
 	}
 
-	/** Everything which should happen when user edit widget at admin panel */
+	/**  user edit widget at admin panel */
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = trim(strip_tags( $new_instance['title']));
