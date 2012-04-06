@@ -1,0 +1,302 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LoginRadius\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-03-29 09:48+0530\n"
+"PO-Revision-Date: 2012-03-29 09:48+0530\n"
+"Last-Translator: loginradius <hello@loginradius.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../LoginRadius.php:410
+#: ../LoginRadius_admin.php:141
+msgid "Settings"
+msgstr "设置"
+
+#: ../LoginRadius_admin.php:45
+msgid "Restored all settings to defaults."
+msgstr "所有设置恢复到默认值。"
+
+#: ../LoginRadius_admin.php:52
+msgid "You Must Need a Login Radius Api Key For Login Process."
+msgstr "你必须需要一个登录过程LoginRadius API密钥。"
+
+#: ../LoginRadius_admin.php:57
+msgid "You Must Need a Login Radius Api Secret For Login Process."
+msgstr "你必须需要一个登录过程LoginRadius API秘密。"
+
+#: ../LoginRadius_admin.php:127
+msgid "You Need a Redirect url for Login Redirection."
+msgstr "您需要登录重定向重定向URL。"
+
+#: ../LoginRadius_admin.php:130
+msgid "Saved changes."
+msgstr "保存的更改。"
+
+#: ../LoginRadius_admin.php:144
+msgid "Thank you for installing the LoginRadius plugin!"
+msgstr "感谢您安装LoginRadius插件！"
+
+#: ../LoginRadius_admin.php:145
+msgid "You can customize the settings for your plugin on this page, though you will have to choose your desired ID providers and get your unique"
+msgstr "您可以自定义此页面上的插件设置，虽然你会选择所需的编号提供商，并得到您的独特"
+
+#: ../LoginRadius_admin.php:145
+msgid "LoginRadius API Key & Secret"
+msgstr "LoginRadius API密钥和秘密"
+
+#: ../LoginRadius_admin.php:145
+msgid "from"
+msgstr "从"
+
+#: ../LoginRadius_admin.php:145
+msgid "In order to make the login process secure, we require you to manage it from your LoginRadius account."
+msgstr "为了使登录过程的安全，我们要求您管理从LoginRadius account."
+
+#: ../LoginRadius_admin.php:146
+msgid "is a North America based technology company that offers social login through popular hosts such as Facebook, Twitter, Google and over 15 more! For tech support or if you have any questions, please contact us at"
+msgstr "它是一个北美的科技公司，提供社会登录通过流行的主机，如在Facebook，Twitter，谷歌和超过15！的技术支持，或如果您有任何疑问，请联系我们在"
+
+#: ../LoginRadius_admin.php:146
+msgid "We are available 24/7 to assist our clients!"
+msgstr "We提供24 / 7，以协助我们的客户！"
+
+#: ../LoginRadius_admin.php:148
+msgid "Create your FREE account now!"
+msgstr "现在创建您的免费帐户！"
+
+#: ../LoginRadius_admin.php:152
+msgid "Plugin Help"
+msgstr "插件的帮助"
+
+#: ../LoginRadius_admin.php:154
+msgid "Documentation"
+msgstr "文档"
+
+#: ../LoginRadius_admin.php:155
+msgid "Plugin webpage"
+msgstr "插件的网页"
+
+#: ../LoginRadius_admin.php:156
+msgid "Live Demo site"
+msgstr "现场演示网站"
+
+#: ../LoginRadius_admin.php:157
+msgid "About LoginRadius"
+msgstr "关于LoginRadius"
+
+#: ../LoginRadius_admin.php:158
+msgid "LoginRadius Blog"
+msgstr "LoginRadius博客"
+
+#: ../LoginRadius_admin.php:159
+msgid "Other LoginRadius plugins"
+msgstr "其他LoginRadius插件"
+
+#: ../LoginRadius_admin.php:161
+msgid "Tech Support"
+msgstr "技术支持"
+
+#: ../LoginRadius_admin.php:169
+msgid "LoginRadius API Settings"
+msgstr "LoginRadius的API设置"
+
+#: ../LoginRadius_admin.php:173
+msgid "Paste LoginRadius API Key here. To get the API Key, log in to"
+msgstr "粘贴LoginRadius API这里的关键。要获得的API密钥，登录到"
+
+#: ../LoginRadius_admin.php:178
+msgid "API Secret"
+msgstr "API的秘密"
+
+#: ../LoginRadius_admin.php:179
+msgid "Paste LoginRadius API Secret here. To get the API Secret, log in to "
+msgstr "在这里粘贴LoginRadius API的秘密。为了得到API的秘密，登录到"
+
+#: ../LoginRadius_admin.php:183
+msgid "Select API Credential"
+msgstr "选择API凭证"
+
+#: ../LoginRadius_admin.php:183
+msgid "To Communicate with API"
+msgstr "沟通与API"
+
+#: ../LoginRadius_admin.php:185
+msgid "Use cURL (Require cURL support = enabled in your php.ini settings)"
+msgstr "使用cURL（需求 cURL support = enabled 在你的php.ini设置)"
+
+#: ../LoginRadius_admin.php:186
+msgid "Use FSOCKOPEN (Require allow_url_fopen = On and safemode = off in your php.ini settings)"
+msgstr "使用FSOCKOPEN（需求 allow_url_fopen = On 和 safemode = off 在你的php.ini设置)"
+
+#: ../LoginRadius_admin.php:193
+msgid "LoginRadius Login & Redirection Settings"
+msgstr "LoginRadius登录和重定向设置"
+
+#: ../LoginRadius_admin.php:196
+msgid "Show Social Icons On"
+msgstr "社会上的图标"
+
+#: ../LoginRadius_admin.php:196
+msgid "where to show social icons"
+msgstr "显示社会图标"
+
+#: ../LoginRadius_admin.php:198
+msgid "Show on Login Form"
+msgstr "上显示登录表单"
+
+#: ../LoginRadius_admin.php:200
+msgid "Show on Register Form"
+msgstr "登记表上显示"
+
+#: ../LoginRadius_admin.php:202
+msgid "Show on Comment Form"
+msgstr "意见表上显示"
+
+#: ../LoginRadius_admin.php:206
+msgid "Show Social Avatar"
+msgstr "显示社会头像"
+
+#: ../LoginRadius_admin.php:206
+msgid "social provider avatar image on comment"
+msgstr "社会提供头像图片评论"
+
+#: ../LoginRadius_admin.php:208
+msgid "Use Social provider avatar (if provide)"
+msgstr "利用社会提供的头像（如果提供）"
+
+#: ../LoginRadius_admin.php:209
+msgid "Use default avatar"
+msgstr "使用默认头像"
+
+#: ../LoginRadius_admin.php:213
+msgid "Redirection Setting"
+msgstr "重定向设置"
+
+#: ../LoginRadius_admin.php:213
+msgid "Redirect user After login"
+msgstr "重定向用户登录后"
+
+#: ../LoginRadius_admin.php:215
+msgid "Redirect to Same Page of blog"
+msgstr "重定向到同一页的博客"
+
+#: ../LoginRadius_admin.php:215
+msgid "Default"
+msgstr "默认"
+
+#: ../LoginRadius_admin.php:217
+msgid "Redirect to homepage of blog"
+msgstr "重定向到博客首页"
+
+#: ../LoginRadius_admin.php:219
+msgid "Redirect to account dashboard"
+msgstr "重定向到帐户控制面板"
+
+#: ../LoginRadius_admin.php:221
+msgid "Redirect to the following url:"
+msgstr "重定向到以下URL："
+
+#: ../LoginRadius_admin.php:229
+msgid "LoginRadius Basic Settings"
+msgstr "LoginRadius基本设置"
+
+#: ../LoginRadius_admin.php:232
+msgid "Title"
+msgstr "标题"
+
+#: ../LoginRadius_admin.php:233
+msgid "This text displyed above the Social login button."
+msgstr "这个文本是社会的登录按钮，上面显示的。"
+
+#: ../LoginRadius_admin.php:235
+msgid "Please Login with"
+msgstr "请登入"
+
+#: ../LoginRadius_admin.php:239
+msgid "Send Email"
+msgstr "发送电邮"
+
+#: ../LoginRadius_admin.php:239
+msgid "After user register"
+msgstr "经过用户注册"
+
+#: ../LoginRadius_admin.php:240
+msgid "Select YES if you would to like send an email to user after register."
+msgstr "如果你会喜欢后，注册用户发送电子邮件，选择YES。"
+
+#: ../LoginRadius_admin.php:242
+#: ../LoginRadius_admin.php:254
+msgid "Yes"
+msgstr "是"
+
+#: ../LoginRadius_admin.php:243
+#: ../LoginRadius_admin.php:255
+msgid "No"
+msgstr "否"
+
+#: ../LoginRadius_admin.php:247
+msgid "Email Required"
+msgstr "电子邮件要求"
+
+#: ../LoginRadius_admin.php:248
+msgid "A few ID providers do not provide user's Email ID. Select YES if you would like an email pop-up after login or select NO if you would like to auto-generate the email address."
+msgstr "几个ID提供商不提供用户的电子邮件ID。选择YES如果你想要一个电子邮件弹出后登录，或选择NO，如果你想自动生成的电子邮件地址。"
+
+#: ../LoginRadius_admin.php:263
+msgid "This text will be displyed above the popup box for entering email."
+msgstr "此文字将上面的弹出框中输入电子邮件displyed。"
+
+#: ../LoginRadius_admin.php:264
+msgid "Please enter your email address to proceed."
+msgstr "请输入您的电子邮件地址进行。"
+
+#: ../LoginRadius_admin.php:265
+msgid "This text will be displyed above the popup box if email already registered or invalid."
+msgstr "此文字将displyed上面的弹出框，如果电子邮件已经注册或无效。"
+
+#: ../LoginRadius_admin.php:266
+msgid "This email is already registered or invalid , please choose another one."
+msgstr "此电子邮件已注册或无效，请选择另一个。"
+
+#: ../LoginRadius_admin.php:274
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: ../LoginRadius_admin.php:275
+msgid "Restore Defaults"
+msgstr "还原为默认值"
+
+#: ../LoginRadius_function.php:57
+msgid "Welcome! "
+msgstr "欢迎您！"
+
+#: ../LoginRadius_function.php:60
+msgid "Log Out"
+msgstr "注销"
+
+#: ../LoginRadius_header.php:9
+msgid "Login or register with Facebook, Twitter, Yahoo, Google and many more"
+msgstr "在Facebook，Twitter，雅虎，谷歌和多登录或注册"
+
+#: ../LoginRadius_header.php:66
+msgid "Title:"
+msgstr "标题"
+
+#: ../LoginRadius_header.php:68
+msgid "Before widget content:"
+msgstr "前Widget内容："
+
+#: ../LoginRadius_header.php:70
+msgid "After widget content:"
+msgstr "经过Widget内容："
+
+#: ../LoginRadius_header.php:72
+msgid "Hide for logged in users:"
+msgstr "隐藏登录用户："
+
