@@ -64,7 +64,7 @@ This plugin enables social login on Wordpress websites by letting users log in t
 
 = Important links =
 * Website: http://www.loginradius.com
-* Wordpress live demo: http://wordpressdemo.loginradius.com
+* Wordpress live demo: http://wordpress.loginradius.com
 * Other live demo: http://www.loginradius.com/demo
 * Press/Media page: http://www.loginradius.com/press
 * Blog: http://blog.loginradius.com
@@ -121,7 +121,7 @@ details.
 
 = Do you have a live demo site? =
 
-Yes, please visit our WordPress live demo site at http://wordpressdemo.loginradius.com Try logging in and commenting :)
+Yes, please visit our WordPress live demo site at http://wordpress.loginradius.com Try logging in and commenting :)
 
 = My website is not in English, what should i do? =
 
