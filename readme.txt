@@ -1,5 +1,5 @@
 === Social Login for Wordpress ===
-Contributors: LoginRadius team, Italian Language Translator: Michelangelo Giannino.com, Russian Language Translator: Rob (www.prestigecarpet.ru), Spanish Language Translator: Daniel Iturbe (www.telibera.com), Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
+Contributors: LoginRadius team, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
 Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post, open authentication, facebook connect, Social Login,
 OpenID integration, Open Authentication, User Profile Data, Social Analytics, oAuth integration, Online Identity, Social Profile storage,
@@ -8,11 +8,16 @@ Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish,
 Requires at least: 2.5.0
 Tested up to: 3.3.1
 Stable tag: 2.3
+License: GPLv2 or later
 
 Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
 == Description ==
 This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. This plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
+
+= Live Demo =
+* Wordpress: http://wordpress.loginradius.com
+* BuddyPress: http://buddypress.loginradius.com
 
 'Social Login for WordPress' plugin is developed by <a href="http://www.loginradius.com" target="_blank">LoginRadius</a>, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
@@ -23,6 +28,7 @@ This plugin enables social login on Wordpress websites by letting users log in t
 * Get user profile data
 * Select desired providers
 * Manage plugin from WP admin account
+* Compatible with BudyPress
 * Highly secure through REST API
 * Get social analytics of your users
 * Availalbe in 8 languages (English, French, Spanish, Italian, Russian, Chinese, Japanese, German)
@@ -64,7 +70,8 @@ This plugin enables social login on Wordpress websites by letting users log in t
 
 = Important links =
 * Website: http://www.loginradius.com
-* Wordpress live demo: http://wordpress.loginradius.com
+* WordPress live demo: http://wordpress.loginradius.com
+* BuddyPress live demo: http://buddypress.loginradius.com
 * Other live demo: http://www.loginradius.com/demo
 * Press/Media page: http://www.loginradius.com/press
 * Blog: http://blog.loginradius.com
