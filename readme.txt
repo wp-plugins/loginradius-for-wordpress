@@ -13,7 +13,7 @@ License: GPLv2 or later
 Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
 == Description ==
-This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. This plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
+This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics.
 
 = Live Demo =
 * Wordpress: http://wordpress.loginradius.com
@@ -22,11 +22,13 @@ This plugin enables social login on Wordpress websites by letting users log in t
 'Social Login for WordPress' plugin is developed by <a href="http://www.loginradius.com" target="_blank">LoginRadius</a>, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
 
-= Plugin Features =
-* Social Login
-* Post comment with existing ID
-* Get user profile data
-* Select desired providers
+= Plugin key features =
+* Social Login with over 20 ID providers
+* User can post comment with their existing ID
+* Unlimited users*
+* Store user profile data in your WordPress database
+* Add Login widget anywhere on any page
+* Choose as many ID providers as you want
 * Manage plugin from WP admin account
 * Compatible with BudyPress
 * Highly secure through REST API
@@ -41,8 +43,7 @@ This plugin enables social login on Wordpress websites by letting users log in t
 * No programming skills required
 * White label & premium solutions available
 * Available for non-CMS websites as well
-* 24x7 support
-
+* 24/7 support
 
 = List of ID Providers =
 * Facebook
@@ -102,8 +103,8 @@ you can select the providers you want to use on your wodpress website and genera
 = Comment setting =
 If you want to allow only registered users to comment, go to Settings > Discussion and check the box for 'Users must be registered and logged in to comment'. With this option turned on, users must first register or login using a social provider before posting comments.
 
-= Coding instructions =
-If you want LoginRadius interface to appear on any other page or post, then call function - Login_Radius_Connect_button();
+= Widget instructions to add it on any page =
+If you want LoginRadius interface to appear on any other page or post, then call function - <?php Login_Radius_Connect_button(); ?>
 after configuring LoginRadius plugin in your wordpress website.
 
 == Frequently Asked Questions ==
