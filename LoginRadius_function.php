@@ -178,9 +178,13 @@ function loginradius_share_output() {
   $loginRadiusShareSettings = new LoginRadiusAuth();
   global $LoginRadius_settings;
   $lrSocialInterface = $loginRadiusShareSettings -> auth( $LoginRadius_settings['LoginRadius_apikey'], $LoginRadius_settings['LoginRadius_secret'], true );
-  echo '<script type="text/javascript" src="//share.loginradius.com/Content/js/LoginRadiusSharing.js" id="lrsharescript"></script>';
-  echo '<script> $(document).ready(function () { $(".loginradiusshare").LoginRadiusShare('.$lrSocialInterface.');
- });  </script>';
+  echo '<script type="text/javascript" src="//share.loginradius.com/Content/js/Wp_LoginRadiusSharing.js" id="lrsharescript"></script>'; 
+  
+	
+	echo '<script>
+			jQuery(document).ready(function( $ ){$(".loginradiusshare").LoginRadiusShare('.$lrSocialInterface.'); });  
+			</script>';
+
 }
 
 /**

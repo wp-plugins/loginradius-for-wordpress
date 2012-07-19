@@ -6,7 +6,7 @@ Plugin URI: http://www.LoginRadius.com
 
 Description: LoginRadius plugin enables social login on a wordpress website letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long registration process i.e. filling up a long registration form, verifying email ID, remembering another username and password so your users are just one click away from logging in to your website. Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
 
-Version: 2.4
+Version: 2.4.1
 
 Author: LoginRadius Team
 
@@ -67,13 +67,14 @@ class Login_Radius_Connect {
  */
 
   public static function LoginRadius_page_scripts() {
-
-    wp_deregister_script('jquery');
-
-    wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1');
-
-    wp_enqueue_script('jquery');
-
+  	if(!jQuery)
+	{
+		wp_deregister_script('jquery');
+	
+		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1');
+	
+		wp_enqueue_script('jquery');
+  	}
   }
 
 

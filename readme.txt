@@ -5,7 +5,7 @@ Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, so
 single sign-on, Social Sign-in, Social Login Plug-in, Facebook Connect, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages
 Requires at least: 2.5.0
 Tested up to: 3.4
-Stable tag: 2.4
+Stable tag: 2.4.1
 
 Let your users log in, comment and share via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
@@ -149,7 +149,7 @@ option.
 4. **Wordpress LoginRadius page and WordPress Admin panel**: Shows the LoginRadius user account for wordpress users and also wordpress Admin panel with various options.
 5. **Wordpress Login Box**: Displays loginradius interface for wordpress Login box. Its showing all select provider with a slider 
 option.
-6. **Social Analytics**: Get analytics of your user base and their behavior on your website based on social parameters such as age, gender, location, etc. It’s a unique insight into your user base to help you narrow down key marketing and sales strategies.
+6. **Social Analytics**: Get analytics of your user base and their behavior on your website based on social parameters such as age, gender, location, etc. It's a unique insight into your user base to help you narrow down key marketing and sales strategies.
 
 == Testimonials ==
 <em>"LoginRadius is by far the best one-click login solution for websites. You have a fast and friendly support team at your disposal 24/7."</em><br>
@@ -197,7 +197,7 @@ option.
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
-= 2.4 =
+= 2.4.1 =
 * Social sharing released.
 * WordPress Admin UI improved with tab structure.
 * Logout Redirection option added.
@@ -330,7 +330,7 @@ Bug fixed for popup in IE
 * Bug Fixed - filename conflict fixed.
 * Bug fixed - redirection issue from admin login page fixed.
 
-= 2.4 =
+= 2.4.1 =
 * Social sharing released.
 * WordPress Admin UI improved with tab structure.
 * Logout Redirection option added.

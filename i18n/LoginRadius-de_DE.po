@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loginradius\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-16 11:33-0800\n"
-"PO-Revision-Date: 2012-07-16 11:33-0800\n"
+"POT-Creation-Date: 2012-07-19 09:43-0800\n"
+"PO-Revision-Date: 2012-07-19 09:43-0800\n"
 "Last-Translator: Loginradius <hello@loginradius.com>\n"
 "Language-Team:  <hello@loginradius.com>\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../LoginRadius.php:542
+#: ../LoginRadius.php:701
 #: ../LoginRadius_admin.php:35
 msgid "Settings"
 msgstr "Einstellungen"
@@ -428,7 +428,7 @@ msgstr "Änderungen speichern"
 msgid "Preview"
 msgstr "Vorschau"
 
-#: ../LoginRadius_function.php:120
+#: ../LoginRadius_function.php:103
 msgid "Log Out"
 msgstr "Abmelden"
 

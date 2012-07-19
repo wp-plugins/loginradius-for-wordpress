@@ -58,7 +58,7 @@
 
 	
 
-	<div class="wrap">
+	<div class="wrap" style="width:800px;">
 
     <form action="options.php" method="post">
 
@@ -66,9 +66,9 @@
 
     <?php $LoginRadius_settings = get_option('LoginRadius_settings'); ?>
 
-	<h2><b style='color:#00ccff;'>Login</b><b>Radius</b> <?php _e('Settings', 'LoginRadius');?></h2>
+	<h2 class="loginRadiusH2"><b style='color:#00ccff;'>Login</b><b>Radius</b> <?php _e('Settings', 'LoginRadius');?></h2>
 
-	<div class="topfield">
+	<div class="loginRadiusTopfield">
 
 	<table class="form-table">
 
@@ -88,7 +88,7 @@
 
 			<h3><?php _e('Thank you for installing the LoginRadius plugin for Social Login and Social Sharing!', 'LoginRadius');?></h3>
 
-			<p align="justify">
+			<p align="justify" style="color:333333">
 
 <?php _e('You can customize the settings for your plugin on this page, though you will have to choose your desired ID providers and get your unique', 'LoginRadius');?> <strong> <?php _e('LoginRadius API Key & Secret', 'LoginRadius');?> </strong>
 
@@ -96,7 +96,7 @@
 
 
 
-<p align="justify"><strong>LoginRadius</strong> <?php _e('is a technology startup based in Canada that offers social login through popular ID providers such as Facebook Twitter Google LinkedIn and over 15 more as well as social sharing on over 80 networks. For tech support or if you have any questions please contact us at', 'LoginRadius');?> <strong>hello@loginradius.com.</strong></p><h3><?php _e('We are available 24/7 to assist our clients!', 'LoginRadius');?></h3>
+<p align="justify" style="color:333333"><strong>LoginRadius</strong> <?php _e('is a technology startup based in Canada that offers social login through popular ID providers such as Facebook Twitter Google LinkedIn and over 15 more as well as social sharing on over 80 networks. For tech support or if you have any questions please contact us at', 'LoginRadius');?> <strong>hello@loginradius.com.</strong></p><h3><?php _e('We are available 24/7 to assist our clients!', 'LoginRadius');?></h3>
 
 <p>
 
@@ -160,15 +160,11 @@
 
         <ul class="nav-tab-wrapper">
 
-            <li class="loginRadiusTab"><h2 class="nav-tab-wrapper"><a href="#tabs-3"><?php _e('LoginRadius API Settings', 'LoginRadius') ?></a></h2></li>
+            <li style="width:auto" > <h2 class="nav-tab-wrapper loginRadiusH2"><a href="#tabs-3"><?php _e('LoginRadius API Settings', 'LoginRadius') ?></a></h2></li>
 
-		
+            <li style="width:auto" ><h2 class="nav-tab-wrapper loginRadiusH2"><a href="#tabs-1"><?php _e('Social Login', 'LoginRadius') ?> </a></h2></li>
 
-            <li class="loginRadiusTab"><h2 class="nav-tab-wrapper"><a href="#tabs-1"><?php _e('Social Login', 'LoginRadius') ?> </a></h2></li>
-
-            <li class="loginRadiusTab"><h2 class="nav-tab-wrapper"><a href="#tabs-2"><?php _e('Social Share', 'LoginRadius') ?></a></h2></li>
-
-			
+            <li style="width:auto" ><h2 class="nav-tab-wrapper loginRadiusH2"><a href="#tabs-2"><?php _e('Social Share', 'LoginRadius') ?></a></h2></li>
 
         </ul>
 
