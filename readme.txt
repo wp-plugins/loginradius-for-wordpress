@@ -1,36 +1,32 @@
 === Social Login for Wordpress ===
 Contributors: LoginRadius team, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
-Tags: Social login, openID, Wordpress plugin, LoginRadius, comments, share post, open authentication, facebook connect, Social Login,
-OpenID integration, Open Authentication, User Profile Data, Social Analytics, oAuth integration, Online Identity, Social Profile storage,
-single sign-on , SAAS solution, Social Sign-in, Social Login Plug-in, Facebook Connect, Google, Yahoo OpenID, Hyves openid,Linkedin openid,
-Mixi opendID, Virgilio OpenID, BuddyPress, Foursquare, French, Italian, Spanish, Russian, Chinese, Japanese, Vkontakte
+Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, social sharing, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
+single sign-on, Social Sign-in, Social Login Plug-in, Facebook Connect, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages
 Requires at least: 2.5.0
-Tested up to: 3.3.1
-Stable tag: 2.3
-License: GPLv2 or later
+Tested up to: 3.4
+Stable tag: 2.4
 
-Let your users log in and comment via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
+Let your users log in, comment and share via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
 == Description ==
-This plugin enables social login on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics.
+This plugin enables social login and social sharing on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. This plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
 
 = Live Demo =
 * Wordpress: http://wordpress.loginradius.com
 * BuddyPress: http://buddypress.loginradius.com
+* BBPress: http://bbpress.loginradius.com
 
 'Social Login for WordPress' plugin is developed by <a href="http://www.loginradius.com" target="_blank">LoginRadius</a>, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
 
-= Plugin key features =
-* Social Login with over 20 ID providers
-* User can post comment with their existing ID
-* Unlimited users*
-* Store user profile data in your WordPress database
-* Add Login widget anywhere on any page
-* Choose as many ID providers as you want
+= Plugin Features =
+* Social Login
+* Social Sharing
+* Post comment with existing ID
+* Get user profile data
+* Select desired providers
 * Manage plugin from WP admin account
-* Compatible with BudyPress
 * Highly secure through REST API
 * Get social analytics of your users
 * Availalbe in 8 languages (English, French, Spanish, Italian, Russian, Chinese, Japanese, German)
@@ -38,12 +34,13 @@ This plugin enables social login on Wordpress websites by letting users log in t
 = LoginRadius Service Features =
 * Social login
 * User profile data
+* Social sharing
 * Social analytics
 * FREE service
 * No programming skills required
 * White label & premium solutions available
 * Available for non-CMS websites as well
-* 24/7 support
+* 24x7 support
 
 = List of ID Providers =
 * Facebook
@@ -71,8 +68,9 @@ This plugin enables social login on Wordpress websites by letting users log in t
 
 = Important links =
 * Website: http://www.loginradius.com
-* WordPress live demo: http://wordpress.loginradius.com
+* Wordpress live demo: http://wordpress.loginradius.com
 * BuddyPress live demo: http://buddypress.loginradius.com
+* BBPress live demo: http://bbpress.loginradius.com
 * Other live demo: http://www.loginradius.com/demo
 * Press/Media page: http://www.loginradius.com/press
 * Blog: http://blog.loginradius.com
@@ -103,29 +101,35 @@ you can select the providers you want to use on your wodpress website and genera
 = Comment setting =
 If you want to allow only registered users to comment, go to Settings > Discussion and check the box for 'Users must be registered and logged in to comment'. With this option turned on, users must first register or login using a social provider before posting comments.
 
-= Widget instructions to add it on any page =
-If you want LoginRadius interface to appear on any other page or post, then call function - <?php Login_Radius_Connect_button(); ?>
+= Display LoginRadius interface on other pages =
+If you want LoginRadius interface to appear on any other page or post, then call function - <?php Login_Radius_Connect_button(); ?>;
 after configuring LoginRadius plugin in your wordpress website.
 
 == Frequently Asked Questions ==
 
-= What is LoginRadius =
+= What is LoginRadius? =
 
-LoginRadius is a Software As A Service (SAAS) which allows users to log in to a third party website via popular open IDs/oAuths such as Google, Facebook, 
-Yahoo, AOL and over 20 more.
+LoginRadius is a Software as a Service (SaaS) which allows users to bypass the typical registration process and log directly into a third party website using their accounts on popular open IDs/oAuths such as Google, Facebook, Twitter, Yahoo, and over 20 more providers. We also offer rich User Profile Data, a unique Social Analytics and effective Social Sharing service.
+
+= How much do you charge for your service? =
+
+LoginRadius does not charge for its services for basic usage and will always remain FREE for those users, but we have various packages available for businesses and website owners looking for advanced features and customized solutions.
+
+= Can you help me set up LoginRadius on my website? =
+
+Yes, the LoginRadius Team can assist you with implementing LoginRadius. Please contact us at hello@loginradius.com and one of our experts will get back to you.
 
 = How long can I keep my account? =
 
-You can keep your account for as long as you wish--you may remove LoginRadius from your website and delete your account at any time.
+Your LoginRadius account is available for as long as you’d like to use our serivces. You may remove LoginRadius from your website and delete your account at any time.
 
 = What is the best way to reach the LoginRadius Team? =
 
 If you have any questions or concerns regarding LoginRadius, please let us know at hello@loginradius.com.
 
-= How much you charge for this service? =
+= How secure is LoginRadius? =
 
-It is FREE and will remain free, but for advanced features and customized solutions, there are various packages available. Please contact us for further 
-details.
+LoginRadius is a highly secure service. As we handle so much confidential and personal data on a daily basis, we consider security to be our first priority. There are a number of measures in place to protect against data leaks and unauthorized access
 
 = Do you have a live demo site? =
 
@@ -133,7 +137,7 @@ Yes, please visit our WordPress live demo site at http://wordpress.loginradius.c
 
 = My website is not in English, what should i do? =
 
-LoginRadius Wordpress plugin is available in 7 different languages - English, French, Spanish, Russian, Japanese, Chinese and Italian. So you can pick your own language.
+LoginRadius Wordpress plugin is available in 8 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German. So you can pick your own language.
 
 == Screenshots ==
 
@@ -191,6 +195,22 @@ option.
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+= 2.4 =
+* Social sharing released.
+* WordPress Admin UI improved with tab structure.
+* Logout Redirection option added.
+* Auto Approve Social User's Comments- feature added.
+* Hidden field removed using tmp db.
+* Wordpress admin settings improved - now compatible v 2.8 and higher.
+* social share widget added.
+* Title and avatar added in widget.
+* Anyone can register bug fixed.
+* Social Login interface position (embed in wp form or/and beside wp form ) option added.
+* Link existing wordpress user accounts to social login option added.
+* Email verification enabled for end user.
+* API key and secret validation enabled.
+* Performance improvement enhancements.
+
 = 2.3 =
 * Interface customization for language, social icon set and theme
 * Social Avatar added.
@@ -307,3 +327,19 @@ Bug fixed for popup in IE
 * Option to choose social icon login, register,comment page in admin interface.
 * Bug Fixed - filename conflict fixed.
 * Bug fixed - redirection issue from admin login page fixed.
+
+= 2.4 =
+* Social sharing released.
+* WordPress Admin UI improved with tab structure.
+* Logout Redirection option added.
+* Auto Approve Social User's Comments- feature added.
+* Hidden field removed using tmp db.
+* Wordpress admin settings improved - now compatible v 2.8 and higher.
+* social share widget added.
+* Title and avatar added in widget.
+* Anyone can register bug fixed.
+* Social Login interface position (embed in wp form or/and beside wp form ) option added.
+* Link existing wordpress user accounts to social login option added.
+* Email verification enabled for end user.
+* API key and secret validation enabled.
+* Performance improvement enhancements.

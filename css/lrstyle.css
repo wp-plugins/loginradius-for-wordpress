@@ -81,12 +81,12 @@ position: fixed;
 	margin:0px 8px 0px 0px;
 }
 .LoginRadius_container_outer {
- width: 648px;
+ /*width: 648px;
  border: 1px solid #ccc;
- background-color: #EAF7FF;
+ background-color: #EAF7FF;*/
 }
 .LoginRadius_container_inner {
- background-color: #EAF7FF;
+ /*background-color: #EAF7FF;*/
  padding: 10px;
  margin-bottom: 10px;
  overflow: hidden;
@@ -97,8 +97,7 @@ position: fixed;
  padding: 10px;
  margin-bottom: 10px;
  overflow: hidden;
- width:480px;
- background-color: #EAF7FF;
+ width:520px;
 }
 .LoginRadius_container_outer h3 {
  color:#00ccff;
@@ -153,6 +152,29 @@ border-color: #E6DB55;
  background-color: #fff;
 }
 
+.login-panel-lr {
+    float: right;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E5E5E5;
+    box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7);
+    font-weight: normal;
+    margin-left: 8px;
+    padding: 26px 24px 46px;
+	height: 145px;
+	width:345px
+}
+
+.login-sep-text {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 100px 20px 20px 30px;
+    padding-left: 10px;
+}
+
+.float-left {
+    float: left;
+}
 
 <!--[if IE]>
 

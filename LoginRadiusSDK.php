@@ -3,10 +3,11 @@ class LoginRadius {
   public $IsAuthenticated, $JsonResponse, $UserProfile; 
   public function construct($ApiSecrete) {
     $IsAuthenticated = false;
-	$useapi = get_option('useapi');
+	$LoginRadius_settings = get_option('LoginRadius_settings');
+	$useapi = $LoginRadius_settings['LoginRadius_useapi'];
     if (isset($_REQUEST['token'])) {
       $ValidateUrl = "https://hub.loginradius.com/userprofile.ashx?token=".$_REQUEST['token']."&apisecrete=".$ApiSecrete."";
-      if ($useapi == false ) {
+      if ($useapi == 'curl' ) {
         $curl_handle = curl_init();
         curl_setopt($curl_handle, CURLOPT_URL, $ValidateUrl);
         curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 3);
@@ -40,16 +41,28 @@ class LoginRadius {
     }
   }
 }
+
 class LoginRadiusAuth {
   public $IsAuth, $JsonResponse, $UserAuth; 
-  public function auth($ApiKey, $ApiSecrete){
+  public function auth($ApiKey, $ApiSecrete, $LRSocialShare = false ){
+  	if(empty($ApiKey) || empty($ApiSecrete) || !preg_match('/^\{?[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}?$/i', $ApiSecrete) || !preg_match('/^\{?[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}?$/i', $ApiKey))
+	return false;
+
     $IsAuth = false;
-	$useapi = get_option('useapi');
+	$LoginRadius_settings = get_option('LoginRadius_settings');
+	$useapi = $LoginRadius_settings['LoginRadius_useapi'];
     if (isset($ApiKey)) {
       $ApiKey = trim($ApiKey);
       $ApiSecrete = trim($ApiSecrete);
-      $ValidateUrl = "https://hub.loginradius.com/getappinfo/$ApiKey/$ApiSecrete";
-      if ($useapi == false ) {
+	  
+	  if($LRSocialShare) // social share
+	  {
+      	$ValidateUrl = "http://share.loginradius.com/Sharesetting/$ApiKey";
+	  }
+	  else
+      	$ValidateUrl = "https://hub.loginradius.com/getappinfo/$ApiKey/$ApiSecrete";
+      
+	  if ($useapi == 'curl') {
         $curl_handle = curl_init();
         curl_setopt($curl_handle, CURLOPT_URL, $ValidateUrl);
         curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 3);
@@ -76,10 +89,18 @@ class LoginRadiusAuth {
         $JsonResponse = file_get_contents($ValidateUrl);
         $UserAuth = json_decode($JsonResponse);
       }
-      if (isset( $UserAuth->IsValid)){ 
-        $this->IsAuth = true;
-        return $UserAuth;
-      }
+	  
+	  if(!LRSocialShare) 
+	  {
+		  if (isset( $UserAuth->IsValid)){ 
+			$this->IsAuth = true;
+			return $UserAuth;
+		  }
+	  }
+	  
+	  return $JsonResponse; // social share
     }
   }
-}?>
+}
+
+?>
