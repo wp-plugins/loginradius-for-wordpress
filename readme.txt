@@ -198,6 +198,9 @@ option.
 
 == Changelog ==
 = 2.4.1 =
+* Issue fix with Social sharing JQuery conflict
+
+= 2.4 =
 * Social sharing released.
 * WordPress Admin UI improved with tab structure.
 * Logout Redirection option added.
@@ -330,7 +333,7 @@ Bug fixed for popup in IE
 * Bug Fixed - filename conflict fixed.
 * Bug fixed - redirection issue from admin login page fixed.
 
-= 2.4.1 =
+= 2.4 =
 * Social sharing released.
 * WordPress Admin UI improved with tab structure.
 * Logout Redirection option added.
@@ -345,3 +348,6 @@ Bug fixed for popup in IE
 * Email verification enabled for end user.
 * API key and secret validation enabled.
 * Performance improvement enhancements.
+
+= 2.4.1 =
+* Issue fix with Social sharing JQuery conflict
