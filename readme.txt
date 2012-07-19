@@ -103,7 +103,7 @@ you can select the providers you want to use on your wodpress website and genera
 If you want to allow only registered users to comment, go to Settings > Discussion and check the box for 'Users must be registered and logged in to comment'. With this option turned on, users must first register or login using a social provider before posting comments.
 
 = Display LoginRadius interface on other pages =
-If you want LoginRadius interface to appear on any other page or post, then call function - '<?php Login_Radius_Connect_button(); ?>'
+If you want LoginRadius interface to appear on any other page or post, then call function - `<?php Login_Radius_Connect_button(); ?>`
 after configuring LoginRadius plugin in your wordpress website.
 
 == Frequently Asked Questions ==
@@ -142,13 +142,14 @@ LoginRadius Wordpress plugin is available in 8 different languages - English, Fr
 
 == Screenshots ==
 
-1. **Wordpress Social Login Slider**: This screenshot displays Social Login Slider for Wordpress.
-2. **Wordpress LoginRadius page**: This screenshot shows the LoginRadius user account for wordpress users.
-3. **Wordpress admin panel**: This screenshot shows the wordpress Admin panel with various options.
-4. **Wordpress commentbox**: This screenshot displays loginradius interface for comment section. Its showing all select provider with a slider 
+1. **Wordpress Social Login Slider**: Displays Social Login Slider for Wordpress on home page.
+2. **Wordpress commentbox**: It displays loginradius interface for comment section. Its showing all select provider with a slider 
 option.
-5. **Wordpress Login Box**: This screenshot displays loginradius interface for wordpress Login box. Its showing all select provider with a slider 
+3. **Lots of pre-defined themes**: Get lots of pre-defined iconsets and themes for your Wordpress social login.
+4. **Wordpress LoginRadius page and WordPress Admin panel**: Shows the LoginRadius user account for wordpress users and also wordpress Admin panel with various options.
+5. **Wordpress Login Box**: Displays loginradius interface for wordpress Login box. Its showing all select provider with a slider 
 option.
+6. **Social Analytics**: Get analytics of your user base and their behavior on your website based on social parameters such as age, gender, location, etc. It’s a unique insight into your user base to help you narrow down key marketing and sales strategies.
 
 == Testimonials ==
 <em>"LoginRadius is by far the best one-click login solution for websites. You have a fast and friendly support team at your disposal 24/7."</em><br>
