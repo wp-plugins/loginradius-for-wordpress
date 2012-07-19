@@ -10,7 +10,8 @@ Stable tag: 2.4
 Let your users log in, comment and share via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
 == Description ==
-This plugin enables social login and social sharing on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. This plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
+This plugin enables social login and social sharing on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. Other than social login, this plugin also provides User Profile Data and Social Analytics. 
+Social Login plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
 
 = Live Demo =
 * Wordpress: http://wordpress.loginradius.com
@@ -102,7 +103,7 @@ you can select the providers you want to use on your wodpress website and genera
 If you want to allow only registered users to comment, go to Settings > Discussion and check the box for 'Users must be registered and logged in to comment'. With this option turned on, users must first register or login using a social provider before posting comments.
 
 = Display LoginRadius interface on other pages =
-If you want LoginRadius interface to appear on any other page or post, then call function - <?php Login_Radius_Connect_button(); ?>;
+If you want LoginRadius interface to appear on any other page or post, then call function - '<?php Login_Radius_Connect_button(); ?>'
 after configuring LoginRadius plugin in your wordpress website.
 
 == Frequently Asked Questions ==
@@ -121,7 +122,7 @@ Yes, the LoginRadius Team can assist you with implementing LoginRadius. Please c
 
 = How long can I keep my account? =
 
-Your LoginRadius account is available for as long as you’d like to use our serivces. You may remove LoginRadius from your website and delete your account at any time.
+Your LoginRadius account is available for as long as you would like to use our serivces. You may remove LoginRadius from your website and delete your account at any time.
 
 = What is the best way to reach the LoginRadius Team? =
 
