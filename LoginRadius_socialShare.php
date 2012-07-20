@@ -13,13 +13,19 @@
 			{	
 			
 				if($LoginRadius_settings['LoginRadius_sharetop'] && $LoginRadius_settings['LoginRadius_sharebottom'])
+				{
 					$content = $append.'<br/>'.$content.'<br/>'.$append;
+				}
 				else
 				{
 					if($LoginRadius_settings['LoginRadius_sharetop'])
+					{
 						$content = $append.$content;
+					}
 					elseif($LoginRadius_settings['LoginRadius_sharebottom'])
+					{
 						$content = $content.$append;
+					}
 				}
 			}
 		  return $content;

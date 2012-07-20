@@ -6,7 +6,7 @@ Plugin URI: http://www.LoginRadius.com
 
 Description: LoginRadius plugin enables social login on a wordpress website letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long registration process i.e. filling up a long registration form, verifying email ID, remembering another username and password so your users are just one click away from logging in to your website. Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
 
-Version: 2.4.1
+Version: 2.4.2
 
 Author: LoginRadius Team
 
@@ -67,14 +67,12 @@ class Login_Radius_Connect {
  */
 
   public static function LoginRadius_page_scripts() {
-  	if(!jQuery)
-	{
+	if(!wp_script_is('jquery')) {		
 		wp_deregister_script('jquery');
-	
 		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1');
 	
 		wp_enqueue_script('jquery');
-  	}
+  	}	
   }
 
 
@@ -190,9 +188,9 @@ class Login_Radius_Connect {
     }
 
     else
-
+	{
       wp_redirect(site_url());
-
+	}
       return;
 
   }
@@ -225,7 +223,7 @@ class Login_Radius_Connect {
 
     $lrdata = array();
 
-    $userprofile = $obj->construct($LoginRadius_secret);
+    $userprofile = $obj->loginradius_get_data($LoginRadius_secret);
 
     if ($obj->IsAuthenticated == true && !is_user_logged_in() && !is_admin()) {
 
@@ -243,7 +241,7 @@ class Login_Radius_Connect {
 
         $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='id' AND meta_value = %s", $lrdata['id']));
 
-        if (empty($wp_user_id) && $dummyemail != 'dummyemail') {
+        if (empty($wp_user_id)) {
 
           // Look for a user with the same email
 
@@ -369,16 +367,18 @@ class Login_Radius_Connect {
 
         if (!empty($wp_user_id)) {
 
-          // Check if email verified or not.
+          // Check if verified field exist or not.
 
-          $wp_lrVerified = $wpdb->get_var($wpdb->prepare("SELECT meta_value FROM $wpdb->usermeta WHERE user_id = %d AND meta_key = 'loginRadiusVerified'", $wp_user_id));
-
-          if ($wp_lrVerified != '1') {
-
-            self::lrNotVerified("Please verify your email by clicking the confirmation link sent to you.");
-
-            return;
-
+          $loginRadiusVfyExist = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE user_id = %d AND meta_key = 'loginRadiusVerified'", $wp_user_id));
+		  
+          if ( !empty($loginRadiusVfyExist) ) {		// if verified field exists
+			
+            $loginRadiusVerify = $wpdb->get_var($wpdb->prepare("SELECT meta_value FROM $wpdb->usermeta WHERE user_id = %d AND meta_key = 'loginRadiusVerified'", $wp_user_id));
+			if( $loginRadiusVerify != '1')
+			{
+            	self::lrNotVerified("Please verify your email by clicking the confirmation link sent to you.");
+            	return;
+			}
           }
 
           // Set cookies manually since.
@@ -388,6 +388,7 @@ class Login_Radius_Connect {
           $redirect = LoginRadius_redirect();
 
           wp_redirect($redirect);
+
 
         }
 
@@ -882,9 +883,9 @@ class Login_Radius_Connect {
     $loginRadiusUrl = site_url()."?loginRadiusVk=".$loginRadiusKey."&uid=".$loginRadiusUserId;
 
     if (!empty($loginRadiusProvider))
-
+	{
       $loginRadiusUrl .= "&loginRadiusPvider=".$loginRadiusProvider;
-
+	}
       $loginRadiusMessage = "Please click on the following link to verify your email \r\n".$loginRadiusUrl;
 
       wp_mail( $loginRadiusEmail, $loginRadiusSubject, $loginRadiusMessage);
@@ -948,17 +949,17 @@ class Login_Radius_Connect {
   private static function set_cookies($user_id = 0, $remember = true) {
 
     if (!function_exists('wp_set_auth_cookie'))
-
+	{
       return false;
-
+	}
     if (!$user_id)
-
+	{
       return false;
-
+	}
     if (!$user = get_userdata($user_id))
-
+	{
       return false;
-
+	}
     wp_clear_auth_cookie();
 
     wp_set_auth_cookie($user_id, $remember);
@@ -1394,9 +1395,9 @@ function LoginRadius_filter_plugin_actions($links, $file) {
     static $this_plugin;
 
     if (!$this_plugin)
-
+	{
         $this_plugin = plugin_basename(__FILE__);
-
+	}
     if ($file == $this_plugin) {
 
         $settings_link = '<a href="options-general.php?page=LoginRadius">' . __('Settings') . '</a>';

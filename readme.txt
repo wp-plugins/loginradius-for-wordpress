@@ -5,7 +5,7 @@ Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, so
 single sign-on, Social Sign-in, Social Login Plug-in, Facebook Connect, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages
 Requires at least: 2.5.0
 Tested up to: 3.4
-Stable tag: 2.4.1
+Stable tag: 2.4.2
 
 Let your users log in, comment and share via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
 
@@ -197,6 +197,10 @@ option.
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+= 2.4.2 =
+* Issue fixed with Social login beside position
+* Issue fixed with Social sharing JQuery conflict with some plugins
+
 = 2.4.1 =
 * Issue fix with Social sharing JQuery conflict
 
@@ -350,4 +354,8 @@ Bug fixed for popup in IE
 * Performance improvement enhancements.
 
 = 2.4.1 =
-* Issue fix with Social sharing JQuery conflict
+* Issue fixed with Social sharing JQuery conflict
+
+= 2.4.2 =
+* Issue fixed with Social login beside position
+* Issue fixed with Social sharing JQuery conflict with some plugins

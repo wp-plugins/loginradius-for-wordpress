@@ -45,19 +45,23 @@ function Login_Radius_Connect_button($newInterface = false) {
  */ 
 function Login_Radius_get_interface( $newInterface=false ) {
   $LoginRadius_settings = get_option ('LoginRadius_settings');
-  $LoginRadius_apikey = $LoginRadius_settings['LoginRadius_apikey'];
-  $LoginRadius_secret = $LoginRadius_settings['LoginRadius_secret'];
-  $loginRadiusError = '<div style="color:red">Your LoginRadius API key and secret is not valid, please correct it or contact LoginRadius support at <a href="https://www.LoginRadius.com" target="_blank"> www.LoginRadius.com</a></div>';
-  if (!empty($LoginRadius_apikey)) :
+  $LoginRadius_apikey = trim($LoginRadius_settings['LoginRadius_apikey']);
+  $LoginRadius_secret = trim($LoginRadius_settings['LoginRadius_secret']);
+  $loginRadiusError = '<p style ="color:red;">Your LoginRadius API key and secret is not valid, please correct it or contact LoginRadius support at <b><a href ="http://www.loginradius.com" target = "_blank">www.LoginRadius.com</a></b></p>';
+  if (isset($LoginRadius_apikey)) {
     require_once ('LoginRadiusSDK.php');
-    $obj_auth = new LoginRadiusAuth();
-    $UserAuth = $obj_auth->auth($LoginRadius_apikey, $LoginRadius_secret);
+    $obj_auth = new LoginRadius();
+    $UserAuth = $obj_auth->loginradius_get_auth($LoginRadius_apikey, $LoginRadius_secret);
     if ($UserAuth == false) {
       if (!$newInterface)
+	  {
         echo $loginRadiusError;
-      else
-        return $loginRadiusError;
-      return;
+      }
+	  else
+      { 
+		return $loginRadiusError;
+      }
+	  return;
     }
     $IsHttps = (!empty($UserAuth->IsHttps) ? $UserAuth->IsHttps : '');
     $iframeHeight = (!empty($UserAuth->height) ? $UserAuth->height : 50);
@@ -66,10 +70,14 @@ function Login_Radius_get_interface( $newInterface=false ) {
     $loc = get_redirect_location($http);
     $loginRadiusResult = "<iframe src=".$http."hub.loginradius.com/Control/PluginSlider.aspx?apikey=".$LoginRadius_apikey."&callback=".$loc." width='".$iframeWidth."' height='".$iframeHeight."' frameborder='0' scrolling='no' allowtransparency='true' ></iframe>";
     if (!$newInterface)
+	{
       echo $loginRadiusResult;
-    else
-      return $loginRadiusResult;
-  endif;
+    }
+	else
+    {
+	  return $loginRadiusResult;
+  	}
+  }
 }
 
 /**
@@ -97,10 +105,16 @@ function Login_Radius_widget_Connect_button( ) {
 	_e($user->user_login,  'LoginRadius') ;
 	//$redirect = get_permalink();
 	if ($LoginRadius_settings['LoginRadius_loutRedirect'] == 'custom' && !empty($LoginRadius_settings['custom_loutRedirect']))
+	{
 	  $redirect = htmlspecialchars($LoginRadius_settings["custom_loutRedirect"]);
+	}
 	else
+	{
 	  $redirect = home_url();?><br />
-      <a href="<?php echo wp_logout_url($redirect);?>"><?php _e('Log Out', 'LoginRadius');?></a></div></div><?php 
+     <?php 
+	 }
+	 ?>
+	  <a href="<?php echo wp_logout_url($redirect);?>"><?php _e('Log Out', 'LoginRadius');?></a></div></div><?php 
   }
 }
 $LoginRadius_settings = get_option('LoginRadius_settings');
@@ -175,9 +189,9 @@ function LoginRadius_redirect() {
  * Function for shows share bar.
  */	  
 function loginradius_share_output() {
-  $loginRadiusShareSettings = new LoginRadiusAuth();
+  $loginRadiusShareSettings = new LoginRadius();
   global $LoginRadius_settings;
-  $lrSocialInterface = $loginRadiusShareSettings -> auth( $LoginRadius_settings['LoginRadius_apikey'], $LoginRadius_settings['LoginRadius_secret'], true );
+  $lrSocialInterface = $loginRadiusShareSettings ->loginradius_get_sharing($LoginRadius_settings['LoginRadius_apikey']);
   echo '<script type="text/javascript" src="//share.loginradius.com/Content/js/Wp_LoginRadiusSharing.js" id="lrsharescript"></script>'; 
   
 	

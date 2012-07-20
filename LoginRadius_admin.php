@@ -35,9 +35,9 @@
     foreach ( array('LoginRadius_loginform', 'LoginRadius_regform', 'LoginRadius_socialLinking', 'LoginRadius_commentform', 'LoginRadius_autoapprove', 'LoginRadius_sharetop', 'LoginRadius_sharebottom', 'LoginRadius_sharenewwindow', 'LoginRadius_sharehome', 'LoginRadius_sharepost', 'LoginRadius_sharepage','LoginRadius_sharearchive', 'LoginRadius_sharefeed', 'LoginRadius_shareexcerpt') as $val ) {
 
       if ( isset($LoginRadius_settings[$val]) && $LoginRadius_settings[$val] )
-
-        $val =((isset ($LoginRadius_settings [$val]) AND  $LoginRadius_settings [$val] == '1') ? '1' : '0');
-
+		{
+        	$val =((isset ($LoginRadius_settings [$val]) AND  $LoginRadius_settings [$val] == '1') ? '1' : '0');
+		}
     }
 
 	$LoginRadius_settings ['custom_redirect'] = $LoginRadius_settings ['custom_redirect'];
@@ -361,13 +361,13 @@
 			 
 
 			 if ($LoginRadius_settings["LoginRadius_loutRedirect"] == "custom" && $LoginRadius_settings["custom_loutRedirect"] != "")
-
+			{
 			 	$custom = "checked='checked'";
-
+			}
 			else
-
+			{
 				$homepage = "checked='checked'";
-
+			}
 		?>
 
 	<input type="radio" name="LoginRadius_settings[LoginRadius_loutRedirect]" value="homepage" <?php echo $homepage;?>/> <?php _e ('Redirect to Home Page of blog', 'LoginRadius');?> <strong>(<?php _e ('Default', 'LoginRadius') ?>)</strong>
@@ -755,9 +755,9 @@
          $preview_link = esc_url( get_option( 'home' ) . '/' );
 
          if ( is_ssl() )
-
+		 {
               $preview_link = str_replace( 'http://', 'https://', $preview_link );
-
+		 }
          $stylesheet = get_option('stylesheet');
 
          $template = get_option('template');
