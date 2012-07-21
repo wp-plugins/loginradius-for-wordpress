@@ -150,8 +150,16 @@ option.
 5. **Wordpress Login Box**: Displays loginradius interface for wordpress Login box. Its showing all select provider with a slider 
 option.
 6. **Social Analytics**: Get analytics of your user base and their behavior on your website based on social parameters such as age, gender, location, etc. It's a unique insight into your user base to help you narrow down key marketing and sales strategies.
+7. **Social Login position - beside**
 
 == Testimonials ==
+<em>Germany Installation and adjustment only took 30 minutes. LoginRadius is exactly what I was looking for in order to provide a comfortable access to our services.</em>
+<strong>Dustin Feld</strong><br>
+<em>CoachCompare</em><br>
+
+<em>LoginRadius the future of internet,the alternative to the custom login system. As the banking system is changing its ways of transaction from cheque to the Atm, in the same way websites are changing their login system from custom to LoginRadius.</em><br>
+<strong>Abdullah khan</strong><br>
+
 <em>"LoginRadius is by far the best one-click login solution for websites. You have a fast and friendly support team at your disposal 24/7."</em><br>
 <strong>Sinisa Juresic</strong><br>
 <em>Founder</em><br>
@@ -194,12 +202,15 @@ option.
 <em>Webmaster</em><br>
 <em>Delachona</em><br>
 
+Please view more here: https://www.loginradius.com/loginradius/Testimonial
+
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+
 = 2.4.2 =
-* Issue fixed with Social login beside position
-* Issue fixed with Social sharing JQuery conflict with some plugins
+* Issue fixed with Social login beside position.
+* Issue fixed with Social sharing JQuery conflict with some plugins.
 
 = 2.4.1 =
 * Issue fix with Social sharing JQuery conflict
@@ -354,8 +365,8 @@ Bug fixed for popup in IE
 * Performance improvement enhancements.
 
 = 2.4.1 =
-* Issue fixed with Social sharing JQuery conflict
+* Issue fixed with Social sharing JQuery conflict.
 
 = 2.4.2 =
-* Issue fixed with Social login beside position
-* Issue fixed with Social sharing JQuery conflict with some plugins
+* Issue fixed with Social login beside position.
+* Issue fixed with Social sharing JQuery conflict with some plugins.
