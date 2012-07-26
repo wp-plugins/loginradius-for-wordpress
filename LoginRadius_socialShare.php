@@ -9,7 +9,7 @@
 			
 			$append = "<label><b>".ucfirst($LoginRadius_settings['LoginRadius_share_title'])."</b></label><br/><div class='loginradiusshare'></div>";
 				
-			if($LoginRadius_settings['LoginRadius_sharehome'] && is_front_page() || $LoginRadius_settings['LoginRadius_sharepost'] && is_single() || $LoginRadius_settings['LoginRadius_sharepage'] && is_page() || $LoginRadius_settings['LoginRadius_shareexcerpt'] && has_excerpt() || $LoginRadius_settings['LoginRadius_sharearchive'] && is_archive() || $LoginRadius_settings['LoginRadius_sharefeed'] && is_feed())
+			if( ( $LoginRadius_settings['LoginRadius_sharehome'] && is_front_page() ) || ( $LoginRadius_settings['LoginRadius_sharepost'] && is_single() ) || ( $LoginRadius_settings['LoginRadius_sharepage'] && is_page() ) || ( $LoginRadius_settings['LoginRadius_shareexcerpt'] && has_excerpt() ) || ( $LoginRadius_settings['LoginRadius_sharearchive'] && is_archive() ) || ( $LoginRadius_settings['LoginRadius_sharefeed'] && is_feed() ) )
 			{	
 			
 				if($LoginRadius_settings['LoginRadius_sharetop'] && $LoginRadius_settings['LoginRadius_sharebottom'])

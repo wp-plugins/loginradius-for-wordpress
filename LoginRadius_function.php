@@ -47,22 +47,39 @@ function Login_Radius_get_interface( $newInterface=false ) {
   $LoginRadius_settings = get_option ('LoginRadius_settings');
   $LoginRadius_apikey = trim($LoginRadius_settings['LoginRadius_apikey']);
   $LoginRadius_secret = trim($LoginRadius_settings['LoginRadius_secret']);
-  $loginRadiusError = '<p style ="color:red;">Your LoginRadius API key and secret is not valid, please correct it or contact LoginRadius support at <b><a href ="http://www.loginradius.com" target = "_blank">www.LoginRadius.com</a></b></p>';
+  $loginRadiusError = "<p style ='color:red;'>Your LoginRadius API key and secret is not valid, please correct it or contact LoginRadius support at <b><a href ='http://www.loginradius.com' target = '_blank'>www.LoginRadius.com</a></b></p>";
+  
+  $loginRadiusConnErr = "<p style ='color:red;'>Your API connection setting not working. try to change setting from module option or check your php.ini setting for (<b>cURL support = enabled</b> OR <b>allow_url_fopen = On</b>)</p>";
   if (isset($LoginRadius_apikey)) {
     require_once ('LoginRadiusSDK.php');
     $obj_auth = new LoginRadius();
     $UserAuth = $obj_auth->loginradius_get_auth($LoginRadius_apikey, $LoginRadius_secret);
-    if ($UserAuth == false) {
+    if ($UserAuth == "invalid") {
+	
       if (!$newInterface)
 	  {
         echo $loginRadiusError;
+	  	return;
       }
 	  else
       { 
 		return $loginRadiusError;
       }
-	  return;
     }
+	
+	if( $UserAuth == "api connection")
+	{
+	   if (!$newInterface)
+	   {
+		 echo $loginRadiusConnErr;
+		 return;
+	   }
+	   else
+	   { 
+		 return $loginRadiusConnErr;
+	   }
+	}
+	
     $IsHttps = (!empty($UserAuth->IsHttps) ? $UserAuth->IsHttps : '');
     $iframeHeight = (!empty($UserAuth->height) ? $UserAuth->height : 50);
     $iframeWidth = (!empty($UserAuth->width) ? $UserAuth->width : 169);
@@ -118,10 +135,16 @@ function Login_Radius_widget_Connect_button( ) {
   }
 }
 $LoginRadius_settings = get_option('LoginRadius_settings');
+
 // social share
-include('LoginRadius_socialShare.php');
+if( is_active_widget(false, false, 'loginradiusshare', true) || $LoginRadius_settings['LoginRadius_sharetop'] == '1' || $LoginRadius_settings['LoginRadius_sharebottom'] == '1' )
+{
+	include('LoginRadius_socialShare.php');
+}
+
 // Social Login location
 include('LoginRadius_location.php');
+
 if ($LoginRadius_settings['LoginRadius_loginform'] == '1' && $LoginRadius_settings['LoginRadius_loginformPosition'] == "embed") {
   add_action( 'login_form','Login_Radius_Connect_button');
 }
