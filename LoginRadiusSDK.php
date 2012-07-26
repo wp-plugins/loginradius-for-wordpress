@@ -16,7 +16,7 @@ class LoginRadius {
   public function loginradius_get_auth($ApiKey, $ApiSecrete){
     $IsAuth = false;
 	if(empty($ApiKey) || empty($ApiSecrete) || !preg_match('/^\{?[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}?$/i', $ApiSecrete) || !preg_match('/^\{?[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}?$/i', $ApiKey)) {
-		return false;
+		return "invalid";
 	}
 	
     if (isset($ApiKey)) {
@@ -25,10 +25,12 @@ class LoginRadius {
       $ValidateUrl = "https://hub.loginradius.com/getappinfo/$ApiKey/$ApiSecrete";
 	  $JsonResponse = $this->loginradius_call_api($ValidateUrl);
       $UserAuth = json_decode($JsonResponse);
-      if (isset($UserAuth->IsValid)){ 
+      if ( isset($UserAuth->IsValid) ) { 
         $this->IsAuth = true;
         return $UserAuth;
-      }
+      } else{
+	  	return "api connection";
+	  }
     }
   }
   public function loginradius_get_sharing($ApiKey){
@@ -44,7 +46,10 @@ class LoginRadius {
     }
   }
   public function loginradius_call_api($ValidateUrl) {
-    if (in_array('curl', get_loaded_extensions())) {
+  	global $LoginRadius_settings;
+  	$useapi = $LoginRadius_settings['LoginRadius_useapi'];
+	
+    if ( $useapi == "curl" ) {
         $curl_handle = curl_init();
         curl_setopt($curl_handle, CURLOPT_URL, $ValidateUrl);
         curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 3);

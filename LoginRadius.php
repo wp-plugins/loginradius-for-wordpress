@@ -4,7 +4,7 @@
 
 Plugin URI: http://www.LoginRadius.com
 
-Description: LoginRadius plugin enables social login on a wordpress website letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo and over 15 more! This eliminates long registration process i.e. filling up a long registration form, verifying email ID, remembering another username and password so your users are just one click away from logging in to your website. Other than social login, LoginRadius plugin also include User Profile Data and Social Analytics.
+Description: Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
 
 Version: 2.4.2
 
@@ -50,22 +50,31 @@ class Login_Radius_Connect {
 
     add_action('wp_enqueue_scripts', array(get_class(), 'LoginRadius_page_scripts'));
 
-    /*add_action('admin_enqueue_scripts', array(get_class(), 'LoginRadius_admin_scripts'));*/
 
     add_filter('LR_logout_url', array(get_class(), 'log_out_url'), 20, 2);
 
     add_action('login_head', 'wp_enqueue_scripts', 1);
-
+	
+	add_action( 'login_enqueue_scripts', array(get_class(),'loginRadiusStylesheet') );
   }
 
-  
+	/**
+	
+	 * Function that adds stylesheet on wp-login page.
+	
+	 */
+ 	public static function loginRadiusStylesheet()
+	{ ?>
+    	<link rel="stylesheet" href="<?php echo plugins_url('css/loginRadiusStyle.css', __FILE__); ?>" type="text/css" media="all" />
+	<?php
+	}
 
-/**
-
- * Function that add jquery.
-
- */
-
+	/**
+	
+	 * Function that add jquery.
+	
+	 */
+	
   public static function LoginRadius_page_scripts() {
 	if(!wp_script_is('jquery')) {		
 		wp_deregister_script('jquery');
@@ -232,6 +241,35 @@ class Login_Radius_Connect {
       if (!empty($lrdata['Email']) OR (empty($lrdata['Email']) && $dummyemail == 'dummyemail')) {
 
         if (empty($lrdata['Email']) && $dummyemail == 'dummyemail') {
+		
+		  	// check if already verified or pending
+          $loginRadiusProvider2 = $lrdata['Provider'];
+
+          $wp_user_lrid2 = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='".$loginRadiusProvider2."Lrid' AND meta_value = %s", $lrdata['id']));
+
+          if (!empty($wp_user_lrid2)) {
+
+            $lrVerified2 = get_user_meta( $wp_user_lrid2, $loginRadiusProvider2.'LrVerified', true);
+
+            if ($lrVerified2 == '1') {	// Check if lrid is the smae that verified email.
+
+              self::set_cookies($wp_user_lrid2);
+
+              $redirect = LoginRadius_redirect();
+
+              wp_redirect($redirect);
+				return;
+            }
+
+            else {
+
+              // Verify email
+
+              self::lrNotVerified("Please verify your email by clicking the confirmation link sent to you.");
+				return;
+            }
+
+          }
 
           $lrdata['Email'] = self::loginradius_get_randomEmail($lrdata);
 
@@ -242,7 +280,7 @@ class Login_Radius_Connect {
         $wp_user_id = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='id' AND meta_value = %s", $lrdata['id']));
 
         if (empty($wp_user_id)) {
-
+		
           // Look for a user with the same email
 
           $wp_user_obj = get_user_by('email', $lrdata['Email']);
