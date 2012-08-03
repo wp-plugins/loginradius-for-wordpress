@@ -115,24 +115,26 @@
 		   <h3 style="color:black;"><?php _e('Plugin Help', 'LoginRadius');?></h3>
 
 		   <p><ul class="LoginRadius_container_links">
-
-		<li><a href="https://www.loginradius.com/developers/Plugins/WordPress" target="_blank"><?php _e('Documentation', 'LoginRadius');?></a></li>
-
-		<li><a href="https://www.loginradius.com/plugins/wordpress" target="_blank"><?php _e('Plugin webpage', 'LoginRadius');?></a></li>
-
-		<li><a href="http://wordpress.loginradius.com/" target="_blank"><?php _e('Live Demo site', 'LoginRadius');?></a></li>
-
-		<li><a href="http://www.loginradius.com/loginradius/" target="_blank"><?php _e('About LoginRadius', 'LoginRadius');?></a></li>
-
-		<li><a href="http://blog.loginradius.com/" target="_blank"><?php _e('LoginRadius Blog', 'LoginRadius');?></a></li>
-
-		<li><a href="https://www.loginradius.com/plugins/" target="_blank"><?php _e('Other LoginRadius plugins', 'LoginRadius');?></a></li>
-
+		   
+		<li><a href="http://www.loginradius.com/AddOns/WordPress" target="_blank"><?php _e('Plugin Features', 'LoginRadius');?></a></li>
+		<li><a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank"><?php _e('Documentation', 'LoginRadius');?></a></li>
 		
+		<li><a href="http://wordpress.loginradius.com/" target="_blank"><?php _e('Live Demo (Wordpress)', 'LoginRadius');?></a></li>
+		<li><a href="http://buddypress.loginradius.com/" target="_blank"><?php _e('Live Demo (BuddyPress)', 'LoginRadius');?></a></li>
+		<li><a href="http://bbpress.loginradius.com/" target="_blank"><?php _e('Live Demo (bbPress)', 'LoginRadius');?></a></li>
+		
+		<li><a href="https://www.loginradius.com/LoginRadius/WhatIsLoginRadius" target="_blank"><?php _e('About LoginRadius', 'LoginRadius');?></a></li>
 
-		<li><a href="https://www.loginradius.com/helpcenter/findanswer" target="_blank"><?php _e('Tech Support', 'LoginRadius');?></a></li>
+		<li><a href="http://www.loginradius.com/Product/SocialLogin" target="_blank"><?php _e('LoginRadius Products', 'LoginRadius');?></a></li>
 
-		<br /><br />
+		<li><a href="http://www.loginradius.com/AddOns" target="_blank"><?php _e('Other AddOns', 'LoginRadius');?></a></li>
+		
+		<li><a href="http://blog.LoginRadius.com" target="_blank"><?php _e('LoginRadius Blog', 'LoginRadius');?></a></li>
+
+		<li><a href="http://support.loginradius.com/customer/portal/topics/272884-wordpress-plugin/articles" target="_blank"><?php _e('WP Social Login Support', 'LoginRadius');?></a></li>
+
+		<li><a href="https://www.loginradius.com/LoginRadius/Contact" target="_blank"><?php _e('Contact LoginRadius', 'LoginRadius');?></a></li>
+
 
 		</ul>
 
