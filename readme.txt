@@ -1,18 +1,19 @@
 === Social Login for Wordpress ===
 Contributors: LoginRadius team, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
-Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, social sharing, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
+Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
 single sign-on, Social Sign-in, Social Login Plug-in, Facebook Connect, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages
 Requires at least: 2.5.0
 Tested up to: 3.4
 Stable tag: 2.4.2
+License: GPLv2 or later
 
-Let your users log in, comment and share via their accounts with popular ID providers such as Facebook, Google, Twitter, Yahoo, Vkontakte and over 15 more!
+Let your users log in, comment and share via their accounts with popular ID providers such as Facebook, Google, Twitter, Vkontakte and over 20 more!
 
 == Description ==
-This plugin enables social login and social sharing on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 15 more! This eliminates the typical registration process (i.e. filling out long registration forms, verifying email addresses, remembering a new username and password) so that your users are just one click away from logging into your website. 
-Other than social login, this plugin also provides User Profile Data and Social Analytics. 
-Social Login plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
+Enable social login and social sharing on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more! <br /><br />
+<b>Why use Social Login?</b> - Social Login eliminates the annoying registration process that all online users have come to dread, so your users are just one click away from logging in to your website. It also attracts more traffic to your website and helps boost your user base.<br /><br />
+Other than social login, this plugin also provides User Profile Data and Social Analytics. Social Login plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
 
 = Live Demo =
 * Wordpress: http://wordpress.loginradius.com
@@ -21,7 +22,7 @@ Social Login plugin is available in 8 different languages - English, French, Spa
 
 = Step-by-step installation documents =
 * <a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">WordPress implementation </a>
-* <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite- target="_blank">WordPress multisite installation</a>
+* <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">WordPress multisite installation</a>
 
 'Social Login for WordPress' plugin is developed by <a href="http://www.loginradius.com" target="_blank">LoginRadius</a>, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
@@ -94,7 +95,7 @@ Please share your comments and feedback at hello@loginradius.com
 
 = Step-by-step installation documents =
 * <a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">WordPress implementation</a>
-* <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite- target="_blank">WordPress multisite implementation</a>
+* <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">WordPress multisite implementation</a>
 
 = Configuring the Widget =
 
