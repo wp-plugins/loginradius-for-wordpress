@@ -12,11 +12,11 @@ Let your users log in, comment and share via their accounts on popular social ne
 
 == Description ==
 Just install this FREE plugin and enable:
-= Social login = Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!
-= Social Sharing = Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.
-= Social Commenting = Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.
-= User Profile Data & Social Analytics = Every time a user logs in, it fetches user profile data and store them in your WordPress database. These data and IP based data are used to present a unique social analytics to understand your userbase.
-= Single sign-on = Enable single sign-on in your WordPress multisite website. Our plugin support both domain-based and/or directory based features of multisite WordPress.
+= 1. Social login = Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!
+= 2. Social Sharing = Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.
+= 3. Social Commenting = Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.
+= 4. User Profile Data & Social Analytics = Every time a user logs in, it fetches user profile data and store them in your WordPress database. These data and IP based data are used to present a unique social analytics to understand your userbase.
+= 5. Single sign-on = Enable single sign-on in your WordPress multisite website. Our plugin support both domain-based and/or directory based features of multisite WordPress.
 
 = Plugin Live Demo =
 * Wordpress: http://wordpress.loginradius.com
@@ -148,7 +148,7 @@ If you want LoginRadius interface to appear on any other page or post, then call
 <a href="http://support.loginradius.com/customer/portal/articles/585919-how-do-i-add-the-login-interface-on-a-comment-form-" target="_blank">How do I add the login interface on a comment form?</a><br />
 <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">How do I implement Social Login on my WordPress Multisite?</a><br />
 <a href="http://support.loginradius.com/customer/portal/articles/602964-problems-with-redirect-url-sticking-after-saving" target="_blank">Problems with redirect URL 'sticking' after saving</a><br />
-<a href="http://support.loginradius.com/customer/portal/articles/602971-error-warning-file_get_contents-function-file-get-contents-failed-to-open-stream" target="_blank">Error: Warning: file_get_contents [function.file-get-contents]: failed...</a><br /><br />
+<a href="http://support.loginradius.com/customer/portal/articles/602971-error-warning-file_get_contents-function-file-get-contents-failed-to-open-stream" target="_blank">Error: Warning: file_get_contents [function.file-get-contents]: failed...</a><br />
 <a href="http://support.loginradius.com/customer/portal/articles/606381-where-can-i-set-the-charset-to-utf8-for-the-email-pop-up-" target="_blank">Where can I set the charset to utf8 for the email pop up ?</a><br />
 
 == Frequently Asked Questions ==
