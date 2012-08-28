@@ -12,7 +12,7 @@ Let your users log in, comment and share via their accounts on popular social ne
 
 == Description ==
 Just install this FREE plugin and enable:
-= 1. Social login = Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!
+= 1. Social Login = Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!
 = 2. Social Sharing = Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.
 = 3. Social Commenting = Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.
 = 4. User Profile Data & Social Analytics = Every time a user logs in, it fetches user profile data and store them in your WordPress database. These data and IP based data are used to present a unique social analytics to understand your userbase.
@@ -83,7 +83,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Twitter
 * Vkontakte
 * AOL
-* Flickr
+* Persona
 * Yahoo
 * Linkedin
 * FourSquare
