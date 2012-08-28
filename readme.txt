@@ -11,19 +11,18 @@ License: GPLv2 or later
 Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, Vkontakte and over 20 more!
 
 == Description ==
-Enable social login and social sharing on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more! <br /><br />
+Enable social login and social sharing on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more!
 
-Just install this FREE plugin and enable:<br /><br />
+= Just install this FREE plugin and enable =
+1) Social login - Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!<br />
 
-<b>1) Social login </b>- Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!<br /><br />
+2) Social Sharing - Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.<br />
 
-<b>2) Social Sharing </b>- Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.<br /><br />
+3) Social Commenting - Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.<br />
 
-<b>3) Social Commenting </b>- Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.<br /><br />
+4) User Profile Data & Social Analytics - Every time a user logs in, it fetches user profile data and store them in your WordPress database. These data and IP based data are used to present a unique social analytics to understand your userbase.<br />
 
-<b>4) User Profile Data & Social Analytics </b>- Every time a user logs in, it fetches user profile data and store them in your WordPress database. These data and IP based data are used to present a unique social analytics to understand your userbase.<br /><br />
-
-<b>5) Single sign-on </b>- Enable single sign-on in your WordPress multisite website. Our plugin support both domain-based and/or directory based features of multisite WordPress.<br /><br />
+5) Single sign-on - Enable single sign-on in your WordPress multisite website. Our plugin support both domain-based and/or directory based features of multisite WordPress.
 
 = Plugin Live Demo =
 * Wordpress: http://wordpress.loginradius.com
@@ -52,7 +51,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Completely customize the login interface - add your own icon theme and login design!
 * Position the Social Login interface (widget) - "embed in or beside WP login/register form"
 * Options to show Social Login interface (widget) on login, register, comment page
-* Personalize ID Providers i.e. integrate FB, Google, Twitter apps in to your LoginRadius so that it will show your website name/logo in the ID Providers’ login pop-ups
+* Personalize ID Providers i.e. integrate FB, Google, Twitter apps in to your LoginRadius so that it will show your website name/logo in the ID Provider's login pop-ups
 * Enable email verification of end users
 * API connection options for cURL or fopen
 * Custom Login Redirection i.e. set a URL to redirect your users after logging in
