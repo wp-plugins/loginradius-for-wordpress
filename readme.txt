@@ -1,4 +1,4 @@
-=== Social Login for Wordpress ===
+=== Social Login, Sharing & Commenting ===
 Contributors: LoginRadius team, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
 Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
@@ -8,14 +8,24 @@ Tested up to: 3.4
 Stable tag: 2.4.2
 License: GPLv2 or later
 
-Let your users log in, comment and share via their accounts with popular ID providers such as Facebook, Google, Twitter, Vkontakte and over 20 more!
+Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, Vkontakte and over 20 more!
 
 == Description ==
 Enable social login and social sharing on Wordpress websites by letting users log in through their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more! <br /><br />
-<b>Why use Social Login?</b> - Social Login eliminates the annoying registration process that all online users have come to dread, so your users are just one click away from logging in to your website. It also attracts more traffic to your website and helps boost your user base.<br /><br />
-Other than social login, this plugin also provides User Profile Data and Social Analytics. Social Login plugin is available in 8 different languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
 
-= Live Demo =
+Just install this FREE plugin and enable:<br /><br />
+
+<b>1) Social login </b>- Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!<br /><br />
+
+<b>2) Social Sharing </b>- Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.<br /><br />
+
+<b>3) Social Commenting </b>- Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.<br /><br />
+
+<b>4) User Profile Data & Social Analytics </b>- Every time a user logs in, it fetches user profile data and store them in your WordPress database. These data and IP based data are used to present a unique social analytics to understand your userbase.<br /><br />
+
+<b>5) Single sign-on </b>- Enable single sign-on in your WordPress multisite website. Our plugin support both domain-based and/or directory based features of multisite WordPress.<br /><br />
+
+= Plugin Live Demo =
 * Wordpress: http://wordpress.loginradius.com
 * BuddyPress: http://buddypress.loginradius.com
 * BBPress: http://bbpress.loginradius.com
@@ -24,33 +34,57 @@ Other than social login, this plugin also provides User Profile Data and Social 
 * <a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">WordPress implementation </a>
 * <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">WordPress multisite installation</a>
 
-'Social Login for WordPress' plugin is developed by <a href="http://www.loginradius.com" target="_blank">LoginRadius</a>, watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our video</a>
+This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRadius</a> SaaS (Software as a Service). Watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our quick video</a> to learn more about LoginRadius!
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
 
 = Plugin Features =
-* Social Login
-* Social Sharing
-* Post comment with existing ID
-* Get user profile data
-* Select desired providers
-* Manage plugin from WP admin account
-* Highly secure through REST API
-* Get social analytics of your users
-* Fully support WordPress mulisite feature
-* Availalbe in 8 languages (English, French, Spanish, Italian, Russian, Chinese, Japanese, German)
+* Add social login interface (the widget) on any page that supports up to 23 ID Providers (Please see the list below)
+* Choose as many ID Providers as you want
+* Users can register by logging in with social ID such as Gmail, Twitter, Facebook etc and they will not require usernames/passwords
+* Support legacy account mapping for your existing wordpress user accounts to social login
+* It automatically creates account for the users after logging in with their existing IDs
+* Multisite support enabled for domain-based and directory based
+* Fully compatible with s2member and multisite (both together)
+* Fully compatible with Buddypress and bbPress
+* Auto Approve User's Comments from Social ID provider
+* Show social login interface (the widget) multiple times on a single page
+* Choose social icon themes and login interface (widget) design
+* Completely customize the login interface - add your own icon theme and login design!
+* Position the Social Login interface (widget) - "embed in or beside WP login/register form"
+* Options to show Social Login interface (widget) on login, register, comment page
+* Personalize ID Providers i.e. integrate FB, Google, Twitter apps in to your LoginRadius so that it will show your website name/logo in the ID Providers’ login pop-ups
+* Enable email verification of end users
+* API connection options for cURL or fopen
+* Custom Login Redirection i.e. set a URL to redirect your users after logging in
+* Custom Logout Redirection i.e. set a URL to redirect your users after logging out
+* Allow users to post comments with their Social Accounts
+* The comment will appear with users name, his/her avatar image and link to his/her profile
+* Option to automatically approves user's comments if they post with their social account
+* Eliminate spamming, no chance of spam comments!!
+* Enable Social Sharing widget on your WordPress site
+* Options to add social sharing widget on homepage, posts, feeds, content pages, etc
+* Users can share contents on over 90 social networks, can send contents in an email or can print!
+* Choose social sharing interface designs
+* Every time a user logs in, it fetches user profile data and store in your WordPress database 
+* Get social avatar of your users and show the avatar in widget, comments and profile 
+* You'll be the owner of these data and can export anytime from your database
+* Fetched data include Email addresses and over 50 other types of data depending up on ID Providers
+* Twitter & Linkedin do not provider email addresses, so in case a user logs in with Twitter or Linkedin, a pop-up window will appear asking users to fill his/her email address and that can be verified (not default setting, you have to configure as per our installation document)
+* A nice and clean user friendly WP admin U/I with tab structure with various options for social login, sharing and commenting
+* Manage everything from your WP admin
+* UI to manage Customize Social Login interface position - embed in or beside wp login/register form
+* Email verification for end user after successful login
+* API connection check feature for error notification
+* No programming skills required 
+* Its simple, secure and reliable
+* REST API access and HTTPS support
+* Validate API key and secret
+* Enable API connection check
+* Compatible with Buddypress and bbPress
+* Available in 8 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
+* 24/7 quick and the best support available from our expert technical team
 
-= LoginRadius Service Features =
-* Social login
-* User profile data
-* Social sharing
-* Social analytics
-* FREE service
-* No programming skills required
-* White label & premium solutions available
-* Available for non-CMS websites as well
-* 24x7 support
-
-= List of ID Providers =
+= List of Integrated ID Providers =
 * Facebook
 * Google
 * Twitter
@@ -74,82 +108,83 @@ Other than social login, this plugin also provides User Profile Data and Social 
 * SteamCommunity
 * Virgilio
 
+= Other Social Login plugins =
+We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart and DotNetNuke! <a href="https://www.loginradius.com/AddOns" target="_blank">Learn more</a>.
+
 = Important links =
-* Website: http://www.loginradius.com
-* Wordpress live demo: http://wordpress.loginradius.com
+* WordPress live demo: http://wordpress.loginradius.com
 * BuddyPress live demo: http://buddypress.loginradius.com
 * BBPress live demo: http://bbpress.loginradius.com
+* Learn more about this plugin: https://www.loginradius.com/AddOns/WordPress
+* LoginRadius website: http://www.loginradius.com
 * Other live demo: http://www.loginradius.com/demo
-* Press/Media page: http://www.loginradius.com/press
 * Blog: http://blog.loginradius.com
 * Our video: http://www.youtube.com/loginradius
+* Press/Media page: http://www.loginradius.com/press
 
 Please share your comments and feedback at hello@loginradius.com
 
 == Installation ==
 
-1. Download the plugin zip file and extract the contents. 
-2. Upload the folder contents to your Wordpress plugin's directory (wp-content/plugins/). 
-3. Activate the plugin through the 'Plugins' page in Wordpress. 
-4. After activation you will see a new option called 'Social Login for Wordpress'.
-
 = Step-by-step installation documents =
-* <a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">WordPress implementation</a>
+After downloading the plugin, please follow the step-by-step installation guide:<br />
+* <a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">WordPress implementation</a><br />
 * <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">WordPress multisite implementation</a>
 
 = Configuring the Widget =
 
-5. Once you activate the plugin, go to the 'Widgets' section in the 'Design' or 'Appearance' menu. 
-6. Look for the 'LoginRadius' widget and click on the 'Add' link, or drag and drop the widget to the widget area on the right. 
-7. After adding the LoginRadius widget, customize it by changing the title, text show before, text show after, etc.
+1. Once you activate the plugin, go to the 'Widgets' section in the 'Design' or 'Appearance' menu.
+2. Look for the 'LoginRadius' widget and click on the 'Add' link, or drag and drop the widget to the widget area on the right.
+3. After adding the LoginRadius widget, customize it by changing the title, text show before, text show after, etc.
 
 = Settings =
 
-8. Go to 'Settings' section and click on 'LoginRadius' option.
-9. Click on LoginRadius link (or directly goto www.loginradius.com) and login using any provider. Then in the user account section,
-you can select the providers you want to use on your wodpress website and generate your unique API Key and API Secret.
-10. Copy and Paste API Key in LoginRadius plug-in box for 'API key'.
+1. Go to 'Settings' section and click on 'LoginRadius' option.
+2. Click on LoginRadius link (or directly goto http://www.loginradius.com) and login using any provider. Then in the user account section, you can select the providers you want to use on your wodpress website and generate your unique API Key and API Secret.
+3. Copy and Paste API Key in LoginRadius plug-in box for 'API key'.
 
 = Comment setting =
+
 If you want to allow only registered users to comment, go to Settings > Discussion and check the box for 'Users must be registered and logged in to comment'. With this option turned on, users must first register or login using a social provider before posting comments.
 
 = Display LoginRadius interface on other pages =
-If you want LoginRadius interface to appear on any other page or post, then call function - `<?php Login_Radius_Connect_button(); ?>`
-after configuring LoginRadius plugin in your wordpress website.
+If you want LoginRadius interface to appear on any other page or post, then call function - '<?php Login_Radius_Connect_button(); ?>' after configuring LoginRadius plugin in your wordpress website.
+
+= Technical Support Questions =
+<a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">How do I implement Social Login on my WordPress website?</a><br /><br />
+<a href="http://support.loginradius.com/customer/portal/articles/585919-how-do-i-add-the-login-interface-on-a-comment-form-" target="_blank">How do I add the login interface on a comment form?</a><br /><br />
+<a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">How do I implement Social Login on my WordPress Multisite?</a><br /><br />
+<a href="http://support.loginradius.com/customer/portal/articles/602964-problems-with-redirect-url-sticking-after-saving" target="_blank">Problems with redirect URL 'sticking' after saving</a><br /><br />
+<a href="http://support.loginradius.com/customer/portal/articles/602971-error-warning-file_get_contents-function-file-get-contents-failed-to-open-stream" target="_blank">Error: Warning: file_get_contents [function.file-get-contents]: failed...</a><br /><br />
+<a href="http://support.loginradius.com/customer/portal/articles/606381-where-can-i-set-the-charset-to-utf8-for-the-email-pop-up-" target="_blank">Where can I set the charset to utf8 for the email pop up ?</a><br /><br />
 
 == Frequently Asked Questions ==
+= What is Social Login and why do I need it? =
+Social login is an idea of letting users to log in to a website with their Facebook, Twitter and over 20 more ID Providers. By using Social Login, you eliminate traditional registration form & process hencing attracting more users resulting into increment of sign-up rate up to 100%.
 
-= What is LoginRadius? =
+= What about Social Commenting & Social Sharing? =
+Social commenting means users can post their comments via their social networks and user avatar, name & link to his/her profile will appear with the comment, while social sharing allows users to share your web content on his/her social networks i.e. amongst his/her friends resulting in increased referral traffic!
 
-LoginRadius is a Software as a Service (SaaS) which allows users to bypass the typical registration process and log directly into a third party website using their accounts on popular open IDs/oAuths such as Google, Facebook, Twitter, Yahoo, and over 20 more providers. We also offer rich User Profile Data, a unique Social Analytics and effective Social Sharing service.
-
-= How much do you charge for your service? =
-
-LoginRadius does not charge for its services for basic usage and will always remain FREE for those users, but we have various packages available for businesses and website owners looking for advanced features and customized solutions.
-
-= Can you help me set up LoginRadius on my website? =
-
-Yes, the LoginRadius Team can assist you with implementing LoginRadius. Please contact us at hello@loginradius.com and one of our experts will get back to you.
-
-= How long can I keep my account? =
-
-Your LoginRadius account is available for as long as you would like to use our serivces. You may remove LoginRadius from your website and delete your account at any time.
-
-= What is the best way to reach the LoginRadius Team? =
-
-If you have any questions or concerns regarding LoginRadius, please let us know at hello@loginradius.com.
-
-= How secure is LoginRadius? =
-
-LoginRadius is a highly secure service. As we handle so much confidential and personal data on a daily basis, we consider security to be our first priority. There are a number of measures in place to protect against data leaks and unauthorized access
+= How much do you charge for the plugin? =
+Our plugin is FREE to download and feel free to use it on your WordPress, BuddyPress, bbPress and any other WP based systems. For advanced features, enterprise level support and custom solutions, we offer premium packages as well. 
 
 = Do you have a live demo site? =
+Yes, we have three live demo sites (try logging in to see how it works):<br />
+1. For WordPress: http://wordpress.loginradius.com Try logging in and posting a comment :)<br />
+2. For BuddyPress: http://buddypress.loginradius.com <br />
+3. For bbPress:  http://bbpress.loginradius.com <br />
 
-Yes, please visit our WordPress live demo site at http://wordpress.loginradius.com Try logging in and commenting :)
+= Can you help me set up Social Login, Sharing & Commenting on my website? =
+Yes, the LoginRadius Team can assist you with implementing these social features. Please contact us here and one of our experts will get back to you.
+
+= Where can I get support? =
+We offer 24/7 support, feel free to browse our knowledge base here.
 
 = My website is not in English, what should i do? =
+LoginRadius WordPress plugin is available in 8 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German. So you can pick your own language.
 
-LoginRadius Wordpress plugin is available in 8 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German. So you can pick your own language.
+= What is LoginRadius? =
+LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 22,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS etc.
 
 == Screenshots ==
 
