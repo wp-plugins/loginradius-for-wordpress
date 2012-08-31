@@ -5,7 +5,7 @@ Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, so
 single sign-on, Social Sign-in, Social Login Plug-in, Facebook Connect, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages
 Requires at least: 2.5.0
 Tested up to: 3.4
-Stable tag: 2.4.2
+Stable tag: 2.4.3
 License: GPLv2 or later
 
 Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, Vkontakte and over 20 more!
@@ -246,6 +246,12 @@ Please view more here: https://www.loginradius.com/loginradius/Testimonial
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+= 2.4.3 =
+* Multisite and S2member support added
+* Social login interface can be enabled on Buddyprss login and register form
+* Replicate main site plugin settings to each subsite in multisite network
+* Buddypress refresh at login solved
+* Buddypress user registration issue solved
 
 = 2.4.2 =
 * Issue fixed with Social login beside position.

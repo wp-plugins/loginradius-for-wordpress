@@ -6,7 +6,7 @@ Plugin URI: http://www.LoginRadius.com
 
 Description: Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
 
-Version: 2.4.2
+Version: 2.4.3
 
 Author: LoginRadius Team
 
@@ -335,16 +335,7 @@ class Login_Radius_Connect {
 
             else {
 
-              if (!get_option('users_can_register')) {
-
-                wp_redirect('wp-login.php?registration=disabled');
-
-                exit();
-
-              }
-
-			  else {
-
+				self::socialLoginRegistrationStatus();
                 $loginRadiusDs = DIRECTORY_SEPARATOR;
 
                 include(getcwd().$loginRadiusDs.'wp-admin'.$loginRadiusDs.'includes'.$loginRadiusDs.'user.php');
@@ -353,7 +344,6 @@ class Login_Radius_Connect {
 
                 self::add_new_wpuser($lrdata);
 
-              }
 
             }
 
@@ -375,19 +365,8 @@ class Login_Radius_Connect {
 
         else {
 
-          if (!get_option('users_can_register')) {
-
-            wp_redirect('wp-login.php?registration=disabled');
-
-            exit();
-
-          }
-
-          else {
-
+			self::socialLoginRegistrationStatus();
             self::add_new_wpuser($lrdata);
-
-          }
 
         }
 
@@ -462,21 +441,10 @@ class Login_Radius_Connect {
 
           else {
 
-            if (!get_option('users_can_register')) {
-
-              wp_redirect('wp-login.php?registration=disabled');
-
-              exit();
-
-            }
-
-            else {
-
+			  self::socialLoginRegistrationStatus();
               self::set_tmpuser_data($lrdata);
 
               self::popup($lrdata, $msg);
-
-            }
 
           }
 
@@ -664,6 +632,33 @@ class Login_Radius_Connect {
 
   } //connect ends
 
+ /**
+  * check if new user registration is allowed
+  */
+ private static function socialLoginRegistrationStatus(){
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+	if( is_plugin_active('s2member/s2member.php') ){
+	
+		if(is_multisite()){
+			$tempArr = get_option('ws_plugin__s2member_options'); 
+			if( $tempArr['mms_registration_grants'] == "none" ){
+				wp_redirect('wp-login.php?registration=disabled');
+				exit();
+			}
+		}else{
+			if (!get_option('users_can_register') ) {
+				wp_redirect('wp-login.php?registration=disabled');
+				exit();
+			}
+		}
+	}else{
+	  if (!get_option('users_can_register') ) {
+		wp_redirect('wp-login.php?registration=disabled');
+		exit();
+	  }
+    }
+	return;
+ }
 
 
 /**
@@ -770,6 +765,7 @@ class Login_Radius_Connect {
 
       $index = 0;
 
+	  $username = str_replace(' ', '-', $username);
       $userName   = $username;
 
       while ($nameexists == true) {

@@ -64,7 +64,24 @@
 
     <?php settings_fields('LoginRadius_setting_options'); ?>
 
-    <?php $LoginRadius_settings = get_option('LoginRadius_settings'); ?>
+    <?php $LoginRadius_settings = get_option('LoginRadius_settings'); 
+	
+			if(is_multisite()){
+				$socialLoginApi = $LoginRadius_settings['LoginRadius_apikey'];
+				$socialLoginSecret = $LoginRadius_settings['LoginRadius_secret'];
+				
+				if( $socialLoginApi == "" && $socialLoginSecret == "" ){
+					global $wpdb;
+					$socialLoginMainSettings = $wpdb->get_row( $wpdb->prepare("select option_value from wp_options where option_name = %s", "LoginRadius_settings") );
+					$socialLoginMainSettings = maybe_unserialize($socialLoginMainSettings->option_value);
+					
+					$LoginRadius_settings = $socialLoginMainSettings;
+					update_option('LoginRadius_settings', $LoginRadius_settings);
+				
+				}
+			}
+
+	?>
 
 	<h2 class="loginRadiusH2"><b style='color:#00ccff;'>Login</b><b>Radius</b> <?php _e('Settings', 'LoginRadius');?></h2>
 
