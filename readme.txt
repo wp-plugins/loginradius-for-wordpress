@@ -141,7 +141,7 @@ After downloading the plugin, please follow the step-by-step installation guide:
 If you want to allow only registered users to comment, go to Settings > Discussion and check the box for 'Users must be registered and logged in to comment'. With this option turned on, users must first register or login using a social provider before posting comments.
 
 = Display LoginRadius interface on other pages =
-If you want LoginRadius interface to appear on any other page or post, then call function - '<?php Login_Radius_Connect_button(); ?>' after configuring LoginRadius plugin in your wordpress website.
+If you want LoginRadius interface to appear on any other page or post, then call function - `<?php Login_Radius_Connect_button(); ?>` after configuring LoginRadius plugin in your wordpress website.
 
 = Technical Support Questions =
 <a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">How do I implement Social Login on my WordPress website?</a><br />
