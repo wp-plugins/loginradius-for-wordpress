@@ -5,7 +5,7 @@ Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, so
 single sign-on, Social Sign-in, Social Login Plug-in, Facebook Connect, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages
 Requires at least: 2.5.0
 Tested up to: 3.4
-Stable tag: 2.4.3
+Stable tag: 3.0
 License: GPLv2 or later
 
 Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, Vkontakte and over 20 more!
@@ -246,6 +246,20 @@ Please view more here: https://www.loginradius.com/loginradius/Testimonial
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+
+= 3.0 =
+* New layout for Social Commenting
+* Added Social Counter
+* Enhanced Socail Sharing with updates
+* Wordpress admin UI improvement
+* Added a separate menu item - LoginRadius in admin panel
+* Username/password is not sent to user before email verification
+* Wordpress admin bar appearing at first login, page refresh issue fixed
+* Correct password is sent to user after registration
+* Validation of api/secret key entered through admin
+* Bug fixes with social sharing
+* Support for brazillian language
+
 = 2.4.3 =
 * Multisite and S2member support added
 * Social login interface can be enabled on Buddyprss login and register form
@@ -415,3 +429,16 @@ Bug fixed for popup in IE
 = 2.4.2 =
 * Issue fixed with Social login beside position.
 * Issue fixed with Social sharing JQuery conflict with some plugins.
+
+= 3.0 =
+* New layout for Social Commenting
+* Added Social Counter
+* Enhanced Socail Sharing with updates
+* Wordpress admin UI improvement
+* Added a separate menu item - LoginRadius in admin panel
+* Username/password is not sent to user before email verification
+* Wordpress admin bar appearing at first login, page refresh issue fixed
+* Correct password is sent to user after registration
+* Validation of api/secret key entered through admin
+* Bug fixes with social sharing
+* Support for brazillian language
