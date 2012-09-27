@@ -604,11 +604,9 @@ function LoginRadius_redirect() {
  
 	  if ($redirect_to_safe) {
 		wp_redirect($redirect_to);
-		die;
 	  }
 	  else {
 		wp_safe_redirect($redirect_to); 
-		die;
 	  }
   }
 
