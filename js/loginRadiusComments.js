@@ -32,20 +32,35 @@
 				if(loginRadiusAction == "set"){
 					createCookie("loginRadiusCommentCk2", loginRadiusCommentTextarea.value.trim(), 30);
 				}else{
+					
+					//alert(tmpCookie);
 					loginRadiusCommentTextarea.value = readCookie("loginRadiusCommentCk2");
 				}
 			}
 			 
 			 function loginRadiusComments(){
+				 
 				var loginRadiusCommentTextarea = document.getElementById("comment");
 			 	loginRadiusAjaxJs(loginRadiusCommentTextarea, "get");
 				var loginRadiusMainWrapper = document.getElementById("loginRadiusMainWrapper");
 				var loginRadiusWrapper = document.getElementById("loginRadiusWrapper");
+				
 				if(document.getElementById("loginRadiusInterface") != null){
 					var loginRadiusInterface = document.getElementById("loginRadiusInterface");
 					loginRadiusInterface.style.width = "38%";
 					loginRadiusInterface.style.float = "left";
 				}else{
+					var loginRadiusCommentAreas = document.getElementById("commentform").getElementsByTagName("p"), i;
+					var lrTemp = 1; 
+					for (i in loginRadiusCommentAreas){
+						if((" " + loginRadiusCommentAreas[i].className + " ").indexOf(" " + "comment-form-comment" + " ") > -1){
+							if(lrTemp == 2){
+								loginRadiusCommentAreas[0].style.display = "none";
+								loginRadiusCommentAreas[i].style.clear = "both";
+							}
+							lrTemp+=1;
+						}
+					}
 					loginRadiusMainWrapper.style.display = "block";
 					loginRadiusMainWrapper.style.width = (window.getComputedStyle) ? window.getComputedStyle(loginRadiusCommentTextarea, null).width : loginRadiusCommentTextarea.currentStyle.width;
 					
@@ -61,7 +76,7 @@
 					loginRadiusMainWrapper.style.padding = "0";
 					
 				}
-				var loginRadiusElems = document.getElementsByTagName("*"), i;
+				var loginRadiusElems = document.getElementById("commentform").getElementsByTagName("p"), i;
 				for (i in loginRadiusElems){
 					if((" " + loginRadiusElems[i].className + " ").indexOf(" " + "form-submit" + " ") > -1){
 						loginRadiusElems[i].className = "";
@@ -69,6 +84,17 @@
 					}
 				}
 				loginRadiusCommentTextarea.onclick = function(){
+														var loginRadiusCommentArea = document.getElementById("commentform").getElementsByTagName("p"), i;
+														var lrTemp = 1; 
+														for (i in loginRadiusCommentArea){
+															if((" " + loginRadiusCommentArea[i].className + " ").indexOf(" " + "comment-form-comment" + " ") > -1){
+																if(lrTemp == 2){
+																	loginRadiusCommentArea[0].style.display = "none";
+																	loginRadiusCommentArea[i].style.marginTop = "36px";
+																}
+																lrTemp+=1;
+															}
+														}
 														loginRadiusMainWrapper.style.display = "block";
 														if(document.getElementById("loginRadiusInterface") != null){
 															document.getElementById("loginRadiusLoginMessage").style.display = "block";

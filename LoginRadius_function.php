@@ -1,7 +1,4 @@
 <?php 
-
-
-
 /**
 
  * Function that process callback redirection.
@@ -391,15 +388,12 @@ function loginRadiusMove_textarea( $loginRadiusInput = array () )
     if ( 'comment_form_defaults' === current_filter() )
 
     {
-
         // Copy the field to our internal variable …
-
         $loginRadiusTextarea = $loginRadiusInput['comment_field'];
 
         // … and remove it from the defaults array.
 
         $loginRadiusInput['comment_field'] = '';
-
 		unset( $loginRadiusInput['comment_notes_after'] );
 
         return $loginRadiusInput;
@@ -407,11 +401,11 @@ function loginRadiusMove_textarea( $loginRadiusInput = array () )
     }
 
 
-    $loginRadiusCommentHtml = $loginRadiusTextarea."<div id='loginRadiusLoginMessage' style='background-color:#000000; display:none; width:96%;height:24px;padding-left:5px;color:#fff; font-size:small'><p class='comment-notes'>Post your comments via a social network or fill out your name and email.</p></div>".
+    $loginRadiusCommentHtml = $loginRadiusTextarea."<div id='loginRadiusLoginMessage' style='background-color:#000000; display:none; width:95%;height:24px;padding-left:5px;color:#fff; font-size:small'><p class='comment-notes'>Post your comments via a social network or fill out your name and email.</p></div>".
 													"<div id='loginRadiusMainWrapper' style='display:none'>".
 
 
-												"<div id='loginRadiusWrapper' style='width:56%; float:right; padding-left:2%; border-left:1px solid #ccc; margin-left:10px'>";
+												"<div id='loginRadiusWrapper' style='width:56%; float:right; padding-left:3%; border-left:1px solid #ccc; margin-left:10px'>";
 
 	if (is_user_logged_in() && !is_admin()) {
 
@@ -438,8 +432,6 @@ function loginRadiusMove_textarea( $loginRadiusInput = array () )
 		  }
 
 		}
-
-		//$loginRadiusCommentHtml .= Login_Radius_widget_Connect_button( "comment" );
 
 	}
 
