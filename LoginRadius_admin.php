@@ -2432,9 +2432,9 @@
 
 
 
+<?php _e('This will work only if you have selected Horizontal interface from LoginRadius account', 'LoginRadius'); ?> 
 
-
-
+<br />
 
 <input type="checkbox" name="LoginRadius_settings[LoginRadius_sharetop]" value="1" <?php checked('1', $LoginRadius_settings['LoginRadius_sharetop']); ?>/> <?php _e ('Show on Top', 'LoginRadius'); ?> <br />
 
@@ -2812,6 +2812,9 @@
 
 
 
+<?php _e ('This will work only if you have selected Horizontal interface from LoginRadius account', 'LoginRadius'); ?> 
+
+<br />
 
 
 <input type="checkbox" name="LoginRadius_settings[LoginRadius_countertop]" value="1" <?php checked('1', $LoginRadius_settings['LoginRadius_countertop']); ?>/> <?php _e ('Show on Top', 'LoginRadius'); ?> <br />

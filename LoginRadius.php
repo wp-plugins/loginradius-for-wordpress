@@ -2903,7 +2903,7 @@ function loginRadiusActivation() {
 
 										 'LoginRadius_commentEnable' => '1',
 
-										 'LoginRadius_commentform' => 'new'
+										 'LoginRadius_commentform' => 'old'
 
 
 
