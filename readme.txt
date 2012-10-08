@@ -11,7 +11,10 @@ License: GPLv2 or later
 Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, Vkontakte and over 20 more!
 
 == Description ==
-Just install this FREE plugin and enable:
+Just install this FREE plugin and enable Social Login, Social Sharing and Social Commenting. This is the best plugin to implement Social Infrastructure on your WordPress site. Our plugin also provide accurate user's social profile data and Social Analytics. It is also compatible with WordPress multisite plugin.
+
+Here is the detailed information about each feature:
+
 = 1. Social Login = Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!
 = 2. Social Sharing = Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.
 = 3. Social Commenting = Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.
