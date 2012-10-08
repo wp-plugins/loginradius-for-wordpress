@@ -1,4 +1,4 @@
-=== Social Login, Social Sharing & Social Commenting ===
+=== Social Login, Social Sharing & Social Commenting, with User Profile Data ===
 Contributors: loginradius, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
 Tags: Social login, Social, social commenting Analytics, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
