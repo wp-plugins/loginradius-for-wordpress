@@ -11,7 +11,7 @@ License: GPLv2 or later
 Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, Vkontakte and over 20 more!
 
 == Description ==
-Just install this FREE plugin and enable Social Login, Social Sharing and Social Commenting. This is the best plugin to implement Social Infrastructure on your WordPress site. Our plugin also provide accurate user's social profile data and Social Analytics. It is also compatible with WordPress multisite plugin.
+Just install this FREE plugin to enable Social Login, Social Sharing, and Social Commenting on your WordPress site. This is the best plugin for implementing Social Infrastructure and for capturing accurate user profile data gathered from social networks. Users can also run Social Analytics to better understand their userbase. This plugin is also compatible with WordPress's multisite plugin.
 
 Here is the detailed information about each feature:
 
