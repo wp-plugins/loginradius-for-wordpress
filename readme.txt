@@ -1,7 +1,7 @@
-=== Social Login, Sharing & Commenting ===
+=== Social Login, Social Sharing & Social Commenting ===
 Contributors: loginradius, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
-Tags: Social login, Social, Analytics, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
+Tags: Social login, Social, social commenting Analytics, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
 single sign-on, Social Sign-in, Social Login Plug-in, Facebook Connect, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages
 Requires at least: 2.5.0
 Tested up to: 3.4
