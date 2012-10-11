@@ -14,7 +14,7 @@ Description: Description: Add Social Login and Social Sharing to your WordPress 
 
 
 
-Version: 3.0
+Version: 3.1
 
 
 
@@ -1586,7 +1586,7 @@ class Login_Radius_Connect {
 
 					'user_pass' => $user_pass,
 
-                    'user_nicename' => $fname,
+                    'user_nicename' => sanitize_title($fname),
 
 
 
@@ -2918,15 +2918,49 @@ function loginRadiusActivation() {
 }
 
 
-
 register_activation_hook(__FILE__, 'loginRadiusActivation');
 
+function login_radius_bp_avatar($text, $args)
+{
+	global $LoginRadius_settings;
+		//Check arguments
+		if (is_array ($args))
+		{
+			//User Object
+			if (! empty ($args['object']) AND strtolower ($args['object']) == 'user')
+			{
+				//User Identifier
+				if (! empty ($args['item_id']) AND is_numeric ($args['item_id']))
+				{
+					//Retrieve user
+					if (($user_data = get_userdata( $args['item_id'] )) !== false)
+					{
+						//Retrieve Avatar
+						if (($user_thumbnail = get_user_meta ($args['item_id'], 'thumbnail', true)) !== false)
+						{
+							//Thumbnail retrieved
+							if (strlen (trim ($user_thumbnail)) > 0)
+							{
+								//Build Image tags
+								$img_alt = (! empty ($args['alt']) ? 'alt="'.esc_attr($args['alt']).'" ' : '');
+								$img_alt = sprintf($img_alt, htmlspecialchars($user_data->user_login));
 
+								$img_class = ('class="'.(! empty ($args['class']) ? ($args['class'].' ') : '').'avatar-social-login" ');
+								$img_width = (! empty ($args['width']) ? 'width="'.$args['width'].'" ' : '');
+								$img_height = (! empty ($args['height']) ? 'height="'.$args['height'].'" ' : '');
 
+								//Replace
+								$text = preg_replace('#<img[^>]+>#i', '<img src="'.$user_thumbnail.'" '.$img_alt.$img_class.$img_height.$img_width.' style="float:left; margin-right:10px" />', $text);
+							}
+						}
+					}
+				}
+			}
+		}
+	return $text;
+}
 
-
-
-
-
-
+if( $LoginRadius_settings['LoginRadius_socialavatar'] == "socialavatar" ){
+	add_filter('bp_core_fetch_avatar', 'login_radius_bp_avatar', 10, 2);
+}
 ?>

@@ -5,7 +5,7 @@ Tags: Social login, Social, social commenting Analytics, Wordpress plugin, Buddy
 single sign-on, Social Sign-in, Social Login Plug-in, Facebook Connect, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages
 Requires at least: 2.5.0
 Tested up to: 3.4
-Stable tag: 3.0
+Stable tag: 3.1
 License: GPLv2 or later
 
 Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, Vkontakte and over 20 more!
@@ -249,6 +249,9 @@ Please view more here: https://www.loginradius.com/loginradius/Testimonial
 <strong>Please share your comments and feedback at hello@loginradius.com</strong>
 
 == Changelog ==
+= 3.1 =
+* Added user nicename sanitized.
+* Added social avatars for Buddypress.
 
 = 3.0 =
 * New layout for Social Commenting
