@@ -2946,8 +2946,8 @@ function login_radius_bp_avatar($text, $args)
 								$img_alt = sprintf($img_alt, htmlspecialchars($user_data->user_login));
 
 								$img_class = ('class="'.(! empty ($args['class']) ? ($args['class'].' ') : '').'avatar-social-login" ');
-								$img_width = (! empty ($args['width']) ? 'width="'.$args['width'].'" ' : '');
-								$img_height = (! empty ($args['height']) ? 'height="'.$args['height'].'" ' : '');
+								$img_width = (! empty ($args['width']) ? 'width="'.$args['width'].'" ' : 'width="50"');
+								$img_height = (! empty ($args['height']) ? 'height="'.$args['height'].'" ' : 'height="50"');
 
 								//Replace
 								$text = preg_replace('#<img[^>]+>#i', '<img src="'.$user_thumbnail.'" '.$img_alt.$img_class.$img_height.$img_width.' style="float:left; margin-right:10px" />', $text);
