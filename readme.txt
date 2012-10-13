@@ -8,13 +8,14 @@ Tested up to: 3.4
 Stable tag: 3.1
 License: GPLv2 or later
 
-Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, Vkontakte and over 20 more!
+Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, LinkedIn, Vkontakte and over 20 more!
 
 == Description ==
 Just install this FREE plugin to enable Social Login, Social Sharing, and Social Commenting on your WordPress site. This is the best plugin for implementing Social Infrastructure and for capturing accurate user profile data gathered from social networks. Users can also run Social Analytics to better understand their userbase. This plugin is also compatible with WordPress's multisite plugin.
 
-Here is the detailed information about each feature:
+See the <a href="http://wordpress.org/extend/plugins/loginradius-for-wordpress/screenshots">screenshot section</a> for visuals on social login, social sharing and social commenting features.
 
+Please see the detailed information about these features:
 = 1. Social Login = Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!
 = 2. Social Sharing = Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.
 = 3. Social Commenting = Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.
@@ -39,10 +40,15 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Users can register by logging in with social ID such as Gmail, Twitter, Facebook etc and they will not require usernames/passwords
 * Support legacy account mapping for your existing wordpress user accounts to social login
 * It automatically creates account for the users after logging in with their existing IDs
+* New layout for Social Commenting
+* Auto Approve User's Comments from Social ID provider
+* Automatically store commenting data in your WordPress database
+* Social Counter to increate your web presence
+* Enhanced Socail Sharing with lots of customization
+* Plug and play of various clean and fresh social icon sets available in LoginRadius account
 * Multisite support enabled for domain-based and directory based
 * Fully compatible with s2member and multisite (both together)
 * Fully compatible with Buddypress and bbPress
-* Auto Approve User's Comments from Social ID provider
 * Show social login interface (the widget) multiple times on a single page
 * Choose social icon themes and login interface (widget) design
 * Completely customize the login interface - add your own icon theme and login design!
@@ -65,7 +71,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Get social avatar of your users and show the avatar in widget, comments and profile 
 * You'll be the owner of these data and can export anytime from your database
 * Fetched data include Email addresses and over 50 other types of data depending up on ID Providers
-* Twitter & Linkedin do not provider email addresses, so in case a user logs in with Twitter or Linkedin, a pop-up window will appear asking users to fill his/her email address and that can be verified (not default setting, you have to configure as per our installation document)
+* Twitter does not provide email address, so in case a user logs in with Twitter, a pop-up window will appear asking users to fill his/her email address and that can be verified (not default setting, you have to configure as per our installation document)
 * A nice and clean user friendly WP admin U/I with tab structure with various options for social login, sharing and commenting
 * Manage everything from your WP admin
 * UI to manage Customize Social Login interface position - embed in or beside wp login/register form
@@ -73,11 +79,10 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * API connection check feature for error notification
 * No programming skills required 
 * Its simple, secure and reliable
+* User will get the password for traditional login system
 * REST API access and HTTPS support
-* Validate API key and secret
 * Enable API connection check
-* Compatible with Buddypress and bbPress
-* Available in 8 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
+* Available in 9 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese, Brazillian and German
 * 24/7 quick and the best support available from our expert technical team
 
 = List of Integrated ID Providers =
@@ -88,7 +93,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * AOL
 * Persona
 * Yahoo
-* Linkedin
+* LinkedIn
 * FourSquare
 * Wordpress
 * Blogger
@@ -177,22 +182,20 @@ Yes, the LoginRadius Team can assist you with implementing these social features
 We offer 24/7 support, feel free to browse our knowledge base <a href="http://support.loginradius.com/customer/portal/topics/272884-wordpress-plugin/articles" target="_blank">here</a>.
 
 = My website is not in English, what should i do? =
-LoginRadius WordPress plugin is available in 8 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German. So you can pick your own language.
+LoginRadius WordPress plugin is available in 9 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German and Brazillian. So you can pick your own language. Please let us know at feedback@loginradius.com if you would like us to add any other language. 
 
 = What is LoginRadius? =
-LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 22,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS etc.
+LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 25,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS, etc.
 
 == Screenshots ==
-
-1. **Wordpress Social Login Slider**: Displays Social Login Slider for Wordpress on home page.
-2. **Wordpress commentbox**: It displays loginradius interface for comment section. Its showing all select provider with a slider 
-option.
-3. **Lots of pre-defined themes**: Get lots of pre-defined iconsets and themes for your Wordpress social login.
-4. **Wordpress LoginRadius page and WordPress Admin panel**: Shows the LoginRadius user account for wordpress users and also wordpress Admin panel with various options.
-5. **Wordpress Login Box**: Displays loginradius interface for wordpress Login box. Its showing all select provider with a slider 
-option.
-6. **Social Analytics**: Get analytics of your user base and their behavior on your website based on social parameters such as age, gender, location, etc. It's a unique insight into your user base to help you narrow down key marketing and sales strategies.
-7. **Social Login position - beside**
+1. *Social Login, Social Sharing and Social Counter**: This is an example presentation of these three social tools. There are multiple themes and wide range of customization available.
+2. **Social Commenting**: Users will see a simple comment box and when click to type, it will expand and open up comment posting  options.
+3. **Social Login along traditiona login**: This is how it will be shown on your WordPress website. You can choose from plenty of social login themes in your LoginRadius account.
+4. **WordPress Admin Settings**: WordPress Admin interface for LoginRadius is presented in 4 tabs for each social tools. You can customize it based on your requirements.
+5. **LoginRadius account**: This screenshot shows easy of social login management in your LoginRadius account.
+6. **Social Commenting themes**: You can choose from plenty of social commenting themes!
+7. **Lots of pre-defined themes**: Get lots of pre-defined iconsets and themes for your Wordpress social login.
+8. **Social Analytics**: Get analytics of your user base and their behavior on your website based on social parameters such as age, gender, location, etc. It's a unique insight into your user base to help you narrow down key marketing and sales strategies.
 
 == Testimonials ==
 <em>Germany Installation and adjustment only took 30 minutes. LoginRadius is exactly what I was looking for in order to provide a comfortable access to our services.</em>
@@ -448,3 +451,7 @@ Bug fixed for popup in IE
 * Validation of api/secret key entered through admin
 * Bug fixes with social sharing
 * Support for brazillian language
+
+= 3.1 =
+* Added user nicename sanitized.
+* Added social avatars for Buddypress.
