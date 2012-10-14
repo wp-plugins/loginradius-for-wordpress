@@ -188,7 +188,7 @@ LoginRadius WordPress plugin is available in 9 different languages - English, Fr
 LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 25,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS, etc.
 
 == Screenshots ==
-1. *Social Login, Social Sharing and Social Counter**: This is an example presentation of these three social tools. There are multiple themes and wide range of customization available.
+1. **Social Login, Social Sharing and Social Counter**: This is an example presentation of these three social tools. There are multiple themes and wide range of customization available.
 2. **Social Commenting**: Users will see a simple comment box and when click to type, it will expand and open up comment posting  options.
 3. **Social Login along traditiona login**: This is how it will be shown on your WordPress website. You can choose from plenty of social login themes in your LoginRadius account.
 4. **WordPress Admin Settings**: WordPress Admin interface for LoginRadius is presented in 4 tabs for each social tools. You can customize it based on your requirements.
