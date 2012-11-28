@@ -45,7 +45,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Auto Approve User's Comments from Social ID provider
 * Show social login interface (the widget) multiple times on a single page
 * Choose social icon themes and login interface (widget) design
-* Personalize ID Providers i.e integrate FB, Google, Twitter apps in to your LoginRadius so that it will show your website name/logo in the ID Providers' login pop-up
+* Personalize ID Providers i.e integrate FB, Google, Twitter apps in to your LoginRadius so that it will show your website name/logo in the ID Providers login pop-up
 * Position the Social Login interface (widget) - "embed in or beside WP login/register form"
 * Options to show Social Login interface (widget) on login, register, comment page
 * Enable email verification of end users
