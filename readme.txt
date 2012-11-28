@@ -1,7 +1,7 @@
 === Social Login, Social Sharing & Social Commenting, with User Profile Data ===
 Contributors: loginradius, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
-Tags: Social login, Social share, social commenting Analytics, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
+Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage,
 single sign-on, Social Login Plug-in, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages, social media tools, social login for website, free social login, post of multiple social networks, social authentication, facebook api, google api, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
 Requires at least: 2.5.0
 Tested up to: 3.4
@@ -45,7 +45,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Auto Approve User's Comments from Social ID provider
 * Show social login interface (the widget) multiple times on a single page
 * Choose social icon themes and login interface (widget) design
-* Personalize ID Providers i.e integrate FB, Google, Twitter apps in to your LoginRadius so that it will show your website name/logo in the ID Providers’ login pop-ups
+* Personalize ID Providers i.e integrate FB, Google, Twitter apps in to your LoginRadius so that it will show your website name/logo in the ID Providers' login pop-up
 * Position the Social Login interface (widget) - "embed in or beside WP login/register form"
 * Options to show Social Login interface (widget) on login, register, comment page
 * Enable email verification of end users
@@ -62,7 +62,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Choose social sharing interface designs
 * Every time a user logs in, it fetches user profile data (basic data) and store in your WordPress database
 * Get social avatar of your users and show the avatar in widget, comments and profile
-* You’ll be the owner of these data and can export anytime from your database
+* You'll be the owner of these data and can export anytime from your database
 * Fetched data include Email addresses, name, date of birth, etc.
 * Twitter does not provider email addresses, so in case a user logs in with Twitter, a pop-up window will appear asking users to fill his/her email address and that can be verified. (not default setting, you have to configure as per our installation document)
 * A nice and clean user friendly WP admin U/I with tab structure with various options for social login, sharing and commenting
@@ -83,8 +83,8 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Multisite support enabled for domain-based and directory based
 * White label service
 * Full customization of login interface available with our subscription packages.
-* Get extended user profile data and user’s social network data
-* Get online/offline access to a user’s social profile to post on user’s profile
+* Get extended user profile data and user's social network data
+* Get online/offline access to a user's social profile to post on user's profile
 * VIP social icon themes and VIP login interface designs
 * Supports HTTPS enabled website 
 * Developer sandbox
