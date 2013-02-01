@@ -2,7 +2,7 @@
 Contributors: loginradius, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
 Donate link: http://www.loginradius.com/
 Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage, ID provider linking, QQ, Renren, Github, MSN,
-single sign-on, Social Login Plug-in, Twitter login, Google login, Yahoo OpenID, Linkedin login, differnet languages, social media tools, social login for website, free social login, post of multiple social networks, social authentication, facebook api, google api, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
+single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
 Requires at least: 2.5.0
 Tested up to: 3.5.1
 Stable tag: 4.0
