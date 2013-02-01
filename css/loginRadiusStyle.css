@@ -171,7 +171,6 @@ border-color: #E6DB55;
     font-weight: normal; 
     margin-left: 8px; 
     padding: 26px 24px 46px; 
-	height: 145px; 
 	width:345px 
 }  
 
@@ -196,107 +195,16 @@ background:black;
 filter: alpha(opacity=90); 
 } 
 .loginRadiusTabs
-
-
-
-
-
-
-
-
-
-
-
 {
-
-
-
-
-
-
-
-
-
-
-
 	color:#333333
-
-
-
-
-
-
-
-
-
-
-
-} 
-#tabs a
-
-
-
-
-
-
-
-
-
-
-
-{
-
-
-
-
-
-
-
-
-
-
-
-    border: none;
-
-
-
-
-
-
-
-
-
-
-
-    font-weight: normal;
-
-
-
-
-
-
-
-
-
-
-
-    text-decoration: none;
-
-
-
-
-
-
-
-
-
-
-
 }
-
-
-
-   <![endif]-->
+.lrcounter_simplebox{
+	z-index: 1000000 !important;
+}
+.lrsharecontainer{
+	z-index: 1000000 !important;
+}
+<![endif]-->
 
 
 

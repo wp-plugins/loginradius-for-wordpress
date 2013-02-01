@@ -1,10 +1,10 @@
 <?php 
-  function loginRadiusLoginInterface() 
+  function login_radius_login_interface() 
   { 
-  		global $LoginRadius_settings; 
+  		global $loginRadiusSettings; 
 	 	//$html = Login_Radius_get_interface(); 
-		$lrLogin = ($LoginRadius_settings['LoginRadius_loginform'] == 1) && ($LoginRadius_settings['LoginRadius_loginformPosition'] == "beside"); 
-		$lrRegister = ($LoginRadius_settings['LoginRadius_regform'] == 1) && ($LoginRadius_settings['LoginRadius_regformPosition'] == "beside"); 
+		$lrLogin = ($loginRadiusSettings['LoginRadius_loginform'] == 1) && ($loginRadiusSettings['LoginRadius_loginformPosition'] == "beside"); 
+		$lrRegister = ($loginRadiusSettings['LoginRadius_regform'] == 1) && ($loginRadiusSettings['LoginRadius_regformPosition'] == "beside"); 
 		$script = '<script type="text/javascript"> 
 		jQuery(document).ready(function(){ '. 
 					'var loginDiv = jQuery("div#login");'; 
@@ -19,12 +19,12 @@
 							loginDiv.append("<div class=\"login-sep-text float-left\"><h3>OR</h3></div>"); 
 							 
 							if( jQuery("#registerform").length ) { 
-								loginDiv.append("<div class=\"login-panel-lr\" style=\"height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
+								loginDiv.append("<div class=\"login-panel-lr\" style=\"min-height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
 							}else if( jQuery("#lostpasswordform").length ) { 
-								loginDiv.append("<div class=\"login-panel-lr\" style=\"height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
+								loginDiv.append("<div class=\"login-panel-lr\" style=\"min-height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
 								jQuery("#lostpasswordform").css("height", "178px"); 
 							}else if( jQuery("#loginform").length ) { 
-								loginDiv.append("<div class=\"login-panel-lr\" style=\"height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
+								loginDiv.append("<div class=\"login-panel-lr\" style=\"min-height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
 								jQuery("#loginform").css("height", "178px"); 
 							} 
 						}'; 
@@ -36,10 +36,10 @@
 							loginDiv.append("<div class=\"login-sep-text float-left\"><h3>OR</h3></div>"); 
 							 
 							if( jQuery("#lostpasswordform").length ) { 
-								loginDiv.append("<div class=\"login-panel-lr\" style=\"height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
+								loginDiv.append("<div class=\"login-panel-lr\" style=\"min-height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
 								jQuery("#lostpasswordform").css("height", "178px"); 
 							}else if( jQuery("#loginform").length ) { 
-								loginDiv.append("<div class=\"login-panel-lr\" style=\"height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
+								loginDiv.append("<div class=\"login-panel-lr\" style=\"min-height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
 								jQuery("#loginform").css("height", "178px"); 
 							} 
 						}'; 
@@ -51,10 +51,10 @@
 								loginDiv.append("<div class=\"login-sep-text float-left\"><h3>OR</h3></div>");  
 
 								if( jQuery("#lostpasswordform").length ) { 
-									loginDiv.append("<div class=\"login-panel-lr\" style=\"height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
+									loginDiv.append("<div class=\"login-panel-lr\" style=\"min-height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
 									jQuery("#lostpasswordform").css("height", "178px"); 
 								}else if( jQuery("#registerform").length ) { 
-									loginDiv.append("<div class=\"login-panel-lr\" style=\"height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
+									loginDiv.append("<div class=\"login-panel-lr\" style=\"min-height:178px\" >'.Login_Radius_Connect_button(true).'</div>"); 
 									jQuery("#loginform").css("height", "178px"); 
 								} 
 							}'; 
