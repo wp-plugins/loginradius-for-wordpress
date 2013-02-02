@@ -121,13 +121,13 @@ Learn more about our VIP packages <a href="https://www.loginradius.com/pricing/p
 * Virgilio
 
 = Other Social Login plugins =
-We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart, vBulletin, BlogEngine and DotNetNuke! <a href="https://www.loginradius.com/AddOns" target="_blank">Learn more</a>.
+We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart, vBulletin, BlogEngine and DotNetNuke! <a href="https://www.loginradius.com/addons" target="_blank">Learn more</a>.
 
 = Important links =
 * WordPress live demo: http://wordpress.loginradius.com
 * BuddyPress live demo: http://buddypress.loginradius.com
 * BBPress live demo: http://bbpress.loginradius.com
-* Learn more about this plugin: https://www.loginradius.com/AddOns/WordPress
+* Learn more about this plugin: https://www.loginradius.com/addons/wordpress
 * LoginRadius website: http://www.loginradius.com
 * Other live demo: http://www.loginradius.com/demo
 * Blog: http://blog.loginradius.com
@@ -140,7 +140,7 @@ Please share your comments and feedback at feedback@loginradius.com
 
 = Step-by-step installation documents =
 After downloading the plugin, please follow the step-by-step installation guide:<br />
-* <a href="http://support.loginradius.com/customer/portal/articles/971398-wordpress-social-login-installation-configuration-and-troubleshooting" target="_blank">WordPress installation and configuration</a><br />
+<a href="http://support.loginradius.com/customer/portal/articles/971398-wordpress-social-login-installation-configuration-and-troubleshooting" target="_blank">WordPress installation and configuration</a><br />
 
 = Configuring the Widget =
 
@@ -159,9 +159,9 @@ If you want to allow only registered users to comment, go to Settings > Discussi
 
 = Display LoginRadius interface on other pages =
 You can enable social login, sharing and counter anywhere in your website page/post content using shortcodes. Just place following shortcodes where you want to show interface<br />
-Shortcode for Social Login – [LoginRadius_Login]<br />
-Shortcode for Social Sharing – [LoginRadius_Share]<br />
-Shortcode for Social Counter – [LoginRadius_Counter]<br />
+Shortcode for Social Login: [LoginRadius_Login]<br />
+Shortcode for Social Sharing: [LoginRadius_Share]<br />
+Shortcode for Social Counter: [LoginRadius_Counter]<br />
 
 = Technical Support Questions =
 <a href="http://support.loginradius.com/customer/portal/articles/971398-wordpress-social-login-installation-configuration-and-troubleshooting#Installation" target="_blank">How do I implement Social Login on my WordPress website?</a><br />
