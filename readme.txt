@@ -28,8 +28,7 @@ Please see the detailed information about these features:
 * BBPress: http://bbpress.loginradius.com
 
 = Step-by-step installation documents =
-* <a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">WordPress implementation </a>
-* <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">WordPress multisite installation</a>
+* <a href="http://support.loginradius.com/customer/portal/articles/971398-wordpress-social-login-installation-configuration-and-troubleshooting" target="_blank">WordPress installation and configuration</a>
 
 This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRadius</a> SaaS (Software as a Service). Watch <a href="http://www.youtube.com/watch?v=mLYbVNsU36U"  target="_blank">our quick video</a> to learn more about LoginRadius!
 [youtube http://www.youtube.com/watch?v=mLYbVNsU36U]
@@ -109,7 +108,6 @@ Learn more about our VIP packages <a href="https://www.loginradius.com/pricing/p
 * LinkedIn
 * FourSquare
 * Wordpress
-* Blogger
 * MyOpenID
 * LiveJournal
 * VeriSign
@@ -142,8 +140,7 @@ Please share your comments and feedback at feedback@loginradius.com
 
 = Step-by-step installation documents =
 After downloading the plugin, please follow the step-by-step installation guide:<br />
-* <a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">WordPress implementation</a><br />
-* <a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">WordPress multisite implementation</a>
+* <a href="http://support.loginradius.com/customer/portal/articles/971398-wordpress-social-login-installation-configuration-and-troubleshooting" target="_blank">WordPress installation and configuration</a><br />
 
 = Configuring the Widget =
 
@@ -158,19 +155,17 @@ After downloading the plugin, please follow the step-by-step installation guide:
 3. Copy and Paste API Key in LoginRadius plug-in box for 'API key'.
 
 = Comment setting =
-
 If you want to allow only registered users to comment, go to Settings > Discussion and check the box for 'Users must be registered and logged in to comment'. With this option turned on, users must first register or login using a social provider before posting comments.
 
 = Display LoginRadius interface on other pages =
-If you want LoginRadius interface to appear on any other page or post, then call function - `<?php Login_Radius_Connect_button(); ?>` after configuring LoginRadius plugin in your wordpress website.
+You can enable social login, sharing and counter anywhere in your website page/post content using shortcodes. Just place following shortcodes where you want to show interface<br />
+Shortcode for Social Login – [LoginRadius_Login]<br />
+Shortcode for Social Sharing – [LoginRadius_Share]<br />
+Shortcode for Social Counter – [LoginRadius_Counter]<br />
 
 = Technical Support Questions =
-<a href="http://support.loginradius.com/customer/portal/articles/594030-how-do-i-implement-social-login-on-my-wordpress-website-" target="_blank">How do I implement Social Login on my WordPress website?</a><br />
-<a href="http://support.loginradius.com/customer/portal/articles/585919-how-do-i-add-the-login-interface-on-a-comment-form-" target="_blank">How do I add the login interface on a comment form?</a><br />
-<a href="http://support.loginradius.com/customer/portal/articles/687407-how-do-i-implement-social-login-on-my-wordpress-multisite-" target="_blank">How do I implement Social Login on my WordPress Multisite?</a><br />
-<a href="http://support.loginradius.com/customer/portal/articles/602964-problems-with-redirect-url-sticking-after-saving" target="_blank">Problems with redirect URL 'sticking' after saving</a><br />
-<a href="http://support.loginradius.com/customer/portal/articles/602971-error-warning-file_get_contents-function-file-get-contents-failed-to-open-stream" target="_blank">Error: Warning: file_get_contents [function.file-get-contents]: failed...</a><br />
-<a href="http://support.loginradius.com/customer/portal/articles/606381-where-can-i-set-the-charset-to-utf8-for-the-email-pop-up-" target="_blank">Where can I set the charset to utf8 for the email pop up ?</a><br />
+<a href="http://support.loginradius.com/customer/portal/articles/971398-wordpress-social-login-installation-configuration-and-troubleshooting#Installation" target="_blank">How do I implement Social Login on my WordPress website?</a><br />
+<a href="http://support.loginradius.com/customer/portal/articles/971398-wordpress-social-login-installation-configuration-and-troubleshooting#multisite" target="_blank">How do I implement Social Login on my WordPress Multisite?</a><br />
 
 == Frequently Asked Questions ==
 = What is Social Login and why do I need it? =
@@ -189,16 +184,16 @@ Yes, we have three live demo sites (try logging in to see how it works):<br />
 3. For bbPress:  http://bbpress.loginradius.com <br />
 
 = Can you help me set up Social Login, Sharing & Commenting on my website? =
-Yes, the LoginRadius Team can assist you with implementing these social features. Please contact us here and one of our experts will get back to you.
+Yes, the LoginRadius Team can assist you with implementing these social features. Please contact us <a href="https://www.loginradius.com/loginradius/contact" target="_blank">here</a> and one of our experts will get back to you.
 
 = Where can I get support? =
-We offer 24/7 support, feel free to browse our knowledge base <a href="http://support.loginradius.com/customer/portal/topics/272884-wordpress-plugin/articles" target="_blank">here</a>.
+We offer 24/7 support, feel free to browse our knowledge base <a href="http://support.loginradius.com/customer/portal/articles/971398-wordpress-social-login-installation-configuration-and-troubleshooting" target="_blank">here</a>.
 
 = My website is not in English, what should i do? =
 LoginRadius WordPress plugin is available in 9 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German and Portuguese Brazillian. So you can pick your own language. Please let us know at feedback@loginradius.com if you would like us to add any other language. 
 
 = What is LoginRadius? =
-LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 25,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS, etc.
+LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 40,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS, etc.
 
 == Screenshots ==
 1. **Social Login, Social Sharing and Social Counter**: This is an example presentation of these three social tools. There are multiple themes and wide range of customization available.
