@@ -77,7 +77,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Compatible with Buddypress and bbPress
 * Highly reliable as it runs on Cloud Computing with failover server support
 * 24/7 community support, rich knowledge base, and active discussion forum
-* Available in 8 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese and German
+* Available in 9 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese, Portuguese and German
  
 = VIP Features (Paid) =
 * Multisite support enabled for domain-based and directory based
@@ -195,7 +195,7 @@ Yes, the LoginRadius Team can assist you with implementing these social features
 We offer 24/7 support, feel free to browse our knowledge base <a href="http://support.loginradius.com/customer/portal/topics/272884-wordpress-plugin/articles" target="_blank">here</a>.
 
 = My website is not in English, what should i do? =
-LoginRadius WordPress plugin is available in 9 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German and Brazillian. So you can pick your own language. Please let us know at feedback@loginradius.com if you would like us to add any other language. 
+LoginRadius WordPress plugin is available in 9 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German and Portuguese Brazillian. So you can pick your own language. Please let us know at feedback@loginradius.com if you would like us to add any other language. 
 
 = What is LoginRadius? =
 LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 25,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS, etc.
