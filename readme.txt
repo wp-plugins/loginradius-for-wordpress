@@ -91,7 +91,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Get 24/7 email support
 * We also offer set-up service (installation, configuration, customization, quality assurance)
 
-Learn more about our VIP packages <a href="https://www.loginradius.com/pricing/packages" target="_blank">here</a>.
+Learn more about our VIP packages <a href="https://www.loginradius.com/pricing/loginradius-pricing-plans" target="_blank">here</a>.
 
 = List of Integrated ID Providers =
 * Facebook
@@ -121,13 +121,13 @@ Learn more about our VIP packages <a href="https://www.loginradius.com/pricing/p
 * Virgilio
 
 = Other Social Login plugins =
-We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart, vBulletin, BlogEngine and DotNetNuke! <a href="https://www.loginradius.com/addons" target="_blank">Learn more</a>.
+We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart, vBulletin, BlogEngine and DotNetNuke! <a href="https://www.loginradius.com/loginradius-cms-social-plugins" target="_blank">Learn more</a>.
 
 = Important links =
 * WordPress live demo: http://wordpress.loginradius.com
 * BuddyPress live demo: http://buddypress.loginradius.com
 * BBPress live demo: http://bbpress.loginradius.com
-* Learn more about this plugin: https://www.loginradius.com/addons/wordpress
+* Learn more about this plugin: https://www.loginradius.com/loginradius-cms-social-plugins/wordpress-plugin
 * LoginRadius website: http://www.loginradius.com
 * Other live demo: http://www.loginradius.com/demo
 * Blog: http://blog.loginradius.com
@@ -253,7 +253,7 @@ LoginRadius is a Canadian Startup that offers Social Infrastructure to websites 
 <em>Webmaster</em><br>
 <em>Delachona</em><br>
 
-Please view more here: https://www.loginradius.com/loginradius/Testimonial
+Please view more here: https://www.loginradius.com/loginradius/testimonial
 
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
