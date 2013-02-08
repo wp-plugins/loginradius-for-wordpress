@@ -80,14 +80,13 @@ class LoginRadius{
 				$JsonResponse = curl_exec($curl_handle); 
 			}else{
 				curl_setopt($curl_handle, CURLOPT_HEADER, 1); 
-				$url = curl_getinfo($curl_handle, CURLINFO_EFFECTIVE_URL); 
-				curl_close($curl_handle); 
-				$ch = curl_init(); 
+				$url = curl_getinfo($curl_handle, CURLINFO_EFFECTIVE_URL);
+				curl_close($curl_handle);
+				$curl_handle = curl_init(); 
 				$url = str_replace('?','/?',$url); 
-				curl_setopt($ch, CURLOPT_URL, $url); 
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				$JsonResponse = curl_exec($ch); 
-				curl_close($ch); 
+				curl_setopt($curl_handle, CURLOPT_URL, $url); 
+				curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
+				$JsonResponse = curl_exec($curl_handle); 
 			}
 			$httpCode = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
 			if(in_array($httpCode, array(400, 401, 403, 404, 500, 503)) && $httpCode != 200){
@@ -97,6 +96,7 @@ class LoginRadius{
 					return "timeout";
 				}
 			}
+			curl_close($curl_handle);
 		}else{
 			$JsonResponse = @file_get_contents($ValidateUrl);
 			if(strpos(@$http_response_header[0], "400") !== false || strpos(@$http_response_header[0], "401") !== false || strpos(@$http_response_header[0], "403") !== false || strpos(@$http_response_header[0], "404") !== false || strpos(@$http_response_header[0], "500") !== false || strpos(@$http_response_header[0], "503") !== false){
