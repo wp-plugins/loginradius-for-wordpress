@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Loginradius\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-30 10:34-0800\n"
-"PO-Revision-Date: 2013-01-30 10:36-0800\n"
+"POT-Creation-Date: 2013-02-08 10:08-0800\n"
+"PO-Revision-Date: 2013-02-08 10:08-0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -61,723 +61,727 @@ msgstr "Ваш ключ API и Секретной являются действ�
 msgid "Problem in communicating LoginRadius API. Please check if one of the API Connection method mentioned above is working."
 msgstr "Проблема в общении LoginRadius API. Пожалуйста, проверьте, если один из методов API подключения упомянутых выше работает."
 
-#: ../LoginRadius_admin.php:102
+#: ../LoginRadius_admin.php:86
+msgid "Uh oh, looks like something went wrong. Try again in a sec!"
+msgstr "Ой-ой, похоже, что-то пошло не так. Попробуйте еще раз в секунду!"
+
+#: ../LoginRadius_admin.php:104
 #, fuzzy
 msgid "Social Plugin Settings"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:104
+#: ../LoginRadius_admin.php:106
 msgid "Please clear your browser cache, if you have trouble loading the plugin interface. For more information"
 msgstr "Пожалуйста, очистить кэш браузера, если у вас есть проблемы с загрузкой плагинов интерфейс. Для получения дополнительной информации"
 
-#: ../LoginRadius_admin.php:104
+#: ../LoginRadius_admin.php:106
 msgid "click here"
 msgstr "нажмите здесь"
 
-#: ../LoginRadius_admin.php:107
+#: ../LoginRadius_admin.php:109
 #, fuzzy
 msgid "Thank you for installing the LoginRadius Social Plugin!"
 msgstr "Благодарим вас за установку плагина LoginRadius!"
 
-#: ../LoginRadius_admin.php:108
+#: ../LoginRadius_admin.php:110
 #, fuzzy
 msgid "To activate the plugin, you will need to first configure it (manage your desired social networks, etc.) from your LoginRadius account. If you do not have an account, click"
 msgstr "Для активации плагина, пожалуйста, настроить и управлять социальными сетями от вас LoginRadius счет. Если вы не имеете учетной записи, нажмите"
 
-#: ../LoginRadius_admin.php:108
+#: ../LoginRadius_admin.php:110
 msgid "here"
 msgstr "здесь"
 
-#: ../LoginRadius_admin.php:108
+#: ../LoginRadius_admin.php:110
 msgid "and create one for FREE!"
 msgstr "и создать одну бесплатно!"
 
-#: ../LoginRadius_admin.php:110
+#: ../LoginRadius_admin.php:112
 #, fuzzy
 msgid "We also offer Social Plugins for "
 msgstr "Этот текст отображается над кнопкой  социального входа."
 
-#: ../LoginRadius_admin.php:110
+#: ../LoginRadius_admin.php:112
 msgid "and"
 msgstr "и"
 
-#: ../LoginRadius_admin.php:113
+#: ../LoginRadius_admin.php:115
 #, fuzzy
 msgid "Set up my FREE account!"
 msgstr "Создайте свой БЕСПЛАТНЫЙ аккаунт!"
 
-#: ../LoginRadius_admin.php:115
+#: ../LoginRadius_admin.php:117
 msgid "How to set up an account"
 msgstr "Как настроить учетную запись"
 
-#: ../LoginRadius_admin.php:119
+#: ../LoginRadius_admin.php:121
 #, fuzzy
 msgid "Get Updates"
 msgstr "Получите обновления!"
 
-#: ../LoginRadius_admin.php:120
+#: ../LoginRadius_admin.php:122
 #, fuzzy
 msgid "To receive updates on new features, future releases, etc, please connect with us via Facebook and Twitter"
 msgstr "Чтобы получать информацию о новых функциях, релизы и т.д., пожалуйста, подключиться к одному из наших страницах социальных медиа"
 
-#: ../LoginRadius_admin.php:136
-#: ../LoginRadius_admin.php:1067
+#: ../LoginRadius_admin.php:138
+#: ../LoginRadius_admin.php:1069
 #, fuzzy
 msgid "Help & Documentations"
 msgstr "документация"
 
-#: ../LoginRadius_admin.php:138
-#: ../LoginRadius_admin.php:1073
+#: ../LoginRadius_admin.php:140
+#: ../LoginRadius_admin.php:1075
 msgid "Plugin Installation, Configuration and Troubleshooting"
 msgstr "Плагин установке, настройке и устранению неполадок"
 
-#: ../LoginRadius_admin.php:139
-#: ../LoginRadius_admin.php:1074
+#: ../LoginRadius_admin.php:141
+#: ../LoginRadius_admin.php:1076
 #, fuzzy
 msgid "How to get LoginRadius API Key & Secret"
 msgstr "API от LoginRadius"
 
-#: ../LoginRadius_admin.php:140
-#: ../LoginRadius_admin.php:1075
+#: ../LoginRadius_admin.php:142
+#: ../LoginRadius_admin.php:1077
 #, fuzzy
 msgid "WP Multisite Feature"
 msgstr "плагин веб-страницу"
 
-#: ../LoginRadius_admin.php:143
-#: ../LoginRadius_admin.php:1076
+#: ../LoginRadius_admin.php:145
+#: ../LoginRadius_admin.php:1078
 #, fuzzy
 msgid "Support Documentations"
 msgstr "документация"
 
-#: ../LoginRadius_admin.php:144
-#: ../LoginRadius_admin.php:1077
+#: ../LoginRadius_admin.php:146
+#: ../LoginRadius_admin.php:1079
 msgid "Discussion Forum"
 msgstr "Форум"
 
-#: ../LoginRadius_admin.php:145
-#: ../LoginRadius_admin.php:1080
+#: ../LoginRadius_admin.php:147
+#: ../LoginRadius_admin.php:1082
 msgid "About LoginRadius"
 msgstr "Блог LoginRadius"
-
-#: ../LoginRadius_admin.php:148
-#: ../LoginRadius_admin.php:1081
-#, fuzzy
-msgid "LoginRadius Products"
-msgstr "LoginRadius блог"
-
-#: ../LoginRadius_admin.php:149
-#: ../LoginRadius_admin.php:1082
-#, fuzzy
-msgid "Social Plugins"
-msgstr "Место социальной Share"
 
 #: ../LoginRadius_admin.php:150
 #: ../LoginRadius_admin.php:1083
 #, fuzzy
+msgid "LoginRadius Products"
+msgstr "LoginRadius блог"
+
+#: ../LoginRadius_admin.php:151
+#: ../LoginRadius_admin.php:1084
+#, fuzzy
+msgid "Social Plugins"
+msgstr "Место социальной Share"
+
+#: ../LoginRadius_admin.php:152
+#: ../LoginRadius_admin.php:1085
+#, fuzzy
 msgid "Social SDKs"
 msgstr "Социального положения Share"
 
-#: ../LoginRadius_admin.php:155
+#: ../LoginRadius_admin.php:157
 #, fuzzy
 msgid "Support Us"
 msgstr "Техническая Поддержка"
 
-#: ../LoginRadius_admin.php:157
+#: ../LoginRadius_admin.php:159
 msgid "If you liked our FREE open-source plugin, please send your feedback/testimonial to "
 msgstr "Если Вам понравился наш бесплатный с открытым исходным кодом плагина, пожалуйста, отправьте Ваше мнение / свидетельством"
 
-#: ../LoginRadius_admin.php:158
+#: ../LoginRadius_admin.php:160
 msgid "Please help us to "
 msgstr "Пожалуйста, помогите нам"
 
-#: ../LoginRadius_admin.php:158
+#: ../LoginRadius_admin.php:160
 msgid "translate"
 msgstr "переводить"
 
-#: ../LoginRadius_admin.php:158
+#: ../LoginRadius_admin.php:160
 msgid "the plugin content in your language."
 msgstr "Плагин содержания на вашем языке."
 
-#: ../LoginRadius_admin.php:168
+#: ../LoginRadius_admin.php:170
 #, fuzzy
 msgid "API Settings"
 msgstr "настройки"
 
-#: ../LoginRadius_admin.php:169
+#: ../LoginRadius_admin.php:171
 #, fuzzy
 msgid "Social Login"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:170
+#: ../LoginRadius_admin.php:172
 #, fuzzy
 msgid "Social Commenting"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:171
+#: ../LoginRadius_admin.php:173
 #, fuzzy
 msgid "Social Sharing"
 msgstr "Социального положения Share"
 
-#: ../LoginRadius_admin.php:172
+#: ../LoginRadius_admin.php:174
 #, fuzzy
 msgid "Social Counter"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:173
+#: ../LoginRadius_admin.php:175
 msgid "Help"
 msgstr "Помогите"
 
-#: ../LoginRadius_admin.php:179
+#: ../LoginRadius_admin.php:181
 #, fuzzy
 msgid "What API Connection Method do you prefer to use to enable API communication?"
 msgstr "Что API Метод подключения вы предпочитаете, чтобы включить API общения?"
 
-#: ../LoginRadius_admin.php:189
+#: ../LoginRadius_admin.php:191
 msgid "Use CURL"
 msgstr "Использование CURL"
 
-#: ../LoginRadius_admin.php:190
+#: ../LoginRadius_admin.php:192
 #, fuzzy
 msgid "This is the recommended API connection method, but sometimes this is disabled on hosting server"
 msgstr "Рекомендуемый способ подключения API, но иногда эта функция отключена на сервере хостинг"
 
-#: ../LoginRadius_admin.php:194
+#: ../LoginRadius_admin.php:196
 msgid "Use FSOCKOPEN"
 msgstr "Используйте FSOCKOPEN"
 
-#: ../LoginRadius_admin.php:195
+#: ../LoginRadius_admin.php:197
 #, fuzzy
 msgid "Choose this option if cURL is disabled on your hosting server"
 msgstr "Выберите эту опцию, если Curl отключена на ваш хостинг-сервер"
 
-#: ../LoginRadius_admin.php:196
+#: ../LoginRadius_admin.php:198
 #, fuzzy
 msgid "Auto-detect Connection Method"
 msgstr "Выберите API учетных"
 
-#: ../LoginRadius_admin.php:204
+#: ../LoginRadius_admin.php:206
 #, fuzzy
 msgid "To activate the plugin, insert the LoginRadius API Key & Secret"
 msgstr "API от LoginRadius"
 
-#: ../LoginRadius_admin.php:205
+#: ../LoginRadius_admin.php:207
 msgid "(How to get it?)"
 msgstr "(Как его получить?)"
 
-#: ../LoginRadius_admin.php:210
+#: ../LoginRadius_admin.php:212
 msgid "API Key"
 msgstr "API Key"
 
-#: ../LoginRadius_admin.php:215
+#: ../LoginRadius_admin.php:217
 msgid "API Secret"
 msgstr "API секретно"
 
-#: ../LoginRadius_admin.php:218
+#: ../LoginRadius_admin.php:220
 #, fuzzy
 msgid "Verify API Settings"
 msgstr "настройки"
 
-#: ../LoginRadius_admin.php:229
+#: ../LoginRadius_admin.php:231
 #, fuzzy
 msgid "Social Login Interface Settings"
 msgstr "Показать иконки на"
 
-#: ../LoginRadius_admin.php:233
+#: ../LoginRadius_admin.php:235
 #, fuzzy
 msgid "What text should be displayed above the Social Login interface? Leave blank if you do not want any text to be displayed"
 msgstr "Какой текст вы хотите, чтобы отобразить над социальным интерфейсом Логин (оставьте пустым без текста)?"
 
-#: ../LoginRadius_admin.php:234
+#: ../LoginRadius_admin.php:236
 msgid "Login with Social ID"
 msgstr "Войти с социал-ID"
 
-#: ../LoginRadius_admin.php:240
+#: ../LoginRadius_admin.php:242
 #, fuzzy
 msgid "Do you want to show the Social Login interface on your WordPress login page?"
 msgstr "где показывать социальные иконки"
 
-#: ../LoginRadius_admin.php:242
-#: ../LoginRadius_admin.php:256
-#: ../LoginRadius_admin.php:486
-#: ../LoginRadius_admin.php:531
-#: ../LoginRadius_admin.php:844
-msgid "Yes"
-msgstr "Да"
-
-#: ../LoginRadius_admin.php:245
+#: ../LoginRadius_admin.php:244
 #: ../LoginRadius_admin.php:258
 #: ../LoginRadius_admin.php:488
 #: ../LoginRadius_admin.php:533
 #: ../LoginRadius_admin.php:846
+msgid "Yes"
+msgstr "Да"
+
+#: ../LoginRadius_admin.php:247
+#: ../LoginRadius_admin.php:260
+#: ../LoginRadius_admin.php:490
+#: ../LoginRadius_admin.php:535
+#: ../LoginRadius_admin.php:848
 msgid "No"
 msgstr "Нет"
 
-#: ../LoginRadius_admin.php:253
+#: ../LoginRadius_admin.php:255
 #, fuzzy
 msgid "Do you want to show Social Login interface on your WordPress registration page?"
 msgstr "где показывать социальные иконки"
 
-#: ../LoginRadius_admin.php:266
+#: ../LoginRadius_admin.php:268
 #, fuzzy
 msgid "If Yes, how do you want the Social Login interface to be shown on your wordpress registration page?"
 msgstr "Если да, то как вы хотите, социальная интерфейс Вход будет показано на странице регистрации WordPress?"
 
-#: ../LoginRadius_admin.php:268
+#: ../LoginRadius_admin.php:270
 #, fuzzy
 msgid "Show it below the registration form"
 msgstr "Показать на регистрационную форму"
 
-#: ../LoginRadius_admin.php:269
+#: ../LoginRadius_admin.php:271
 #, fuzzy
 msgid "Show it beside the registration form"
 msgstr "Показать на регистрационную форму"
 
-#: ../LoginRadius_admin.php:277
+#: ../LoginRadius_admin.php:279
 msgid "User Email Settings"
 msgstr "Настройки пользователя E-mail"
 
-#: ../LoginRadius_admin.php:283
+#: ../LoginRadius_admin.php:285
 #, fuzzy
 msgid "Do you want to send emails to users with their username and password post-registration?"
 msgstr "Вы хотите, чтобы отправлять письма пользователям после регистрации их Имя пользователя и пароль подробности?"
 
-#: ../LoginRadius_admin.php:292
+#: ../LoginRadius_admin.php:294
 #, fuzzy
 msgid "YES, send an email to users after registration"
 msgstr "Выберите Да, если вы бы хотели, чтобы отправить по электронной почте пользователь после регистр."
 
-#: ../LoginRadius_admin.php:293
+#: ../LoginRadius_admin.php:295
 #, fuzzy
 msgid "NO, do not send email to users after registration"
 msgstr "Выберите Да, если вы бы хотели, чтобы отправить по электронной почте пользователь после регистр."
 
-#: ../LoginRadius_admin.php:300
+#: ../LoginRadius_admin.php:302
 #, fuzzy
 msgid "A few ID Providers do not supply users' e-mail IDs as part of the user profile data they provide. Do you want to prompt users to provide their email IDs before completing registration process if it is not provided by the ID Provider?"
 msgstr "Несколько поставщиков ID не предоставляют пользователям электронной почты идентификаторы как часть данных профиля пользователя. Вы хотите, чтобы пользователи предоставляют свои идентификаторы электронной почты до завершения процесса регистрации?"
 
-#: ../LoginRadius_admin.php:309
+#: ../LoginRadius_admin.php:311
 #, fuzzy
 msgid "YES, ask users to enter their email address in a pop-up"
 msgstr "Да, получить реальные идентификаторы электронной почты от пользователей (Ask пользователям вводить их электронной почты идентификаторы в всплывающем)"
 
-#: ../LoginRadius_admin.php:310
+#: ../LoginRadius_admin.php:312
 #, fuzzy
 msgid "NO, just auto-generate random email IDs for users"
 msgstr "Нет, просто автоматически генерировать случайные идентификаторы электронной почты для пользователей"
 
-#: ../LoginRadius_admin.php:318
+#: ../LoginRadius_admin.php:320
 #, fuzzy
 msgid "Please enter the message to be displayed to the user in the pop-up asking for their email address"
 msgstr "Пожалуйста, введите сообщение, которое будет показано пользователю в всплывающем просят электронной почте"
 
-#: ../LoginRadius_admin.php:320
+#: ../LoginRadius_admin.php:322
 #, fuzzy
 msgid "Unfortunately, the ID Provider did not provided your email address. Please enter your email to proceed"
 msgstr "К сожалению, социальная Информация не предоставлена ​​ваш электронный адрес. Введите адрес электронной приступить"
 
-#: ../LoginRadius_admin.php:327
+#: ../LoginRadius_admin.php:329
 #, fuzzy
 msgid "Please enter the message to be shown to the user in case of an invalid or already registered email"
 msgstr "Пожалуйста, введите сообщение, которое будет показано пользователю в случае недействительных или электронной почты уже зарегистрирован"
 
-#: ../LoginRadius_admin.php:329
+#: ../LoginRadius_admin.php:331
 #, fuzzy
 msgid "The email you have entered is either already registered or invalid. Please enter a valid email address."
 msgstr "Этот адрес уже зарегистрирован или недействительным, пожалуйста, выберите другой."
 
-#: ../LoginRadius_admin.php:337
+#: ../LoginRadius_admin.php:339
 #, fuzzy
 msgid "Redirection Settings"
 msgstr "Настройка перенаправления"
 
-#: ../LoginRadius_admin.php:343
+#: ../LoginRadius_admin.php:345
 msgid "Where do you want to redirect your users after successfully logging in?"
 msgstr "Если вы хотите, чтобы перенаправить пользователей после успешного входа в систему?"
 
-#: ../LoginRadius_admin.php:358
+#: ../LoginRadius_admin.php:360
 #, fuzzy
 msgid "Redirect to the same page where the user logged in"
 msgstr "Перенаправление на главную страницу блога."
 
-#: ../LoginRadius_admin.php:358
-#: ../LoginRadius_admin.php:393
+#: ../LoginRadius_admin.php:360
+#: ../LoginRadius_admin.php:395
 msgid "Default"
 msgstr "По Умолчанию"
 
-#: ../LoginRadius_admin.php:359
+#: ../LoginRadius_admin.php:361
 #, fuzzy
 msgid "Redirect to homepage of your WP site"
 msgstr "Перенаправление на главную страницу блога."
 
-#: ../LoginRadius_admin.php:361
+#: ../LoginRadius_admin.php:363
 msgid "Redirect to account dashboard"
 msgstr "Перенаправление на страницу приборной панели"
 
-#: ../LoginRadius_admin.php:366
+#: ../LoginRadius_admin.php:368
 #, fuzzy
 msgid "Redirect to Buddypress profile page"
 msgstr "Перенаправление на главную страницу блога."
 
-#: ../LoginRadius_admin.php:371
-#: ../LoginRadius_admin.php:395
+#: ../LoginRadius_admin.php:373
+#: ../LoginRadius_admin.php:397
 #, fuzzy
 msgid "Redirect to Custom URL:"
 msgstr "Перенаправление на следующий адрес:"
 
-#: ../LoginRadius_admin.php:380
+#: ../LoginRadius_admin.php:382
 msgid "Where do you want to redirect your users after successfully logging out?"
 msgstr "Если вы хотите, чтобы перенаправить пользователей после успешного выхода из системы?"
 
-#: ../LoginRadius_admin.php:382
+#: ../LoginRadius_admin.php:384
 #, fuzzy
 msgid "Note: Logout function works only when clicking 'logout' in the social login widget area. In all other cases, WordPress's default logout function will be applied."
 msgstr "Примечание: Выход функция работает только при нажатии на выход в социальной сфере виджет входа в систему. Во всех других случаях, WordPress по умолчанию выход функции будет применяться."
 
-#: ../LoginRadius_admin.php:393
+#: ../LoginRadius_admin.php:395
 #, fuzzy
 msgid "Redirect to the homepage"
 msgstr "Перенаправление на главную страницу блога."
 
-#: ../LoginRadius_admin.php:405
+#: ../LoginRadius_admin.php:407
 #, fuzzy
 msgid "User Settings"
 msgstr "настройки"
 
-#: ../LoginRadius_admin.php:411
+#: ../LoginRadius_admin.php:413
 msgid "Do you want to allow new users to register through Social Login?"
 msgstr "Вы хотите, чтобы позволить новым пользователям регистрироваться через социальные Логин?"
 
-#: ../LoginRadius_admin.php:413
+#: ../LoginRadius_admin.php:415
 msgid "YES, allow new users to register through Social Login"
 msgstr "Да, разрешить новым пользователям регистрироваться через социальные Логин"
 
-#: ../LoginRadius_admin.php:414
+#: ../LoginRadius_admin.php:416
 msgid "NO, do not allow new users to register through Social Login"
 msgstr "Нет, не позволяют новым пользователям регистрироваться через социальные Логин"
 
-#: ../LoginRadius_admin.php:415
+#: ../LoginRadius_admin.php:417
 msgid "New users will not be able to login through Social Login"
 msgstr "Новые пользователи не смогут войти через социальные Логин"
 
-#: ../LoginRadius_admin.php:422
+#: ../LoginRadius_admin.php:424
 msgid "Do you want to display the social network that the user connected with, in the user list"
 msgstr "Вы хотите, чтобы отобразить социальные сети, которые пользователь связан, в списке пользователей"
 
-#: ../LoginRadius_admin.php:424
+#: ../LoginRadius_admin.php:426
 msgid "YES, display the social network that the user connected with, in the user list"
 msgstr "Да, отображение социальной сети, пользователь связан, в списке пользователей"
 
-#: ../LoginRadius_admin.php:425
+#: ../LoginRadius_admin.php:427
 msgid "NO, do not display the social network that the user connected with, in the user list"
 msgstr "Нет, не отображают социальные сети, которые пользователь связан, в списке пользователей"
 
-#: ../LoginRadius_admin.php:432
+#: ../LoginRadius_admin.php:434
 #, fuzzy
 msgid "Do you want to automatically link your existing users' accounts to their social accounts if their WP account email address matches the email address associated with their social account?"
 msgstr "Вы хотите, чтобы ваши существующие учетные записи пользователей WP автоматически связывать их социальной ответственности в случае электронной почты ID матчей с их социальным ID учетной записи электронной почты?"
 
-#: ../LoginRadius_admin.php:434
+#: ../LoginRadius_admin.php:436
 msgid "YES, automatically link social accounts to WP accounts"
 msgstr "Да, автоматически связывать социальные счета WP счетов"
 
-#: ../LoginRadius_admin.php:436
+#: ../LoginRadius_admin.php:438
 msgid "NO, I want my existing users to continue using the native WP login"
 msgstr "НЕТ, я хочу, чтобы мои существующих пользователей, чтобы продолжить использование родного вход WP"
 
-#: ../LoginRadius_admin.php:446
+#: ../LoginRadius_admin.php:448
 msgid "Do you want to apply the same changes when you update plugin settings in the main blog of multisite network?"
 msgstr "Вы хотите, чтобы применять те же изменения при обновлении настроек плагина в главном блоге сети многоузлового?"
 
-#: ../LoginRadius_admin.php:447
+#: ../LoginRadius_admin.php:449
 msgid "YES, apply the same changes to plugin settings of each blog in the multisite network when I update plugin settings."
 msgstr "Да, применяются такие же изменения в настройках плагина каждого блога в сети многоузловое, когда я обновляю настройках плагина."
 
-#: ../LoginRadius_admin.php:448
+#: ../LoginRadius_admin.php:450
 msgid "NO, do not apply the changes to other blogs when I update plugin settings."
 msgstr "Нет, не применять изменения в других блогах, когда я обновляю настройках плагина."
 
-#: ../LoginRadius_admin.php:465
+#: ../LoginRadius_admin.php:467
 #, fuzzy
 msgid "Do you want to let users use their social profile picture as an avatar on your website?"
 msgstr "Вы хотите, чтобы социальная Счетчик для вашего сайта?"
 
-#: ../LoginRadius_admin.php:466
+#: ../LoginRadius_admin.php:468
 msgid "YES, let users use their social profile picture as an avatar"
 msgstr "Да, позволяющие пользователям использовать свой социальный профиль изображения в качестве аватара"
 
-#: ../LoginRadius_admin.php:467
+#: ../LoginRadius_admin.php:469
 #, fuzzy
 msgid "NO, use default avatars"
 msgstr "Использовать параметры по умолчанию аватара"
 
-#: ../LoginRadius_admin.php:477
+#: ../LoginRadius_admin.php:479
 #, fuzzy
 msgid "Social Commenting Settings"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:483
+#: ../LoginRadius_admin.php:485
 msgid "Do you want to enable Social Commenting for your website"
 msgstr "Вы хотите, чтобы социальная Комментируя для вашего сайта"
 
-#: ../LoginRadius_admin.php:495
+#: ../LoginRadius_admin.php:497
 #, fuzzy
 msgid "Where do you want to the Social login interface on the commenting form?"
 msgstr "как вы хотите, социальная Войти, чтобы появиться на комментирование"
 
-#: ../LoginRadius_admin.php:498
+#: ../LoginRadius_admin.php:500
 msgid "At the very top of the comment form"
 msgstr "В самой верхней части формы комментария"
 
-#: ../LoginRadius_admin.php:499
+#: ../LoginRadius_admin.php:501
 msgid "After the 'Leave a Reply' caption"
 msgstr "После \"Оставить комментарий\" подпись"
 
-#: ../LoginRadius_admin.php:500
+#: ../LoginRadius_admin.php:502
 msgid "Before the comment form input fields"
 msgstr "Перед комментарий полей формы ввода"
 
-#: ../LoginRadius_admin.php:501
+#: ../LoginRadius_admin.php:503
 #, fuzzy
 msgid "Before the comment box"
 msgstr "Перед содержанием виджета:"
 
-#: ../LoginRadius_admin.php:509
+#: ../LoginRadius_admin.php:511
 #, fuzzy
 msgid "Do you want to automatically approve comments posted via Social Login?"
 msgstr "Автоматически утверждать замечания пользователей социальных входа"
 
-#: ../LoginRadius_admin.php:511
+#: ../LoginRadius_admin.php:513
 msgid "YES"
 msgstr "ДА"
 
-#: ../LoginRadius_admin.php:512
+#: ../LoginRadius_admin.php:514
 #, fuzzy
 msgid "NO, I want to approve the comments per my discretion"
 msgstr "Нет, я хочу, чтобы утвердить комментарии, как в мое усмотрение"
 
-#: ../LoginRadius_admin.php:522
+#: ../LoginRadius_admin.php:524
 #, fuzzy
 msgid "Basic Social Sharing Settings"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:528
+#: ../LoginRadius_admin.php:530
 msgid "Do you want to enable Social Sharing for your website"
 msgstr "Вы хотите, чтобы включить социальной сети для вашего сайта"
 
-#: ../LoginRadius_admin.php:540
+#: ../LoginRadius_admin.php:542
 #, fuzzy
 msgid "Enter the text that you wish to be displayed above the Social Sharing Interface. Leave the field blank if you don't want any text to be displayed."
 msgstr "Этот текст отображается над кнопкой  социального входа."
 
-#: ../LoginRadius_admin.php:542
+#: ../LoginRadius_admin.php:544
 #, fuzzy
 msgid "Share it now!"
 msgstr "Отправить сейчас"
 
-#: ../LoginRadius_admin.php:550
+#: ../LoginRadius_admin.php:552
 #, fuzzy
 msgid "Social Sharing Theme Selection"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:556
+#: ../LoginRadius_admin.php:558
 #, fuzzy
 msgid "What Social Sharing widget theme would you like to use across your website?"
 msgstr "Что социальная тема виджетов сети вы хотите использовать на вашем сайте?"
 
-#: ../LoginRadius_admin.php:569
+#: ../LoginRadius_admin.php:571
 msgid "Select Social Sharing widget theme to be shown at the top of the content"
 msgstr "Выберите тему виджет социальной сети будут показаны в верхней части содержания"
 
-#: ../LoginRadius_admin.php:609
+#: ../LoginRadius_admin.php:611
 msgid "Select Social Sharing widget theme to be shown at the bottom of the content"
 msgstr "Выберите тему виджет социальной сети будут показаны в нижней части содержания"
 
-#: ../LoginRadius_admin.php:661
+#: ../LoginRadius_admin.php:663
 msgid "Choose a sharing theme"
 msgstr "Выберите обмена тему"
 
-#: ../LoginRadius_admin.php:687
+#: ../LoginRadius_admin.php:689
 msgid "What Sharing Networks do you want to show in the sharing widget? (All other sharing networks  will be shown as part of LoginRadius sharing icon)"
 msgstr "Что сетей обмена вы хотите показать в обмен виджет? (Все другие сети обмена будет показана как часть LoginRadius значок обмен)"
 
-#: ../LoginRadius_admin.php:749
+#: ../LoginRadius_admin.php:751
 #, fuzzy
 msgid "In what order do you want your sharing networks listed?"
 msgstr "Каков порядок обмена сети вы предпочитаете для вашего обмена виджет?"
 
-#: ../LoginRadius_admin.php:771
+#: ../LoginRadius_admin.php:773
 #, fuzzy
 msgid "Social Sharing Widget Position"
 msgstr "Социального положения Share"
 
-#: ../LoginRadius_admin.php:777
+#: ../LoginRadius_admin.php:779
 #, fuzzy
 msgid "Select the position of the Social Sharing widget"
 msgstr "Выберите положение социальных виджетов сети"
 
-#: ../LoginRadius_admin.php:797
+#: ../LoginRadius_admin.php:799
 msgid "Specify distance of vertical sharing interface from top (Leave empty for default behaviour)"
 msgstr "Укажите расстояние вертикальной интерфейс обмена сверху (оставьте пустым поведение по умолчанию)"
 
-#: ../LoginRadius_admin.php:807
+#: ../LoginRadius_admin.php:809
 #, fuzzy
 msgid "Select the position of the Social sharing interface"
 msgstr "где показывать социальные иконки"
 
-#: ../LoginRadius_admin.php:809
-#: ../LoginRadius_admin.php:1040
+#: ../LoginRadius_admin.php:811
+#: ../LoginRadius_admin.php:1042
 msgid "Show at the top of content"
 msgstr "Показать в верхней части содержания"
 
-#: ../LoginRadius_admin.php:810
-#: ../LoginRadius_admin.php:1041
+#: ../LoginRadius_admin.php:812
+#: ../LoginRadius_admin.php:1043
 msgid "Show at the bottom of content"
 msgstr "Показать в нижней части содержания"
 
-#: ../LoginRadius_admin.php:816
+#: ../LoginRadius_admin.php:818
 msgid "What area(s) do you want to show the social sharing widget?"
 msgstr "Какой район (ы) Вы хотите, чтобы показать социальные виджеты обмена?"
 
-#: ../LoginRadius_admin.php:818
-#: ../LoginRadius_admin.php:1050
+#: ../LoginRadius_admin.php:820
+#: ../LoginRadius_admin.php:1052
 #, fuzzy
 msgid "Show on homepage"
-msgstr "Показать на комментарий форме"
-
-#: ../LoginRadius_admin.php:819
-#: ../LoginRadius_admin.php:1051
-#, fuzzy
-msgid "Show on posts"
 msgstr "Показать на комментарий форме"
 
 #: ../LoginRadius_admin.php:821
 #: ../LoginRadius_admin.php:1053
 #, fuzzy
-msgid "Show on pages"
-msgstr "Показать на страницы"
-
-#: ../LoginRadius_admin.php:822
-#: ../LoginRadius_admin.php:1054
-#, fuzzy
-msgid "Show on post excerpts "
-msgstr "Показать на регистрационную форму"
+msgid "Show on posts"
+msgstr "Показать на комментарий форме"
 
 #: ../LoginRadius_admin.php:823
 #: ../LoginRadius_admin.php:1055
 #, fuzzy
-msgid "Show on archive pages"
-msgstr "Показать на страницах архивов"
+msgid "Show on pages"
+msgstr "Показать на страницы"
+
+#: ../LoginRadius_admin.php:824
+#: ../LoginRadius_admin.php:1056
+#, fuzzy
+msgid "Show on post excerpts "
+msgstr "Показать на регистрационную форму"
 
 #: ../LoginRadius_admin.php:825
 #: ../LoginRadius_admin.php:1057
 #, fuzzy
+msgid "Show on archive pages"
+msgstr "Показать на страницах архивов"
+
+#: ../LoginRadius_admin.php:827
+#: ../LoginRadius_admin.php:1059
+#, fuzzy
 msgid "Show on feed"
 msgstr "Показать на корм"
 
-#: ../LoginRadius_admin.php:835
+#: ../LoginRadius_admin.php:837
 #, fuzzy
 msgid "Basic Social Counter Settings"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:841
+#: ../LoginRadius_admin.php:843
 msgid "Do you want to enable Social Counter for your website?"
 msgstr "Вы хотите, чтобы социальная Счетчик для вашего сайта?"
 
-#: ../LoginRadius_admin.php:853
+#: ../LoginRadius_admin.php:855
 #, fuzzy
 msgid "Enter the text that you wish to be displayed above the Social Counter Interface. Leave the field blank if you don't want any text to be displayed"
 msgstr "Этот текст отображается над кнопкой  социального входа."
 
-#: ../LoginRadius_admin.php:855
+#: ../LoginRadius_admin.php:857
 #, fuzzy
 msgid "Be a fan"
 msgstr "Быть фанатом!"
 
-#: ../LoginRadius_admin.php:863
+#: ../LoginRadius_admin.php:865
 #, fuzzy
 msgid "Social Counter Theme Selection"
 msgstr "Место социальной Share"
 
-#: ../LoginRadius_admin.php:869
+#: ../LoginRadius_admin.php:871
 #, fuzzy
 msgid "What Social Counter widget theme would you like to use across your website?"
 msgstr "Что социальным Счетчик тему виджет вы хотите использовать на вашем сайте?"
 
-#: ../LoginRadius_admin.php:882
+#: ../LoginRadius_admin.php:884
 msgid "Select Social Counter widget theme to be shown at the top of the content"
 msgstr "Выберите социальной Счетчик тему виджет будет отображаться в верхней части содержания"
 
-#: ../LoginRadius_admin.php:904
+#: ../LoginRadius_admin.php:906
 msgid "Select Social Counter widget theme to be shown at the bottom of the content"
 msgstr "Выберите социальной Счетчик тему виджет будет отображаться в нижней части содержания"
 
-#: ../LoginRadius_admin.php:937
+#: ../LoginRadius_admin.php:939
 msgid "Choose a counter theme"
 msgstr "Выберите счетчик тему"
 
-#: ../LoginRadius_admin.php:963
+#: ../LoginRadius_admin.php:965
 msgid "What Counter Networks do you want to show in the counter widget?"
 msgstr "Что Счетчик Сети вы хотите показать в счетчике виджет?"
 
-#: ../LoginRadius_admin.php:1002
+#: ../LoginRadius_admin.php:1004
 #, fuzzy
 msgid "Social Counter Widget Position"
 msgstr "Социального положения Share"
 
-#: ../LoginRadius_admin.php:1008
+#: ../LoginRadius_admin.php:1010
 #, fuzzy
 msgid "Select the position of the Social Counter widget"
 msgstr "Выберите положение социальных Counter Widget"
 
-#: ../LoginRadius_admin.php:1028
+#: ../LoginRadius_admin.php:1030
 msgid "Specify distance of vertical counter interface from top (Leave empty for default behaviour)"
 msgstr "Укажите расстояние вертикального счетчика интерфейс сверху (оставьте пустым поведение по умолчанию)"
 
-#: ../LoginRadius_admin.php:1038
+#: ../LoginRadius_admin.php:1040
 #, fuzzy
 msgid "Select the position of Social counter interface"
 msgstr "где показывать социальные иконки"
 
-#: ../LoginRadius_admin.php:1048
+#: ../LoginRadius_admin.php:1050
 msgid "What area(s) do you want to show the social counter widget?"
 msgstr "Какой район (ы) Вы хотите, чтобы показать социальные виджеты счетчик?"
 
-#: ../LoginRadius_admin.php:1104
+#: ../LoginRadius_admin.php:1106
 msgid "Save Changes"
 msgstr "Сохронить изменения."
 
-#: ../LoginRadius_admin.php:1105
+#: ../LoginRadius_admin.php:1107
 msgid "Preview"
 msgstr "предварительный просмотр"
 
-#: ../LoginRadius_function.php:151
+#: ../LoginRadius_function.php:159
 msgid "Log Out"
 msgstr "Выйти"
 
-#: ../LoginRadius_function.php:548
+#: ../LoginRadius_function.php:560
 msgid "This account is already mapped"
 msgstr "Эта учетная запись уже сопоставлен"
 
-#: ../LoginRadius_function.php:551
+#: ../LoginRadius_function.php:563
 msgid "Account mapped successfully"
 msgstr "Счет отображается успешно"
 
-#: ../LoginRadius_function.php:556
+#: ../LoginRadius_function.php:568
 msgid "Link your account"
 msgstr "Свяжите свой аккаунт"
 
-#: ../LoginRadius_function.php:560
+#: ../LoginRadius_function.php:572
 msgid "By adding another account, you can log in with the new account as well!"
 msgstr "Путем добавления другой учетной записи, вы можете войти в систему с новой учетной записью, как хорошо!"
 
-#: ../LoginRadius_function.php:664
-#: ../LoginRadius_function.php:687
+#: ../LoginRadius_function.php:676
+#: ../LoginRadius_function.php:699
 msgid "Connected with"
 msgstr "Связанные с"
 
-#: ../LoginRadius_function.php:668
-#: ../LoginRadius_function.php:691
+#: ../LoginRadius_function.php:680
+#: ../LoginRadius_function.php:703
 msgid "Remove"
 msgstr "удаление"
 
@@ -817,6 +821,12 @@ msgstr "Войти или зарегистрироваться использу�
 #: ../LoginRadius_widget.php:156
 msgid "Get your fan counts all over the social networks."
 msgstr "Получите ваш поклонник считает все более социальным сетям."
+
+#~ msgid ""
+#~ "Currently service is not available and we are working on a fix for it."
+#~ msgstr ""
+#~ "В настоящее время услуга не предоставляется, и мы работаем над решением "
+#~ "этого."
 
 #~ msgid ""
 #~ "Embed it in registration form and show it below the registration form"

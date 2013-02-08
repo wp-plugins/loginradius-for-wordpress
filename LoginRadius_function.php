@@ -80,7 +80,8 @@ function login_radius_get_interface($newInterface = false){
 	$loginRadiusApiKey = trim($loginRadiusSettings['LoginRadius_apikey']); 
 	$loginRadiusSecret = trim($loginRadiusSettings['LoginRadius_secret']); 
 	$loginRadiusError = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><p style ='color:red;'>Your LoginRadius API key or secret is not valid, please correct it or contact LoginRadius support at <b><a href ='http://www.loginradius.com' target = '_blank'>www.LoginRadius.com</a></b></p></div>"; 
-	$loginRadiusConnErr = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><p style ='color:red;'>Your API connection setting not working. try to change setting from module option or check your php.ini setting for (<b>cURL support = enabled</b> OR <b>allow_url_fopen = On</b>)</p></div>"; 
+	$loginRadiusConnErr = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><p style ='color:red;'>Your API connection setting not working. try to change setting from module option or check your php.ini setting for (<b>cURL support = enabled</b> OR <b>allow_url_fopen = On</b>)</p></div>";
+	$loginRadiusServiceErr = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><p style ='color:red;'>Uh oh, looks like something went wrong. Try again in a sec!</p></div>"; 
 	$loginRadiusEmpty = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><div style ='color:red; margin-bottom:5px'>LoginRadius Social Login Plugin is not configured!</div><p style='line-height:1.3; margin-bottom:4px'>To activate your plugin, navigate to <strong>LoginRadius > API Settings</strong> section in your WordPress admin panel and insert LoginRadius API Key & Secret. Follow <a href='http://support.loginradius.com/customer/portal/articles/677100-how-to-get-loginradius-api-key-and-secret' target='_blank'>this</a> document to learn how to get API Key & Secret.</p></div>";
 	if(!empty($loginRadiusApiKey)){
 		global $loginRadiusObject;
@@ -98,6 +99,13 @@ function login_radius_get_interface($newInterface = false){
 				return;
 			}else{
 				return $loginRadiusConnErr; 
+			} 
+		}elseif($iframe == "service error" || $iframe == "timeout"){
+			if(!$newInterface){
+				echo $loginRadiusServiceErr;
+				return;
+			}else{
+				return $loginRadiusServiceErr;
 			} 
 		}
 		$isHttps = (!empty($iframe->IsHttps) ? $iframe->IsHttps : ''); 

@@ -82,6 +82,8 @@ function login_radius_option_page(){
 				jQuery('#login_radius_api_response').html('<span style="color:green; width:auto"><?php _e('Your API Key and Secret are valid. Please save the changes.', 'LoginRadius') ?></span>');
 			}else if(data == 'connection'){
 				jQuery('#login_radius_api_response').html('<span style="color:green; width:auto"><?php _e('Problem in communicating LoginRadius API. Please check if one of the API Connection method mentioned above is working.', 'LoginRadius') ?></span>');
+			}else if(data == 'service error' || data == 'timeout'){
+				jQuery('#login_radius_api_response').html('<span style="color:red; width:auto"><?php _e('Uh oh, looks like something went wrong. Try again in a sec!', 'LoginRadius') ?></span>');
 			}
 		  }
 		});

@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name:Social Login for wordpress  
+Plugin Name: Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
-Description: Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
-Version: 4.0
+Description: Add Social Login, Social Sharing, Social commenting and more to your WordPress website/blog and also get accurate User Profile Data and Social Analytics.
+Version: 4.0.1
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -874,6 +874,10 @@ function login_radius_verify_keys(){
 			die('key');
 		}elseif($iframe == "connection error"){
 			die('connection');
+		}elseif($iframe == "service error"){
+			die('service error');
+		}elseif($iframe == "timeout"){
+			die('timeout');
 		}
 		die('working');
 	}

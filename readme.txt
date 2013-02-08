@@ -1,5 +1,5 @@
 === Social Login, Social Sharing, Social Commenting and more! ===
-Contributors: loginradius, Italian Language Translator: Michelangelo Giannino, Russian Language Translator: Rob, Spanish Language Translator: Daniel Iturbe, Chinese & Japanese Language Translator: Wenxuan Hu, German language translatior: David Werth
+Contributors: loginradius
 Donate link: http://www.loginradius.com/
 Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage, ID provider linking, QQ, Renren, Github, MSN,
 single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
@@ -76,7 +76,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Compatible with Buddypress and bbPress
 * Highly reliable as it runs on Cloud Computing with failover server support
 * 24/7 community support, rich knowledge base, and active discussion forum
-* Available in 9 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese, Portuguese and German
+* Available in 9 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese, Portuguese and German (Italian Language Translator: Michelangelo Giannino; Russian Language Translator: Rob; Spanish Language Translator: Daniel Iturbe; Chinese & Japanese Language Translator: Wenxuan; German language translatior: David Werth)
  
 = VIP Features (Paid) =
 * Multisite support enabled for domain-based and directory based
@@ -258,6 +258,9 @@ Please view more here: https://www.loginradius.com/loginradius/Testimonial
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
 == Changelog ==
+= 4.0.1 =
+* Added performance improvement during login interface load
+
 = 4.0 =
 * Added Social Sharing and Counter with in WordPress admin with customization options
 * Add social login provider - Github, QQ, Renren, Kaixin
@@ -497,3 +500,6 @@ Bug fixed for popup in IE
 * Option for admin to see the social provider name in the user list
 * Shortcodes for inserting social login, social sharing and social counter in the post/page contents
 * Option to disable sharing/counter by navigating to the individual post/page 'Edit' section
+
+= 4.0.1 =
+* Added performance improvement during login interface load
