@@ -5,7 +5,7 @@ Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPres
 single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
 Requires at least: 2.5.0
 Tested up to: 3.5.1
-Stable tag: 4.0
+Stable tag: 4.0.1
 License: GPLv2 or later
 
 Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, LinkedIn, Vkontakte and over 20 more!
