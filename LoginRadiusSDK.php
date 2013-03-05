@@ -32,42 +32,33 @@ class LoginRadius{
 	} 
 	
 	/** 
-	 * Get social login interface parameters from LoginRadius. 
+	 * Check if CURL/FSOCKOPEN are working. 
 	 */	 
-	public function login_radius_get_iframe($ApiKey, $ApiSecrete){ 
-		$ApiKey = trim($ApiKey); 
-		$ApiSecrete = trim($ApiSecrete); 
-		$IsAuth = false; 
-		if(!($this->loginradiusValidateKey($ApiKey) && $this->loginradiusValidateKey($ApiSecrete))){ 
-			return "invalid"; 
-		} 
-		if(isset($ApiKey)){
-			$ApiKey = trim($ApiKey); 
-			$ApiSecrete = trim($ApiSecrete); 
-      		$ValidateUrl = "https://hub.loginradius.com/getappinfo/$ApiKey/$ApiSecrete";
-			$JsonResponse = $this->loginradius_call_api($ValidateUrl);
-			$UserAuth = json_decode($JsonResponse); 
-			if(isset($UserAuth->IsValid) && $UserAuth->PK_ID != 0){
-				$this->IsAuth = true;
-				return $UserAuth;
-			}elseif(isset($UserAuth->IsValid)){
-				return "incorrect key"; 
-			}elseif($JsonResponse == "service error"){
-				return "service error";
-			}elseif($JsonResponse == "timeout"){
-				return "timeout";
-			}else{
-				return "connection error";
-			}
-		} 
+	public function login_radius_check_connection($method){ 
+		$ValidateUrl = "https://hub.loginradius.com/ping/ApiKey/ApiSecrete";
+		$JsonResponse = $this->loginradius_call_api($ValidateUrl, $method);
+		$UserAuth = json_decode($JsonResponse);
+		if(isset($UserAuth->ok)){
+			return "ok";
+		}elseif($JsonResponse == "service connection timeout"){
+			return "service connection timeout";
+		}elseif($JsonResponse == "timeout"){
+			return "timeout";
+		}else{
+			return "connection error";
+		}
 	}
 	
 	/** 
 	 * Fetch data from passed URL. 
 	 */	 
-	public function loginradius_call_api($ValidateUrl){
-		global $loginRadiusSettings; 
-		$useapi = $loginRadiusSettings['LoginRadius_useapi']; 
+	public function loginradius_call_api($ValidateUrl, $method = ""){
+		global $loginRadiusSettings;
+		if($method == ""){
+			$useapi = $loginRadiusSettings['LoginRadius_useapi']; 
+		}else{
+			$useapi = $method;
+		}
 		if($useapi == "curl"){
 			$curl_handle = curl_init(); 
 			curl_setopt($curl_handle, CURLOPT_URL, $ValidateUrl); 
@@ -77,7 +68,6 @@ class LoginRadius{
 			if(ini_get('open_basedir') == '' && (ini_get('safe_mode') == 'Off' or !ini_get('safe_mode'))){
 				curl_setopt($curl_handle, CURLOPT_FOLLOWLOCATION, 1); 
 				curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true); 
-				$JsonResponse = curl_exec($curl_handle); 
 			}else{
 				curl_setopt($curl_handle, CURLOPT_HEADER, 1); 
 				$url = curl_getinfo($curl_handle, CURLINFO_EFFECTIVE_URL);
@@ -86,11 +76,11 @@ class LoginRadius{
 				$url = str_replace('?','/?',$url); 
 				curl_setopt($curl_handle, CURLOPT_URL, $url); 
 				curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, true);
-				$JsonResponse = curl_exec($curl_handle); 
 			}
+			$JsonResponse = curl_exec($curl_handle); 
 			$httpCode = curl_getinfo($curl_handle, CURLINFO_HTTP_CODE);
 			if(in_array($httpCode, array(400, 401, 403, 404, 500, 503)) && $httpCode != 200){
-				return "service error";
+				return "service connection timeout";
 			}else{
 				if(curl_errno($curl_handle) == 28){
 					return "timeout";
@@ -100,7 +90,7 @@ class LoginRadius{
 		}else{
 			$JsonResponse = @file_get_contents($ValidateUrl);
 			if(strpos(@$http_response_header[0], "400") !== false || strpos(@$http_response_header[0], "401") !== false || strpos(@$http_response_header[0], "403") !== false || strpos(@$http_response_header[0], "404") !== false || strpos(@$http_response_header[0], "500") !== false || strpos(@$http_response_header[0], "503") !== false){
-				return "service error";
+				return "service connection timeout";
 			}
 		}
 		return $JsonResponse; 

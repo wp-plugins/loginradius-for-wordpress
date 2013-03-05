@@ -59,6 +59,10 @@ function login_radius_option_page(){
 				jQuery('#login_radius_fsock').attr('checked', 'checked');
 			}else if(data == 'lrerror'){
 				jQuery('#login_radius_response').html('<span style="color:red; width:auto"><?php _e('Please check your php.ini settings to enable CURL or FSOCKOPEN', 'LoginRadius')  ?></span>');
+			}else if(data == 'connection error'){
+				jQuery('#login_radius_response').html('<span style="color:red; width:auto"><?php _e('Problem in communicating LoginRadius API. Please check if one of the API Connection method mentioned above is working.', 'LoginRadius') ?></span>');
+			}else if(data == 'service connection timeout' || data == 'timeout'){
+				jQuery('#login_radius_response').html('<span style="color:red; width:auto"><?php _e('Uh oh, looks like something went wrong. Try again in a sec!', 'LoginRadius') ?></span>');
 			}
 		  }
 		});
@@ -80,10 +84,6 @@ function login_radius_option_page(){
 				jQuery('#login_radius_api_response').html('<span style="color:red; width:auto"><?php _e('Your API Secret is invalid. Please paste the correct API Secret from your LoginRadius Account', 'LoginRadius') ?></span>');
 			}else if(data == 'working'){
 				jQuery('#login_radius_api_response').html('<span style="color:green; width:auto"><?php _e('Your API Key and Secret are valid. Please save the changes.', 'LoginRadius') ?></span>');
-			}else if(data == 'connection'){
-				jQuery('#login_radius_api_response').html('<span style="color:green; width:auto"><?php _e('Problem in communicating LoginRadius API. Please check if one of the API Connection method mentioned above is working.', 'LoginRadius') ?></span>');
-			}else if(data == 'service error' || data == 'timeout'){
-				jQuery('#login_radius_api_response').html('<span style="color:red; width:auto"><?php _e('Uh oh, looks like something went wrong. Try again in a sec!', 'LoginRadius') ?></span>');
 			}
 		  }
 		});
@@ -195,7 +195,7 @@ function login_radius_option_page(){
 									<td>
 									<input name="LoginRadius_settings[LoginRadius_useapi]" type="radio" id="login_radius_fsock" <?php echo $fsockopen;?> value="fsockopen" /><?php _e("Use FSOCKOPEN", 'LoginRadius'); ?><br />
 									<span><?php _e('Choose this option if cURL is disabled on your hosting server', 'LoginRadius') ?></span>
-									<input type="button" style="font-weight:bold; float:left; margin-top:10px; width:200px" class="button" id="login_radius_detect_api" value="<?php _e('Auto-detect Connection Method', 'LoginRadius') ?>" />
+									<input type="button" style="font-weight:bold; float:left; margin-top:10px;" class="button" id="login_radius_detect_api" value="<?php _e('Auto-detect Connection Method', 'LoginRadius') ?>" />
 									<div id="login_radius_response" style="float:left; margin:13px 0 0 10px; width:400px"></div>	
 									</td>
 								</tr>

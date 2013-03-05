@@ -6,6 +6,27 @@ $loginRadiusDs = DIRECTORY_SEPARATOR;
 include_once(ABSPATH . 'wp-admin'.$loginRadiusDs.'includes'.$loginRadiusDs.'plugin.php');
 
 /** 
+ * Print the script required for enabling social login.
+ */
+function login_radius_login_script(){
+	global $loginRadiusSettings, $loginRadiusObject;
+	$loginRadiusSettings['LoginRadius_apikey'] = trim($loginRadiusSettings['LoginRadius_apikey']);
+	if($loginRadiusObject->loginradiusValidateKey($loginRadiusSettings['LoginRadius_apikey'])){
+		if(isset($_SERVER['HTTPS']) && !empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off'){
+			$http = "https://";
+		}else{
+			$http = "http://";
+		}
+		?>
+		<!-- Script to enable social login -->
+		 <script src="http://hub.loginradius.com/include/js/LoginRadius.js" ></script>
+		 <script type="text/javascript"> var options={}; options.login=true; LoginRadius_SocialLogin.util.ready(function () { $ui = LoginRadius_SocialLogin.lr_login_settings;$ui.interfacesize = "";$ui.apikey = "<?php echo $loginRadiusSettings['LoginRadius_apikey'] ?>";$ui.callback = "<?php echo login_radius_get_callback($http) ?>"; $ui.lrinterfacecontainer ="interfacecontainerdiv"; LoginRadius_SocialLogin.init(options); });
+		 </script>
+		<?php
+	}
+}
+
+/** 
  * Check if buddypress is active.
  */
 function login_radius_is_bp_active(){
@@ -76,54 +97,25 @@ function Login_Radius_Connect_button($newInterface = false){
  * Get Socisl Login iframe. 
  */  
 function login_radius_get_interface($newInterface = false){
-	global $loginRadiusSettings;
+	global $loginRadiusSettings, $loginRadiusObject;
 	$loginRadiusApiKey = trim($loginRadiusSettings['LoginRadius_apikey']); 
 	$loginRadiusSecret = trim($loginRadiusSettings['LoginRadius_secret']); 
 	$loginRadiusError = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><p style ='color:red;'>Your LoginRadius API key or secret is not valid, please correct it or contact LoginRadius support at <b><a href ='http://www.loginradius.com' target = '_blank'>www.LoginRadius.com</a></b></p></div>"; 
-	$loginRadiusConnErr = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><p style ='color:red;'>Your API connection setting not working. try to change setting from module option or check your php.ini setting for (<b>cURL support = enabled</b> OR <b>allow_url_fopen = On</b>)</p></div>";
-	$loginRadiusServiceErr = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><p style ='color:red;'>Uh oh, looks like something went wrong. Try again in a sec!</p></div>"; 
 	$loginRadiusEmpty = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><div style ='color:red; margin-bottom:5px'>LoginRadius Social Login Plugin is not configured!</div><p style='line-height:1.3; margin-bottom:4px'>To activate your plugin, navigate to <strong>LoginRadius > API Settings</strong> section in your WordPress admin panel and insert LoginRadius API Key & Secret. Follow <a href='http://support.loginradius.com/customer/portal/articles/677100-how-to-get-loginradius-api-key-and-secret' target='_blank'>this</a> document to learn how to get API Key & Secret.</p></div>";
-	if(!empty($loginRadiusApiKey)){
-		global $loginRadiusObject;
-		$iframe = $loginRadiusObject->login_radius_get_iframe($loginRadiusApiKey, $loginRadiusSecret); 
-		if($iframe == "invalid" || $iframe == "incorrect key"){
-			if(!$newInterface){
-				echo $loginRadiusError; 
-				return; 
-			}else{
-				return $loginRadiusError; 
-			}
-		}elseif($iframe == "connection error"){
-			if(!$newInterface){
-				echo $loginRadiusConnErr;
-				return;
-			}else{
-				return $loginRadiusConnErr; 
-			} 
-		}elseif($iframe == "service error" || $iframe == "timeout"){
-			if(!$newInterface){
-				echo $loginRadiusServiceErr;
-				return;
-			}else{
-				return $loginRadiusServiceErr;
-			} 
-		}
-		$isHttps = (!empty($iframe->IsHttps) ? $iframe->IsHttps : ''); 
-		$iframeHeight = (!empty($iframe->height) ? $iframe->height : 50); 
-		$iframeWidth = (!empty($iframe->width) ? $iframe->width : 169); 
-		$http = ($isHttps == 1 ? "https://" : "http://");
-		$loc = login_radius_get_callback($http);
-		$loginRadiusResult = "<iframe src=".$http."hub.loginradius.com/Control/PluginSlider.aspx?apikey=".$loginRadiusApiKey."&callback=".$loc." width='".$iframeWidth."' height='".$iframeHeight."' frameborder='0' scrolling='no' allowtransparency='true' ></iframe>"; 
-	}else{
+	if(empty($loginRadiusApiKey)){
 		$loginRadiusResult = $loginRadiusEmpty;
+	}elseif(!$loginRadiusObject->loginradiusValidateKey($loginRadiusApiKey) || !$loginRadiusObject->loginradiusValidateKey($loginRadiusSecret)){
+		$loginRadiusResult = $loginRadiusError;
+	}else{
+		$loginRadiusResult = '<div class="interfacecontainerdiv"></div>';
 	}
-	// return/print iframe
+	// return/print interface HTML
 	if(!$newInterface){ 
 		echo $loginRadiusResult; 
 	}else{ 
 		return $loginRadiusResult; 
 	} 
-} 
+}
 
 /** 
  * Display social login interface in widget area. 
@@ -574,6 +566,7 @@ function login_radius_mapping(){
 		<tr>
 			<td colspan="2">
 		<?php
+		login_radius_login_script();
 		login_radius_get_interface();
 		?>
 			</td>

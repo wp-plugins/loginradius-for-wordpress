@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: Social Login for wordpress  
+Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
-Description: Add Social Login, Social Sharing, Social commenting and more to your WordPress website/blog and also get accurate User Profile Data and Social Analytics.
-Version: 4.0.1
+Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
+Version: 4.5
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -18,7 +18,7 @@ require_once('LoginRadius_admin.php');
  * This class handles the overall process of plugin.
  */
 class Login_Radius_Social_Login{
-// plugin version
+// plugin database update version
 private static $loginRadiusVersion = "4.0";
 
 /**
@@ -49,6 +49,7 @@ public static function login_radius_front_end_scripts(){
 		wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1');
 		wp_enqueue_script('jquery');
 	}
+	login_radius_login_script();
 }
 
 /**
@@ -577,9 +578,9 @@ private static function login_radius_validate_profiledata($userProfileObject) {
 	$profileData['FirstName'] = (!empty($userProfileObject->FirstName) ? $userProfileObject->FirstName : '');
 	$profileData['LastName'] = (!empty($userProfileObject->LastName) ? $userProfileObject->LastName : '');
 	$profileData['Provider'] = (!empty($userProfileObject->Provider) ? $userProfileObject->Provider : '');
-	$profileData['Thumbnail'] = (!empty($userProfileObject->ImageUrl) ? trim($userProfileObject->ImageUrl) : '');
+	$profileData['Thumbnail'] = (!empty($userProfileObject->ThumbnailImageUrl) ? trim($userProfileObject->ThumbnailImageUrl) : '');
 	if(empty($profileData['Thumbnail']) && $profileData['Provider'] == 'facebook'){
-		$profileData['Thumbnail'] = "http://graph.facebook.com/" . $profileData['SocialId'] . "/picture?type=large";
+		$profileData['Thumbnail'] = "http://graph.facebook.com/" . $profileData['SocialId'] . "/picture?type=square";
 	}
 	$profileData['Bio'] = (!empty($userProfileObject->About) ? $userProfileObject->About : '');
 	$profileData['ProfileUrl'] = (!empty($userProfileObject->ProfileUrl) ? $userProfileObject->ProfileUrl : '');
@@ -849,10 +850,29 @@ if($loginRadiusSettings['LoginRadius_socialavatar'] == "socialavatar"){
 add_action('login_radius_social_login', 'Login_Radius_Connect_button');
 
 function login_radius_api_connection(){
+	global $loginRadiusObject;
 	if(in_array('curl', get_loaded_extensions())){
-		die('curl');
+		$iframe = $loginRadiusObject->login_radius_check_connection($method = "curl");
+		if($iframe == "ok"){
+			die('curl');
+		}elseif($iframe == "service connection timeout"){
+			die('service connection timeout');
+		}elseif($iframe == "connection error"){
+			die('connection error');
+		}elseif($iframe == "timeout"){
+			die('timeout');
+		}
 	}elseif(ini_get('allow_url_fopen') == 1){
-		die('fsock');
+		$iframe = $loginRadiusObject->login_radius_check_connection($method = "fopen");
+		if($iframe == "ok"){
+			die('fsock');
+		}elseif($iframe == "service connection timeout"){
+			die('service connection timeout');
+		}elseif($iframe == "connection error"){
+			die('connection error');
+		}elseif($iframe == "timeout"){
+			die('timeout');
+		}
 	}else{
 		die('lrerror');
 	}
@@ -868,17 +888,6 @@ function login_radius_verify_keys(){
 	}elseif(empty($secret) || !preg_match('/^\{?[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}?$/i', $secret)){
 		die('secret');
 	}else{
-		global $loginRadiusObject;
-		$iframe = $loginRadiusObject->login_radius_get_iframe($key, $secret);
-		if($iframe == "incorrect key"){
-			die('key');
-		}elseif($iframe == "connection error"){
-			die('connection');
-		}elseif($iframe == "service error"){
-			die('service error');
-		}elseif($iframe == "timeout"){
-			die('timeout');
-		}
 		die('working');
 	}
 }

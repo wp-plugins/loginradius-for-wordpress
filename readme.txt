@@ -5,7 +5,7 @@ Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPres
 single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
 Requires at least: 2.5.0
 Tested up to: 3.5.1
-Stable tag: 4.0.1
+Stable tag: 4.5
 License: GPLv2 or later
 
 Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, LinkedIn, Vkontakte and over 20 more!
@@ -258,6 +258,10 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
 == Changelog ==
+= 4.5 =
+* Added JS framework
+  [Important: If you are upgrading to Version 4.5, the icons in your login interface will default to the new login theme. Please log into your www.loginradius.com account if you wish to change it.]
+
 = 4.0.1 =
 * Added performance improvement during login interface load
 
@@ -503,3 +507,7 @@ Bug fixed for popup in IE
 
 = 4.0.1 =
 * Added performance improvement during login interface load
+
+= 4.5 =
+* Added JS framework
+  [Important: If you are upgrading to version 4.5, the icons in your login interface will default to the new login theme. Please log into your www.loginradius.com account if you wish to change it.]
