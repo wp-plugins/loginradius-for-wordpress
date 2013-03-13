@@ -19,7 +19,7 @@ function login_radius_login_script(){
 		}
 		?>
 		<!-- Script to enable social login -->
-		 <script src="http://hub.loginradius.com/include/js/LoginRadius.js" ></script>
+		 <script src="//hub.loginradius.com/include/js/LoginRadius.js"></script>
 		 <script type="text/javascript"> var options={}; options.login=true; LoginRadius_SocialLogin.util.ready(function () { $ui = LoginRadius_SocialLogin.lr_login_settings;$ui.interfacesize = "";$ui.apikey = "<?php echo $loginRadiusSettings['LoginRadius_apikey'] ?>";$ui.callback = "<?php echo login_radius_get_callback($http) ?>"; $ui.lrinterfacecontainer ="interfacecontainerdiv"; LoginRadius_SocialLogin.init(options); });
 		 </script>
 		<?php
