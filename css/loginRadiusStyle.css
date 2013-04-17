@@ -62,24 +62,6 @@ position: fixed;
 	padding:6px 7px 6px 8px; 
 	margin:0px 8px 0px 0px; 
 } 
-.inputbutton:hover{ 
-	border:#00ccff 1px solid; 
-	-moz-border-radius:2px; 
-	-webkit-border-radius:2px; 
-	border-radius:2px; 
-	khtml-border-radius:2px; 
-	text-decoration:none; 
-	color:#000000; 
-	font-family:Arial, Helvetica, sans-serif; 
-	font-size:13px; 
-	cursor:pointer; 
-	padding:6px 7px 6px 8px; 
-	-moz-box-shadow: 0px 0px  4px #8a8a8a; 
-	-webkit-box-shadow: 0px 0px  4px #8a8a8a; 
-	box-shadow: 0px 0px  4px #8a8a8a; 
-	background:#f3f3f3; 
-	margin:0px 8px 0px 0px; 
-} 
 .LoginRadius_container_outer { 
  /*width: 648px; 
  border: 1px solid #ccc; 
@@ -88,21 +70,8 @@ position: fixed;
 .LoginRadius_container_inner { 
  /*background-color: #EAF7FF;*/ 
  padding: 10px; 
-
-
-
-
-
-
-
-
-
-
-
-
  overflow: hidden; 
  }  
-
 .LoginRadius_container { 
  float:left; 
  padding: 10px; 
@@ -173,7 +142,6 @@ border-color: #E6DB55;
     padding: 26px 24px 46px; 
 	width:345px 
 }  
-
 .login-sep-text { 
     float: left; 
     font-size: 16px; 
@@ -181,7 +149,6 @@ border-color: #E6DB55;
     margin: 100px 20px 20px 30px; 
     padding-left: 10px; 
 }  
-
 .float-left { 
     float: left; 
 }  
@@ -205,14 +172,3 @@ filter: alpha(opacity=90);
 	z-index: 1000000 !important;
 }
 <![endif]-->
-
-
-
-
-
-
-
-
-
-
-

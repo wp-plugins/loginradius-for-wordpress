@@ -3,7 +3,7 @@
 Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
 Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
-Version: 4.5.1
+Version: 4.6
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -93,13 +93,21 @@ private static function login_radius_verify(){
 		}else{
 			update_user_meta( $userId, 'loginradius_isVerified', '1');
 			delete_user_meta( $userId, 'loginradius_verification_key', $verificationKey);
-			if(isset($loginRadiusSettings['LoginRadius_sendemail']) && $loginRadiusSettings['LoginRadius_sendemail'] == "sendemail"){
-				$userPassword = wp_generate_password();
-				wp_update_user(array('ID' => $userId, 'user_pass' => $userPassword));
-				wp_new_user_notification($userId, $userPassword);
-			}
 		}
-		self::login_radius_notify("Your email has been successfully verified. Now you can login into your account.");
+		// new user notification
+		if(isset($loginRadiusSettings['LoginRadius_sendemail']) && $loginRadiusSettings['LoginRadius_sendemail'] == "sendemail"){
+			$userPassword = wp_generate_password();
+			wp_update_user(array('ID' => $userId, 'user_pass' => $userPassword));
+			wp_new_user_notification($userId, $userPassword);
+		}else{
+			// notification to admin
+			self::loginRadiusSendVerificationEmail(trim(get_option('admin_email')), "", "", 'admin notification', $userId);
+		}
+		if(get_user_meta($userId, 'loginradius_status', true) === '0'){
+			self::login_radius_notify(__("Your account is currently inactive. You will be notified through email, once Administrator activates your account.", 'LoginRadius'));
+		}else{
+			self::login_radius_notify(__("Your email has been successfully verified. Now you can login into your account.", 'LoginRadius'));
+		}
 	}else{
 		wp_redirect(site_url());
 		exit();
@@ -128,7 +136,7 @@ private static function login_radius_update_status($userId, $provider, $socialId
 	update_user_meta($userId, $provider.'LrVerified', '0');
 	update_user_meta($userId, $provider.'LoginRadiusVkey', $loginRadiusKey);
 	self::loginRadiusSendVerificationEmail($email, $loginRadiusKey, $provider);
-	self::login_radius_notify("Your Confirmation link Has Been Sent To Your Email Address. Please verify your email by clicking on confirmation link.");
+	self::login_radius_notify(__("Your Confirmation link Has Been Sent To Your Email Address. Please verify your email by clicking on confirmation link.", 'LoginRadius'));
 }
   
 /**
@@ -148,6 +156,10 @@ private static function login_radius_check_verification_status($socialId, $provi
  * Login and redirect user
  */	
 public static function login_radius_login_user($userId, $socialId){
+	if(get_user_meta($userId, 'loginradius_status', true) === '0'){
+		self::login_radius_notify(__("Your account is currently inactive. You will be notified through email, once Administrator activates your account.", 'LoginRadius'));
+		return;
+	}
 	// set the current social login id
 	update_user_meta($userId, 'loginradius_current_id', $socialId);
 	self::login_radius_set_cookies($userId);
@@ -178,8 +190,9 @@ public static function login_radius_connect(){
 			$isVerified = get_user_meta( $userId, $loginRadiusProvider.'LrVerified', true);
 			if($isVerified == '1'){											// Check if lrid is the same that verified email.
 				self::login_radius_login_user($userId, $profileData['SocialId']);					// login user
+				return;
 			}else{															// Notify user to verify email
-				self::login_radius_notify("Please verify your email by clicking the confirmation link sent to you.");
+				self::login_radius_notify(__("Please verify your email by clicking the confirmation link sent to you.", 'LoginRadius'));
 				return;
 			}
 		}
@@ -192,12 +205,14 @@ public static function login_radius_connect(){
 				$isVerified = $wpdb->get_var($wpdb->prepare("SELECT meta_value FROM $wpdb->usermeta WHERE user_id = %d and meta_key='loginradius_isVerified'", $loginRadiusUserId));
 				if ($isVerified == '1') {								// if email is verified
 					self::login_radius_login_user($loginRadiusUserId, $profileData['SocialId']);
+					return;
 				}else{
-					self::login_radius_notify("Please verify your email by clicking the confirmation link sent to you.");
+					self::login_radius_notify(__("Please verify your email by clicking the confirmation link sent to you.", 'LoginRadius'));
 					return;
 				}
 			}else{
 				self::login_radius_login_user($loginRadiusUserId, $profileData['SocialId']);
+				return;
 			}
 		}else{															// id doesn't exist
 			if(empty($profileData['Email'])){							// email is empty
@@ -226,6 +241,7 @@ public static function login_radius_connect(){
 							self::login_radius_link_account($loginRadiusUserId, $profileData['SocialId'], $profileData['Thumbnail'], $profileData['Provider']);
 							// Login user
 							self::login_radius_login_user($loginRadiusUserId, $profileData['SocialId']);
+							return;
 						}else{
 							if(!self::login_radius_allow_registration()){
 								return;	
@@ -248,6 +264,7 @@ public static function login_radius_connect(){
 						}
 						// Login user
 						self::login_radius_login_user($loginRadiusUserId, $profileData['SocialId']);
+						return;
 					}
 				}else{
 					if(!self::login_radius_allow_registration()){
@@ -329,7 +346,7 @@ public static function login_radius_connect(){
 								$loginRadiusProviderId = get_user_meta($loginRadiusUserId, $loginRadiusProvider.'Lrid', true);
 								if($loginRadiusProviderId == $loginRadiusId){
 									// If verification pending for this login radius id, show notification.
-									self::login_radius_notify("Please verify your email by clicking the confirmation link sent to you.");
+									self::login_radius_notify(__("Please verify your email by clicking the confirmation link sent to you.", 'LoginRadius'));
 								}else{
 									self::login_radius_update_status($loginRadiusUserId, $loginRadiusProvider, $loginRadiusId, $loginRadiusEmail);
 								}
@@ -446,12 +463,6 @@ private static function login_radius_create_user($profileData, $loginRadiusPopup
 		);
 		$user_id = wp_insert_user($userdata);
 		self::login_radius_delete_temporary_data($profileData);
-		if(($sendemail == 'sendemail')){
-			if(($dummyEmail == "notdummyemail") && ($loginRadiusPopup == true)){
-			}else{
-				wp_new_user_notification($user_id, $userPassword);
-			}
-		}
 		if(!is_wp_error($user_id)){
 			if(!empty($socialId)){
 				update_user_meta($user_id, 'loginradius_provider_id', $socialId);
@@ -467,8 +478,33 @@ private static function login_radius_create_user($profileData, $loginRadiusPopup
 				update_user_meta($user_id, 'loginradius_verification_key', $loginRadiusKey);
 				update_user_meta($user_id, 'loginradius_isVerified', '0');
 				self::loginRadiusSendVerificationEmail($email, $loginRadiusKey);
-				self::login_radius_notify("Your Confirmation link Has Been Sent To Your Email Address. Please verify your email by clicking on confirmation link.");
+				// set status
+				if(isset($loginRadiusSettings['LoginRadius_defaultUserStatus']) && $loginRadiusSettings['LoginRadius_defaultUserStatus'] == '0'){
+					update_user_meta($user_id, 'loginradius_status', '0');
+				}else{
+					update_user_meta($user_id, 'loginradius_status', '1');
+				}
+				self::login_radius_notify(__("Your Confirmation link Has Been Sent To Your Email Address. Please verify your email by clicking on confirmation link.", 'LoginRadius'));
 				return;
+			}
+			if(($sendemail == 'sendemail')){
+				if(($dummyEmail == "notdummyemail") && ($loginRadiusPopup == true)){
+				}else{
+					wp_new_user_notification($user_id, $userPassword);
+				}
+			}else{
+				// notification to admin
+				self::loginRadiusSendVerificationEmail(trim(get_option('admin_email')), "", "", 'admin notification', $user_id);
+			}
+			// set status if option is enabled
+			if(isset($loginRadiusSettings['LoginRadius_enableUserActivation']) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == '1'){
+				if(isset($loginRadiusSettings['LoginRadius_defaultUserStatus']) && $loginRadiusSettings['LoginRadius_defaultUserStatus'] == '0'){
+					update_user_meta($user_id, 'loginradius_status', '0');
+					self::login_radius_notify(__("Your account is currently inactive. You will be notified through email, once Administrator activates your account.", 'LoginRadius'));
+					return;
+				}else{
+					update_user_meta($user_id, 'loginradius_status', '1');
+				}
 			}
 			self::login_radius_login_user($user_id, $socialId);
 		}else{
@@ -480,13 +516,25 @@ private static function login_radius_create_user($profileData, $loginRadiusPopup
 /**
  * Function that verify new wp user.
  */
-private static function loginRadiusSendVerificationEmail($loginRadiusEmail, $loginRadiusKey, $loginRadiusProvider=""){
-	$loginRadiusSubject = "[".htmlspecialchars(trim(get_option('blogname')))."] Email Verification";
-	$loginRadiusUrl = site_url()."?loginRadiusVk=".$loginRadiusKey;
-	if(!empty($loginRadiusProvider)){
-		$loginRadiusUrl .= "&loginRadiusPvider=".$loginRadiusProvider;
+public static function loginRadiusSendVerificationEmail($loginRadiusEmail, $loginRadiusKey, $loginRadiusProvider="", $emailType = '', $username = ''){
+	if($emailType == 'activation'){
+		$loginRadiusSubject = "[".htmlspecialchars(trim(get_option('blogname')))."] Account Activation";
+		$loginRadiusMessage = "Hi ".$username.", \r\n".
+							  "Your account has been activated at ".site_url().". Now you can login to your account.";
+	}elseif($emailType == 'admin notification'){
+		$user = get_userdata($username);
+		$loginRadiusSubject = "[".htmlspecialchars(trim(get_option('blogname')))."] New User Registration";
+		$loginRadiusMessage = "New user registration on your site ".htmlspecialchars(trim(get_option('blogname'))).": \r\n".
+							   "Username: ".$user->user_login." \r\n".
+							   "E-mail: ".$user->user_email."";
+	}else{
+		$loginRadiusSubject = "[".htmlspecialchars(trim(get_option('blogname')))."] Email Verification";
+		$loginRadiusUrl = site_url()."?loginRadiusVk=".$loginRadiusKey;
+		if(!empty($loginRadiusProvider)){
+			$loginRadiusUrl .= "&loginRadiusPvider=".$loginRadiusProvider;
+		}
+		$loginRadiusMessage = "Please click on the following link or paste it in browser to verify your email \r\n".$loginRadiusUrl;
 	}
-	$loginRadiusMessage = "Please click on the following link or paste it in browser to verify your email \r\n ".$loginRadiusUrl;
 	wp_mail($loginRadiusEmail, $loginRadiusSubject, $loginRadiusMessage);
 }
 
@@ -807,6 +855,9 @@ function login_radius_activation(){
 										   'LoginRadius_counterhome' => '1',
 										   'LoginRadius_counterpost' => '1',
 										   'LoginRadius_counterpage' => '1',
+										   'LoginRadius_noProvider' => '0',
+										   'LoginRadius_enableUserActivation' => '1',
+										   'LoginRadius_defaultUserStatus' => '1'
 										));
 }
 register_activation_hook(__FILE__, 'login_radius_activation');
@@ -849,6 +900,7 @@ if($loginRadiusSettings['LoginRadius_socialavatar'] == "socialavatar"){
 // show social login interface on the custom hook call
 add_action('login_radius_social_login', 'Login_Radius_Connect_button');
 
+// verify API connection method
 function login_radius_api_connection(){
 	global $loginRadiusObject;
 	if(in_array('curl', get_loaded_extensions())){
@@ -880,6 +932,7 @@ function login_radius_api_connection(){
 // ajax for connection handler detection
 add_action('wp_ajax_login_radius_api_connection', 'login_radius_api_connection');
 
+// verify API Key/Secret
 function login_radius_verify_keys(){
 	$key = trim($_POST['key']);
 	$secret = trim($_POST['secret']);
@@ -893,4 +946,27 @@ function login_radius_verify_keys(){
 }
 // ajax for key verification
 add_action('wp_ajax_login_radius_verify_keys', 'login_radius_verify_keys');
+
+// change user status
+function login_radius_change_user_status(){
+	$currentStatus = $_POST['current_status'];
+	$userId = $_POST['user_id'];
+	if($currentStatus == '1'){
+		update_user_meta($userId, 'loginradius_status', '0');
+		die('done'); 
+	}elseif($currentStatus == '0'){ 
+		update_user_meta($userId, 'loginradius_status', '1');
+		$user = get_userdata($userId);
+		$username = $user->display_name != "" ? $user->display_name : $user->user_nicename;
+		$username = $username != "" ? ucfirst($username) : ucfirst($user->user_login);
+		try{
+			Login_Radius_Social_Login::loginRadiusSendVerificationEmail($user->user_email, "", "", 'activation', $username);
+		}catch(Exception $e){
+			die('error');
+		}
+		die('done');
+	}
+}
+// ajax for key verification
+add_action('wp_ajax_login_radius_change_user_status', 'login_radius_change_user_status');
 ?>

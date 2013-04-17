@@ -12,6 +12,16 @@ window.onload = function(){
 			}
 		}
 	}
+	// user activate/deactivate toggle
+	var loginRadiusStatusOption = document.getElementsByName('LoginRadius_settings[LoginRadius_enableUserActivation]');
+	for(var i = 0; i < loginRadiusStatusOption.length; i++){
+		if(loginRadiusStatusOption[i].checked && loginRadiusStatusOption[i].value == '1'){
+			document.getElementById('loginRadiusDefaultStatus').style.display = 'table-row'; 
+		}else if(loginRadiusStatusOption[i].checked && loginRadiusStatusOption[i].value == '0'){
+			document.getElementById('loginRadiusDefaultStatus').style.display = 'none'; 
+		}
+	}
+	// email required
 	var loginRadiusEmailRequired = document.getElementsByName('LoginRadius_settings[LoginRadius_dummyemail]');
 	for(var i = 0; i < loginRadiusEmailRequired.length; i++){
 		if(loginRadiusEmailRequired[i].checked && loginRadiusEmailRequired[i].value == 'notdummyemail'){

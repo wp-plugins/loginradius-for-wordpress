@@ -237,6 +237,7 @@ function login_radius_option_page(){
 							<div class="loginRadiusBorder"></div>
 							</td>
 							</tr>
+							
 							<tr>
 							<tr>
 							<td><div class="loginRadiusQuestion"><?php _e("Do you want to show the Social Login interface on your WordPress login page?", 'LoginRadius'); ?></div>
@@ -274,7 +275,40 @@ function login_radius_option_page(){
 							</table>
 						</div>
 						</div>
+						
+						<div class="stuffbox">
+						<h3><label><?php _e('Social Login Interface Customization', 'LoginRadius'); ?></label></h3>
+						<div class="inside">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form-table editcomment menu_content_table">
+							<tr>
+							<td><div class="loginRadiusQuestion"><?php _e("Select the icon size to use in the Social Login interface", 'LoginRadius'); ?></div>
+							<div class="loginRadiusYesRadio">
+							<input type="radio" name="LoginRadius_settings[LoginRadius_interfaceSize]" value="" <?php echo !isset($loginRadiusSettings['LoginRadius_interfaceSize']) || $loginRadiusSettings['LoginRadius_interfaceSize'] == ''? "checked" : ""; ?>/> <label><?php _e ('Medium', 'LoginRadius'); ?></label>
+							</div>
+							<div>
+							<input type="radio" name="LoginRadius_settings[LoginRadius_interfaceSize]" value="small" <?php echo isset($loginRadiusSettings['LoginRadius_interfaceSize']) && $loginRadiusSettings['LoginRadius_interfaceSize'] == 'small'? "checked" : ""; ?>/> <label><?php _e ('Small', 'LoginRadius'); ?></label>
+							</div>
+							<div class="loginRadiusBorder"></div>
+							</td>
+							</tr>
 							
+							<tr>
+							<td><div class="loginRadiusQuestion"><?php _e("How many social icons would you like to be displayed per row?", 'LoginRadius'); ?></div>
+							<input type="text" name="LoginRadius_settings[LoginRadius_numColumns]" style="width:50px" maxlength="2" value="<?php if(isset($loginRadiusSettings['LoginRadius_numColumns'])){ echo trim($loginRadiusSettings['LoginRadius_numColumns']); } ?>" />
+							<div class="loginRadiusBorder"></div>
+							</td>
+							</tr>
+							
+							<tr>
+							<td><div class="loginRadiusQuestion"><?php _e("What background color would you like to use for the Social Login interface?", 'LoginRadius'); ?> <a style="text-decoration:none" href="javascript:void(0)" title="<?php _e('Leave empty for transparent. You can enter hexa-decimal code of the color as well as name of the color.', 'LoginRadius') ?>">(?)</a></div>
+							<input type="text" name="LoginRadius_settings[LoginRadius_backgroundColor]" value="<?php if(isset($loginRadiusSettings['LoginRadius_backgroundColor'])){ echo trim($loginRadiusSettings['LoginRadius_backgroundColor']); } ?>" />
+							<div class="loginRadiusBorder"></div>
+							</td>
+							</tr>
+							</table>
+							</div>
+						</div>
+						
 						<div class="stuffbox">
 						<h3><label><?php _e('User Email Settings', 'LoginRadius'); ?></label></h3>
 						<div class="inside">
@@ -418,6 +452,7 @@ function login_radius_option_page(){
 						<div class="loginRadiusBorder"></div>
 						</td>
 						</tr>
+						
 						<tr>
 						<td>
 						<div class="loginRadiusQuestion">
@@ -467,6 +502,36 @@ function login_radius_option_page(){
 						<?php _e("Do you want to let users use their social profile picture as an avatar on your website?", 'LoginRadius'); ?></div>
 						<input name="LoginRadius_settings[LoginRadius_socialavatar]" type="radio"  <?php echo $socialavatar;?> value="socialavatar"/><?php _e("YES, let users use their social profile picture as an avatar", 'LoginRadius'); ?> <br />
 						<input name="LoginRadius_settings[LoginRadius_socialavatar]" type="radio" <?php echo $defaultavatar;?> value="defaultavatar" /><?php _e("NO, use default avatars", 'LoginRadius'); ?>
+						</td>
+						</tr>
+						</table>
+						</div>
+						</div>
+						
+						<div class="stuffbox">
+						<h3><label><?php _e('User Membership Control', 'LoginRadius');?></label></h3>
+						<div class="inside">
+						<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form-table editcomment menu_content_table">
+						<tr>
+						<td>
+						<div class="loginRadiusQuestion">
+						<?php _e('Do you want to control user activation/deactivation?', 'LoginRadius'); ?>
+						<a style="text-decoration:none" href="javascript:void(0)" title="<?php _e('You can enable/disable user from Status column on Users page in admin', 'LoginRadius'); ?>">(?)</a>
+						</div>
+						<input type="radio" name="LoginRadius_settings[LoginRadius_enableUserActivation]" value="1" <?php echo(isset($loginRadiusSettings['LoginRadius_enableUserActivation']) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == 1)? "checked" : ""; ?> onchange = "if(this.checked){ document.getElementById('loginRadiusDefaultStatus').style.display = 'table-row'; }" /> <?php _e('YES, display activate/deactivate option in the ', 'LoginRadius') ?> <a href="<?php echo get_admin_url() ?>users.php" target="_blank" ><?php _e('User list', 'LoginRadius'); ?></a><br />
+						<input type="radio" name="LoginRadius_settings[LoginRadius_enableUserActivation]" value="0" <?php echo((isset($loginRadiusSettings['LoginRadius_enableUserActivation']) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == 0)) || !isset($loginRadiusSettings['LoginRadius_enableUserActivation'])? "checked" : ""; ?>  onchange = "if(this.checked){ document.getElementById('loginRadiusDefaultStatus').style.display = 'none'; }" /> <?php _e('NO', 'LoginRadius'); ?><br />
+						<div class="loginRadiusBorder"></div>
+						</td>
+						</tr>
+						
+						<tr id="loginRadiusDefaultStatus">
+						<td>
+						<div class="loginRadiusQuestion">
+						<?php _e('What would you like to set as the default status of the user when he/she registers to your website?', 'LoginRadius'); ?>
+						</div>
+						<input type="radio" name="LoginRadius_settings[LoginRadius_defaultUserStatus]" value="1" <?php echo((isset($loginRadiusSettings['LoginRadius_defaultUserStatus']) && $loginRadiusSettings['LoginRadius_defaultUserStatus'] == 1)) || !isset($loginRadiusSettings['LoginRadius_defaultUserStatus'])? "checked" : ""; ?>/> <?php _e('Active', 'LoginRadius'); ?><br />
+						<input type="radio" name="LoginRadius_settings[LoginRadius_defaultUserStatus]" value="0" <?php echo(isset($loginRadiusSettings['LoginRadius_defaultUserStatus']) && $loginRadiusSettings['LoginRadius_defaultUserStatus'] == 0)? "checked" : ""; ?>/> <?php _e('Inactive', 'LoginRadius'); ?>
+						<div class="loginRadiusBorder"></div>
 						</td>
 						</tr>
 						</table>
@@ -692,6 +757,9 @@ function login_radius_option_page(){
 						<div style="width:420px">
 						<div class="loginRadiusProviders">
 							<input type="checkbox" onchange="loginRadiusSharingLimit(this); loginRadiusRearrangeProviderList(this)" <?php echo !isset($loginRadiusSettings['sharing_providers']) || in_array('facebook', $loginRadiusSettings['sharing_providers']) ? 'checked="checked"' : '' ?> name="LoginRadius_settings[sharing_providers][]" value="facebook" /> <label>Facebook</label>
+						</div>
+						<div class="loginRadiusProviders">
+							<input type="checkbox" onchange="loginRadiusSharingLimit(this); loginRadiusRearrangeProviderList(this)" <?php echo !isset($loginRadiusSettings['sharing_providers']) || in_array('pinterest', $loginRadiusSettings['sharing_providers']) ? 'checked="checked"' : '' ?> name="LoginRadius_settings[sharing_providers][]" value="pinterest" /> <label>Pinterest</label>
 						</div>
 						<div class="loginRadiusProviders">
 							<input type="checkbox" onchange="loginRadiusSharingLimit(this); loginRadiusRearrangeProviderList(this)" <?php echo !isset($loginRadiusSettings['sharing_providers']) || in_array('googleplus', $loginRadiusSettings['sharing_providers']) ? 'checked="checked"' : '' ?> name="LoginRadius_settings[sharing_providers][]" value="googleplus" /> <label>GooglePlus</label>
@@ -979,6 +1047,9 @@ function login_radius_option_page(){
 								<input <?php echo !isset($loginRadiusSettings['counter_providers']) || in_array('Google+ +1', $loginRadiusSettings['counter_providers']) ? 'checked="checked"' : '' ?> type="checkbox" name="LoginRadius_settings[counter_providers][]" value="Google+ +1" /> <label>Google+ +1</label>
 							</div>
 							<div class="loginRadiusCounterProviders">
+								<input <?php echo isset($loginRadiusSettings['counter_providers']) && in_array('Pinterest Pin it', $loginRadiusSettings['counter_providers']) ? 'checked="checked"' : '' ?> type="checkbox" name="LoginRadius_settings[counter_providers][]" value="Pinterest Pin it" /> <label>Pinterest Pin it</label>
+							</div>
+							<div class="loginRadiusCounterProviders">
 								<input <?php echo isset($loginRadiusSettings['counter_providers']) && in_array('Google+ Share', $loginRadiusSettings['counter_providers']) ? 'checked="checked"' : '' ?> type="checkbox" name="LoginRadius_settings[counter_providers][]" value="Google+ Share" /> <label>Google+ Share</label>
 							</div>
 							<div class="loginRadiusCounterProviders">
@@ -992,6 +1063,9 @@ function login_radius_option_page(){
 							</div>
 							<div class="loginRadiusCounterProviders">
 								<input <?php echo isset($loginRadiusSettings['counter_providers']) && in_array('Reddit', $loginRadiusSettings['counter_providers']) ? 'checked="checked"' : '' ?> type="checkbox" name="LoginRadius_settings[counter_providers][]" value="Reddit" /> <label>Reddit</label>
+							</div>
+							<div class="loginRadiusCounterProviders">
+								<input <?php echo isset($loginRadiusSettings['counter_providers']) && in_array('Hybridshare', $loginRadiusSettings['counter_providers']) ? 'checked="checked"' : '' ?> type="checkbox" name="LoginRadius_settings[counter_providers][]" value="Hybridshare" /> <label>Hybridshare</label>
 							</div>
 							</div>
 						</td>

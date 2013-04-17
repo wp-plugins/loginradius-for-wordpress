@@ -20,7 +20,7 @@ function login_radius_login_script(){
 		?>
 		<!-- Script to enable social login -->
 		 <script src="//hub.loginradius.com/include/js/LoginRadius.js"></script>
-		 <script type="text/javascript"> var options={}; options.login=true; LoginRadius_SocialLogin.util.ready(function () { $ui = LoginRadius_SocialLogin.lr_login_settings;$ui.interfacesize = "";$ui.apikey = "<?php echo $loginRadiusSettings['LoginRadius_apikey'] ?>";$ui.callback = "<?php echo login_radius_get_callback($http) ?>"; $ui.lrinterfacecontainer ="interfacecontainerdiv"; LoginRadius_SocialLogin.init(options); });
+		 <script type="text/javascript"> var options={}; options.login=true; LoginRadius_SocialLogin.util.ready(function () { $ui = LoginRadius_SocialLogin.lr_login_settings;$ui.interfacesize = "";$ui.apikey = "<?php echo $loginRadiusSettings['LoginRadius_apikey'] ?>";$ui.callback = "<?php echo login_radius_get_callback($http) ?>"; $ui.lrinterfacecontainer ="interfacecontainerdiv"; $ui.interfacesize = "<?php if(isset($loginRadiusSettings['LoginRadius_interfaceSize'])){ echo trim($loginRadiusSettings['LoginRadius_interfaceSize']); }?>"; <?php if(isset($loginRadiusSettings['LoginRadius_numColumns']) && trim($loginRadiusSettings['LoginRadius_numColumns']) != ""){ echo '$ui.noofcolumns = '.trim($loginRadiusSettings['LoginRadius_numColumns']).';'; } ?> $ui.lrinterfacebackground = "<?php if(isset($loginRadiusSettings['LoginRadius_backgroundColor'])){ echo trim($loginRadiusSettings['LoginRadius_backgroundColor']); } ?>"; LoginRadius_SocialLogin.init(options); });
 		 </script>
 		<?php
 	}
@@ -370,7 +370,7 @@ function login_radius_get_counter_code(){
 		}
 	}elseif(isset($loginRadiusSettings['LoginRadius_counterTheme']) && $loginRadiusSettings['LoginRadius_counterTheme'] == "vertical"){
 		$isHorizontal = "false";
-		if($loginRadiusSettings['topCounter_theme'] == "32"){
+		if($loginRadiusSettings['verticalCounter_theme'] == "32"){
 			$type = 'vertical';
 		}else{
 			$type = 'horizontal';
@@ -469,24 +469,6 @@ function login_radius_login_shortcode(){
 }
 add_shortcode('LoginRadius_Login', 'login_radius_login_shortcode');
 
-// check if provider column to be shown in the user list.
-if(isset($loginRadiusSettings['LoginRadius_noProvider']) && $loginRadiusSettings['LoginRadius_noProvider'] != "1"){
-    // add provider column in the user list
-	function login_radius_add_provider_column($columns){
-		$columns['loginradius_provider'] = 'LoginRadius Provider';
-		return $columns;
-	}
-	add_filter('manage_users_columns', 'login_radius_add_provider_column');
-	// show social ID provider in the provider column
-	function login_radius_show_provider($value, $columnName, $userId){
-		$lrProvider = get_user_meta($userId, 'loginradius_provider', true);
-		$lrProvider = ($lrProvider == false) ? "-" : $lrProvider;
-		if('loginradius_provider' == $columnName){
-			return ucfirst($lrProvider);
-		}
-	}
-	add_action('manage_users_custom_column', 'login_radius_show_provider', 10, 3);
-}
 // replicate Social Login configuration to the subblogs in the multisite network
 if(is_multisite() && is_main_site()){
 	// replicate the social login config to the new blog created in the multisite network
@@ -719,5 +701,118 @@ function login_radius_delete_meta(){
 	global $user_ID; 
 	delete_user_meta($user_ID, 'loginradius_current_id');
 }
-add_action('clear_auth_cookie', 'login_radius_delete_meta' ); 
+add_action('clear_auth_cookie', 'login_radius_delete_meta' );
+
+// check if provider column to be shown in the user list.
+if((isset($loginRadiusSettings['LoginRadius_noProvider']) && $loginRadiusSettings['LoginRadius_noProvider'] != "1") || (isset($loginRadiusSettings['LoginRadius_enableUserActivation']) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == "1")){
+    // add provider column in the user list
+	function login_radius_add_provider_column($columns){
+		global $loginRadiusSettings;
+		if(isset($loginRadiusSettings['LoginRadius_noProvider']) && $loginRadiusSettings['LoginRadius_noProvider'] != "1"){
+			$columns['loginradius_provider'] = 'LoginRadius Provider';
+		}
+		if(isset($loginRadiusSettings['LoginRadius_enableUserActivation']) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == "1"){
+			$columns['loginradius_status'] = 'Status';
+		}
+		return $columns;
+	}
+	add_filter('manage_users_columns', 'login_radius_add_provider_column');
+	// show social ID provider in the provider column
+	function login_radius_show_provider($value, $columnName, $userId){
+		global $loginRadiusSettings;
+		if(isset($loginRadiusSettings['LoginRadius_noProvider']) && $loginRadiusSettings['LoginRadius_noProvider'] != "1"){
+			$lrProvider = get_user_meta($userId, 'loginradius_provider', true);
+			$lrProvider = ($lrProvider == false) ? "-" : $lrProvider;
+			if('loginradius_provider' == $columnName){
+				return ucfirst($lrProvider);
+			}
+		}
+		if(isset($loginRadiusSettings['LoginRadius_enableUserActivation']) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == "1"){
+			if($userId == 1){
+				return;
+			}
+			if(($lrStatus = get_user_meta($userId, 'loginradius_status', true)) == "" || $lrStatus == '1'){
+				$lrStatus = '1';
+			}else{
+				$lrStatus = '0';
+			}
+			if('loginradius_status' == $columnName){
+				if($lrStatus == '1'){
+					return '<span id="loginRadiusStatus'.$userId.'"><a alt="Active (Click to Disable)" title="Active (Click to Disable)" href="javascript:void(0)" onclick="loginRadiusChangeStatus('.$userId.', '.$lrStatus.')" ><img height="20" width="20" src="'.plugins_url("images/enable.png", __FILE__).'" /></a></span>';
+				}else{
+					return '<span id="loginRadiusStatus'.$userId.'"><a alt="Inactive (Click to Enable)" title="Inactive (Click to Enable)" href="javascript:void(0)" onclick="loginRadiusChangeStatus('.$userId.', '.$lrStatus.')" ><img height="20" width="20" src="'.plugins_url("images/disable.png", __FILE__).'" /></a></span>';
+				}
+			}
+		}
+	}
+	add_action('manage_users_custom_column', 'login_radius_show_provider', 10, 3);
+
+	// add javascript on users.php in admin
+	function loginradius_add_script(){
+		global $parent_file;
+		if($parent_file == 'users.php'){
+			?>
+			<script type="text/javascript">
+			function loginRadiusChangeStatus(userId, currentStatus){
+				jQuery('#loginRadiusStatus'+userId).html('<img width="20" height="20" title="<?php _e('Please wait', 'LoginRadius') ?>..." src="<?php echo plugins_url("images/loading_icon.gif", __FILE__) ?>" />');
+				jQuery.ajax({
+				  type: 'POST',
+				  url: '<?php echo get_admin_url() ?>admin-ajax.php',
+				  data: {  
+					  action: 'login_radius_change_user_status',
+					  user_id: userId,
+					  current_status: currentStatus
+				  },
+				  success: function(data, textStatus, XMLHttpRequest){
+					if(data == 'done'){
+						if(currentStatus == 0){
+							jQuery('#loginRadiusStatus'+userId).html('<span id="loginRadiusStatus'+userId+'"><a href="javascript:void(0)" alt="<?php _e('Active (Click to Disable)', 'LoginRadius') ?>" title="<?php _e('Active (Click to Disable)', 'LoginRadius') ?>" onclick="loginRadiusChangeStatus('+userId+', 1)" ><img width="20" height="20" src="<?php echo plugins_url("images/enable.png", __FILE__) ?>" /></a></span>');
+						}else if(currentStatus == 1){
+							jQuery('#loginRadiusStatus'+userId).html('<span id="loginRadiusStatus'+userId+'"><a href="javascript:void(0)" alt="<?php _e('Inactive (Click to Enable)', 'LoginRadius') ?>" title="<?php _e('Inactive (Click to Enable)', 'LoginRadius') ?>" onclick="loginRadiusChangeStatus('+userId+', 0)" ><img width="20" height="20" src="<?php echo plugins_url("images/disable.png", __FILE__) ?>" /></a></span>');
+						}
+					}else if(data == 'error'){
+						jQuery('#loginRadiusStatus'+userId).html('<span id="loginRadiusStatus'+userId+'"><a href="javascript:void(0)" alt="<?php _e('Active (Click to Disable)', 'LoginRadius') ?>" title="<?php _e('Active (Click to Disable)', 'LoginRadius') ?>" onclick="loginRadiusChangeStatus('+userId+', 1)" ><img width="20" height="20" src="<?php echo plugins_url("images/enable.png", __FILE__) ?>" /></a></span>');
+					}
+				  },
+				  error: function(xhr, textStatus, errorThrown){
+				  	  alert('<?php _e('Unexpected error occurred') ?>');
+				  }
+				});
+			}
+			</script>
+			<?php
+		}
+	}
+	if(isset($loginRadiusSettings['LoginRadius_enableUserActivation']) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == "1"){
+		add_filter('admin_head', 'loginradius_add_script');
+	}
+}
+// keep track of the inactive user login attempts from traditional login form 
+$loginRadiusLoginAttempt = 0;
+/** 
+ * Stop disabled user from logging in.
+ */ 
+function login_radius_filter_login($user, $username, $password) {
+	$tempUser = get_user_by('login', $username);
+	if(isset($tempUser->data->ID)){
+		$id = $tempUser->data->ID;
+		if(get_user_meta($id, 'loginradius_status', true) === '0'){
+			global $loginRadiusLoginAttempt;
+			$loginRadiusLoginAttempt = 1;
+			return null;
+		}
+	}
+	return $user;
+}
+add_filter('authenticate', 'login_radius_filter_login', 40, 3);
+
+function login_radius_error_message($error){
+	global $loginRadiusLoginAttempt;
+    //check if inactive user has attempted to login
+    if($loginRadiusLoginAttempt == 1){
+        $error = __('Your account is currently inactive. You will be notified through email, once Administrator activates your account.', 'LoginRadius');
+    }
+    return $error;
+}
+add_filter('login_errors','login_radius_error_message');
 ?>

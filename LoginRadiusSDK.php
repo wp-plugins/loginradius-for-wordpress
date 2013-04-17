@@ -10,7 +10,7 @@ class LoginRadius{
 	public function login_radius_get_userprofile_data($ApiSecrete){
 		$IsAuthenticated = false; 
 		if(isset($_REQUEST['token'])){
-			$ValidateUrl = "https://hub.loginradius.com/userprofile.ashx?token=".$_REQUEST['token']."&apisecrete=".trim($ApiSecrete);
+			$ValidateUrl = "https://hub.loginradius.com/userprofile/".trim($ApiSecrete)."/".$_REQUEST['token'];
 			$JsonResponse = $this->loginradius_call_api($ValidateUrl); 
 			$UserProfile = json_decode($JsonResponse);
 			if(isset($UserProfile->ID) && $UserProfile->ID != ''){
