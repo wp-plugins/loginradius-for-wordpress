@@ -253,7 +253,7 @@ function login_radius_redirect($user_id){
 				default: 
 				case 'samepage':
 					if(strpos($_SERVER['HTTP_REFERER'], "&callback=") !== false){
-						$redirectionUrl = substr($_SERVER['HTTP_REFERER'], strpos($_SERVER['HTTP_REFERER'], "&callback=")+10);
+						$redirectionUrl = urldecode(substr($_SERVER['HTTP_REFERER'], strpos($_SERVER['HTTP_REFERER'], "&callback=")+10));
 					}else{
 						$redirectionUrl = site_url();
 					}
