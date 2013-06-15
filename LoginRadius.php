@@ -3,7 +3,7 @@
 Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
 Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
-Version: 4.6.1
+Version: 4.7
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -20,6 +20,7 @@ require_once('LoginRadius_admin.php');
 class Login_Radius_Social_Login{
 // plugin database update version
 private static $loginRadiusVersion = "4.0";
+private static $loginRadiusProfileData;
 
 /**
  * Load necessary scripts and CSS.
@@ -151,18 +152,50 @@ private static function login_radius_check_verification_status($socialId, $provi
 		return false;
 	}
 }
-  
+
+/**
+ * Update user profile data
+ */	
+public static function login_radius_update_profile_data($userId){
+	// create username, firstname and lastname
+	$usernameFirstnameLastname = explode('|LR|', self::login_radius_create_username(self::$loginRadiusProfileData));
+	$username = $usernameFirstnameLastname[0];
+	$firstName = $usernameFirstnameLastname[1];
+	$lastName = $usernameFirstnameLastname[2];
+	// fields going to be updated
+	$profileData = array(
+		'ID' => $userId,
+		'first_name' => $firstName,
+		'last_name' => $lastName,
+		'description' => self::$loginRadiusProfileData['Bio'],
+		'user_url' => self::$loginRadiusProfileData['ProfileUrl']
+	);
+	if(wp_update_user($profileData)){
+		update_user_meta($userId, 'loginradius_thumbnail', self::$loginRadiusProfileData['Thumbnail']);
+	}
+}
+
 /**
  * Login and redirect user
  */	
-public static function login_radius_login_user($userId, $socialId){
+public static function login_radius_login_user($userId, $socialId, $firstLogin = false){
 	if(get_user_meta($userId, 'loginradius_status', true) === '0'){
 		self::login_radius_notify(__("Your account is currently inactive. You will be notified through email, once Administrator activates your account.", 'LoginRadius'));
 		return;
 	}
+	// update user profile data if option is set
+	if(!$firstLogin){
+		global $loginRadiusSettings;
+		if(isset($loginRadiusSettings['profileDataUpdate']) && $loginRadiusSettings['profileDataUpdate'] == '1'){
+			self::login_radius_update_profile_data($userId);
+		}
+	}
 	// set the current social login id
 	update_user_meta($userId, 'loginradius_current_id', $socialId);
 	self::login_radius_set_cookies($userId);
+	// WP login hook
+	$_user = get_user_by( 'id', $userId );
+	do_action( 'wp_login', $_user->user_login, $_user );
 	login_radius_redirect($userId);
 }
   
@@ -181,15 +214,15 @@ public static function login_radius_connect(){
 	global $loginRadiusObject;
 	$userProfileObject = $loginRadiusObject->login_radius_get_userprofile_data($loginRadiusSecret);
 	if($loginRadiusObject->IsAuthenticated == true && !is_user_logged_in() && !is_admin()){
-		$profileData = self::login_radius_validate_profiledata($userProfileObject);
+		self::$loginRadiusProfileData = self::login_radius_validate_profiledata($userProfileObject);
 		// check for social id in the database 
 		// check if already verified or pending
-		$loginRadiusProvider = $profileData['Provider'];
-		$userId = self::login_radius_check_verification_status($profileData['SocialId'], $loginRadiusProvider);
+		$loginRadiusProvider = self::$loginRadiusProfileData['Provider'];
+		$userId = self::login_radius_check_verification_status(self::$loginRadiusProfileData['SocialId'], $loginRadiusProvider);
 		if($userId != false){
 			$isVerified = get_user_meta( $userId, $loginRadiusProvider.'LrVerified', true);
 			if($isVerified == '1'){											// Check if lrid is the same that verified email.
-				self::login_radius_login_user($userId, $profileData['SocialId']);					// login user
+				self::login_radius_login_user($userId, self::$loginRadiusProfileData['SocialId']);					// login user
 				return;
 			}else{															// Notify user to verify email
 				self::login_radius_notify(__("Please verify your email by clicking the confirmation link sent to you.", 'LoginRadius'));
@@ -197,50 +230,50 @@ public static function login_radius_connect(){
 			}
 		}
 		// check if id already exists.
-		$loginRadiusUserId = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='loginradius_provider_id' AND meta_value = %s", $profileData['SocialId']));
+		$loginRadiusUserId = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='loginradius_provider_id' AND meta_value = %s", self::$loginRadiusProfileData['SocialId']));
 		if(!empty($loginRadiusUserId)){										// id exists
 			$tempUserId = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE user_id = %d and meta_key='loginradius_isVerified'", $loginRadiusUserId));
 			if(!empty($tempUserId)){ 
 				// check if verification field exists.
 				$isVerified = $wpdb->get_var($wpdb->prepare("SELECT meta_value FROM $wpdb->usermeta WHERE user_id = %d and meta_key='loginradius_isVerified'", $loginRadiusUserId));
 				if ($isVerified == '1') {								// if email is verified
-					self::login_radius_login_user($loginRadiusUserId, $profileData['SocialId']);
+					self::login_radius_login_user($loginRadiusUserId, self::$loginRadiusProfileData['SocialId']);
 					return;
 				}else{
 					self::login_radius_notify(__("Please verify your email by clicking the confirmation link sent to you.", 'LoginRadius'));
 					return;
 				}
 			}else{
-				self::login_radius_login_user($loginRadiusUserId, $profileData['SocialId']);
+				self::login_radius_login_user($loginRadiusUserId, self::$loginRadiusProfileData['SocialId']);
 				return;
 			}
 		}else{															// id doesn't exist
-			if(empty($profileData['Email'])){							// email is empty
+			if(empty(self::$loginRadiusProfileData['Email'])){							// email is empty
 				if($dummyEmail == 'dummyemail'){						// email not required
-					$profileData['Email'] = self::login_radius_get_random_email($profileData);
+					self::$loginRadiusProfileData['Email'] = self::login_radius_get_random_email(self::$loginRadiusProfileData);
 					if(!self::login_radius_allow_registration()){
 						return;
 					}
-					self::login_radius_create_user($profileData);
+					self::login_radius_create_user(self::$loginRadiusProfileData);
 					return;
 				}else{													// email required
 					if(!self::login_radius_allow_registration()){
 						return;	
 					}
-					self::login_radius_store_temporary_data($profileData);					// save data temporarily
-					self::login_radius_display_popup($profileData, htmlspecialchars(trim($loginRadiusSettings['msg_email'])));	// show popup
+					self::login_radius_store_temporary_data(self::$loginRadiusProfileData);					// save data temporarily
+					self::login_radius_display_popup(self::$loginRadiusProfileData, htmlspecialchars(trim($loginRadiusSettings['msg_email'])));	// show popup
 				}
 			}else{															// email is not empty
-				$userObject = get_user_by('email', $profileData['Email']);
+				$userObject = get_user_by('email', self::$loginRadiusProfileData['Email']);
 				$loginRadiusUserId = is_object($userObject) ? $userObject->ID : "";
 				if(!empty($loginRadiusUserId)){								// email exists
 					$isVerified = $wpdb->get_var($wpdb->prepare("SELECT meta_value FROM $wpdb->usermeta WHERE user_id = %d and meta_key='loginradius_isVerified'", $loginRadiusUserId));
 					if(!empty($isVerified)){ 
 						if($isVerified == '1'){	
 							// social linking
-							self::login_radius_link_account($loginRadiusUserId, $profileData['SocialId'], $profileData['Thumbnail'], $profileData['Provider']);
+							self::login_radius_link_account($loginRadiusUserId, self::$loginRadiusProfileData['SocialId'], self::$loginRadiusProfileData['Thumbnail'], self::$loginRadiusProfileData['Provider']);
 							// Login user
-							self::login_radius_login_user($loginRadiusUserId, $profileData['SocialId']);
+							self::login_radius_login_user($loginRadiusUserId, self::$loginRadiusProfileData['SocialId']);
 							return;
 						}else{
 							if(!self::login_radius_allow_registration()){
@@ -249,28 +282,28 @@ public static function login_radius_connect(){
 							$directorySeparator = DIRECTORY_SEPARATOR;
 							require_once(getcwd().$directorySeparator.'wp-admin'.$directorySeparator.'includes'.$directorySeparator.'user.php');
 							wp_delete_user( $loginRadiusUserId );
-							self::login_radius_create_user($profileData);
+							self::login_radius_create_user(self::$loginRadiusProfileData);
 						}
 					}else{
 						if(get_user_meta($loginRadiusUserId, 'loginradius_provider_id', true) != false){
 							// social linking
-							self::login_radius_link_account($loginRadiusUserId, $profileData['SocialId'], $profileData['Thumbnail'], $profileData['Provider']);
+							self::login_radius_link_account($loginRadiusUserId, self::$loginRadiusProfileData['SocialId'], self::$loginRadiusProfileData['Thumbnail'], self::$loginRadiusProfileData['Provider']);
 						}else{
 							// traditional account					
 							// social linking
 							if(isset($loginRadiusSettings['LoginRadius_socialLinking']) && ($loginRadiusSettings['LoginRadius_socialLinking'] == 1)){
-								self::login_radius_link_account($loginRadiusUserId, $profileData['SocialId'], $profileData['Thumbnail'], $profileData['Provider']);
+								self::login_radius_link_account($loginRadiusUserId, self::$loginRadiusProfileData['SocialId'], self::$loginRadiusProfileData['Thumbnail'], self::$loginRadiusProfileData['Provider']);
 							}
 						}
 						// Login user
-						self::login_radius_login_user($loginRadiusUserId, $profileData['SocialId']);
+						self::login_radius_login_user($loginRadiusUserId, self::$loginRadiusProfileData['SocialId']);
 						return;
 					}
 				}else{
 					if(!self::login_radius_allow_registration()){
 						return;	
 					}
-					self::login_radius_create_user($profileData);						// create new user
+					self::login_radius_create_user(self::$loginRadiusProfileData);						// create new user
 				}
 			}
 		}
@@ -394,6 +427,38 @@ private static function login_radius_allow_registration(){
 }
 
 /**
+ * Create username, firstname and lastname.
+ */
+private static function login_radius_create_username($profileData){
+	$username = "";
+	$firstName = "";
+	$lastName = "";
+	if(!empty($profileData['FirstName']) && !empty($profileData['LastName'])){
+		$username = $profileData['FirstName'] . ' ' . $profileData['LastName'];
+		$firstName = $profileData['FirstName'];
+		$lastName = $profileData['LastName'];
+	}elseif(!empty($profileData['FullName'])){
+		$username = $profileData['FullName'];
+		$firstName = $profileData['FullName'];
+	}
+	elseif(!empty($profileData['ProfileName'])){
+		$username = $profileData['ProfileName'];
+		$firstName = $profileData['ProfileName'];
+	}
+	elseif(!empty($profileData['NickName'])){
+		$username = $profileData['NickName'];
+		$firstName = $profileData['NickName'];
+	}elseif(!empty($email)){
+		$user_name = explode('@', $email);
+		$username = $user_name[0];
+		$firstName = str_replace("_", " ", $user_name[0]);
+	}else{
+		$username = $profileData['SocialId'];
+		$firstName = $profileData['SocialId'];
+	}
+	return $username."|LR|".$firstName."|LR|".$lastName;
+}
+/**
  * Create new user.
  */
 private static function login_radius_create_user($profileData, $loginRadiusPopup = false){
@@ -404,34 +469,16 @@ private static function login_radius_create_user($profileData, $loginRadiusPopup
 	$profileUrl = $profileData['ProfileUrl'];
 	$socialId = $profileData['SocialId'];
 	$thumbnail = $profileData['Thumbnail'];
-	$lastName = "";
 	if(isset($socialId) && !empty($socialId)){
 		if(!empty($profileData['Email'])){
 			$email = $profileData['Email'];
 		}
-		if(!empty($profileData['FirstName']) && !empty($profileData['LastName'])){
-			$username = $profileData['FirstName'] . ' ' . $profileData['LastName'];
-			$firstName = $profileData['FirstName'];
-			$lastName = $profileData['LastName'];
-		}elseif(!empty($profileData['FullName'])){
-			$username = $profileData['FullName'];
-			$firstName = $profileData['FullName'];
-		}
-		elseif(!empty($profileData['ProfileName'])){
-			$username = $profileData['ProfileName'];
-			$firstName = $profileData['ProfileName'];
-		}
-		elseif(!empty($profileData['NickName'])){
-			$username = $profileData['NickName'];
-			$firstName = $profileData['NickName'];
-		}elseif(!empty($email)){
-			$user_name = explode('@', $email);
-			$username = $user_name[0];
-			$firstName = str_replace("_", " ", $user_name[0]);
-		}else{
-			$username = $profileData['SocialId'];
-			$firstName = $profileData['SocialId'];
-		}
+		// create username, firstname and lastname
+		$usernameFirstnameLastname = explode('|LR|', self::login_radius_create_username($profileData));
+		$username = $usernameFirstnameLastname[0];
+		$firstName = $usernameFirstnameLastname[1];
+		$lastName = $usernameFirstnameLastname[2];
+		
 		$role = get_option('default_role');
 		$sendemail  = $loginRadiusSettings['LoginRadius_sendemail'];
 		//look for user with username match	
@@ -506,7 +553,7 @@ private static function login_radius_create_user($profileData, $loginRadiusPopup
 					update_user_meta($user_id, 'loginradius_status', '1');
 				}
 			}
-			self::login_radius_login_user($user_id, $socialId);
+			self::login_radius_login_user($user_id, $socialId, true);
 		}else{
 			login_radius_redirect($user_id);
 		}
@@ -718,12 +765,6 @@ function login_radius_meta_setup(){
 			<?php _e('Disable Social Sharing on this '.$postType, 'LoginRadius') ?>
 		</label>
 	</p>
-	<p>
-		<label for="login_radius_counter">
-			<input type="checkbox" name="_login_radius_meta[counter]" id="login_radius_counter" value="1" <?php checked('1', @$lrMeta['counter']); ?> />
-			<?php _e('Disable Social Counter on this '.$postType, 'LoginRadius') ?>
-		</label>
-	</p>
 	<?php
 	// custom nonce for verification later
     echo '<input type="hidden" name="login_radius_meta_nonce" value="' . wp_create_nonce(__FILE__) . '" />';
@@ -846,15 +887,18 @@ function login_radius_activation(){
 										   'LoginRadius_sharingTheme' => 'horizontal',
 										   'LoginRadius_counterTheme' => 'horizontal',
 										   'LoginRadius_shareEnable' => '1',
-										   'LoginRadius_counterEnable' => '1',
-										   'LoginRadius_sharetop' => '1',
-										   'LoginRadius_counterbottom' => '1',
-										   'LoginRadius_sharehome' => '1',
-										   'LoginRadius_sharepost' => '1',
-										   'LoginRadius_sharepage' => '1',
-										   'LoginRadius_counterhome' => '1',
-										   'LoginRadius_counterpost' => '1',
-										   'LoginRadius_counterpage' => '1',
+										   'horizontal_shareEnable' => '1',
+										   'horizontal_shareTop' => '1',
+										   'horizontal_shareBottom' => '1',
+										   'horizontal_sharehome' => '1',
+										   'horizontal_sharepost' => '1',
+										   'horizontal_sharepage' => '1',
+										   'vertical_shareEnable' => '1',
+										   'verticalSharing_theme' => 'counter_vertical',
+										   'vertical_sharehome' => '1',
+										   'vertical_sharepost' => '1',
+										   'vertical_sharepage' => '1',
+										   'sharing_offset' => '200',
 										   'LoginRadius_noProvider' => '0',
 										   'LoginRadius_enableUserActivation' => '1',
 										   'LoginRadius_defaultUserStatus' => '1'
@@ -940,6 +984,8 @@ function login_radius_verify_keys(){
 		die('key'); 
 	}elseif(empty($secret) || !preg_match('/^\{?[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}?$/i', $secret)){
 		die('secret');
+	}elseif($key == $secret){
+		die('same');
 	}else{
 		die('working');
 	}

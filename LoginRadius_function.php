@@ -69,7 +69,7 @@ function login_radius_get_callback($http){
 /** 
  * Display Social Login interface.
  */ 
-function Login_Radius_Connect_button($newInterface = false){ 
+function Login_Radius_Connect_button($newInterface = false){
 	global $loginRadiusSettings;
 	$title = $loginRadiusSettings['LoginRadius_title'];
 	if(!is_user_logged_in()){
@@ -84,7 +84,7 @@ function Login_Radius_Connect_button($newInterface = false){
 			?> 
 			<div>
 			<div style='margin-bottom: 3px;'><?php if(trim($loginRadiusSettings['LoginRadius_apikey']) != "" && trim($loginRadiusSettings['LoginRadius_secret']) != ""){?><label><?php _e( $title, 'LoginRadius' ) ?></label><?php } ?></div>
-			<?php  
+			<?php
 			login_radius_get_interface($newInterface);
 			?>
 			</div>
@@ -101,9 +101,8 @@ function login_radius_get_interface($newInterface = false){
 	$loginRadiusApiKey = trim($loginRadiusSettings['LoginRadius_apikey']); 
 	$loginRadiusSecret = trim($loginRadiusSettings['LoginRadius_secret']); 
 	$loginRadiusError = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><p style ='color:red;'>Your LoginRadius API key or secret is not valid, please correct it or contact LoginRadius support at <b><a href ='http://www.loginradius.com' target = '_blank'>www.LoginRadius.com</a></b></p></div>"; 
-	$loginRadiusEmpty = "<div style='background-color: #FFFFE0;border:1px solid #E6DB55;padding:5px;'><div style ='color:red; margin-bottom:5px'>LoginRadius Social Login Plugin is not configured!</div><p style='line-height:1.3; margin-bottom:4px'>To activate your plugin, navigate to <strong>LoginRadius > API Settings</strong> section in your WordPress admin panel and insert LoginRadius API Key & Secret. Follow <a href='http://support.loginradius.com/customer/portal/articles/677100-how-to-get-loginradius-api-key-and-secret' target='_blank'>this</a> document to learn how to get API Key & Secret.</p></div>";
-	if(empty($loginRadiusApiKey)){
-		$loginRadiusResult = $loginRadiusEmpty;
+	if(empty($loginRadiusSecret)){
+		$loginRadiusResult = "";
 	}elseif(!$loginRadiusObject->loginradiusValidateKey($loginRadiusApiKey) || !$loginRadiusObject->loginradiusValidateKey($loginRadiusSecret)){
 		$loginRadiusResult = $loginRadiusError;
 	}else{
@@ -154,13 +153,10 @@ function Login_Radius_widget_Connect_button(){
 
 global $loginRadiusSettings;
 // social share 
-if(is_active_widget(false, false, 'loginradiusshare', true) || ( isset($loginRadiusSettings['LoginRadius_shareEnable']) && $loginRadiusSettings['LoginRadius_shareEnable'] == '1')){ 
+if(isset($loginRadiusSettings['LoginRadius_shareEnable']) && $loginRadiusSettings['LoginRadius_shareEnable'] == '1'){ 
 	require_once('LoginRadius_socialShare.php'); 
 } 
-// social counter 
-if(is_active_widget(false, false, 'loginradiuscounter', true) || ( isset( $loginRadiusSettings['LoginRadius_counterEnable'] ) && $loginRadiusSettings['LoginRadius_counterEnable'] == '1')){
-	require_once('LoginRadius_socialCounter.php'); 
-}
+
 // Set Social Login position in "beside" mode
 require_once('LoginRadius_location.php');
 // display social login on login form
@@ -269,47 +265,68 @@ function login_radius_redirect($user_id){
 		exit();
 	}
 } 
-
 /** 
  * Return Sharing code. 
  */	   
 function login_radius_get_sharing_code(){
-	global $loginRadiusSettings;
-	if(isset($loginRadiusSettings['LoginRadius_sharingTheme']) && $loginRadiusSettings['LoginRadius_sharingTheme'] == "horizontal"){
+	global $loginRadiusSettings, $post;
+	$sharingScript = '<script type="text/javascript">var islrsharing = true; var islrsocialcounter = true;</script> <script type="text/javascript" src="//share.loginradius.com/Content/js/LoginRadius.js" id="lrsharescript"></script>';
+	$sharingScript .= '<script type="text/javascript">';
+	// horizontal sharing theme
+	if(isset($loginRadiusSettings['horizontal_shareEnable']) && $loginRadiusSettings['horizontal_shareEnable'] == "1"){
 		// interface
-		if($loginRadiusSettings['topSharing_theme'] == "32" || $loginRadiusSettings['topSharing_theme'] == "16"){
+		if($loginRadiusSettings['horizontalSharing_theme'] == "32" || $loginRadiusSettings['horizontalSharing_theme'] == "16"){
 			$interface = 'horizontal';
-		}elseif($loginRadiusSettings['topSharing_theme'] == "single_large" || $loginRadiusSettings['topSharing_theme'] == "single_small"){
+		}elseif($loginRadiusSettings['horizontalSharing_theme'] == "single_large" || $loginRadiusSettings['horizontalSharing_theme'] == "single_small"){
 			$interface = 'simpleimage';
+		}elseif($loginRadiusSettings['horizontalSharing_theme'] == "counter_horizontal" || $loginRadiusSettings['horizontalSharing_theme'] == "counter_vertical"){
+			// set counter variables
+			$interface = 'simple';
+			$isHorizontal = "true";
+			// interface
+			if($loginRadiusSettings['horizontalSharing_theme'] == "counter_vertical"){
+				$type = 'vertical';
+			}else{
+				$type = 'horizontal';
+			}
 		}else{
 			$interface = 'horizontal';
 		}
 		// size
-		if($loginRadiusSettings['topSharing_theme'] == "32" || $loginRadiusSettings['topSharing_theme'] == "single_large"){
+		if($loginRadiusSettings['horizontalSharing_theme'] == "32" || $loginRadiusSettings['horizontalSharing_theme'] == "single_large"){
 			$size = '32';
-		}elseif($loginRadiusSettings['topSharing_theme'] == "16" || $loginRadiusSettings['topSharing_theme'] == "single_small"){
+		}elseif($loginRadiusSettings['horizontalSharing_theme'] == "16" || $loginRadiusSettings['horizontalSharing_theme'] == "single_small"){
 			$size = '16';
 		}else{
 			$size = '32';
 		}
-	}elseif(isset($loginRadiusSettings['LoginRadius_sharingTheme']) && $loginRadiusSettings['LoginRadius_sharingTheme'] == "vertical"){
-		$interface = 'Simplefloat';
-		if($loginRadiusSettings['verticalSharing_theme'] == "32" || $loginRadiusSettings['verticalSharing_theme'] == "single_large"){
-			$size = '32';
+		// counter providers
+		if($loginRadiusSettings['horizontalSharing_theme'] == "counter_horizontal" || $loginRadiusSettings['horizontalSharing_theme'] == "counter_vertical"){
+			if(isset($loginRadiusSettings['horizontal_counter_providers']) && is_array($loginRadiusSettings['horizontal_counter_providers'])){
+				$providers = implode('","', $loginRadiusSettings['horizontal_counter_providers']);
+			}else{
+				$providers = 'Facebook Like","Google+ +1","Pinterest Pin it","LinkedIn Share","Hybridshare';
+			}
+			// prepare counter script
+			$sharingScript .= 'LoginRadius.util.ready(function () { $SC.Providers.Selected = ["'.$providers.'"]; $S = $SC.Interface.'.$interface.'; $S.isHorizontal = '.$isHorizontal.'; $S.countertype = \''.$type.'\'; $S.show("loginRadiusHorizontalSharing"); });';
 		}else{
-			$size = '16';
+			// sharing providers
+			if(isset($loginRadiusSettings['horizontal_rearrange_providers']) && count($loginRadiusSettings['horizontal_rearrange_providers']) > 0){
+				$providers = implode('","', $loginRadiusSettings['horizontal_rearrange_providers']);
+			}else{
+				$providers = 'Facebook","Twitter","GooglePlus","LinkedIn","Pinterest","Print","Email';
+			}
+			// prepare sharing script
+			$sharingScript .= 'LoginRadius.util.ready(function() { $i = $SS.Interface.'.$interface.'; $SS.Providers.Top = ["'.$providers.'"]; $u = LoginRadius.user_settings;';
+			if(isset($loginRadiusSettings["LoginRadius_apikey"]) && trim($loginRadiusSettings["LoginRadius_apikey"]) != ""){
+				$sharingScript .= '$u.apikey= \''.trim($loginRadiusSettings["LoginRadius_apikey"]).'\';';
+			}
+			$sharingScript .= '$i.size = '.$size.'; $u.sharecounttype="url"; $i.show("loginRadiusHorizontalSharing"); });';
 		}
-	}elseif(!isset($loginRadiusSettings['LoginRadius_sharingTheme']) || $loginRadiusSettings['LoginRadius_sharingTheme'] == ""){
-		$interface = 'horizontal';
-		$size = '32';
 	}
-	if(isset($loginRadiusSettings['rearrange_providers']) && count($loginRadiusSettings['rearrange_providers']) > 0){
-		$providers = implode('","', $loginRadiusSettings['rearrange_providers']);
-	}else{
-		$providers = 'Facebook","Twitter","GooglePlus","Print","Email';
-	}
-	$code = '<script type="text/javascript">var islrsharing = true; var islrsocialcounter = true;</script> <script type="text/javascript" src="//share.loginradius.com/Content/js/LoginRadius.js" id="lrsharescript"></script> <script type="text/javascript">LoginRadius.util.ready(function () { $i = $SS.Interface.'.$interface.'; $SS.Providers.Top = ["'.$providers.'"]; $u = LoginRadius.user_settings; $u.apikey= \''.trim($loginRadiusSettings["LoginRadius_apikey"]).'\'; $i.size = '.$size.';';
-	if(isset($loginRadiusSettings['LoginRadius_sharingTheme']) && $loginRadiusSettings['LoginRadius_sharingTheme'] == "vertical"){
+	// vertical sharing interface
+	if(isset($loginRadiusSettings['vertical_shareEnable']) && $loginRadiusSettings['vertical_shareEnable'] == "1"){
+		// relative vertical position
 		if($loginRadiusSettings['sharing_verticalPosition'] == 'top_left'){
 			$position1 = 'top';
 			$position2 = 'left';
@@ -323,103 +340,62 @@ function login_radius_get_sharing_code(){
 			$position1 = 'bottom';
 			$position2 = 'right';
 		}
+		// interface top offset
+		if($loginRadiusSettings['verticalSharing_theme'] == "counter_horizontal" || $loginRadiusSettings['verticalSharing_theme'] == "counter_vertical"){
+			$sharingVariable = 'S';
+		}else{
+			$sharingVariable = 'i';
+		}
+		$offset = "";
 		if(isset($loginRadiusSettings['sharing_offset']) && trim($loginRadiusSettings['sharing_offset']) != ""){
-			$code .= '$i.top = \''.trim($loginRadiusSettings['sharing_offset']).'px\'; $i.'.$position2.' = \'0px\';';
+			$offset = '$'.$sharingVariable.'.top = \''.trim($loginRadiusSettings['sharing_offset']).'px\'; $'.$sharingVariable.'.'.$position2.' = \'0px\';';
 		}else{
-			$code .= '$i.'.$position1.' = \'0px\'; $i.'.$position2.' = \'0px\';';
+			$offset = '$'.$sharingVariable.'.'.$position1.' = \'0px\'; $'.$sharingVariable.'.'.$position2.' = \'0px\';';
+		}
+		
+		$interface = 'Simplefloat';
+		if($loginRadiusSettings['verticalSharing_theme'] == "32"){
+			$size = '32';
+		}elseif($loginRadiusSettings['verticalSharing_theme'] == "16"){
+			$size = '16';
+		}elseif($loginRadiusSettings['verticalSharing_theme'] == "counter_horizontal" || $loginRadiusSettings['verticalSharing_theme'] == "counter_vertical"){
+			$interface = 'simple';
+			$isHorizontal = "false";
+			if($loginRadiusSettings['verticalSharing_theme'] == "counter_vertical"){
+				$type = 'vertical';
+			}elseif($loginRadiusSettings['verticalSharing_theme'] == "counter_horizontal"){
+				$type = 'horizontal';
+			}
+		}else{
+			$size = '16';
+		}
+		
+		// counter providers
+		if($loginRadiusSettings['verticalSharing_theme'] == "counter_horizontal" || $loginRadiusSettings['verticalSharing_theme'] == "counter_vertical"){
+			if(isset($loginRadiusSettings['vertical_counter_providers']) && is_array($loginRadiusSettings['vertical_counter_providers'])){
+				$providers = implode('","', $loginRadiusSettings['vertical_counter_providers']);
+			}else{
+				$providers = 'Facebook Like","Google+ +1","Pinterest Pin it","LinkedIn Share","Hybridshare';
+			}
+			// prepare counter script
+			$sharingScript .= 'LoginRadius.util.ready(function () { $SC.Providers.Selected = ["'.$providers.'"]; $S = $SC.Interface.'.$interface.'; $S.isHorizontal = '.$isHorizontal.'; $S.countertype = \''.$type.'\'; '.$offset.' $S.show("loginRadiusVerticalSharing"); });';
+		}else{
+			// sharing providers
+			if(isset($loginRadiusSettings['vertical_rearrange_providers']) && count($loginRadiusSettings['vertical_rearrange_providers']) > 0){
+				$providers = implode('","', $loginRadiusSettings['vertical_rearrange_providers']);
+			}else{
+				$providers = 'Facebook","Twitter","GooglePlus","LinkedIn","Pinterest","Print","Email';
+			}
+			// prepare sharing script
+			$sharingScript .= 'LoginRadius.util.ready(function() { $i = $SS.Interface.'.$interface.'; $SS.Providers.Top = ["'.$providers.'"]; $u = LoginRadius.user_settings;';
+			if(isset($loginRadiusSettings["LoginRadius_apikey"]) && trim($loginRadiusSettings["LoginRadius_apikey"]) != ""){
+				$sharingScript .= '$u.apikey= \''.trim($loginRadiusSettings["LoginRadius_apikey"]).'\';';
+			}
+			$sharingScript .= '$i.size = '.$size.'; '.$offset.' $i.show("loginRadiusVerticalSharing"); });';
 		}
 	}
-	// add bottom interface parameters in the sharing code
-	$bottomInterface = $interface;
-	$bottomSize = $size;
-	if(isset($loginRadiusSettings['LoginRadius_sharingTheme']) && $loginRadiusSettings['LoginRadius_sharingTheme'] == "horizontal" && ($loginRadiusSettings['bottomSharing_theme'] != $loginRadiusSettings['topSharing_theme'])){
-		// bottom interface
-		if($loginRadiusSettings['bottomSharing_theme'] == "32" || $loginRadiusSettings['bottomSharing_theme'] == "16"){
-			$bottomInterface = 'horizontal';
-		}else{
-			$bottomInterface = 'simpleimage';
-		}
-		// size
-		if($loginRadiusSettings['bottomSharing_theme'] == "32" || $loginRadiusSettings['bottomSharing_theme'] == "single_large"){
-			$bottomSize = '32';
-		}else{
-			$bottomSize = '16';
-		}
-	}
-	$code .= '$i.show("lrsharecontainer");';
-	if(!isset($loginRadiusSettings['LoginRadius_sharingTheme']) || $loginRadiusSettings['LoginRadius_sharingTheme'] == "horizontal" || $loginRadiusSettings['LoginRadius_sharingTheme'] == ""){
-		$code .= ' $i = $SS.Interface.'.$bottomInterface.'; $i.size = '.$bottomSize.'; $i.show("lrsharecontainer2");';
-	}
-	$code .= ' }); </script>';
-	echo $code;
-}
-
-/** 
- * Return counter code. 
- */	   
-function login_radius_get_counter_code(){
-	global $loginRadiusSettings;
-	$interface = 'simple';
-	if(isset($loginRadiusSettings['LoginRadius_counterTheme']) && $loginRadiusSettings['LoginRadius_counterTheme'] == "horizontal"){
-		$isHorizontal = "true";
-		// interface
-		if($loginRadiusSettings['topCounter_theme'] == "32"){
-			$type = 'vertical';
-		}else{
-			$type = 'horizontal';
-		}
-	}elseif(isset($loginRadiusSettings['LoginRadius_counterTheme']) && $loginRadiusSettings['LoginRadius_counterTheme'] == "vertical"){
-		$isHorizontal = "false";
-		if($loginRadiusSettings['verticalCounter_theme'] == "32"){
-			$type = 'vertical';
-		}else{
-			$type = 'horizontal';
-		}
-	}elseif(!isset($loginRadiusSettings['LoginRadius_counterTheme']) || $loginRadiusSettings['LoginRadius_counterTheme'] == ""){
-		$isHorizontal = "true";
-		$type = 'horizontal';
-	}
-	if(isset($loginRadiusSettings['counter_providers']) && count($loginRadiusSettings['counter_providers']) > 0){
-		$providers = implode('","', $loginRadiusSettings['counter_providers']);
-	}else{
-		$providers = 'Facebook Like","Google+ +1","LinkedIn Share","Twitter Tweet';
-	}
-	$code = '<script type="text/javascript">var islrsharing = true; var islrsocialcounter = true;</script> <script type="text/javascript" src="//share.loginradius.com/Content/js/LoginRadius.js" id="lrsharescript"></script> <script type="text/javascript">LoginRadius.util.ready(function () { $SC.Providers.Selected = ["'.$providers.'"]; $S = $SC.Interface.'.$interface.'; $S.isHorizontal = '.$isHorizontal.'; $S.countertype = \''.$type.'\';';
-	if(isset($loginRadiusSettings['LoginRadius_counterTheme']) && $loginRadiusSettings['LoginRadius_counterTheme'] == "vertical"){
-		if($loginRadiusSettings['counter_verticalPosition'] == 'top_left'){
-			$position1 = 'top';
-			$position2 = 'left';
-		}elseif($loginRadiusSettings['counter_verticalPosition'] == 'top_right'){
-			$position1 = 'top';
-			$position2 = 'right';
-		}elseif($loginRadiusSettings['counter_verticalPosition'] == 'bottom_left'){
-			$position1 = 'bottom';
-			$position2 = 'left';
-		}else{
-			$position1 = 'bottom';
-			$position2 = 'right';
-		}
-		if(isset($loginRadiusSettings['counter_offset']) && trim($loginRadiusSettings['counter_offset']) != ""){
-			$code .= '$S.top = \''.trim($loginRadiusSettings['counter_offset']).'px\'; $S.'.$position2.' = \'0px\';';
-		}else{
-			$code .= '$S.'.$position1.' = \'0px\'; $S.'.$position2.' = \'0px\';';
-		}
-	}
-	// add bottom interface parameters in the counter code
-	if(isset($loginRadiusSettings['LoginRadius_counterTheme']) && $loginRadiusSettings['LoginRadius_counterTheme'] == "horizontal" && ($loginRadiusSettings['bottomCounter_theme'] != $loginRadiusSettings['topCounter_theme'])){
-		// type
-		if($loginRadiusSettings['bottomCounter_theme'] == "32"){
-			$type = 'vertical';
-		}else{
-			$type = 'horizontal';
-		}
-	}
-	$code .= '$S.show("lrcounter_simplebox");';
-	if(!isset($loginRadiusSettings['LoginRadius_counterTheme']) || $loginRadiusSettings['LoginRadius_counterTheme'] == "horizontal"){
-		$code .= ' $S.countertype = \''.$type.'\'; $S.show("lrcounter_simplebox2");';
-	}
-	$code .= '}); </script>';
-	echo $code;
+	$sharingScript .= '</script>';
+	echo $sharingScript;
 }
 
 /** 
@@ -448,24 +424,62 @@ if(isset($loginRadiusSettings['LoginRadius_autoapprove']) && $loginRadiusSetting
 /** 
  * Shortcode for social sharing.
  */ 
-function login_radius_sharing_shortcode(){
-	return '<div class="lrsharecontainer"></div>';
+function login_radius_sharing_shortcode($params){
+	extract(shortcode_atts(array(
+		'style' => '',
+		'type' => 'horizontal'
+	), $params));
+	$return = '<div ';
+	// sharing theme type
+	if($type == "vertical"){
+		$return .= 'class="loginRadiusVerticalSharing" ';
+	}else{
+		$return .= 'class="loginRadiusHorizontalSharing" ';
+	}
+	// style 
+	if($style != ""){
+		$return .= 'style="'.$style.'"';
+	}
+	$return .= '></div>';
+	return $return;
 }
 add_shortcode('LoginRadius_Share', 'login_radius_sharing_shortcode');
 
 /** 
  * Shortcode for social counter.
+ * Deprecated since version 4.7 
  */ 
-function login_radius_counter_shortcode(){
-	return '<div class="lrcounter_simplebox"></div>';
+function login_radius_counter_shortcode($params){
+	extract(shortcode_atts(array(
+		'style' => ''
+	), $params));
+	$return = '<div class="loginRadiusHorizontalSharing" ';
+	if($style != ""){
+		$return .= 'style="'.$style.'"';
+	}
+	$return .= '></div>';
+	return $return;
 }
 add_shortcode('LoginRadius_Counter', 'login_radius_counter_shortcode');
 
 /** 
  * Shortcode for social login.
  */ 
-function login_radius_login_shortcode(){
+function login_radius_login_shortcode($params){
+	extract(shortcode_atts(array(
+		'style' => ''
+	), $params));
+	if($style != ""){
+		?>
+		<div style="<?php echo $style; ?>">
+		<?php
+	}
 	Login_Radius_Connect_button();
+	if($style != ""){
+		?>
+		</div>
+		<?php
+	}
 }
 add_shortcode('LoginRadius_Login', 'login_radius_login_shortcode');
 
@@ -815,4 +829,3 @@ function login_radius_error_message($error){
     return $error;
 }
 add_filter('login_errors','login_radius_error_message');
-?>

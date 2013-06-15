@@ -72,12 +72,12 @@ class LoginRadiusWidget extends WP_Widget {
   } 
 } 
 add_action( 'widgets_init', create_function( '', 'return register_widget( "LoginRadiusWidget" );' )); 
-class LoginRadiusShareWidget extends WP_Widget { 
+class LoginRadiusHorizontalShareWidget extends WP_Widget { 
 	/** constructor */ 
-	function LoginRadiusShareWidget() { 
+	function LoginRadiusHorizontalShareWidget() { 
 		parent::WP_Widget( 
-			'LoginRadiusShare', //unique id 
-			'Login Radius Share', //title displayed at admin panel 
+			'LoginRadiusHorizontalShare', //unique id 
+			'LoginRadius Horizontal Sharing', //title displayed at admin panel 
 			//Additional parameters 
 			array(  
 				'description' => __( 'Share post/page with Facebook, Twitter, Yahoo, Google and many more', 'LoginRadius' )) 
@@ -101,7 +101,7 @@ class LoginRadiusShareWidget extends WP_Widget {
 			echo $instance['before_widget_content']; 
 		} 
          
-		echo '<div class="lrsharecontainer"></div>';  
+		echo '<div class="loginRadiusHorizontalSharing"></div>';  
 
 		if( !empty( $instance['after_widget_content'] ) ){ 
 			echo $instance['after_widget_content']; 
@@ -144,16 +144,16 @@ class LoginRadiusShareWidget extends WP_Widget {
 <?php 
   } 
 } 
-add_action( 'widgets_init', create_function( '', 'return register_widget( "LoginRadiusShareWidget" );' )); 
-class LoginRadiusCounterWidget extends WP_Widget { 
+add_action( 'widgets_init', create_function( '', 'return register_widget( "LoginRadiusHorizontalShareWidget" );' )); 
+class LoginRadiusVerticalShareWidget extends WP_Widget { 
 	/** constructor */ 
-	function LoginRadiusCounterWidget() { 
+	function LoginRadiusVerticalShareWidget() { 
 		parent::WP_Widget( 
-			'LoginRadiusCounter', //unique id 
-			'Login Radius Counter', //title displayed at admin panel 
+			'LoginRadiusVerticalShare', //unique id 
+			'Login Radius Vertical Sharing', //title displayed at admin panel 
 			//Additional parameters 
 			array(  
-				'description' => __( 'Get your fan counts all over the social networks.', 'LoginRadius' )) 
+				'description' => __( 'Share post/page with Facebook, Twitter, Yahoo, Google and many more', 'LoginRadius' )) 
 			); 
 	}  
 
@@ -174,7 +174,7 @@ class LoginRadiusCounterWidget extends WP_Widget {
 			echo $instance['before_widget_content']; 
 		} 
          
-		echo '<div class="lrcounter_simplebox"></div>';  
+		echo '<div class="loginRadiusVerticalSharing"></div>';  
 
 		if( !empty( $instance['after_widget_content'] ) ){ 
 			echo $instance['after_widget_content']; 
@@ -197,7 +197,7 @@ class LoginRadiusCounterWidget extends WP_Widget {
 	/** Widget edit form at admin panel */ 
 	function form( $instance ) { 
 		/* Set up default widget settings. */ 
-		$defaults = array( 'title' => 'Be a fan!', 'before_widget_content' => '', 'after_widget_content' => '' );  
+		$defaults = array( 'title' => 'Share it now', 'before_widget_content' => '', 'after_widget_content' => '' );  
 
 		foreach( $instance as $key => $value )  
 			$instance[ $key ] = esc_attr( $value );  
@@ -217,5 +217,5 @@ class LoginRadiusCounterWidget extends WP_Widget {
 <?php 
   } 
 } 
-add_action( 'widgets_init', create_function( '', 'return register_widget( "LoginRadiusCounterWidget" );' )); 
+add_action( 'widgets_init', create_function( '', 'return register_widget( "LoginRadiusVerticalShareWidget" );' )); 
 ?>

@@ -271,12 +271,24 @@ div.menu_containt_div img{
 	width: 32px;
 	height: 32px;
 }
-ul#loginRadiusSortable > li{
+ul#loginRadiusHorizontalSortable > li{
+	float:left;
+}
+ul#loginRadiusVerticalSortable > li{
 	float:left;
 }
 .loginRadiusYesRadio{
 	margin-right:20px;
 	float:left
+}
+div.loginRadiusBorder2 {
+	clear: both;
+	border-bottom-color: rgb(243, 243, 243);
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	height: 10px;
+	width: 103%;
+	margin-left: -8px;
 }
 .twitter_box {
     width: 58px; height: 34px;

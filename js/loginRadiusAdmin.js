@@ -1,14 +1,47 @@
-var loginRadiusSharingTheme = document.getElementsByName('LoginRadius_settings[LoginRadius_sharingTheme]');
-var loginRadiusCounterTheme = document.getElementsByName('LoginRadius_settings[LoginRadius_counterTheme]');
-var loginRadiusSharingProviders = document.getElementsByName('LoginRadius_settings[sharing_providers][]');
+var loginRadiusHorizontalSharingTheme = document.getElementsByName('LoginRadius_settings[horizontalSharing_theme]');
+var loginRadiusVerticalSharingTheme = document.getElementsByName('LoginRadius_settings[verticalSharing_theme]');
+var loginRadiusHorizontalSharingProviders;
+var loginRadiusVerticalSharingProviders;
+
+function loginRadiusCheckElement(arr, obj){
+	for(var i=0; i<arr.length; i++) {
+		if (arr[i] == obj) return true;
+	}
+	return false
+}
 
 window.onload = function(){
-	loginRadiusToggleShareTheme(loginRadiusSharingTheme[0].value);
-	loginRadiusToggleCounterTheme(loginRadiusCounterTheme[0].value);
-	if(document.getElementsByName('LoginRadius_settings[rearrange_providers][]').length == 0){
-		for(var i = 0; i < loginRadiusSharingProviders.length; i++){
-			if(loginRadiusSharingProviders[i].checked){
-				loginRadiusRearrangeProviderList(loginRadiusSharingProviders[i]);
+	loginRadiusAdminUI2();
+	loginRadiusHorizontalSharingProviders = document.getElementsByName('LoginRadius_settings[horizontal_sharing_providers][]');
+	loginRadiusVerticalSharingProviders = document.getElementsByName('LoginRadius_settings[vertical_sharing_providers][]');
+	loginRadiusAdminUI();
+}
+function loginRadiusAdminUI(){
+	for(var key in loginRadiusHorizontalSharingTheme){
+		if(loginRadiusHorizontalSharingTheme[key].checked){
+			loginRadiusToggleHorizontalShareTheme(loginRadiusHorizontalSharingTheme[key].value);
+			break;
+		}
+	}
+	for(var key in loginRadiusVerticalSharingTheme){
+		if(loginRadiusVerticalSharingTheme[key].checked){
+			loginRadiusToggleVerticalShareTheme(loginRadiusVerticalSharingTheme[key].value);
+			break;
+		}
+	}
+	// if rearrange horizontal sharing icons option is empty, show seleted icons to rearrange
+	if(document.getElementsByName('LoginRadius_settings[horizontal_rearrange_providers][]').length == 0){
+		for(var i = 0; i < loginRadiusHorizontalSharingProviders.length; i++){
+			if(loginRadiusHorizontalSharingProviders[i].checked){
+				loginRadiusRearrangeProviderList(loginRadiusHorizontalSharingProviders[i], 'Horizontal');
+			}
+		}
+	}
+	// if rearrange vertical sharing icons option is empty, show seleted icons to rearrange
+	if(document.getElementsByName('LoginRadius_settings[vertical_rearrange_providers][]').length == 0){
+		for(var i = 0; i < loginRadiusVerticalSharingProviders.length; i++){
+			if(loginRadiusVerticalSharingProviders[i].checked){
+				loginRadiusRearrangeProviderList(loginRadiusVerticalSharingProviders[i], 'Vertical');
 			}
 		}
 	}
@@ -61,77 +94,125 @@ window.onload = function(){
 		}
 	}
 }
+
 jQuery(function(){
-    jQuery("#loginRadiusSortable").sortable({
+    jQuery("#loginRadiusHorizontalSortable, #loginRadiusVerticalSortable").sortable({
       revert: true
     });
 });
 // prepare rearrange provider list
-function loginRadiusRearrangeProviderList(elem){
-	var ul = document.getElementById('loginRadiusSortable');
+function loginRadiusRearrangeProviderList(elem, sharingType){
+	var ul = document.getElementById('loginRadius'+sharingType+'Sortable');
 	if(elem.checked){
 		var listItem = document.createElement('li');
-		listItem.setAttribute('id', 'loginRadiusLI'+elem.value);
+		listItem.setAttribute('id', 'loginRadius'+sharingType+'LI'+elem.value);
 		listItem.setAttribute('title', elem.value);
-		listItem.setAttribute('class', 'lrshare_iconsprite32 lrshare_'+elem.value);
+		listItem.setAttribute('class', 'lrshare_iconsprite32 lrshare_'+elem.value.toLowerCase());
 		// append hidden field
 		var provider = document.createElement('input');
 		provider.setAttribute('type', 'hidden');
-		provider.setAttribute('name', 'LoginRadius_settings[rearrange_providers][]');
+		provider.setAttribute('name', 'LoginRadius_settings['+sharingType.toLowerCase()+'_rearrange_providers][]');
 		provider.setAttribute('value', elem.value);
 		listItem.appendChild(provider);
 		ul.appendChild(listItem);
 	}else{
-		ul.removeChild(document.getElementById('loginRadiusLI'+elem.value));
+		if(document.getElementById('loginRadius'+sharingType+'LI'+elem.value)){
+			ul.removeChild(document.getElementById('loginRadius'+sharingType+'LI'+elem.value));
+		}
 	}
 }
-// limit maximum number of providers selected in sharing
-function loginRadiusSharingLimit(elem){
+// limit maximum number of providers selected in horizontal sharing
+function loginRadiusHorizontalSharingLimit(elem){
 	var checkCount = 0;
-	for(var i = 0; i < loginRadiusSharingProviders.length; i++){
-		if(loginRadiusSharingProviders[i].checked){
+	for(var i = 0; i < loginRadiusHorizontalSharingProviders.length; i++){
+		if(loginRadiusHorizontalSharingProviders[i].checked){
 			// count checked providers
 			checkCount++;
 			if(checkCount >= 10){
 				elem.checked = false;
-				document.getElementById('loginRadiusSharingLimit').style.display = 'block';
+				document.getElementById('loginRadiusHorizontalSharingLimit').style.display = 'block';
+				setTimeout(function(){ document.getElementById('loginRadiusHorizontalSharingLimit').style.display = 'none'; }, 2000);
 				return;
 			}
 		}
 	}
 }
-// toggle horizontal and vertical theme selection
-function loginRadiusToggleShareTheme(theme){
-	loginRadiusSharingTheme[0].value = theme;
-	if(theme == "vertical"){
-		verticalDisplay = 'table-row';
-		horizontalDisplay = 'none';
-	}else{
-		verticalDisplay = 'none';
-		horizontalDisplay = 'table-row';
+// limit maximum number of providers selected in vertical sharing
+function loginRadiusVerticalSharingLimit(elem){
+	var checkCount = 0;
+	for(var i = 0; i < loginRadiusVerticalSharingProviders.length; i++){
+		if(loginRadiusVerticalSharingProviders[i].checked){
+			// count checked providers
+			checkCount++;
+			if(checkCount >= 10){
+				elem.checked = false;
+				document.getElementById('loginRadiusVerticalSharingLimit').style.display = 'block';
+				setTimeout(function(){ document.getElementById('loginRadiusVerticalSharingLimit').style.display = 'none'; }, 2000);
+				return;
+			}
+		}
 	}
-	document.getElementById('login_radius_vertical').style.display = verticalDisplay;
-	document.getElementById('login_radius_vertical_position').style.display = verticalDisplay;
-	document.getElementById('login_radius_sharing_offset').style.display = verticalDisplay;
-	document.getElementById('login_radius_horizontal_top').style.display = horizontalDisplay;
-	document.getElementById('login_radius_horizontal_bottom').style.display = horizontalDisplay;
+}
+// show/hide options according to the selected horizontal sharing theme
+function loginRadiusToggleHorizontalShareTheme(theme){
+	switch(theme){
+		case '32':
+		document.getElementById('login_radius_horizontal_rearrange_container').style.display = 'block';
+		document.getElementById('login_radius_horizontal_sharing_providers_container').style.display = 'block';
+		document.getElementById('login_radius_horizontal_counter_providers_container').style.display = 'none';
+		document.getElementById('login_radius_horizontal_providers_container').style.display = 'block';
+		break;
+		case '16':
+		document.getElementById('login_radius_horizontal_rearrange_container').style.display = 'block';
+		document.getElementById('login_radius_horizontal_sharing_providers_container').style.display = 'block';
+		document.getElementById('login_radius_horizontal_counter_providers_container').style.display = 'none';
+		document.getElementById('login_radius_horizontal_providers_container').style.display = 'block';
+		break;
+		case 'single_large':
+		document.getElementById('login_radius_horizontal_rearrange_container').style.display = 'none';
+		document.getElementById('login_radius_horizontal_providers_container').style.display = 'none';
+		break;
+		case 'single_small':
+		document.getElementById('login_radius_horizontal_rearrange_container').style.display = 'none';
+		document.getElementById('login_radius_horizontal_providers_container').style.display = 'none';
+		break;
+		case 'counter_vertical':
+		document.getElementById('login_radius_horizontal_rearrange_container').style.display = 'none';
+		document.getElementById('login_radius_horizontal_sharing_providers_container').style.display = 'none';
+		document.getElementById('login_radius_horizontal_counter_providers_container').style.display = 'block';
+		document.getElementById('login_radius_horizontal_providers_container').style.display = 'block';
+		break;
+		case 'counter_horizontal':
+		document.getElementById('login_radius_horizontal_rearrange_container').style.display = 'none';
+		document.getElementById('login_radius_horizontal_sharing_providers_container').style.display = 'none';
+		document.getElementById('login_radius_horizontal_counter_providers_container').style.display = 'block';
+		document.getElementById('login_radius_horizontal_providers_container').style.display = 'block';
+	}
 }
 
 // display options according to the selected counter theme
-function loginRadiusToggleCounterTheme(theme){
-	loginRadiusCounterTheme[0].value = theme;
-	if(theme == "vertical"){
-		verticalDisplay = 'table-row';
-		horizontalDisplay = 'none';
-	}else{
-		verticalDisplay = 'none';
-		horizontalDisplay = 'table-row';
+function loginRadiusToggleVerticalShareTheme(theme){
+	switch(theme){
+		case '32':
+		document.getElementById('login_radius_vertical_rearrange_container').style.display = 'block';
+		document.getElementById('login_radius_vertical_sharing_providers_container').style.display = 'block';
+		document.getElementById('login_radius_vertical_counter_providers_container').style.display = 'none';
+		break;
+		case '16':
+		document.getElementById('login_radius_vertical_rearrange_container').style.display = 'block';
+		document.getElementById('login_radius_vertical_sharing_providers_container').style.display = 'block';
+		document.getElementById('login_radius_vertical_counter_providers_container').style.display = 'none';
+		break;
+		case 'counter_vertical':
+		document.getElementById('login_radius_vertical_rearrange_container').style.display = 'none';
+		document.getElementById('login_radius_vertical_sharing_providers_container').style.display = 'none';
+		document.getElementById('login_radius_vertical_counter_providers_container').style.display = 'block';
+		break;
+		case 'counter_horizontal':
+		document.getElementById('login_radius_vertical_rearrange_container').style.display = 'none';
+		document.getElementById('login_radius_vertical_sharing_providers_container').style.display = 'none';
+		document.getElementById('login_radius_vertical_counter_providers_container').style.display = 'block';
 	}
-	document.getElementById('login_radius_vertical_counter').style.display = verticalDisplay;
-	document.getElementById('login_radius_vertical_position_counter').style.display = verticalDisplay;
-	document.getElementById('login_radius_counter_offset').style.display = verticalDisplay;
-	document.getElementById('login_radius_horizontal_top_counter').style.display = horizontalDisplay;
-	document.getElementById('login_radius_horizontal_bottom_counter').style.display = horizontalDisplay;
 }
 
 // assign update code function onchange event of elements
@@ -151,11 +232,11 @@ function loginRadiusGetChecked(elems){
 	return checked;
 }
 function loginRadiusInterfacePosition(checkVar, elemName){
-	if(elemName == "LoginRadius_settings[LoginRadius_loginform]") 
+	if(elemName == "LoginRadius_settings[LoginRadius_loginform]"){
 		var elem = document.getElementsByName('LoginRadius_settings[LoginRadius_loginformPosition]'); 
-	else if(elemName == "LoginRadius_settings[LoginRadius_regform]") 
+	}else if(elemName == "LoginRadius_settings[LoginRadius_regform]"){
 		var elem = document.getElementsByName('LoginRadius_settings[LoginRadius_regformPosition]'); 
-	else if(elemName == "LoginRadius_settings[LoginRadius_loginformPosition]"){ 
+	}else if(elemName == "LoginRadius_settings[LoginRadius_loginformPosition]"){ 
 		var elem = document.getElementsByName('LoginRadius_settings[LoginRadius_loginform]'); 
 	}else if(elemName == "LoginRadius_settings[LoginRadius_regformPosition]"){ 
 		var elem = document.getElementsByName('LoginRadius_settings[LoginRadius_regform]'); 
@@ -168,26 +249,3 @@ function loginRadiusInterfacePosition(checkVar, elemName){
 		elem[0].checked = true; 
 	} 
 }
-jQuery(function(){
-    function m(n, d){
-        P = Math.pow;
-        R = Math.round
-        d = P(10, d);
-        i = 7;
-        while(i) {
-            (s = P(10, i-- * 3)) <= n && (n = R(n * d / s) / d + "KMGTPE"[i])
-        }
-        return n;
-    }
-    jQuery.ajax({
-        url: 'http://api.twitter.com/1/users/show.json',
-        data: {
-            screen_name: 'LoginRadius'
-        },
-        dataType: 'jsonp',
-        success: function(data) {
-           count = data.followers_count;
-           jQuery('#followers').html(m(count, 1));
-        }
-    });
-});
