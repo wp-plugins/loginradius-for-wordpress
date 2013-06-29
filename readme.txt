@@ -8,15 +8,15 @@ Tested up to: 3.5.1
 Stable tag: 4.7
 License: GPLv2 or later
 
-Let your users log in, comment and share via their accounts on popular social networks such as Facebook, Google, Twitter, LinkedIn, Vkontakte and over 20 more!
+Let your users log in, comment and share via their social accounts with Facebook, Google Plus, Amazon, Twitter, LinkedIn, Yahoo, Vkontakte, QQ and over 25 more!
 
 == Description ==
-Just install this FREE plugin to enable Social Login, Social Sharing, and Social Commenting on your WordPress site. This is the best plugin for implementing Social Infrastructure and for capturing accurate user profile data gathered from social networks. Users can also run Social Analytics to better understand their userbase. This plugin is also compatible with WordPress's multisite plugin.
+Install this plugin to enable Social Login, Social Sharing, and Social Commenting on your WordPress site. It also captures users’ social profile data, store them in WP database and automatically creates profile. Based on the user data and activities, you also get a unique Social Analytics.
 
 See the <a href="http://wordpress.org/extend/plugins/loginradius-for-wordpress/screenshots">screenshot section</a> for visuals on social login, social sharing and social commenting features.
 
 Please see the detailed information about these features:
-= 1. Social Login = Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 20 more. This will increase your sign-up rate up to 150% and you can quickly build a loyal customer base!
+= 1. Social Login = Eliminate traditional registration form and let your users sign-up in few seconds with their existing IDs such as Facebook, Twitter, Google, Yahoo, Vkontakte and over 25 more. This will increase your sign-up rate up to 150% and you quickly build a loyal customer base!
 = 2. Social Sharing = Let users share your web contents on over 90 social networks resulting into dramatic increase in referral traffic.
 = 3. Social Commenting = Your users can now post comment with their social IDs. Option available to auto approve comments for social ID providers.
 = 4. User Profile Data & Social Analytics = Every time a user logs in, it fetches user profile data and store them in your WordPress database. These data and IP based data are used to present a unique social analytics to understand your userbase.
