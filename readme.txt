@@ -8,7 +8,7 @@ Tested up to: 3.5.1
 Stable tag: 4.7
 License: GPLv2 or later
 
-Let your users log in, comment and share via their social accounts with Facebook, Google Plus, Amazon, Twitter, LinkedIn, Yahoo, Vkontakte, QQ and over 25 more!
+Let your users log in, comment and share via their social accounts with Facebook, Google, Amazon, Twitter, LinkedIn, Vkontakte, QQ and over 25 more!
 
 == Description ==
 Install this plugin to enable Social Login, Social Sharing, and Social Commenting on your WordPress site. It also captures users’ social profile data, store them in WP database and automatically creates profile. Based on the user data and activities, you also get a unique Social Analytics.
@@ -98,6 +98,10 @@ Learn more about our VIP packages <a href="https://www.loginradius.com/pricing/l
 * Google
 * Twitter
 * Vkontakte
+* Amazon login
+* Salesforce
+* Paypal
+* Odnoklassniki‎
 * AOL
 * Persona
 * Yahoo
