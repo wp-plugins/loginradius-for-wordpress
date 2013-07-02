@@ -219,13 +219,11 @@ function login_radius_option_page(){
 		<p>
 		<?php _e('We also offer Social Plugins for ', 'LoginRadius') ?><a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#joomlaextension" target="_blank">Joomla</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#drupalmodule" target="_blank">Drupal</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#vBulletinplugin" target="_blank">vBulletin</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#vanillaaddons" target="_blank">VanillaForum</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#magentoextension" target="_blank">Magento</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#osCommerceaddons" target="_blank">OSCommerce</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#prestashopmodule" target="_blank">PrestaShop</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#xcartextension" target="_blank">X-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#zencartplugin" target="_blank">Zen-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#dotnetnukemodule" target="_blank">DotNetNuke</a> <?php _e('and', 'LoginRadius') ?> <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#blogengineextension" target="_blank">BlogEngine</a>!
 		</p>
-		<a style="text-decoration:none;" href="https://www.loginradius.com/" target="_blank">
-			<input style="margin-top:10px" class="button" type="button" value="<?php _e('Set up my FREE account!', 'LoginRadius'); ?>" />
-		</a>
-		<a class="loginRadiusHow" target="_blank" href="http://support.loginradius.com/customer/portal/articles/593954">(<?php _e('How to set up an account', 'LoginRadius') ?>?)</a>
+		<a style="text-decoration:none;" href="https://www.loginradius.com/registration?utm_source=wppluginshare&utm_medium=wpadmin&utm_campaign=wptraffic" target="_blank">
+			<input style="margin-top:10px" class="greenbutton green" type="button" value="<?php _e('Enable Plugin Now!', 'LoginRadius'); ?>" />
+		</a><br />
 		</fieldset>
-		
-		<fieldset style="width:25%; background-color: rgb(231, 255, 224); border: 1px solid rgb(191, 231, 176); padding-bottom:6px; height:173px; width:255px">
+		<fieldset style="width:25%; background-color: rgb(231, 255, 224); border: 1px solid rgb(191, 231, 176); padding-bottom:6px; height:193px; width:255px">
 		<h4 style="border-bottom:#d7d7d7 1px solid;"><strong><?php _e('Get Updates', 'LoginRadius') ?></strong></h4>
 		<p><?php _e('To receive updates on new features, future releases, etc, please connect with us via Facebook and Twitter', 'LoginRadius') ?>-</p>
 		<div>
