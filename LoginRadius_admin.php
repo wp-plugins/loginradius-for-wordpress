@@ -33,6 +33,7 @@ function login_radius_validate_options($loginRadiusSettings){
  * Display options page.
  */ 
 function login_radius_option_page(){
+	global $loginRadiusLoginIsBpActive;
 	$loginRadiusSettings = get_option('LoginRadius_settings');
 	?>
   	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
@@ -213,15 +214,21 @@ function login_radius_option_page(){
 		<div id="loginRadiusError" style="background-color: #FFFFE0; border:1px solid #E6DB55; padding:5px; margin-bottom:5px; width: 1050px;">
 			 <?php _e('Please clear your browser cache, if you have trouble loading the plugin interface. For more information', 'LoginRadius') ?> <a target="_blank" href="http://www.wikihow.com/Clear-Your-Browser's-Cache" >  <?php _e('click here', 'LoginRadius') ?> </a>.
 		</div>
-		<fieldset style="margin-right:13px; background-color:#EAF7FF; border-color:rgb(195, 239, 250); padding-bottom:10px; width:751px">
+		<fieldset style="margin-right:13px; background-color:#EAF7FF; border-color:rgb(195, 239, 250); padding-bottom:10px; width:751px; height:189px">
 		<h4 style="color:#000"><strong><?php _e('Thank you for installing the LoginRadius Social Plugin!', 'LoginRadius') ?></strong></h4>
 		<p><?php _e('To activate the plugin, you will need to first configure it (manage your desired social networks, etc.) from your LoginRadius account. If you do not have an account, click', 'LoginRadius') ?> <a target="_blank" href="http://www.loginradius.com/"><?php _e('here', 'LoginRadius') ?></a> <?php _e('and create one for FREE!', 'LoginRadius'); ?></p>
 		<p>
 		<?php _e('We also offer Social Plugins for ', 'LoginRadius') ?><a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#joomlaextension" target="_blank">Joomla</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#drupalmodule" target="_blank">Drupal</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#vBulletinplugin" target="_blank">vBulletin</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#vanillaaddons" target="_blank">VanillaForum</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#magentoextension" target="_blank">Magento</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#osCommerceaddons" target="_blank">OSCommerce</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#prestashopmodule" target="_blank">PrestaShop</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#xcartextension" target="_blank">X-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#zencartplugin" target="_blank">Zen-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#dotnetnukemodule" target="_blank">DotNetNuke</a> <?php _e('and', 'LoginRadius') ?> <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#blogengineextension" target="_blank">BlogEngine</a>!
 		</p>
-		<a style="text-decoration:none;" href="https://www.loginradius.com/registration?utm_source=wppluginshare&utm_medium=wpadmin&utm_campaign=wptraffic" target="_blank">
-			<input style="margin-top:10px" class="greenbutton green" type="button" value="<?php _e('Enable Plugin Now!', 'LoginRadius'); ?>" />
-		</a><br />
+		<?php
+		if(!isset($loginRadiusSettings['LoginRadius_apikey']) || trim($loginRadiusSettings['LoginRadius_apikey']) == '' || !isset($loginRadiusSettings['LoginRadius_secret']) || trim($loginRadiusSettings['LoginRadius_secret']) == ''){
+			?>
+			<a style="text-decoration:none;" href="https://www.loginradius.com/registration?utm_source=wppluginshare&utm_medium=wpadmin&utm_campaign=wptraffic" target="_blank">
+				<input style="margin-top:10px" class="greenbutton green" type="button" value="<?php _e('Enable Plugin Now!', 'LoginRadius'); ?>" />
+			</a><br />
+			<?php
+		}
+		?>
 		</fieldset>
 		<fieldset style="width:25%; background-color: rgb(231, 255, 224); border: 1px solid rgb(191, 231, 176); padding-bottom:6px; height:193px; width:255px">
 		<h4 style="border-bottom:#d7d7d7 1px solid;"><strong><?php _e('Get Updates', 'LoginRadius') ?></strong></h4>
@@ -418,7 +425,10 @@ function login_radius_option_page(){
 							</tr>
 							
 							<tr>
-							<td><div class="loginRadiusQuestion"><?php _e("What background color would you like to use for the Social Login interface?", 'LoginRadius'); ?> <a style="text-decoration:none" href="javascript:void(0)" title="<?php _e('Leave empty for transparent. You can enter hexa-decimal code of the color as well as name of the color.', 'LoginRadius') ?>">(?)</a></div>
+							<td><div class="loginRadiusQuestion"><?php _e("What background color would you like to use for the Social Login interface?", 'LoginRadius'); ?>
+							<a style="text-decoration:none" href="javascript:void(0)" title="<?php _e('Leave empty for transparent. You can enter hexa-decimal code of the color as well as name of the color.', 'LoginRadius') ?>">(?)</a><br/>
+							<?php _e("You can get hexadecimal code of the color from ", "LoginRadius") ?><a target="_blank" href="http://www.colorpicker.com/">http://www.colorpicker.com/</a>
+							</div>
 							<input type="text" name="LoginRadius_settings[LoginRadius_backgroundColor]" value="<?php if(isset($loginRadiusSettings['LoginRadius_backgroundColor'])){ echo trim($loginRadiusSettings['LoginRadius_backgroundColor']); } ?>" />
 							<div class="loginRadiusBorder"></div>
 							</td>
@@ -515,7 +525,7 @@ function login_radius_option_page(){
 						<input type="radio" name="LoginRadius_settings[LoginRadius_redirect]" onclick="if(this.checked){ document.getElementById('loginRadiusCustomLoginUrl').style.display = 'none' }" value="dashboard" <?php echo $dashboard;?>/> <?php _e ('Redirect to account dashboard', 'LoginRadius'); ?>
 						<br />
 						<?php
-						if(login_radius_is_bp_active()){
+						if($loginRadiusLoginIsBpActive){
 							?>
 							<input type="radio" name="LoginRadius_settings[LoginRadius_redirect]" value="bp" onclick="if(this.checked){ document.getElementById('loginRadiusCustomLoginUrl').style.display = 'none' }" <?php echo $bp;?>/> <?php _e ('Redirect to Buddypress profile page', 'LoginRadius');?>
 							<br />
@@ -620,8 +630,22 @@ function login_radius_option_page(){
 						<?php _e("Do you want to let users use their social profile picture as an avatar on your website?", 'LoginRadius'); ?></div>
 						<input name="LoginRadius_settings[LoginRadius_socialavatar]" type="radio"  <?php echo $socialavatar;?> value="socialavatar"/><?php _e("YES, let users use their social profile picture as an avatar", 'LoginRadius'); ?> <br />
 						<input name="LoginRadius_settings[LoginRadius_socialavatar]" type="radio" <?php echo $defaultavatar;?> value="defaultavatar" /><?php _e("NO, use default avatars", 'LoginRadius'); ?>
+						<div class="loginRadiusBorder"></div>
 						</td>
 						</tr>
+						
+						<tr>
+							<td>
+							<div class="loginRadiusQuestion">
+							<?php _e("Do you need to change the separator for the username?", 'LoginRadius'); ?>
+							<a style="text-decoration:none" href="javascript:void(0)" title="<?php _e('During account creation, it automatically adds a separator between first name and last name of the user', 'LoginRadius'); ?>">(?)</a>
+							</div>
+							<input name="LoginRadius_settings[username_separator]" type="radio"  <?php echo !isset($loginRadiusSettings['username_separator']) || $loginRadiusSettings['username_separator'] == 'dash' ? 'checked="checked"' : '' ?> value="dash"/><?php _e("Dash", 'LoginRadius'); ?> (-) <br />
+							<input name="LoginRadius_settings[username_separator]" type="radio"  <?php echo isset($loginRadiusSettings['username_separator']) && $loginRadiusSettings['username_separator'] == 'dot' ? 'checked="checked"' : '' ?> value="dot"/><?php _e("Dot", 'LoginRadius'); ?> (.) <br />
+							<input name="LoginRadius_settings[username_separator]" type="radio"  <?php echo isset($loginRadiusSettings['username_separator']) && $loginRadiusSettings['username_separator'] == 'space' ? 'checked="checked"' : '' ?> value="space"/><?php _e("Space", 'LoginRadius'); ?> ( )
+							</td>
+						</tr>
+						
 						</table>
 						</div>
 						</div>
@@ -673,6 +697,25 @@ function login_radius_option_page(){
 						
 						</table>
 						</div>
+						</div>
+						
+						<!-- Plugin deletion options -->
+						<div class="stuffbox">
+							<h3><label><?php _e('Plug-in deletion options', 'LoginRadius');?></label></h3>
+							<div class="inside">
+							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form-table editcomment menu_content_table">
+							<tr>
+							<td>
+							<div class="loginRadiusQuestion">
+							<?php _e('Do you want to completely remove the plugin settings and options on plugin deletion (If you choose yes, then you will not be able to recover settings again)?', 'LoginRadius'); ?>
+							</div>
+							<input type="radio" name="LoginRadius_settings[delete_options]" value="1" <?php echo(!isset($loginRadiusSettings['delete_options']) || $loginRadiusSettings['delete_options'] == 1) ? "checked" : ""; ?> /> <?php _e('YES', 'LoginRadius') ?> <br />
+							<input type="radio" name="LoginRadius_settings[delete_options]" value="0" <?php echo (isset($loginRadiusSettings['delete_options']) && $loginRadiusSettings['delete_options'] == 0) ? "checked" : ""; ?>  /> <?php _e('NO', 'LoginRadius'); ?><br />
+							</td>
+							</tr>
+
+							</table>
+							</div>
 						</div>
 					</div>
 					
@@ -735,8 +778,22 @@ function login_radius_option_page(){
 					<input type="radio" name="LoginRadius_settings[LoginRadius_shareEnable]" value="1" <?php echo isset($loginRadiusSettings['LoginRadius_shareEnable']) && $loginRadiusSettings['LoginRadius_shareEnable'] == 1 ? 'checked' : ''; ?>/> <?php _e("Yes", 'LoginRadius') ?>
 					</div>
 					<input type="radio" name="LoginRadius_settings[LoginRadius_shareEnable]" value="0" <?php echo isset($loginRadiusSettings['LoginRadius_shareEnable']) && $loginRadiusSettings['LoginRadius_shareEnable'] == 0 ? 'checked' : ''; ?>/> <?php _e("No", 'LoginRadius') ?> 
+					<div class="loginRadiusBorder"></div>
 					</td>
 					</tr>
+					
+					<tr>
+					<td>
+					<div class="loginRadiusQuestion">
+					<?php _e("Which page do you want to get shared when multiple social sharing interfaces are shown on a page/home page?", 'LoginRadius'); ?>
+					</div>
+					<div class="loginRadiusYesRadio">
+					<input type="radio" name="LoginRadius_settings[sharingCount]" value="website" <?php echo isset($loginRadiusSettings['sharingCount']) && $loginRadiusSettings['sharingCount'] == 'website' ? 'checked' : ''; ?>/> <?php _e("Page where all the social sharing interfaces are shown", 'LoginRadius') ?>
+					</div><br/>
+					<input type="radio" name="LoginRadius_settings[sharingCount]" value="page" <?php echo !isset($loginRadiusSettings['sharingCount']) || $loginRadiusSettings['sharingCount'] == 'page' ? 'checked' : ''; ?>/> <?php _e("Individual page associated with that Social sharing interface", 'LoginRadius') ?>
+					</td>
+					</tr>
+					
 					</table>
 					</div>
 					</div>
@@ -878,11 +935,7 @@ function login_radius_option_page(){
 						<input type="checkbox" name="LoginRadius_settings[horizontal_sharepost]" value="1" <?php echo isset($loginRadiusSettings['horizontal_sharepost']) && $loginRadiusSettings['horizontal_sharepost'] == 1 ? 'checked' : '' ?>/> <?php _e ('Show on posts', 'LoginRadius'); ?> 
 						<br />
 						<input type="checkbox" name="LoginRadius_settings[horizontal_sharepage]" value="1" <?php echo isset($loginRadiusSettings['horizontal_sharepage']) && $loginRadiusSettings['horizontal_sharepage'] == 1 ? 'checked' : '' ?>/> <?php _e ('Show on pages', 'LoginRadius'); ?> <br /> 
-						<input type="checkbox" name="LoginRadius_settings[horizontal_shareexcerpt]" value="1" <?php checked('1', @$loginRadiusSettings['horizontal_shareexcerpt']); ?>/> <?php _e ('Show on post excerpts ', 'LoginRadius'); ?> <br /> 
-						<input type="checkbox" name="LoginRadius_settings[horizontal_sharearchive]" value="1" <?php checked('1', @$loginRadiusSettings['horizontal_sharearchive']); ?>/> <?php _e ('Show on archive pages', 'LoginRadius'); ?> 
-						<br />
-						<input type="checkbox" name="LoginRadius_settings[horizontal_sharefeed]" value="1" <?php checked('1', @$loginRadiusSettings['horizontal_sharefeed']); ?>/> <?php _e ('Show on feed', 'LoginRadius'); ?> 
-					
+						<input type="checkbox" name="LoginRadius_settings[horizontal_shareexcerpt]" value="1" <?php echo isset($loginRadiusSettings['horizontal_shareexcerpt']) && $loginRadiusSettings['horizontal_shareexcerpt'] == 1 ? 'checked' : '' ?>/> <?php _e ('Show on post excerpts ', 'LoginRadius'); ?>
 					</div>
 					</td>
 					</tr>
@@ -1005,10 +1058,7 @@ function login_radius_option_page(){
 						<input type="checkbox" name="LoginRadius_settings[vertical_sharepost]" value="1" <?php echo isset($loginRadiusSettings['vertical_sharepost']) && $loginRadiusSettings['vertical_sharepost'] == 1 ? 'checked' : '' ?>/> <?php _e ('Show on posts', 'LoginRadius'); ?> 
 						<br />
 						<input type="checkbox" name="LoginRadius_settings[vertical_sharepage]" value="1" <?php echo isset($loginRadiusSettings['vertical_sharepage']) && $loginRadiusSettings['vertical_sharepage'] == 1 ? 'checked' : '' ?>/> <?php _e ('Show on pages', 'LoginRadius'); ?> <br /> 
-						<input type="checkbox" name="LoginRadius_settings[vertical_shareexcerpt]" value="1" <?php checked('1', @$loginRadiusSettings['vertical_shareexcerpt']); ?>/> <?php _e ('Show on post excerpts ', 'LoginRadius'); ?> <br /> 
-						<input type="checkbox" name="LoginRadius_settings[vertical_sharearchive]" value="1" <?php checked('1', @$loginRadiusSettings['vertical_sharearchive']); ?>/> <?php _e ('Show on archive pages', 'LoginRadius'); ?> 
-						<br />
-						<input type="checkbox" name="LoginRadius_settings[vertical_sharefeed]" value="1" <?php checked('1', @$loginRadiusSettings['vertical_sharefeed']); ?>/> <?php _e ('Show on feed', 'LoginRadius'); ?>
+						<input type="checkbox" name="LoginRadius_settings[vertical_shareexcerpt]" value="1" <?php checked('1', @$loginRadiusSettings['vertical_shareexcerpt']); ?>/> <?php _e ('Show on post excerpts ', 'LoginRadius'); ?>
 						<div class="loginRadiusBorder2"></div>
 					</div>
 					</td>

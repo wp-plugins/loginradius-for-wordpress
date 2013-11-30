@@ -1,9 +1,10 @@
 <?php
 // include sharing script in head section
 add_action('wp_enqueue_scripts', 'login_radius_get_sharing_code');
-$verticalInterfaceCount = 0;
+$loginRadiusVerticalInterfaceContentCount = 0;
+$loginRadiusVerticalInterfaceExcerptCount = 0;
 function loginRadiusShareContent($content){
-	global $post;
+	global $post, $loginRadiusLoginIsBpActive;
 	$lrMeta = get_post_meta($post->ID, '_login_radius_meta', true);
 	// if sharing disabled on this page/post, return content unaltered
 	if(isset($lrMeta['sharing']) && $lrMeta['sharing'] == 1 && !is_front_page()){
@@ -13,15 +14,26 @@ function loginRadiusShareContent($content){
 	$loginRadiusSettings['LoginRadius_sharingTitle'] = isset($loginRadiusSettings['LoginRadius_sharingTitle']) ? trim($loginRadiusSettings['LoginRadius_sharingTitle']) : "";
 	if(isset($loginRadiusSettings['horizontal_shareEnable']) && $loginRadiusSettings['horizontal_shareEnable'] == "1"){
 		if(isset($loginRadiusSettings['horizontalSharing_theme']) && ($loginRadiusSettings['horizontalSharing_theme'] == "32" || $loginRadiusSettings['horizontalSharing_theme'] == "16" || $loginRadiusSettings['horizontalSharing_theme'] == "single_large" || $loginRadiusSettings['horizontalSharing_theme'] == "single_small")){
-			$loginRadiusHorizontalSharingDiv = '<div class="loginRadiusHorizontalSharing" data-share-url="'.get_permalink($post->ID).'"></div>';
+			$loginRadiusHorizontalSharingDiv = '<div class="loginRadiusHorizontalSharing"';
+			if(!isset($loginRadiusSettings['sharingCount']) || $loginRadiusSettings['sharingCount'] == 'page'){
+				$loginRadiusHorizontalSharingDiv .= ' data-share-url="'.get_permalink($post->ID).'"';
+			}
+			$loginRadiusHorizontalSharingDiv .= ' ></div>';
 		}elseif(isset($loginRadiusSettings['horizontalSharing_theme']) && ($loginRadiusSettings['horizontalSharing_theme'] == "counter_horizontal" || $loginRadiusSettings['horizontalSharing_theme'] == "counter_vertical")){
-			$loginRadiusHorizontalSharingDiv = '<div class="loginRadiusHorizontalSharing" data-share-url="'.get_permalink($post->ID).'"></div>';
+			$loginRadiusHorizontalSharingDiv = '<div class="loginRadiusHorizontalSharing"';
+			if(!isset($loginRadiusSettings['sharingCount']) || $loginRadiusSettings['sharingCount'] == 'page'){
+				$loginRadiusHorizontalSharingDiv .= ' data-share-url="'.get_permalink($post->ID).'" data-counter-url="'.get_permalink($post->ID).'"';
+			}
+			$loginRadiusHorizontalSharingDiv .= ' ></div>';
 		}else{
-			$loginRadiusHorizontalSharingDiv = '<div class="loginRadiusHorizontalSharing" data-share-url="'.get_permalink($post->ID).'"></div>';
+			$loginRadiusHorizontalSharingDiv = '<div class="loginRadiusHorizontalSharing"';
+			if(!isset($loginRadiusSettings['sharingCount']) || $loginRadiusSettings['sharingCount'] == 'page'){
+				$loginRadiusHorizontalSharingDiv .= ' data-share-url="'.get_permalink($post->ID).'"';
+			}
+			$loginRadiusHorizontalSharingDiv .= ' ></div>';
 		}
 		$horizontalDiv = "<div style='margin:0'><b>".ucfirst($loginRadiusSettings['LoginRadius_sharingTitle'])."</b></div>".$loginRadiusHorizontalSharingDiv;
-		// show horizontal sharing		
-		if((isset( $loginRadiusSettings['horizontal_sharehome']) && is_front_page()) || ( isset( $loginRadiusSettings['horizontal_sharepost'] ) && is_single() ) || ( isset( $loginRadiusSettings['horizontal_sharepage'] ) && is_page() ) || ( isset( $loginRadiusSettings['horizontal_shareexcerpt'] ) && has_excerpt() ) || ( isset( $loginRadiusSettings['horizontal_sharearchive'] ) && is_archive() ) || ( isset( $loginRadiusSettings['horizontal_sharefeed'] ) && is_feed() ) ){	
+		if((( (isset( $loginRadiusSettings['horizontal_sharehome']) && current_filter() == 'the_content') || (isset( $loginRadiusSettings['horizontal_shareexcerpt']) &&  current_filter() == 'get_the_excerpt'))&& is_front_page()) || ( isset( $loginRadiusSettings['horizontal_sharepost'] ) && is_single()) || ( isset( $loginRadiusSettings['horizontal_sharepage'] ) && is_page() )){	
 			if(isset($loginRadiusSettings['horizontal_shareTop'] ) && isset($loginRadiusSettings['horizontal_shareBottom'])){
 				$content = $horizontalDiv.'<br/>'.$content.'<br/>'.$horizontalDiv;
 			}else{
@@ -37,12 +49,17 @@ function loginRadiusShareContent($content){
 	if(isset($loginRadiusSettings['vertical_shareEnable']) && $loginRadiusSettings['vertical_shareEnable'] == "1"){
 		$loginRadiusVerticalSharingDiv = '<div class="loginRadiusVerticalSharing"></div>';
 		// show vertical sharing	
-		if((isset( $loginRadiusSettings['vertical_sharehome']) && is_front_page()) || ( isset( $loginRadiusSettings['vertical_sharepost'] ) && is_single() ) || ( isset( $loginRadiusSettings['vertical_sharepage'] ) && is_page() ) || ( isset( $loginRadiusSettings['vertical_shareexcerpt'] ) && has_excerpt() ) || ( isset( $loginRadiusSettings['vertical_sharearchive'] ) && is_archive() ) || ( isset( $loginRadiusSettings['vertical_sharefeed'] ) && is_feed() ) ){	
+		if((((isset( $loginRadiusSettings['vertical_sharehome']) && current_filter() == 'the_content') || (isset( $loginRadiusSettings['vertical_shareexcerpt']) &&  current_filter() == 'get_the_excerpt')) && is_front_page()) || ( isset( $loginRadiusSettings['vertical_sharepost'] ) && is_single() ) || ( isset( $loginRadiusSettings['vertical_sharepage'] ) && is_page() ) ){
 			if(is_front_page()){
-				global $verticalInterfaceCount;
-				if($verticalInterfaceCount == 0){
+				global $loginRadiusVerticalInterfaceContentCount, $loginRadiusVerticalInterfaceExcerptCount;
+				if(current_filter() == 'the_content'){
+					$compareVariable = 'loginRadiusVerticalInterfaceContentCount';
+				}elseif(current_filter() == 'get_the_excerpt'){
+					$compareVariable = 'loginRadiusVerticalInterfaceExcerptCount';
+				}
+				if($$compareVariable == 0){
 					$content = $content.$loginRadiusVerticalSharingDiv;
-					$verticalInterfaceCount++;
+					$$compareVariable++;
 				}
 			}else{
 				$content = $content.$loginRadiusVerticalSharingDiv;
@@ -52,3 +69,4 @@ function loginRadiusShareContent($content){
 	return $content;
 }
 add_filter('the_content', 'loginRadiusShareContent');
+add_filter('get_the_excerpt', 'loginRadiusShareContent');

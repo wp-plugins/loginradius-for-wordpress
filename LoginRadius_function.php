@@ -1,7 +1,7 @@
 <?php
 // plugin options
 $loginRadiusSettings = get_option('LoginRadius_settings');
-$loginRadiusDs = DIRECTORY_SEPARATOR;
+$loginRadiusDs = '/';
 // include necessary files to detect a plugin
 include_once(ABSPATH . 'wp-admin'.$loginRadiusDs.'includes'.$loginRadiusDs.'plugin.php');
 
@@ -24,17 +24,6 @@ function login_radius_login_script(){
 		 </script>
 		<?php
 	}
-}
-
-/** 
- * Check if buddypress is active.
- */
-function login_radius_is_bp_active(){
-	global $loginRadiusDs;
-	if(is_plugin_active("buddypress".$loginRadiusDs."bp-loader.php")){
-		return true;
-	}
-	return false;
 }
 
 /** 
@@ -139,7 +128,14 @@ function Login_Radius_widget_Connect_button(){
 			echo @get_avatar($user_ID, $size, $default, $alt);   
 		}
 		echo "</div><div style='width:100px; float:left; margin-left:10px'>"; 
-		echo $user->user_login;
+		// username separator
+		if(!isset($loginRadiusSettings['username_separator']) || $loginRadiusSettings['username_separator'] == 'dash'){
+			echo $user->user_login;
+		}elseif(isset($loginRadiusSettings['username_separator']) && $loginRadiusSettings['username_separator'] == 'dot'){
+			echo str_replace('-', '.', $user->user_login);
+		}else{
+			echo str_replace('-', ' ', $user->user_login);
+		}
 		if($loginRadiusSettings['LoginRadius_loutRedirect'] == 'custom' && !empty($loginRadiusSettings['custom_loutRedirect'])){ 
 			$redirect = htmlspecialchars($loginRadiusSettings["custom_loutRedirect"]); 
 		}else{ 
@@ -215,7 +211,7 @@ if(isset($loginRadiusSettings['LoginRadius_commentEnable']) && $loginRadiusSetti
  * Redirect users after login. 
  */	 
 function login_radius_redirect($user_id){
-	global $loginRadiusSettings; 
+	global $loginRadiusSettings, $loginRadiusLoginIsBpActive; 
 	$loginRedirect = $loginRadiusSettings['LoginRadius_redirect']; 
 	$customRedirectUrl = trim($loginRadiusSettings['custom_redirect']); 
 	$redirectionUrl = site_url();
@@ -233,7 +229,7 @@ function login_radius_redirect($user_id){
 					$redirectionUrl = admin_url(); 
 					break; 
 				case 'bp': 
-					if(login_radius_is_bp_active()){
+					if($loginRadiusLoginIsBpActive){
 						$redirectionUrl = bp_core_get_user_domain($user_id); 
 					}else{
 						$redirectionUrl = admin_url();	

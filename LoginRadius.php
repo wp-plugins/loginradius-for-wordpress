@@ -3,11 +3,12 @@
 Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
 Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
-Version: 4.8
+Version: 4.9
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
 */
+$loginRadiusLoginIsBpActive = false;
 require_once('LoginRadiusSDK.php');
 $loginRadiusObject = new LoginRadius();
 require_once('LoginRadius_function.php');
@@ -593,7 +594,7 @@ private static function login_radius_display_popup($profileData, $loginRadiusMes
 	if($loginRadiusMessage){
 		$output .= "<b>" . $loginRadiusMessage . "</b>";
 	}
-	$output .= '</div><form method="post" action=""><div><input type="text" name="email" id="email" class="inputtxt"/></div><div><input type="submit" id="LoginRadius_popupSubmit" name="LoginRadius_popupSubmit" value="Submit" class="inputbutton"><input type="Submit" name="LoginRadius_popupSubmit" value="Cancel" class="inputbutton" /> <input type="hidden" value="'.$profileData['UniqueId'].'" name = "session"/> <input type="hidden" value="'.$profileData['Provider'].'" name = "lrProvider"/>';
+	$output .= '</div><form method="post" action=""><div><input type="text" name="email" id="email" class="loginRadiusInputTxt"/></div><div><input type="submit" id="LoginRadius_popupSubmit" name="LoginRadius_popupSubmit" value="Submit" class="inputbutton"><input type="Submit" name="LoginRadius_popupSubmit" value="Cancel" class="inputbutton" /> <input type="hidden" value="'.$profileData['UniqueId'].'" name = "session"/> <input type="hidden" value="'.$profileData['Provider'].'" name = "lrProvider"/>';
 	$output .= '</div></form></div></div></div>';
 	print $output;
 }
@@ -744,7 +745,7 @@ add_filter('init', 'login_radius_init_locale');
  * Add the LoginRadius menu in the left sidebar in the admin
  */
 function login_radius_admin_menu(){
-	$page = @add_menu_page('LoginRadius', '<b>LoginRadius</b>', 8, 'LoginRadius', 'login_radius_option_page', plugins_url('images/favicon.ico', __FILE__));
+	$page = @add_menu_page('LoginRadius', '<b>LoginRadius</b>', 'manage_options', 'LoginRadius', 'login_radius_option_page', plugins_url('images/favicon.ico', __FILE__));
 	@add_action('admin_print_scripts-' . $page, 'login_radius_options_page_scripts');
 	@add_action('admin_print_styles-' . $page, 'login_radius_options_page_style');
 	@add_action('admin_print_styles-' . $page, 'login_radius_admin_css_custom_page');
@@ -901,7 +902,9 @@ function login_radius_activation(){
 										   'sharing_offset' => '200',
 										   'LoginRadius_noProvider' => '0',
 										   'LoginRadius_enableUserActivation' => '1',
-										   'LoginRadius_defaultUserStatus' => '1'
+										   'LoginRadius_defaultUserStatus' => '1',
+										   'delete_options' => '1',
+										   'username_separator' => 'dash',
 										));
 }
 register_activation_hook(__FILE__, 'login_radius_activation');
@@ -1015,4 +1018,10 @@ function login_radius_change_user_status(){
 }
 // ajax for key verification
 add_action('wp_ajax_login_radius_change_user_status', 'login_radius_change_user_status');
+
+function login_radius_bp_check(){
+    global $loginRadiusLoginIsBpActive;
+	$loginRadiusLoginIsBpActive = true;
+}
+add_action( 'bp_include', 'login_radius_bp_check' );
 ?>

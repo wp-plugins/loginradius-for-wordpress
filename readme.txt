@@ -4,8 +4,8 @@ Donate link: http://www.loginradius.com/
 Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage, ID provider linking, QQ, Renren, Github, MSN,
 single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
 Requires at least: 2.5.0
-Tested up to: 3.5.2
-Stable tag: 4.8
+Tested up to: 3.7.1
+Stable tag: 4.9
 License: GPLv2 or later
 
 Let your users log in, comment and share via their social accounts with Facebook, Google, Amazon, Twitter, LinkedIn, Vkontakte, QQ and over 25 more!
@@ -262,6 +262,13 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
 == Changelog ==
+= 4.9 =
+* Added option to specify target url for multiple sharing interfaces at Homepage
+* Added option to specify username separator in Social Login widget area.
+* Added option to delete plugin settings on plugin deletion
+* "Enable plugin now" button will be displayed at plugin options page, only if
+  user has not saved API Key and Secret.
+
 = 4.8 =
 * Added new login ID providers - Amazon, Github, kaixin, Paypal, renren, Salesforce, odnoklassniki and QQ
 
@@ -560,3 +567,10 @@ Bug fixed for popup in IE
 
 = 4.8 =
 * Added new login ID providers - Amazon, Github, kaixin, Paypal, renren, Salesforce, odnoklassniki and QQ
+
+= 4.9 =
+* Added option to specify target url for multiple sharing interfaces at Homepage
+* Added option to specify username separator in Social Login widget area.
+* Added option to delete plugin settings on plugin deletion
+* "Enable plugin now" button will be displayed at plugin options page, only if
+  user has not saved API Key and Secret.
