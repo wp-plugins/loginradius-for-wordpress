@@ -20,7 +20,7 @@ function login_radius_login_script(){
 		?>
 		<!-- Script to enable social login -->
 		 <script src="//hub.loginradius.com/include/js/LoginRadius.js"></script>
-		 <script type="text/javascript"> var options={}; options.login=true; LoginRadius_SocialLogin.util.ready(function () { $ui = LoginRadius_SocialLogin.lr_login_settings;$ui.interfacesize = "";$ui.apikey = "<?php echo $loginRadiusSettings['LoginRadius_apikey'] ?>";$ui.callback = "<?php echo login_radius_get_callback($http) ?>"; $ui.lrinterfacecontainer ="interfacecontainerdiv"; $ui.interfacesize = "<?php if(isset($loginRadiusSettings['LoginRadius_interfaceSize'])){ echo trim($loginRadiusSettings['LoginRadius_interfaceSize']); }?>"; <?php if(isset($loginRadiusSettings['LoginRadius_numColumns']) && trim($loginRadiusSettings['LoginRadius_numColumns']) != ""){ echo '$ui.noofcolumns = '.trim($loginRadiusSettings['LoginRadius_numColumns']).';'; } ?> $ui.lrinterfacebackground = "<?php if(isset($loginRadiusSettings['LoginRadius_backgroundColor'])){ echo trim($loginRadiusSettings['LoginRadius_backgroundColor']); } ?>"; LoginRadius_SocialLogin.init(options); });
+		 <script type="text/javascript"> var options={}; options.login=true; LoginRadius_SocialLogin.util.ready(function () { $ui = LoginRadius_SocialLogin.lr_login_settings;$ui.interfacesize = "";$ui.apikey = "<?php echo $loginRadiusSettings['LoginRadius_apikey'] ?>";$ui.callback = "<?php echo login_radius_get_callback($http) ?>"; $ui.lrinterfacecontainer ="interfacecontainerdiv"; $ui.interfacesize = "<?php if(isset($loginRadiusSettings['LoginRadius_interfaceSize'])){ echo trim($loginRadiusSettings['LoginRadius_interfaceSize']); }?>"; <?php if(isset($loginRadiusSettings['LoginRadius_numColumns']) && trim($loginRadiusSettings['LoginRadius_numColumns']) != ""){ echo '$ui.noofcolumns = '.trim($loginRadiusSettings['LoginRadius_numColumns']).';'; } ?> $ui.lrinterfacebackground = "<?php if(isset($loginRadiusSettings['LoginRadius_backgroundColor'])){ echo trim($loginRadiusSettings['LoginRadius_backgroundColor']); } ?>"; $ui.samewindow = <?php echo isset($loginRadiusSettings['sameWindow']) ? $loginRadiusSettings['sameWindow'] : 0; ?>; LoginRadius_SocialLogin.init(options); });
 		 </script>
 		<?php
 	}
@@ -210,10 +210,15 @@ if(isset($loginRadiusSettings['LoginRadius_commentEnable']) && $loginRadiusSetti
 /** 
  * Redirect users after login. 
  */	 
-function login_radius_redirect($user_id){
+function login_radius_redirect($user_id, $register = false){
 	global $loginRadiusSettings, $loginRadiusLoginIsBpActive; 
-	$loginRedirect = $loginRadiusSettings['LoginRadius_redirect']; 
-	$customRedirectUrl = trim($loginRadiusSettings['custom_redirect']); 
+	if($register){
+		$loginRedirect = $loginRadiusSettings['LoginRadius_regRedirect']; 
+		$customRedirectUrl = trim($loginRadiusSettings['custom_regRedirect']);			
+	}else{
+		$loginRedirect = $loginRadiusSettings['LoginRadius_redirect']; 
+		$customRedirectUrl = trim($loginRadiusSettings['custom_redirect']);
+	}
 	$redirectionUrl = site_url();
 	$safeRedirection = false; 
 	if(!empty($_GET['redirect_to'])){
@@ -253,13 +258,17 @@ function login_radius_redirect($user_id){
 			} 
 		} 
 	} 
-	if($safeRedirection){
-		wp_redirect($redirectionUrl);
-		exit();
-	}else{
-		wp_safe_redirect($redirectionUrl);
-		exit();
-	}
+	?>
+	<script type="text/javascript">
+		if(window.opener){
+			window.opener.location.href="<?php echo $redirectionUrl; ?>";
+			window.close();
+		}else{
+			window.location.href="<?php echo $redirectionUrl; ?>";
+		}
+	</script>
+	<?php
+	die;
 } 
 /** 
  * Return Sharing code. 
@@ -462,20 +471,18 @@ add_shortcode('LoginRadius_Counter', 'login_radius_counter_shortcode');
  * Shortcode for social login.
  */ 
 function login_radius_login_shortcode($params){
+	$return = '';
 	extract(shortcode_atts(array(
 		'style' => ''
 	), $params));
 	if($style != ""){
-		?>
-		<div style="<?php echo $style; ?>">
-		<?php
+		$return .= '<div style="'.$style.'">';
 	}
-	Login_Radius_Connect_button();
+	$return .= login_radius_get_interface(true);
 	if($style != ""){
-		?>
-		</div>
-		<?php
+		$return .= '</div>';
 	}
+	return $return;
 }
 add_shortcode('LoginRadius_Login', 'login_radius_login_shortcode');
 

@@ -203,11 +203,6 @@ h2.nav-tab-wrapper > ul > li{
 	display:block;
 	font-weight:normal
 }
-input[type="radio"]{
-	display: block;
-	float: left;
-	margin:3px 2px 0 0;
-}
 input[type="text"]{
 	float: left;
 	border:#acacac 1px solid;
@@ -246,13 +241,23 @@ input[type="reset"]{
 	margin-right:10px
 }
 li.ui-tabs-active{
-	border-bottom-color: #fff;
-	margin-top: 1px;
+	border-bottom-color: #f1f1f1;
 	border-bottom-style: solid;
-	border-bottom-width: 1px;
+	border-bottom-width: 5px;
+}
+li.ui-tabs-active a{
+	background-color: transparent
+}
+.stuffbox h3{
+	border-bottom: 1px solid #ccc
 }
 .submit a {
 	margin-left: 20px;
+}
+input[type="radio"]{
+	display: block;
+	float: left !important;
+	margin: 0 2px 0 0 !important;
 }
 #tabs a.tab_anchor{
     border: none;

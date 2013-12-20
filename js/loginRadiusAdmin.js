@@ -65,6 +65,12 @@ function loginRadiusAdminUI(){
 			document.getElementById('loginRadiusPopupErrorMessage').style.display = 'none';
 		}
 	}
+	// registration redirection
+	if(document.getElementById('loginRadiusCustomRegRadio').checked){
+		document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'block';
+	}else{
+		document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'none';
+	}
 	// login redirection
 	var loginRadiusLoginRedirection = document.getElementsByName('LoginRadius_settings[LoginRadius_redirect]');
 	for(var i = 0; i < loginRadiusLoginRedirection.length; i++){

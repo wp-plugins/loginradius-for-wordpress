@@ -3,7 +3,7 @@
 Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
 Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
-Version: 4.9
+Version: 5.0
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -138,7 +138,7 @@ private static function login_radius_update_status($userId, $provider, $socialId
 	update_user_meta($userId, $provider.'LrVerified', '0');
 	update_user_meta($userId, $provider.'LoginRadiusVkey', $loginRadiusKey);
 	self::loginRadiusSendVerificationEmail($email, $loginRadiusKey, $provider);
-	self::login_radius_notify(__("Your Confirmation link Has Been Sent To Your Email Address. Please verify your email by clicking on confirmation link.", 'LoginRadius'));
+	self::login_radius_notify(__("Confirmation link has been sent to your email address. Please verify your email by clicking on confirmation link.", 'LoginRadius'));
 }
   
 /**
@@ -179,7 +179,7 @@ public static function login_radius_update_profile_data($userId){
 /**
  * Login and redirect user
  */	
-public static function login_radius_login_user($userId, $socialId, $firstLogin = false){
+public static function login_radius_login_user($userId, $socialId, $firstLogin = false, $register = false){
 	if(get_user_meta($userId, 'loginradius_status', true) === '0'){
 		self::login_radius_notify(__("Your account is currently inactive. You will be notified through email, once Administrator activates your account.", 'LoginRadius'));
 		return;
@@ -197,20 +197,33 @@ public static function login_radius_login_user($userId, $socialId, $firstLogin =
 	// WP login hook
 	$_user = get_user_by( 'id', $userId );
 	do_action( 'wp_login', $_user->user_login, $_user );
-	login_radius_redirect($userId);
+	login_radius_redirect($userId, $register);
 }
   
 /**
  * Check for the query string variables and authenticate user.
  */	
 public static function login_radius_connect(){
-	global $wpdb, $loginRadiusSettings;
+	global $wpdb, $loginRadiusSettings, $loginRadiusObject;
+	// email popup
+	if(isset($_GET['lrid']) && trim($_GET['lrid']) != '' && !isset($_POST['LoginRadius_popupSubmit'])){
+		$loginRadiusTempUniqueId = $wpdb->get_var($wpdb->prepare("SELECT user_id FROM $wpdb->usermeta WHERE meta_key='tmpsession' AND meta_value = %s", trim($_GET['lrid'])));
+		if(!empty($loginRadiusTempUniqueId)){
+			self::login_radius_display_popup(array('Provider' => $provider, 'UniqueId' => trim($_GET['lrid'])), htmlspecialchars(trim($loginRadiusSettings['msg_email'])));
+			return;
+		}
+	}
+	// notification
+	if(isset($_GET['lrNotVerified'])){
+		self::login_radius_notify(__("Please verify your email by clicking the confirmation link sent to you.", 'LoginRadius'), false);
+		return;
+	}
 	// email verification
 	if(isset($_GET['loginRadiusVk']) && trim($_GET['loginRadiusVk']) != ''){
 		self::login_radius_verify();
 	}
-	$loginRadiusSecret = $loginRadiusSettings['LoginRadius_secret'];
-	$dummyEmail = $loginRadiusSettings['LoginRadius_dummyemail'];
+	$loginRadiusSecret = isset($loginRadiusSettings['LoginRadius_secret']) ? $loginRadiusSettings['LoginRadius_secret'] : '';
+	$dummyEmail = isset($loginRadiusSettings['LoginRadius_dummyemail']) ? $loginRadiusSettings['LoginRadius_dummyemail'] : '';
 	$profileData = array();
 	global $loginRadiusObject;
 	$userProfileObject = $loginRadiusObject->login_radius_get_userprofile_data($loginRadiusSecret);
@@ -261,7 +274,9 @@ public static function login_radius_connect(){
 					if(!self::login_radius_allow_registration()){
 						return;	
 					}
-					self::login_radius_store_temporary_data(self::$loginRadiusProfileData);					// save data temporarily
+					$lrUniqueId = self::login_radius_store_temporary_data(self::$loginRadiusProfileData);					
+					login_radius_close_window($lrUniqueId);
+					// save data temporarily
 					self::login_radius_display_popup(self::$loginRadiusProfileData, htmlspecialchars(trim($loginRadiusSettings['msg_email'])));	// show popup
 				}
 			}else{															// email is not empty
@@ -411,6 +426,8 @@ public static function login_radius_connect(){
 			}
 		}else{
 			self::login_radius_delete_temporary_data(array('UniqueId' => trim($_POST['session'])));
+			wp_redirect(site_url());
+			exit();
 		}
 	}
 } //connect ends
@@ -532,7 +549,7 @@ private static function login_radius_create_user($profileData, $loginRadiusPopup
 				}else{
 					update_user_meta($user_id, 'loginradius_status', '1');
 				}
-				self::login_radius_notify(__("Your Confirmation link Has Been Sent To Your Email Address. Please verify your email by clicking on confirmation link.", 'LoginRadius'));
+				self::login_radius_notify(__("Confirmation link has been sent to your email address. Please verify your email by clicking on confirmation link.", 'LoginRadius'));
 				return;
 			}
 			if(($sendemail == 'sendemail')){
@@ -554,7 +571,7 @@ private static function login_radius_create_user($profileData, $loginRadiusPopup
 					update_user_meta($user_id, 'loginradius_status', '1');
 				}
 			}
-			self::login_radius_login_user($user_id, $socialId, true);
+			self::login_radius_login_user($user_id, $socialId, true, true);
 		}else{
 			login_radius_redirect($user_id);
 		}
@@ -602,10 +619,17 @@ private static function login_radius_display_popup($profileData, $loginRadiusMes
 /**
  * Function that asking for enter email.
  */
-private static function login_radius_notify($loginRadiusMsg){
+private static function login_radius_notify($loginRadiusMsg, $closeWindow = true, $redirection = ''){
+	if($closeWindow){
+		login_radius_close_window('', 'lrNotVerified');
+	}
 	$output = '<div class="LoginRadius_overlay" id="fade"><div id="popupouter"><div id="popupinner"><div id="textmatter">';
 	$output .= "<b> ".$loginRadiusMsg." </b>";
-	$output .= '</div><form method="post" action=""><div><input type="submit" value="OK" class="inputbutton"></div></form></div></div></div>';
+	if($redirection){
+		$output .= '</div><form method="post" action=""><div><input type="button" value="OK" class="inputbutton" onclick="location.href = \''.$redirection.'\'"></div></form></div></div></div>';
+	}else{
+		$output .= '</div><form method="post" action="'.remove_query_arg(array('lrNotVerified', 'lrid')).'"><div><input type="submit" value="OK" class="inputbutton"></div></form></div></div></div>';
+	}
 	print $output;
 }
 
@@ -645,6 +669,7 @@ private static function login_radius_store_temporary_data($profileData){
 	foreach($tmpdata as $key => $value){
 		update_user_meta( $unique_id, $key, $value);
 	}
+	return $profileData['UniqueId'];
 }
 
 /**
@@ -729,7 +754,7 @@ function login_radius_social_avatar($avatar, $avuser, $size, $default, $alt = ''
 	}
 	return $avatar;
 }
-if($loginRadiusSettings['LoginRadius_socialavatar'] == 'socialavatar'){
+if(isset($loginRadiusSettings['LoginRadius_socialavatar']) && $loginRadiusSettings['LoginRadius_socialavatar'] == 'socialavatar'){
 	add_filter('get_avatar', 'login_radius_social_avatar', 10, 5);
 }
 
@@ -905,6 +930,11 @@ function login_radius_activation(){
 										   'LoginRadius_defaultUserStatus' => '1',
 										   'delete_options' => '1',
 										   'username_separator' => 'dash',
+										   'LoginRadius_redirect' => 'samepage',
+										   'LoginRadius_regRedirect' => 'samepage',
+										   'LoginRadius_loutRedirect' => 'homepage',
+										   'LoginRadius_socialavatar' => 'socialavatar',
+										   'sameWindow' => 1
 										));
 }
 register_activation_hook(__FILE__, 'login_radius_activation');
@@ -941,7 +971,7 @@ function login_radius_bp_avatar($text, $args){
 	return $text;
 }
 
-if($loginRadiusSettings['LoginRadius_socialavatar'] == "socialavatar"){
+if(isset($loginRadiusSettings['LoginRadius_socialavatar']) && $loginRadiusSettings['LoginRadius_socialavatar'] == "socialavatar"){
 	add_filter('bp_core_fetch_avatar', 'login_radius_bp_avatar', 10, 2);
 }
 // show social login interface on the custom hook call
@@ -1024,4 +1054,23 @@ function login_radius_bp_check(){
 	$loginRadiusLoginIsBpActive = true;
 }
 add_action( 'bp_include', 'login_radius_bp_check' );
+
+/**
+ * Close current (social login popup) window
+ */
+function login_radius_close_window($uniqueId, $param = ''){
+	if($uniqueId != ''){
+		$queryString = '?lrid='.$uniqueId;
+	}elseif($param != ''){
+		$queryString = '?'.$param.'=1';
+	}
+	?>
+	<script>
+	if(window.opener){
+		window.opener.location.href = '<?php echo site_url().$queryString ?>';
+		window.close();
+	}
+	</script>
+	<?php
+}
 ?>

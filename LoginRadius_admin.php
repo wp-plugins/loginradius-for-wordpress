@@ -214,11 +214,11 @@ function login_radius_option_page(){
 		<div id="loginRadiusError" style="background-color: #FFFFE0; border:1px solid #E6DB55; padding:5px; margin-bottom:5px; width: 1050px;">
 			 <?php _e('Please clear your browser cache, if you have trouble loading the plugin interface. For more information', 'LoginRadius') ?> <a target="_blank" href="http://www.wikihow.com/Clear-Your-Browser's-Cache" >  <?php _e('click here', 'LoginRadius') ?> </a>.
 		</div>
-		<fieldset style="margin-right:13px; background-color:#EAF7FF; border-color:rgb(195, 239, 250); padding-bottom:10px; width:751px; height:189px">
+		<fieldset style="margin-right:13px; background-color:#EAF7FF; border-color:rgb(195, 239, 250); padding-bottom:10px; width:751px; height:172px">
 		<h4 style="color:#000"><strong><?php _e('Thank you for installing the LoginRadius Social Plugin!', 'LoginRadius') ?></strong></h4>
 		<p><?php _e('To activate the plugin, you will need to first configure it (manage your desired social networks, etc.) from your LoginRadius account. If you do not have an account, click', 'LoginRadius') ?> <a target="_blank" href="http://www.loginradius.com/"><?php _e('here', 'LoginRadius') ?></a> <?php _e('and create one for FREE!', 'LoginRadius'); ?></p>
 		<p>
-		<?php _e('We also offer Social Plugins for ', 'LoginRadius') ?><a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#joomlaextension" target="_blank">Joomla</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#drupalmodule" target="_blank">Drupal</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#vBulletinplugin" target="_blank">vBulletin</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#vanillaaddons" target="_blank">VanillaForum</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#magentoextension" target="_blank">Magento</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#osCommerceaddons" target="_blank">OSCommerce</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#prestashopmodule" target="_blank">PrestaShop</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#xcartextension" target="_blank">X-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#zencartplugin" target="_blank">Zen-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#dotnetnukemodule" target="_blank">DotNetNuke</a> <?php _e('and', 'LoginRadius') ?> <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#blogengineextension" target="_blank">BlogEngine</a>!
+		<?php _e('We also offer Social Plugins for ', 'LoginRadius') ?><a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#joomlaextension" target="_blank">Joomla</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#drupalmodule" target="_blank">Drupal</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#vBulletinplugin" target="_blank">vBulletin</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#vanillaaddons" target="_blank">VanillaForum</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#magentoextension" target="_blank">Magento</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#osCommerceaddons" target="_blank">OSCommerce</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#prestashopmodule" target="_blank">PrestaShop</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#xcartextension" target="_blank">X-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#zencartplugin" target="_blank">Zen-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#dotnetnukemodule" target="_blank">DotNetNuke</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#smf" target="_blank">SMF</a> <?php _e('and', 'LoginRadius') ?> <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#phpbb" target="_blank">phpBB</a>!
 		</p>
 		<?php
 		if(!isset($loginRadiusSettings['LoginRadius_apikey']) || trim($loginRadiusSettings['LoginRadius_apikey']) == '' || !isset($loginRadiusSettings['LoginRadius_secret']) || trim($loginRadiusSettings['LoginRadius_secret']) == ''){
@@ -230,9 +230,9 @@ function login_radius_option_page(){
 		}
 		?>
 		</fieldset>
-		<fieldset style="width:25%; background-color: rgb(231, 255, 224); border: 1px solid rgb(191, 231, 176); padding-bottom:6px; height:193px; width:255px">
+		<fieldset style="width:25%; background-color: rgb(231, 255, 224); border: 1px solid rgb(191, 231, 176); padding-bottom:6px; height:176px; width:255px">
 		<h4 style="border-bottom:#d7d7d7 1px solid;"><strong><?php _e('Get Updates', 'LoginRadius') ?></strong></h4>
-		<p><?php _e('To receive updates on new features, future releases, etc, please connect with us via Facebook and Twitter', 'LoginRadius') ?>-</p>
+		<p><?php _e('To receive updates on new features, future releases, etc, please connect with us via Facebook', 'LoginRadius') ?></p>
 		<div>
 			<div style="float:left">
 				<iframe rel="tooltip" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 46px;
@@ -250,7 +250,7 @@ function login_radius_option_page(){
 		</ul>
 		<ul style="float:left; margin-right:43px">
 			<li><a target="_blank" href="http://community.loginradius.com/"><?php _e('Discussion Forum', 'LoginRadius') ?></a></li>
-			<li><a target="_blank" href="http://www.loginradius.com/loginradius/about"><?php _e('About LoginRadius', 'LoginRadius') ?></a></li>
+			<li><a target="_blank" href="https://www.loginradius.com/loginradius/team"><?php _e('About LoginRadius', 'LoginRadius') ?></a></li>
 			<li><a target="_blank" href="http://www.loginradius.com/product/sociallogin"><?php _e('LoginRadius Products', 'LoginRadius') ?></a></li>
 		</ul>
 		<ul style="float:left">
@@ -270,7 +270,7 @@ function login_radius_option_page(){
 		</div>
 		<div class="clr"></div>
 		<?php
-		if(trim($loginRadiusSettings['LoginRadius_apikey']) == "" || trim($loginRadiusSettings['LoginRadius_secret']) == ""){
+		if(!isset($loginRadiusSettings['LoginRadius_apikey']) || !isset($loginRadiusSettings['LoginRadius_secret']) || trim($loginRadiusSettings['LoginRadius_apikey']) == "" || trim($loginRadiusSettings['LoginRadius_secret']) == ""){
 			?>
 			<div id="loginRadiusKeySecretNotification" style="background-color: #FFFFE0; border:1px solid #E6DB55; padding:5px; margin-bottom:5px; width: 1050px;">
 				<?php _e('To activate the <strong>Social Login</strong>, insert LoginRadius API Key and Secret in the <strong>API Settings</strong> section below. <strong>Social Sharing does not require API Key and Secret</strong>.', 'LoginRadius'); ?>
@@ -293,11 +293,11 @@ function login_radius_option_page(){
 				<div class="menu_div" id="tabs">
 					<h2 class="nav-tab-wrapper" style="height:36px">
 					<ul>
-						<li style="margin-left:9px"><a style="margin:0" class="nav-tab" href="#tabs-1"><?php _e('API Settings', 'LoginRadius') ?></a></li>
-						<li><a style="margin:0" class="nav-tab" href="#tabs-2"><?php _e('Social Login', 'LoginRadius') ?></a></li>
-						<li><a style="margin:0" class="nav-tab" href="#tabs-3"><?php _e('Social Commenting', 'LoginRadius') ?></a></li>
-						<li><a style="margin:0" class="nav-tab" href="#tabs-4"><?php _e('Social Sharing', 'LoginRadius') ?></a></li>
-						<li style="float:right; margin-right:8px"><a style="margin:0" class="nav-tab" href="#tabs-6"><?php _e('Help', 'LoginRadius') ?></a></li>
+						<li style="margin-left:9px"><a style="margin:0; height:23px" class="nav-tab" href="#tabs-1"><?php _e('API Settings', 'LoginRadius') ?></a></li>
+						<li><a style="margin:0; height:23px" class="nav-tab" href="#tabs-2"><?php _e('Social Login', 'LoginRadius') ?></a></li>
+						<li><a style="margin:0; height:23px" class="nav-tab" href="#tabs-3"><?php _e('Social Commenting', 'LoginRadius') ?></a></li>
+						<li><a style="margin:0; height:23px" class="nav-tab" href="#tabs-4"><?php _e('Social Sharing', 'LoginRadius') ?></a></li>
+						<li style="float:right; margin-right:8px"><a style="margin:0; height:23px" class="nav-tab" href="#tabs-6"><?php _e('Help', 'LoginRadius') ?></a></li>
 					</ul>
 					</h2>
 				
@@ -309,8 +309,8 @@ function login_radius_option_page(){
 									<?php   
 									$curl = "";
 									$fsockopen = "";
-									if($loginRadiusSettings["LoginRadius_useapi"] == "curl") $curl = "checked='checked'";
-									elseif($loginRadiusSettings["LoginRadius_useapi"] == "fsockopen") $fsockopen = "checked='checked'";
+									if(isset($loginRadiusSettings["LoginRadius_useapi"]) && $loginRadiusSettings["LoginRadius_useapi"] == "curl") $curl = "checked='checked'";
+									elseif(isset($loginRadiusSettings["LoginRadius_useapi"]) && $loginRadiusSettings["LoginRadius_useapi"] == "fsockopen") $fsockopen = "checked='checked'";
 									else $curl = "checked='checked'";?>
 									<tr>
 									<td><input name="LoginRadius_settings[LoginRadius_useapi]" type="radio" id="login_radius_curl" <?php echo $curl;?> value="curl" /><?php _e("Use CURL", 'LoginRadius'); ?><br />
@@ -358,7 +358,7 @@ function login_radius_option_page(){
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" class="form-table editcomment menu_content_table">
 							<tr>
 							<td width="35%"><div class="loginRadiusQuestion"><?php _e('What text should be displayed above the Social Login interface? Leave blank if you do not want any text to be displayed', 'LoginRadius'); ?></div>
-							<input type="text" name="LoginRadius_settings[LoginRadius_title]" size="60" value="<?php if($loginRadiusSettings['LoginRadius_title']){ echo htmlspecialchars ($loginRadiusSettings['LoginRadius_title']); }else { _e('Login with Social ID', 'LoginRadius');} ?>" />
+							<input type="text" name="LoginRadius_settings[LoginRadius_title]" size="60" value="<?php if(isset($loginRadiusSettings['LoginRadius_title']) && $loginRadiusSettings['LoginRadius_title']){ echo htmlspecialchars ($loginRadiusSettings['LoginRadius_title']); }else { _e('Login with Social ID', 'LoginRadius');} ?>" />
 							<div class="loginRadiusBorder"></div>
 							</td>
 							</tr>
@@ -388,6 +388,7 @@ function login_radius_option_page(){
 							<div class="loginRadiusBorder"></div>
 							</td>
 							</tr>
+							
 							<tr>
 							<td>
 							<div class="loginRadiusQuestion">
@@ -395,8 +396,23 @@ function login_radius_option_page(){
 							</div>
 							<input type="radio" name="LoginRadius_settings[LoginRadius_regformPosition]" value="embed" <?php echo (isset($loginRadiusSettings['LoginRadius_regform']) && $loginRadiusSettings['LoginRadius_regform']== 1 && isset($loginRadiusSettings['LoginRadius_regformPosition']) && $loginRadiusSettings['LoginRadius_regformPosition'] == "embed")? "checked" : ""; ?>/> <?php _e ('Show it below the registration form', 'LoginRadius'); ?><br />
 							<input type="radio" name="LoginRadius_settings[LoginRadius_regformPosition]" value="beside" <?php echo (isset($loginRadiusSettings['LoginRadius_regform']) && $loginRadiusSettings['LoginRadius_regform']== 1 && isset($loginRadiusSettings['LoginRadius_regformPosition']) && $loginRadiusSettings['LoginRadius_regformPosition'] == "beside")? "checked" : "" ?>/> <?php _e ('Show it beside the registration form', 'LoginRadius'); ?> 
+							<div class="loginRadiusBorder"></div>
 							</td>
 							</tr>
+							
+							<tr>
+							<td>
+							<div class="loginRadiusQuestion">
+							<?php _e ('Release authentication response in ID provider pop-up?', 'LoginRadius'); ?>
+							<a style="text-decoration:none" href="javascript:void(0)" title="<?php _e('This is used for better user experience', 'LoginRadius') ?>">(?)</a>
+							</div>
+							<div class="loginRadiusYesRadio">
+							<input type="radio" name="LoginRadius_settings[sameWindow]" value="1" <?php echo !isset($loginRadiusSettings['sameWindow']) || $loginRadiusSettings['sameWindow'] == 1 ? "checked" : ""; ?>/><?php _e ('Yes', 'LoginRadius'); ?> 
+							</div>
+							<input type="radio" name="LoginRadius_settings[sameWindow]" value="0" <?php echo isset($loginRadiusSettings['sameWindow']) && $loginRadiusSettings['sameWindow'] == 0 ? "checked" : ""; ?>/><?php _e ('No', 'LoginRadius'); ?>
+							</td>
+							</tr>
+							
 							</table>
 						</div>
 						</div>
@@ -449,8 +465,8 @@ function login_radius_option_page(){
 						<?php
 						$sendemail = "";
 						$notsendemail = "";
-						if($loginRadiusSettings["LoginRadius_sendemail"] == "sendemail") $sendemail = "checked='checked'";
-						elseif($loginRadiusSettings["LoginRadius_sendemail"] == "notsendemail") $notsendemail = "checked='checked'";
+						if(isset($loginRadiusSettings["LoginRadius_sendemail"]) && $loginRadiusSettings["LoginRadius_sendemail"] == "sendemail") $sendemail = "checked='checked'";
+						elseif(isset($loginRadiusSettings["LoginRadius_sendemail"]) && $loginRadiusSettings["LoginRadius_sendemail"] == "notsendemail") $notsendemail = "checked='checked'";
 						else $sendemail = "checked='checked'";
 						?>
 						<?php _e("YES, send an email to users after registration", 'LoginRadius'); ?> <input name="LoginRadius_settings[LoginRadius_sendemail]" type="radio"  value="sendemail" <?php echo $sendemail;?> /><br />
@@ -466,8 +482,8 @@ function login_radius_option_page(){
 						<?php
 						$dummyemail = "";
 						$notdummyemail = "";
-						if($loginRadiusSettings["LoginRadius_dummyemail"] == "notdummyemail") $notdummyemail = "checked='checked'";
-						elseif($loginRadiusSettings["LoginRadius_dummyemail"] == "dummyemail") $dummyemail = "checked='checked'";
+						if(isset($loginRadiusSettings["LoginRadius_dummyemail"]) && $loginRadiusSettings["LoginRadius_dummyemail"] == "notdummyemail") $notdummyemail = "checked='checked'";
+						elseif(isset($loginRadiusSettings["LoginRadius_dummyemail"]) && $loginRadiusSettings["LoginRadius_dummyemail"] == "dummyemail") $dummyemail = "checked='checked'";
 						else $notdummyemail = "checked='checked'";
 						?>
 						<?php _e("YES, ask users to enter their email address in a pop-up", 'LoginRadius'); ?> <input name="LoginRadius_settings[LoginRadius_dummyemail]" type="radio" value"notdummyemail" <?php echo $notdummyemail;?> onchange = "if(this.checked){ document.getElementById('loginRadiusPopupMessage').style.display = 'table-row'; document.getElementById('loginRadiusPopupErrorMessage').style.display = 'table-row';}" /><br />
@@ -481,7 +497,7 @@ function login_radius_option_page(){
 						<?php
 						_e('Please enter the message to be displayed to the user in the pop-up asking for their email address', 'LoginRadius'); ?>
 						</div>
-						<input style="width: 45%;" type="text" name="LoginRadius_settings[msg_email]"  value="<?php if($loginRadiusSettings['msg_email']){ echo htmlspecialchars ($loginRadiusSettings['msg_email']); }else { _e('Unfortunately, the ID Provider did not provided your email address. Please enter your email to proceed', 'LoginRadius'); } ?>" />
+						<input style="width: 45%;" type="text" name="LoginRadius_settings[msg_email]"  value="<?php if(isset($loginRadiusSettings['msg_email']) && $loginRadiusSettings['msg_email']){ echo htmlspecialchars ($loginRadiusSettings['msg_email']); }else { _e('Unfortunately, the ID Provider did not provided your email address. Please enter your email to proceed', 'LoginRadius'); } ?>" />
 						<div class="loginRadiusBorder"></div>
 						</td>
 						</tr>
@@ -490,7 +506,7 @@ function login_radius_option_page(){
 						<div class="loginRadiusQuestion">
 						<?php _e('Please enter the message to be shown to the user in case of an invalid or already registered email', 'LoginRadius'); ?>
 						</div>
-						<input style="width: 45%;" type="text" name="LoginRadius_settings[msg_existemail]"  value="<?php if($loginRadiusSettings['msg_existemail']){ echo htmlspecialchars ($loginRadiusSettings['msg_existemail']); }else { _e('The email you have entered is either already registered or invalid. Please enter a valid email address.', 'LoginRadius');} ?>" />
+						<input style="width: 45%;" type="text" name="LoginRadius_settings[msg_existemail]"  value="<?php if(isset($loginRadiusSettings['msg_existemail']) && $loginRadiusSettings['msg_existemail']){ echo htmlspecialchars ($loginRadiusSettings['msg_existemail']); }else { _e('The email you have entered is either already registered or invalid. Please enter a valid email address.', 'LoginRadius');} ?>" />
 						</td>
 						</tr>
 						</table>
@@ -534,10 +550,49 @@ function login_radius_option_page(){
 						?>
 						<input type="radio" name="LoginRadius_settings[LoginRadius_redirect]" value="custom" <?php echo $custom;?> onclick="if(this.checked){ document.getElementById('loginRadiusCustomLoginUrl').style.display = 'block' }" /> <?php _e ('Redirect to Custom URL:', 'LoginRadius');?>
 						<br />
-						<input type="text" id="loginRadiusCustomLoginUrl" name="LoginRadius_settings[custom_redirect]" size="60" value="<?php if($loginRadiusSettings["LoginRadius_redirect"]=='custom'){echo htmlspecialchars($loginRadiusSettings["custom_redirect"]);} ?>" />
+						<input type="text" id="loginRadiusCustomLoginUrl" name="LoginRadius_settings[custom_redirect]" size="60" value="<?php if(isset($loginRadiusSettings["LoginRadius_redirect"]) && $loginRadiusSettings["LoginRadius_redirect"]=='custom'){echo htmlspecialchars($loginRadiusSettings["custom_redirect"]);} ?>" />
 						<div class="loginRadiusBorder"></div>
 						</td>
 						</tr>
+						
+						<tr>
+						<td>
+						<div class="loginRadiusQuestion">
+						<?php _e('Where do you want to redirect your users after registration (first Social Login)?', 'LoginRadius');?>
+						</div>
+						<?php 
+						$samepage = "";
+						$homepage = "";
+						$dashboard = "";
+						$custom = "";
+						$bp = "";
+						if ($loginRadiusSettings["LoginRadius_regRedirect"] == "samepage") $samepage = "checked='checked'";
+						elseif($loginRadiusSettings["LoginRadius_regRedirect"] == "homepage") $homepage = "checked='checked'";
+						elseif($loginRadiusSettings["LoginRadius_regRedirect"] == "dashboard") $dashboard = "checked='checked'";
+						elseif($loginRadiusSettings["LoginRadius_regRedirect"] == "bp") $bp = "checked='checked'";
+						elseif($loginRadiusSettings["LoginRadius_regRedirect"] == "custom") $custom = "checked='checked'";
+						else $samepage = "checked='checked'";
+						?>
+						<input type="radio" name="LoginRadius_settings[LoginRadius_regRedirect]" onclick="if(this.checked){ document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'none' }" value="samepage" <?php echo $samepage;?>/> <?php _e ('Redirect to the same page where the user registered', 'LoginRadius');?> <strong>(<?php _e ('Default', 'LoginRadius') ?>)</strong><br />
+						<input type="radio" name="LoginRadius_settings[LoginRadius_regRedirect]" onclick="if(this.checked){ document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'none' }" value="homepage" <?php echo $homepage;?> /> <?php _e ('Redirect to homepage of your WP site', 'LoginRadius'); ?> 
+						<br />
+						<input type="radio" name="LoginRadius_settings[LoginRadius_regRedirect]" onclick="if(this.checked){ document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'none' }" value="dashboard" <?php echo $dashboard;?>/> <?php _e ('Redirect to account dashboard', 'LoginRadius'); ?>
+						<br />
+						<?php
+						if($loginRadiusLoginIsBpActive){
+							?>
+							<input type="radio" name="LoginRadius_settings[LoginRadius_regRedirect]" value="bp" onclick="if(this.checked){ document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'none' }" <?php echo $bp;?>/> <?php _e ('Redirect to Buddypress profile page', 'LoginRadius');?>
+							<br />
+							<?php
+						}
+						?>
+						<input type="radio" id="loginRadiusCustomRegRadio" name="LoginRadius_settings[LoginRadius_regRedirect]" value="custom" <?php echo $custom;?> onclick="if(this.checked){ document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'block' }" /> <?php _e ('Redirect to Custom URL:', 'LoginRadius');?>
+						<br />
+						<input type="text" id="loginRadiusCustomRegistrationUrl" name="LoginRadius_settings[custom_regRedirect]" size="60" value="<?php if(isset($loginRadiusSettings["custom_regRedirect"]) && $loginRadiusSettings["LoginRadius_regRedirect"]=='custom'){echo htmlspecialchars($loginRadiusSettings["custom_regRedirect"]);} ?>" />
+						<div class="loginRadiusBorder"></div>
+						</td>
+						</tr>
+						
 						<tr>
 						<td>
 						<div class="loginRadiusQuestion">
@@ -558,7 +613,7 @@ function login_radius_option_page(){
 						<br /> 
 						<input type="radio" name="LoginRadius_settings[LoginRadius_loutRedirect]" onclick="if(this.checked){ document.getElementById('loginRadiusCustomLogoutUrl').style.display = 'block' }" value="custom" <?php echo $custom;?>/> <?php _e ('Redirect to Custom URL:', 'LoginRadius');?> 
 						<br /> 
-						<input type="text" id="loginRadiusCustomLogoutUrl" name="LoginRadius_settings[custom_loutRedirect]" size="60" value="<?php if($loginRadiusSettings["LoginRadius_loutRedirect"]=='custom'){echo htmlspecialchars($loginRadiusSettings["custom_loutRedirect"]);}else{} ?>" />
+						<input type="text" id="loginRadiusCustomLogoutUrl" name="LoginRadius_settings[custom_loutRedirect]" size="60" value="<?php if(isset($loginRadiusSettings["LoginRadius_loutRedirect"]) && $loginRadiusSettings["LoginRadius_loutRedirect"]=='custom'){echo htmlspecialchars($loginRadiusSettings["custom_loutRedirect"]);}else{} ?>" />
 						</td>
 						</tr>
 						</table>
@@ -1081,7 +1136,7 @@ function login_radius_option_page(){
 							<li><a target="_blank" href="http://community.loginradius.com/"><?php _e('Discussion Forum', 'LoginRadius') ?></a></li>
 						</ul>
 						<ul style="float:left">
-							<li><a target="_blank" href="http://www.loginradius.com/loginradius/about"><?php _e('About LoginRadius', 'LoginRadius') ?></a></li>
+							<li><a target="_blank" href="https://www.loginradius.com/loginradius/team"><?php _e('About LoginRadius', 'LoginRadius') ?></a></li>
 							<li><a target="_blank" href="http://www.loginradius.com/product/sociallogin"><?php _e('LoginRadius Products', 'LoginRadius') ?></a></li>
 							<li><a target="_blank" href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms"><?php _e('Social Plugins', 'LoginRadius') ?></a></li>
 							<li><a target="_blank" href="https://www.loginradius.com/loginradius-for-developers/loginRadius-sdks"><?php _e('Social SDKs', 'LoginRadius') ?></a></li>
