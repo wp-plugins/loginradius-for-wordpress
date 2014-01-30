@@ -4,8 +4,8 @@ Donate link: http://www.loginradius.com/
 Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage, ID provider linking, QQ, Renren, Github, MSN,
 single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
 Requires at least: 2.5.0
-Tested up to: 3.8
-Stable tag: 5.0
+Tested up to: 3.8.1
+Stable tag: 5.5
 License: GPLv2 or later
 
 Let your users log in, comment and share via their social accounts with Facebook, Google, Amazon, Twitter, LinkedIn, Vkontakte, QQ and over 25 more!
@@ -23,7 +23,7 @@ Please see the detailed information about these features:
 = 5. Single sign-on = Enable single sign-on in your WordPress multisite website. Our plugin support both domain-based and/or directory based features of multisite WordPress.
 
 = Plugin Live Demo =
-* Wordpress: http://wordpress.loginradius.com
+* Wordpress: http://wordpress-social-plugin.loginradius.com
 * BuddyPress: http://buddypress.loginradius.com
 * BBPress: http://bbpress.loginradius.com
 
@@ -128,7 +128,7 @@ Learn more about our VIP packages <a href="https://www.loginradius.com/pricing/l
 We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart, vBulletin, BlogEngine and DotNetNuke! <a href="https://www.loginradius.com/loginradius-cms-social-plugins" target="_blank">Learn more</a>.
 
 = Important links =
-* WordPress live demo: http://wordpress.loginradius.com
+* WordPress live demo: http://wordpress-social-plugin.loginradius.com/
 * BuddyPress live demo: http://buddypress.loginradius.com
 * BBPress live demo: http://bbpress.loginradius.com
 * Learn more about this plugin: https://www.loginradius.com/loginradius-cms-social-plugins/wordpress-plugin
@@ -183,7 +183,7 @@ Our plugin is FREE to download and feel free to use it on your WordPress, BuddyP
 
 = Do you have a live demo site? =
 Yes, we have three live demo sites (try logging in to see how it works):<br />
-1. For WordPress: http://wordpress.loginradius.com Try logging in and posting a comment :)<br />
+1. For WordPress: http://wordpress-social-plugin.loginradius.com/ Try logging in and posting a comment :)<br />
 2. For BuddyPress: http://buddypress.loginradius.com <br />
 3. For bbPress:  http://bbpress.loginradius.com <br />
 
@@ -262,6 +262,14 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
 == Changelog ==
+= 5.5 =
+* Added performance improvements
+* Added new features and widget for Social Account linking
+* Added shortcode for Social Account linking widget
+* Enhanced Social Sharing to support responsive themes and mobile devices
+* Added an option to use large social profile picture as WordPress avatar
+* Added an option to include plugin JavaScript code in website footer
+
 = 5.0 =
 * Added an option to handle redirection for registration and login using Social Login
 * Added an option to enable improved user experience for Social Login
@@ -584,3 +592,11 @@ Bug fixed for popup in IE
 * Added an option to handle redirection for registration and login using Social Login
 * Added an option to enable improved user experience for Social Login
 * UI improvements in options page
+
+= 5.5 =
+* Added performance improvements
+* Added new features and widget for Social Account linking
+* Added shortcode for Social Account linking widget
+* Enhanced Social Sharing to support responsive themes and mobile devices
+* Added an option to use large social profile picture as WordPress avatar
+* Added an option to include plugin JavaScript code in website footer

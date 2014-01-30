@@ -137,7 +137,7 @@ border-color: #E6DB55;
     border: 1px solid #E5E5E5; 
     box-shadow: 0 4px 10px -1px rgba(200, 200, 200, 0.7); 
     font-weight: normal; 
-    margin-left: 8px; 
+    margin: 20px 0 0 8px; 
     padding: 26px 24px 46px; 
 	width:345px 
 }  
@@ -168,5 +168,8 @@ filter: alpha(opacity=90);
 }
 .lrsharecontainer{
 	z-index: 1000000 !important;
+}
+table.loginRadiusLinking, table.loginRadiusLinking tr, table.loginRadiusLinking th, table.loginRadiusLinking td{
+	border: none !important
 }
 <![endif]-->
