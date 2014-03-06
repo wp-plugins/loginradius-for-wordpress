@@ -3,7 +3,7 @@
 Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
 Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
-Version: 5.5
+Version: 5.6
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
@@ -52,6 +52,7 @@ class Login_Radius_Social_Login
 	 * Include necessary scripts at front end
 	 */
 	public static function login_radius_front_end_scripts(){
+		global $loginRadiusSettings;
 		if ( ! wp_script_is( 'jquery' )  ) {
 			@wp_deregister_script( 'jquery' );
 			@wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', false, '1.7.1' );
@@ -59,6 +60,121 @@ class Login_Radius_Social_Login
 		}
 		if ( !is_user_logged_in() ) {
 			login_radius_login_script();
+		}
+		?>
+		<script>
+		/**
+		 * Call functions on window.onload
+		 */
+		function loginRadiusLoadEvent(func){
+			var oldOnLoad = window.onload;
+			if(typeof window.onload != 'function'){
+				window.onload = func;
+			}else{            
+				window.onload = function(){
+					oldOnLoad();
+					func();
+				}
+			}
+		}
+		</script>
+		<?php
+		if ( ! isset( $loginRadiusSettings['LoginRadius_dummyemail'] ) || $loginRadiusSettings['LoginRadius_dummyemail'] == "notdummyemail" ) {
+			global $wpdb;
+			wp_enqueue_script('thickbox');
+			wp_enqueue_style('thickbox');
+			if ( isset( $_GET['lrid'] ) && trim( $_GET['lrid'] ) != '' && ! isset( $_POST['LoginRadius_popupSubmit'] ) ) {
+				if ( isset( $_GET['LoginRadiusMessage'] ) ) {
+					$key = trim( $_GET['lrid'] );
+					$message = trim( $loginRadiusSettings['msg_existemail'] );
+				} else {
+					$loginRadiusTempUniqueId = $wpdb->get_var( $wpdb->prepare( "SELECT user_id FROM " . $wpdb->usermeta . " WHERE meta_key='tmpsession' AND meta_value = %s", trim( $_GET['lrid'] )  )  );
+					if ( ! empty( $loginRadiusTempUniqueId )  ) {
+						$key = trim( $_GET['lrid'] );
+						$message = trim( $loginRadiusSettings['msg_email'] );
+					}
+				}
+				$ajaxUrl = add_query_arg( 
+					array(
+						'height' => 1,
+						'width' => 1,
+						'action' => 'login_radius_email_popup',
+						'key' => $key,
+						'message' => urlencode($message),
+					), 
+					'admin-ajax.php'
+				);
+				//echo '<br/>'.admin_url().$ajaxUrl; die;
+				?>
+				<script>
+				// show thickbox on window load
+				loginRadiusLoadEvent(function(){
+					tb_show('Email required', '<?php echo admin_url().$ajaxUrl; ?>');
+				});
+				
+				// get trim() worked in IE 
+				if(typeof String.prototype.trim !== 'function') {
+					  String.prototype.trim = function() {
+						return this.replace(/^\s+|\s+$/g, ''); 
+					  }
+				}
+				var loginRadiusPopupSubmit = true;
+				function loginRadiusValidateEmail(){
+					if(!loginRadiusPopupSubmit){
+						return true;
+					}
+					var email = document.getElementById('loginRadiusEmail').value.trim();
+					var loginRadiusErrorDiv = document.getElementById('loginRadiusError');
+					var atPosition = email.indexOf("@");
+					var dotPosition = email.lastIndexOf(".");
+					if(email == '' || atPosition < 1 || dotPosition < atPosition+2 || dotPosition+2>=email.length){
+						loginRadiusErrorDiv.innerHTML = "<?php echo trim($loginRadiusSettings['msg_existemail']) != "" ? trim($loginRadiusSettings['msg_existemail']) : __('The email you have entered is either already registered or invalid. Please enter a valid email address.'); ?>";
+						loginRadiusErrorDiv.style.backgroundColor = "rgb(255, 235, 232)";
+						loginRadiusErrorDiv.style.border = "1px solid rgb(204, 0, 0)";
+						loginRadiusErrorDiv.style.padding = "2px 5px";
+						loginRadiusErrorDiv.style.width = "94%";
+						loginRadiusErrorDiv.style.textAlign = "left";
+						return false;
+					}
+					return true;
+				}
+				</script>
+				<?php
+			}
+		}
+		// message popup - "please verify your email by clicking the confirmation link....."
+		if ( isset( $_GET['lrNotVerified'] ) && isset( $_GET['loginRadiusKey'] ) ) {
+			$message = get_user_meta( $_GET['loginRadiusKey'], 'loginradius_tmpKey', true );
+			$redirection = get_user_meta( $_GET['loginRadiusKey'], 'loginradius_tmpRedirection', true );
+			delete_user_meta( $_GET['loginRadiusKey'], 'loginradius_tmpKey' );
+			delete_user_meta( $_GET['loginRadiusKey'], 'loginradius_tmpRedirection' );
+			if ( $message != '' ) {
+				//self::login_radius_notify( __( $message, 'LoginRadius' ) , false );
+				$args = array(
+						'height' => 1,
+						'width' => 1,
+						'action' => 'login_radius_notification_popup',
+						'key' => '',
+						'message' => urlencode($message),
+					);
+				if ( $redirection != '' ) {
+					$args['redirection'] = $redirection;
+				}
+				$ajaxUrl = add_query_arg( $args, 'admin-ajax.php' );
+				?>
+				<style type="text/css">
+					#TB_window{
+						margin-top: -45px !important;
+					}
+				</style>
+				<script>
+				// show thickbox on window load
+				loginRadiusLoadEvent(function(){
+					tb_show('Message', '<?php echo admin_url().$ajaxUrl; ?>');
+				});
+				</script>
+				<?php
+			}
 		}
 	}
 
@@ -242,6 +358,7 @@ class Login_Radius_Social_Login
 		}
 		
 		// email popup
+		/*
 		if ( isset( $_GET['lrid'] ) && trim( $_GET['lrid'] ) != '' && ! isset( $_POST['LoginRadius_popupSubmit'] )  ) {
 			$loginRadiusTempUniqueId = $wpdb->get_var( $wpdb->prepare( "SELECT user_id FROM " . $wpdb->usermeta . " WHERE meta_key='tmpsession' AND meta_value = %s", trim( $_GET['lrid'] )  )  );
 			if ( ! empty( $loginRadiusTempUniqueId )  ) {
@@ -249,7 +366,9 @@ class Login_Radius_Social_Login
 				return;
 			}
 		}
+		*/
 		// notification
+		/*
 		if ( isset( $_GET['lrNotVerified'] ) && isset( $_GET['loginRadiusKey'] ) ) {
 			$message = get_user_meta( $_GET['loginRadiusKey'], 'loginradius_tmpKey', true );
 			delete_user_meta( $_GET['loginRadiusKey'], 'loginradius_tmpKey' );
@@ -258,6 +377,7 @@ class Login_Radius_Social_Login
 			}
 			return;
 		}
+		*/
 		// email verification
 		if ( isset( $_GET['loginRadiusVk'] ) && trim( $_GET['loginRadiusVk'] ) != '' ) {
 			self::login_radius_verify();
@@ -314,10 +434,10 @@ class Login_Radius_Social_Login
 						if ( ! self::login_radius_allow_registration() ) {
 							return;	
 						}
-						$lrUniqueId = self::login_radius_store_temporary_data( self::$loginRadiusProfileData );					
+						$lrUniqueId = self::login_radius_store_temporary_data( self::$loginRadiusProfileData );
 						login_radius_close_window( $lrUniqueId );
 						// save data temporarily
-						self::login_radius_display_popup( self::$loginRadiusProfileData, htmlspecialchars( trim( $loginRadiusSettings['msg_email'] )  )  );	// show popup
+						self::login_radius_display_popup( self::$loginRadiusProfileData, htmlspecialchars( trim( $loginRadiusSettings['msg_email'] ) ) );	// show popup
 					}
 				}else {															// email is not empty
 					$userObject = get_user_by( 'email', self::$loginRadiusProfileData['Email'] );
@@ -373,7 +493,16 @@ class Login_Radius_Social_Login
 					// If email not in correct format.
 					$loginRadiusMessage = '<p style=\'color:red;\'>' . trim( strip_tags( $loginRadiusSettings['msg_existemail'] )  ) . '</p>';
 					$profileData['UniqueId'] = trim( $_POST['session'] );
-					self::login_radius_display_popup( $profileData, $loginRadiusMessage );
+					//self::login_radius_display_popup( $profileData, $loginRadiusMessage );
+					$redirectUrl = add_query_arg( 
+						array(
+							'lrid' => $profileData['UniqueId'],
+							'LoginRadiusMessage' => urlencode( 'invalid email' ),
+						), 
+						site_url()
+					);
+					wp_redirect( $redirectUrl );
+					die;
 				}else {
 					// Email is in correct format.
 					$profileData = array();
@@ -389,8 +518,17 @@ class Login_Radius_Social_Login
 								// Email is already registered.
 								$loginRadiusMessage = '<p style=\'color:red;\'>' . trim( strip_tags( $loginRadiusSettings['msg_existemail'] )  ) . '</p>';
 								$profileData['UniqueId'] = $_POST['session'];
-								self::login_radius_display_popup( $profileData, $loginRadiusMessage );
-								return;
+								//self::login_radius_display_popup( $profileData, $loginRadiusMessage );
+								//return;
+								$redirectUrl = add_query_arg( 
+									array(
+										'lrid' => $profileData['UniqueId'],
+										'LoginRadiusMessage' => urlencode( 'invalid email' ),
+									), 
+									site_url()
+								);
+								wp_redirect( $redirectUrl );
+								die;
 							}elseif ( get_user_meta( $loginRadiusUserId, 'loginradius_provider', true ) == $loginRadiusProvider ) {
 								$directorySeparator = DIRECTORY_SEPARATOR;
 								require_once( getcwd().$directorySeparator.'wp-admin'.$directorySeparator.'includes'.$directorySeparator.'user.php' );
@@ -676,8 +814,12 @@ class Login_Radius_Social_Login
 			// save the notification in database
 			$key = mt_rand();
 			update_user_meta( $key, 'loginradius_tmpKey', $loginRadiusMsg );
+			if ( $redirection ) {
+				update_user_meta( $key, 'loginradius_tmpRedirection', $redirection );
+			}
 			login_radius_close_window( '', 'lrNotVerified', $key );
 		}	
+		/*
 		$output  = '<div class="LoginRadius_overlay" id="fade"><div id="popupouter"><div id="popupinner"><div id="textmatter">';
 		$output .= '<b> ' . $loginRadiusMsg . ' </b>';
 		if ( $redirection ) {
@@ -686,6 +828,10 @@ class Login_Radius_Social_Login
 			$output .= '</div><form method="post" action="'.remove_query_arg( array( 'lrNotVerified', 'lrid', 'loginRadiusKey' )  ) .'"><div><input type="submit" value="OK" class="inputbutton"></div></form></div></div></div>';
 		}
 		print $output;
+		*/
+		$queryString = '?lrNotVerified=1&loginRadiusKey=' . $key;
+		wp_redirect( site_url() . $queryString );
+		die; 
 	}
 
 	/**
@@ -1168,8 +1314,57 @@ function login_radius_close_window( $uniqueId, $param = '', $key = '' ) {
 	if ( window.opener ) {
 		window.opener.location.href = '<?php echo site_url().$queryString ?>';
 		window.close();
+	} else {
+		window.location.href = '<?php echo site_url().$queryString ?>';
 	}
 	</script>
 	<?php
+	die;
 }
-?>
+
+/**
+ * Function that asking for enter email.
+ */
+function login_radius_email_popup() {
+	if ( isset( $_GET['key'] ) && $_GET['key'] != '' ) {
+		//$redirectionUrl = login_radius_get_protocol(). $_SERVER['HTTP_HOST'] . remove_query_arg( array( 'lrid', 'LoginRadiusMessage' ) );
+		?>
+		<div class="LoginRadius_overlay" id="fade"><div id="popupouter"><div id="popupinner"><div id="loginRadiusError"></div><div id="textmatter">
+		<?php
+		if ( isset( $_GET['message'] ) && $_GET['message'] != '' ) {
+			?>	
+			<b><?php echo $_GET['message']; ?></b>
+			<?php
+		}
+		?>
+		</div><form method="post" action='' onsubmit='return loginRadiusValidateEmail()'><div><input type="text" name="email" id="loginRadiusEmail" class="loginRadiusInputTxt"/></div><div><input type="submit" id="LoginRadius_popupSubmit" name="LoginRadius_popupSubmit" value="Submit" class="inputbutton"><input type="Submit" onClick="loginRadiusPopupSubmit = false" name="LoginRadius_popupSubmit" value="Cancel" class="inputbutton" /> <input type="hidden" value="<?php echo $_GET['key'] ?>" name = "session"/></div></form></div></div></div>
+		<?php
+	}
+	die;
+}
+add_action('wp_ajax_nopriv_login_radius_email_popup', 'login_radius_email_popup');
+
+/**
+ * Function that asking for enter email.
+ */
+function login_radius_notification_popup() {
+	?>
+	<div class="LoginRadius_overlay" id="fade"><div id="popupouter"><div id="popupinner"><div id="textmatter">
+	<?php
+	if ( isset( $_GET['message'] ) && $_GET['message'] != '' ) {
+		?>	
+		<b><?php echo $_GET['message']; ?></b>
+		<?php
+	}
+	if ( isset( $_GET['redirection'] ) && $_GET['redirection'] != '' ) {
+		?>
+		</div><form method="post" action=''><div><input type="button" value="OK" class="inputbutton" onclick="location.href = '<?php echo $_GET['redirection'] ?>'></div></form></div></div></div>';
+		<?php
+	}else {
+		?>
+		</div><form method="post" action="<?php echo site_url() ?>"><div><input type="submit" value="OK" class="inputbutton"></div></form></div></div></div>
+		<?php
+	}
+	die;
+}
+add_action('wp_ajax_nopriv_login_radius_notification_popup', 'login_radius_notification_popup');

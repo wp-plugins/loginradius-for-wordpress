@@ -265,7 +265,7 @@ function login_radius_redirect( $user_id, $register = false ) {
 					}  
 					break; 
 				case 'custom':
-					if ( isset( $loginRedirect ) && strlen( $customRedirectUrl ) > 0 && login_radius_validate_url( $customRedirectUrl )  ) { 
+					if ( isset( $loginRedirect ) && strlen( $customRedirectUrl ) > 0 ) { 
 						$redirectionUrl = trim( $customRedirectUrl ); 
 					}else {
 						$redirectionUrl = site_url().'/'; 		 

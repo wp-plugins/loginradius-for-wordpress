@@ -91,7 +91,7 @@
 	margin:10px 0px;
 	line-height:160%;
 }
-
+/*
 @-moz-document url-prefix() { 
   .header_div > fieldset > p{
 	font:12px Arial, Helvetica, sans-serif;
@@ -101,6 +101,7 @@
 	line-height:157%;
 }
 }
+*/
 .header_div > fieldset > p > a, .header_div > fieldset > ul > li > a{
 	color:#00ccff;
 	text-decoration:none;
@@ -399,4 +400,35 @@ div.loginRadiusBorder2 {
 .lrshare_iconsprite32.lrshare_viadeo { background-position: -644px 0px; width: 32px; height: 32px;  } 
 .lrshare_iconsprite32.lrshare_vkontakte { background-position: -678px 0px; width: 32px; height: 32px;  } 
 .lrshare_iconsprite32.lrshare_wordpress { background-position: -712px 0px; width: 32px; height: 32px;  } 
-.lrshare_iconsprite32.lrshare_yahoo { background-position: -746px 0px; width: 32px; height: 32px;  } 
+.lrshare_iconsprite32.lrshare_yahoo { background-position: -746px 0px; width: 32px; height: 32px;  }
+
+/* LR login/registration form */
+.loginradius-aia--form-element-content{
+	clear:both
+}
+.loginradius-aia--form-element-content label{
+	float: left;
+	width: 100px;
+	margin-top: 3px;
+}
+#loginRadiusRegisterForm label{
+	float: left;
+	width: 155px;
+	margin-top: 3px;
+}
+.loginradius-aia--form-element-content input[type=password]{
+	float: left;
+	border: #acacac 1px solid;
+	border-radius: 4px;
+	width: 276px;
+}
+#loginradius-aia-submit-Login, #loginradius-aia-submit-Register{
+	margin: 10px 0 10px 0 !important;
+	clear: both !important;
+}
+ul.recaptcha_options{
+	clear:both
+}
+.loginradius-aia-validation-message{
+	color: red
+}

@@ -10,6 +10,29 @@ function loginRadiusCheckElement(arr, obj){
 	return false
 }
 
+// toggle between login and registration form
+function loginRadiusToggleForm(val){
+	if(val == 'login'){
+		document.getElementById('loginRadiusToggleFormLink').innerHTML = 'New to LoginRadius, Register Now!';
+		document.getElementById('loginRadiusToggleFormLink').setAttribute('onclick', 'loginRadiusToggleForm("register")');
+		//document.getElementById('loginRadiusSubmit').value = 'Login';
+		document.getElementById('loginRadiusFormTitle').innerHTML = 'Login to your LoginRadius Account to change settings as per your requirements!';
+		document.getElementById('loginRadiusLoginForm').style.display = 'block';
+		document.getElementById('loginRadiusRegisterForm').style.display = 'none';
+	}else{
+		document.getElementById('loginRadiusToggleFormLink').innerHTML = 'Already have an account?';
+		document.getElementById('loginRadiusToggleFormLink').setAttribute('onclick', 'loginRadiusToggleForm("login")');
+		//document.getElementById('loginRadiusSubmit').value = 'Register';
+		document.getElementById('loginRadiusFormTitle').innerHTML = 'Register LoginRadius Account to change settings as per your requirements!';
+		document.getElementById('loginRadiusLoginForm').style.display = 'none';
+		document.getElementById('loginRadiusRegisterForm').style.display = 'block';
+	}
+	var loginRadiusMessage = document.getElementById('loginRadiusMessage');
+	if(loginRadiusMessage){
+		loginRadiusMessage.innerHTML = '';
+	}
+}
+
 window.onload = function(){
 	loginRadiusAdminUI2();
 	loginRadiusHorizontalSharingProviders = document.getElementsByName('LoginRadius_settings[horizontal_sharing_providers][]');
@@ -66,10 +89,13 @@ function loginRadiusAdminUI(){
 		}
 	}
 	// registration redirection
-	if(document.getElementById('loginRadiusCustomRegRadio').checked){
-		document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'block';
-	}else{
-		document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'none';
+	var loginRadiusCustomRadio = document.getElementById('loginRadiusCustomRegRadio');
+	if(loginRadiusCustomRadio){
+		if(loginRadiusCustomRadio.checked){
+			document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'block';
+		}else{
+			document.getElementById('loginRadiusCustomRegistrationUrl').style.display = 'none';
+		}
 	}
 	// login redirection
 	var loginRadiusLoginRedirection = document.getElementsByName('LoginRadius_settings[LoginRadius_redirect]');

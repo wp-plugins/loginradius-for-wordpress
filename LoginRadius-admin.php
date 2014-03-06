@@ -217,7 +217,7 @@ function login_radius_option_page(){
 		<h4 style="color:#000"><strong><?php _e( 'Thank you for installing the LoginRadius Social Plugin!', 'LoginRadius' ) ?></strong></h4>
 		<p><?php _e( 'To activate the plugin, you will need to first configure it ( manage your desired social networks, etc. ) from your LoginRadius account. If you do not have an account, click', 'LoginRadius' ) ?> <a target="_blank" href="http://www.loginradius.com/"><?php _e( 'here', 'LoginRadius' ) ?></a> <?php _e( 'and create one for FREE!', 'LoginRadius' ); ?></p>
 		<p>
-		<?php _e( 'We also offer Social Plugins for ', 'LoginRadius' ) ?> <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#joomla-extension" target="_blank">Joomla</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#drupal-module" target="_blank">Drupal</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#magento-extension" target="_blank">Magento</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#vbullentin-plugin" target="_blank">vBulletin</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#vanilla-add-ons" target="_blank">VanillaForum</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#oscommerce-add-ons" target="_blank">osCommerce</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#prestashop-module" target="_blank">PrestaShop</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms#xcart-extension" target="_blank">X-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#zencart-plugin" target="_blank">Zen-Cart</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#dotnetnuke-module" target="_blank">DotNetNuke</a>, <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#smf" target="_blank">SMF</a> <?php echo _e('and') ?> <a href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms/#phpbb" target="_blank">phpBB</a> !
+		<?php _e( 'We also offer Social Plugins for ', 'LoginRadius' ) ?> <a href="https://www.loginradius.com/developer#joomla" target="_blank">Joomla</a>, <a href="https://www.loginradius.com/developer#drupal" target="_blank">Drupal</a>, <a href="https://www.loginradius.com/developer#magento" target="_blank">Magento</a>, <a href="https://www.loginradius.com/developer#vbulletin" target="_blank">vBulletin</a>, <a href="https://www.loginradius.com/developer#vanilla" target="_blank">VanillaForum</a>, <a href="https://www.loginradius.com/developer#oscommerce" target="_blank">osCommerce</a>, <a href="https://www.loginradius.com/developer#prestashop" target="_blank">PrestaShop</a>, <a href="https://www.loginradius.com/developer#xcart" target="_blank">X-Cart</a>, <a href="https://www.loginradius.com/developer/#zencart" target="_blank">Zen-Cart</a>, <a href="https://www.loginradius.com/developer/#dontnetnuke" target="_blank">DotNetNuke</a>, <a href="https://www.loginradius.com/developer/#smf" target="_blank">SMF</a> <?php echo _e('and') ?> <a href="https://www.loginradius.com/developer/#phpbb" target="_blank">phpBB</a> !
 		</p>
 		<?php
 		if ( ! login_radius_api_secret_saved() ) {
@@ -253,7 +253,7 @@ function login_radius_option_page(){
 			<li><a target="_blank" href="http://www.loginradius.com/product/sociallogin"><?php _e( 'LoginRadius Products', 'LoginRadius' ) ?></a></li>
 		</ul>
 		<ul style="float:left">
-			<li><a target="_blank" href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms"><?php _e( 'Social Plugins', 'LoginRadius' ) ?></a></li>
+			<li><a target="_blank" href="https://www.loginradius.com/developer/#cmsplugins"><?php _e( 'Social Plugins', 'LoginRadius' ) ?></a></li>
 			<li><a target="_blank" href="https://www.loginradius.com/loginradius-for-developers/loginRadius-sdks"><?php _e( 'Social SDKs', 'LoginRadius' ) ?></a></li>
 		</ul>
 		</fieldset>
@@ -1153,7 +1153,7 @@ function login_radius_option_page(){
 						<ul style="float:left">
 							<li><a target="_blank" href="https://www.loginradius.com/loginradius/team"><?php _e( 'About LoginRadius', 'LoginRadius' ) ?></a></li>
 							<li><a target="_blank" href="http://www.loginradius.com/product/sociallogin"><?php _e( 'LoginRadius Products', 'LoginRadius' ) ?></a></li>
-							<li><a target="_blank" href="https://www.loginradius.com/loginradius-for-developers/loginRadius-cms"><?php _e( 'Social Plugins', 'LoginRadius' ) ?></a></li>
+							<li><a target="_blank" href="https://www.loginradius.com/developer/#cmsplugins"><?php _e( 'Social Plugins', 'LoginRadius' ) ?></a></li>
 							<li><a target="_blank" href="https://www.loginradius.com/loginradius-for-developers/loginRadius-sdks"><?php _e( 'Social SDKs', 'LoginRadius' ) ?></a></li>
 						</ul>
 					</td>

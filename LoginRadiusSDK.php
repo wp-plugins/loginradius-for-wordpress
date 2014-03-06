@@ -1,17 +1,33 @@
 <?php
-/** 
- * This class contains functions to communicate with LoginRadius API. 
- */	 
+/**
+ * Class for Social Authentication.
+ *
+ * This is the main class to communicate with LogiRadius Unified Social API. It contains functions for Social Authentication with User Profile Data (Basic and Extended).
+ *
+ * Copyright 2013 LoginRadius Inc. - www.LoginRadius.com
+ *
+ * This file is part of the LoginRadius SDK package.
+ *
+ */
+
+// Define LoginRadius domain
+define('LR_DOMAIN', 'hub.loginradius.com');
+	 
 class LoginRadius
 {
 	public $IsAuthenticated, $JsonResponse, $UserProfile, $IsAuth, $UserAuth, $IsShare, $UserShare;
-	/** 
-	 * Get user profile data from LoginRadius. 
-	 */	 
+	
+	/**
+	 * LoginRadius function - To fetch user profile data from LoginRadius SaaS.
+	 * 
+	 * @param string $ApiSecret LoginRadius API Secret
+	 *
+	 * @return object User profile data.
+	 */
 	public function login_radius_get_userprofile_data( $ApiSecret ) {
 		$IsAuthenticated = false; 
 		if ( isset( $_REQUEST['token'] )  ) {
-			$ValidateUrl  = 'https://hub.loginradius.com/userprofile/' . trim( $ApiSecret ) . '/' . $_REQUEST['token'];
+			$ValidateUrl  = 'https://'.LR_DOMAIN.'/userprofile/' . trim( $ApiSecret ) . '/' . $_REQUEST['token'];
 			$JsonResponse = $this->loginradius_call_api( $ValidateUrl ); 
 			$UserProfile  = json_decode( $JsonResponse );
 			if ( isset( $UserProfile->ID ) && $UserProfile->ID != '' ) {
@@ -21,9 +37,13 @@ class LoginRadius
 		} 
 	}
 	
-	/** 
-	 * Validate data against GUID format. 
-	 */	 
+	/**
+	 * LoginRadius function - It validate against GUID format of keys.
+	 * 
+	 * @param string $key data to validate.
+	 *
+	 * @return boolean. If valid - true, else - false.
+	 */ 
 	public function login_radius_validate_key( $key ) { 
 		if ( empty( $key ) || ! preg_match( '/^\{?[A-Z0-9]{8}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{4}-[A-Z0-9]{12}\}?$/i', $key )  ) { 
 			return false; 
@@ -32,11 +52,15 @@ class LoginRadius
 		} 
 	} 
 	
-	/** 
-	 * Check if CURL/FSOCKOPEN are working. 
-	 */	 
+	/**
+	 * LoginRadius function - Check if CURL/FSOCKOPEN are working.
+	 * 
+	 * @param string $method API communication method to use (curl/fsockopen).
+	 *
+	 * @return string
+	 */
 	public function login_radius_check_connection( $method ) { 
-		$ValidateUrl  = 'https://hub.loginradius.com/ping/ApiKey/ApiSecret';
+		$ValidateUrl  = 'https://'.LR_DOMAIN.'/ping/ApiKey/ApiSecret';
 		$JsonResponse = $this->loginradius_call_api( $ValidateUrl, $method );
 		$UserAuth     = json_decode( $JsonResponse );
 		if ( isset( $UserAuth->ok )  ) {
@@ -50,9 +74,13 @@ class LoginRadius
 		}
 	}
 	
-	/** 
-	 * Fetch data from passed URL. 
-	 */	 
+	/**
+	 * LoginRadius function - To fetch data from the LoginRadius API URL.
+	 * 
+	 * @param string $ValidateUrl - Target URL to fetch data from.
+	 *
+	 * @return string - data fetched from the LoginRadius API.
+	 */  
 	public function loginradius_call_api( $ValidateUrl, $method = '' ) {
 		global $loginRadiusSettings;
 		if ( $method == '' ) {
