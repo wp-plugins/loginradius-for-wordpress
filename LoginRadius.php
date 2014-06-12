@@ -3,7 +3,7 @@
 Plugin Name:Social Login for wordpress  
 Plugin URI: http://www.LoginRadius.com
 Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
-Version: 5.6
+Version: 5.6.1
 Author: LoginRadius Team
 Author URI: http://www.LoginRadius.com
 License: GPL2+
