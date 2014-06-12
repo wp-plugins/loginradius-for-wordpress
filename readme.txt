@@ -266,6 +266,10 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
 == Changelog ==
+= 5.6.1 =
+* Added 3 more Social ID providers (Disqus, SinaWeibo, Instagram)
+* Improved performance of plugin
+
 = 5.6 =
 * UI improvement in notification popups displayed at website front end
 * Improved PHP SDK
@@ -614,3 +618,7 @@ Bug fixed for popup in IE
 * UI improvement in notification popups displayed at website front end
 * Improved PHP SDK
 * Added support for woocommerce plugin for social login and social sharing
+
+= 5.6.1 =
+* Added 3 more Social ID providers (Disqus, SinaWeibo, Instagram)
+* Improved performance of plugin
