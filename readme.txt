@@ -24,10 +24,8 @@ Please see the detailed information about these features:
 = 4. User Profile Data & Social Analytics = Every time a user logs in, it fetches user profile data and store them in your WordPress database. These data and IP based data are used to present a unique social analytics to understand your userbase.
 = 5. Single sign-on = Enable single sign-on in your WordPress multisite website. Our plugin support both domain-based and/or directory based features of multisite WordPress.
 
-= Plugin Live Demo =
-* Wordpress: http://wordpress-social-plugin.loginradius.com
-* BuddyPress: http://buddypress.loginradius.com
-* BBPress: http://bbpress.loginradius.com
+= Live Demo =
+http://demo.loginradius.com
 
 = Step-by-step installation documents =
 * <a href="http://support.loginradius.com/hc/en-us/articles/201968907-Wordpress-Social-Login-instructions" target="_blank">WordPress installation and configuration</a>
@@ -133,12 +131,9 @@ Learn more about our VIP packages <a href="http://www.loginradius.com/pricing/" 
 We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart, vBulletin, BlogEngine and DotNetNuke! <a href="http://www.loginradius.com/developer" target="_blank">Learn more</a>.
 
 = Important links =
-* WordPress live demo: http://wordpress-social-plugin.loginradius.com/
-* BuddyPress live demo: http://buddypress.loginradius.com
-* BBPress live demo: http://bbpress.loginradius.com
 * Learn more about this plugin: http://www.loginradius.com/developer
 * LoginRadius website: http://www.loginradius.com
-* Other live demo: http://demo.loginradius.com/
+* Live demo: http://demo.loginradius.com/
 * Blog: http://blog.loginradius.com
 * Our video: http://www.youtube.com/loginradius
 
@@ -184,12 +179,6 @@ Social commenting means users can post their comments via their social networks 
 
 = How much do you charge for the plugin? =
 Our plugin is FREE to download and feel free to use it on your WordPress, BuddyPress, bbPress and any other WP based systems for Social Sharing feature. For Social login and Social Commenting features, enterprise level support and custom solutions, we offer premium packages. 
-
-= Do you have a live demo site? =
-Yes, we have three live demo sites (try logging in to see how it works):<br />
-1. For WordPress: http://wordpress-social-plugin.loginradius.com/ Try logging in and posting a comment :)<br />
-2. For BuddyPress: http://buddypress.loginradius.com <br />
-3. For bbPress:  http://bbpress.loginradius.com <br />
 
 = Can you help me set up Social Login, Sharing & Commenting on my website? =
 Yes, the LoginRadius Team can assist you with implementing these social features. Please contact us <a href="http://www.loginradius.com/company#contactus" target="_blank">here</a> and one of our experts will get back to you.
