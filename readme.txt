@@ -4,8 +4,8 @@ Donate link: http://www.loginradius.com/
 Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage, ID provider linking, QQ, Renren, Github, MSN,
 single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
 Requires at least: 2.5.0
-Tested up to: 3.8.1
-Stable tag: 5.6.2
+Tested up to: 3.9.2
+Stable tag: 6.0
 License: GPLv2 or later
 
 Let your users log in, comment and share via their social accounts with Facebook, Google, Amazon, Twitter, LinkedIn, Vkontakte, QQ and over 25 more!
@@ -255,6 +255,17 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
 == Changelog ==
+= 6.0.0 =
+* Restructured plugin for better performance.
+* UI improvement in notification popups 
+* Simplified plugin settings text.
+* Improved PHP SDK, Started using wp_remote_get and wp_remote_post instead of CURL
+* Added plugin requirements checking on activation.
+* Added debugging option.
+* Separated settings as basic and advanced settings.
+* Improvement in widgets.
+* Fixed issues with multisite installation. 
+
 = 5.6.2 =
 * Updated the demo website link in details
 
@@ -617,3 +628,14 @@ Bug fixed for popup in IE
 
 = 5.6.2 =
 * Updated the demo website link in details
+
+= 6.0.0 =
+* Restructured plugin for better performance.
+* UI improvement in notification popups 
+* Simplified plugin settings text.
+* Improved PHP SDK, Started using wp_remote_get and wp_remote_post instead of CURL
+* Added plugin requirements checking on activation.
+* Added debugging option.
+* Separated settings as basic and advanced settings.
+* Improvement in widgets.
+* Fixed issues with multisite installation. 

@@ -1,0 +1,895 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: LoginRadius\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-25 09:37+0530\n"
+"PO-Revision-Date: 2014-08-25 09:37+0530\n"
+"Last-Translator: anil kumar <anil@nyaconcepts.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.6.5\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../LoginRadius.php:99
+msgid "Sorry, LoginRadius Social Login and Share requires WordPress "
+msgstr "Désolé, LoginRadius Social Login and Share nécessite WordPress"
+
+#: ../admin/class-loginradius-admin.php:163
+msgid "Disable Social Sharing on this "
+msgstr "Désactiver le partage social sur ce"
+
+#: ../admin/class-loginradius-admin.php:217
+msgid "Settings"
+msgstr "paramètres"
+
+#: ../admin/class-loginradius-admin.php:319
+msgid "Link your account"
+msgstr "Lier votre compte"
+
+#: ../admin/class-loginradius-admin.php:323
+msgid "By adding another account, you can log in with the new account as well!"
+msgstr ""
+"En ajoutant un autre compte , vous pouvez vous connecter avec le nouveau "
+"compte ainsi !"
+
+#: ../admin/helpers/class-admin-helper.php:12
+msgid ""
+"To activate the <strong>Social Login</strong>, insert LoginRadius API Key "
+"and Secret in the <strong>API Settings</strong> section below. "
+"<strong>Social Sharing does not require API Key and Secret</strong>."
+msgstr ""
+"Pour activer le <strong> Social Login </ strong>, insérer LoginRadius clé "
+"API et secret dans les paramètres <strong> API </ strong> section ci-"
+"dessous. <strong> Partage social ne nécessite pas de clé API et secret </ "
+"strong>."
+
+#: ../admin/helpers/class-admin-helper.php:90
+msgid "Please wait"
+msgstr "S'il vous plaît, attendez"
+
+#: ../admin/helpers/class-admin-helper.php:102
+#: ../admin/helpers/class-admin-helper.php:107
+msgid "Active ( Click to Disable ) "
+msgstr "Actif (Cliquez sur Désactiver)"
+
+#: ../admin/helpers/class-admin-helper.php:104
+msgid "Inactive ( Click to Enable ) "
+msgstr "Inactif (Cliquez sur Activer)"
+
+#: ../admin/views/admin-header.php:8
+msgid "Social Plugin Settings"
+msgstr "Paramètres Plugin sociales"
+
+#: ../admin/views/admin-header.php:10
+msgid ""
+"Please clear your browser cache, if you have trouble loading the plugin "
+"interface. For more information"
+msgstr ""
+"S'il vous plaît vider le cache de votre navigateur, si vous avez des "
+"problèmes pour charger l'interface du plugin. Pour plus d'informations"
+
+#: ../admin/views/admin-header.php:10
+msgid "click here"
+msgstr "cliquez ici"
+
+#: ../admin/views/admin-header.php:13
+msgid "Thank you for installing the LoginRadius Social Plugin!"
+msgstr "Merci d'avoir installé le plugin social LoginRadius!"
+
+#: ../admin/views/admin-header.php:14
+msgid ""
+"To activate the plugin, you will need to first configure it ( manage your "
+"desired social networks, etc. ) from your LoginRadius account. If you do not "
+"have an account, click"
+msgstr ""
+"Pour activer le plugin, vous devez d'abord le configurer (gérer vos réseaux "
+"sociaux souhaités, etc) à partir de votre compte LoginRadius. Si vous ne "
+"possédez pas de compte, cliquez sur"
+
+#: ../admin/views/admin-header.php:14
+msgid "here"
+msgstr "ici"
+
+#: ../admin/views/admin-header.php:14
+msgid "and create one for FREE!"
+msgstr "et en créer un gratuitement !"
+
+#: ../admin/views/admin-header.php:16
+msgid "We also offer Social Plugins for "
+msgstr "También ofrecemos Plugins sociales para"
+
+#: ../admin/views/admin-header.php:16
+msgid "and"
+msgstr "et"
+
+#: ../admin/views/admin-header.php:22
+msgid "Enable Plugin Now!"
+msgstr "Activer Plugin maintenant !"
+
+#: ../admin/views/admin-header.php:35
+msgid "Get Updates"
+msgstr "Obtener actualizaciones"
+
+#: ../admin/views/admin-header.php:36
+msgid ""
+"To receive updates on new features, releases, etc. Please connect to one of "
+"our social media pages"
+msgstr ""
+"Para recibir actualizaciones sobre nuevas características, comunicados, etc "
+"Por favor, conectarse a una de nuestras páginas de medios sociales"
+
+#: ../admin/views/admin-header.php:51 ../admin/views/help/help-view.php:9
+msgid "Help & Documentations"
+msgstr "Aide & Documentations"
+
+#: ../admin/views/admin-header.php:53 ../admin/views/help/help-view.php:15
+msgid "Plugin Installation, Configuration and Troubleshooting"
+msgstr "Installation plugin, configuration et dépannage"
+
+#: ../admin/views/admin-header.php:54 ../admin/views/help/help-view.php:16
+msgid "How to get LoginRadius API Key & Secret"
+msgstr "Comment obtenir LoginRadius clé API et secret"
+
+#: ../admin/views/admin-header.php:55 ../admin/views/help/help-view.php:17
+msgid "WP Multisite Feature"
+msgstr "WP multisite entité"
+
+#: ../admin/views/admin-header.php:56 ../admin/views/help/help-view.php:23
+msgid "Social Plugins"
+msgstr "social Plugins"
+
+#: ../admin/views/admin-header.php:59 ../admin/views/help/help-view.php:18
+msgid "Discussion Forum"
+msgstr "Forum de discussion"
+
+#: ../admin/views/admin-header.php:60 ../admin/views/help/help-view.php:21
+msgid "About LoginRadius"
+msgstr "À propos de LoginRadius"
+
+#: ../admin/views/admin-header.php:61 ../admin/views/help/help-view.php:22
+msgid "LoginRadius Products"
+msgstr "LoginRadius Produits"
+
+#: ../admin/views/admin-header.php:62 ../admin/views/help/help-view.php:24
+msgid "Social SDKs"
+msgstr "SDK sociaux"
+
+#: ../admin/views/admin-header.php:67
+msgid "Support Us"
+msgstr "Soutenez-nous"
+
+#: ../admin/views/admin-header.php:69
+msgid ""
+"If you liked our FREE open-source plugin, please send your feedback/"
+"testimonial to "
+msgstr ""
+"Si vous aimez notre module d'extension gratuit open-source, s'il vous plaît "
+"envoyer vos commentaires / témoignages de"
+
+#: ../admin/views/admin-header.php:70
+msgid "Please help us to "
+msgstr "S'il vous plaît nous aider à"
+
+#: ../admin/views/admin-header.php:70
+msgid "translate"
+msgstr "traduire"
+
+#: ../admin/views/admin-header.php:70
+msgid "the plugin content in your language."
+msgstr "le contenu du plugin dans votre langue."
+
+#: ../admin/views/advance-settings/advance-settings-view.php:12
+msgid "Social Login Interface Customization"
+msgstr "Connexion Interface social de personnalisation"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:17
+msgid "What text do you want to display above the Social Login interface?"
+msgstr "Quel texte voulez-vous afficher au-dessus de l'interface Social Login?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:24
+msgid "Select the icon size to use in the Social Login interface"
+msgstr ""
+"Sélectionnez la taille de l'icône à utiliser dans l'interface Social Login"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:26
+msgid "Large"
+msgstr "grand"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:29
+msgid "Small"
+msgstr "petit"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:36
+msgid "How many social icons would you like to be displayed per row?"
+msgstr "How many social icons would you like to be displayed per row?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:47
+msgid ""
+"What background color would you like to use for the Social Login interface?"
+msgstr ""
+"Quelle est la couleur de fond voulez-vous utiliser pour l'interface Social "
+"Login?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:65
+msgid "Social Login Interface Display Settings"
+msgstr "Connexion Interface social Paramètres d'affichage"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:70
+msgid ""
+"Do you want to show the Social Login interface on your WordPress login page?"
+msgstr ""
+"Voulez-vous montrer l'interface Social Login sur votre page de connexion de "
+"WordPress?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:72
+#: ../admin/views/advance-settings/advance-settings-view.php:85
+#: ../admin/views/advance-settings/advance-settings-view.php:105
+#: ../admin/views/advance-settings/advance-settings-view.php:123
+#: ../admin/views/advance-settings/advance-settings-view.php:210
+#: ../admin/views/advance-settings/advance-settings-view.php:221
+#: ../admin/views/advance-settings/advance-settings-view.php:233
+#: ../admin/views/advance-settings/advance-settings-view.php:268
+#: ../admin/views/advance-settings/advance-settings-view.php:287
+#: ../admin/views/social-commenting/social-commenting-view.php:18
+#: ../admin/views/social-sharing/social-sharing-view.php:27
+#: ../admin/views/social-sharing/social-sharing-view.php:154
+msgid "Yes"
+msgstr "oui"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:75
+#: ../admin/views/advance-settings/advance-settings-view.php:87
+#: ../admin/views/advance-settings/advance-settings-view.php:107
+#: ../admin/views/advance-settings/advance-settings-view.php:126
+#: ../admin/views/advance-settings/advance-settings-view.php:186
+#: ../admin/views/advance-settings/advance-settings-view.php:213
+#: ../admin/views/advance-settings/advance-settings-view.php:224
+#: ../admin/views/advance-settings/advance-settings-view.php:236
+#: ../admin/views/advance-settings/advance-settings-view.php:271
+#: ../admin/views/advance-settings/advance-settings-view.php:290
+#: ../admin/views/social-commenting/social-commenting-view.php:20
+#: ../admin/views/social-sharing/social-sharing-view.php:29
+#: ../admin/views/social-sharing/social-sharing-view.php:156
+msgid "No"
+msgstr "needs a context"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:83
+msgid ""
+"Do you want to show Social Login interface on your WordPress registration "
+"page?"
+msgstr ""
+"Voulez-vous montrer l'interface de connexion sociale sur votre page "
+"d'inscription WordPress?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:95
+msgid ""
+"If Yes, how do you want the Social Login interface to be shown on your "
+"wordpress registration page?"
+msgstr ""
+"Si oui, comment voulez-vous l'interface de connexion sociale à afficher sur "
+"votre page d'inscription wordpress?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:96
+msgid "Show it below the registration form"
+msgstr "Voir ci-dessous le formulaire d'inscription"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:97
+msgid "Show it beside the registration form"
+msgstr "Montrez-le à côté du formulaire d'inscription"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:103
+msgid ""
+"Do you want the plugin Javascript code to be included in the footer for "
+"faster loading of website content?"
+msgstr ""
+"Voulez-vous le code Javascript de plugins pour être inclus dans le pied de "
+"page pour un chargement plus rapide du contenu du site ?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:103
+msgid ""
+"It may break the functionality of the plugin if wp_footer and login_footer "
+"hooks do not exist in your theme"
+msgstr ""
+"Il peut se briser la fonctionnalité du plugin si wp_footer et login_footer "
+"crochets n'existent pas dans votre thème"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:116
+msgid "Social Login Email Settings"
+msgstr "Connexion social paramètres de messagerie"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:121
+msgid ""
+"Do you want to send emails to users with their username and password after "
+"user registration?"
+msgstr ""
+"Voulez-vous envoyer des emails aux utilisateurs avec leur nom d'utilisateur "
+"et mot de passe après l'enregistrement des utilisateurs?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:132
+msgid ""
+"A few Social Networks do not supply user email address as part of user "
+"profile data. Do you want users to provide their email before completing the "
+"registration process?"
+msgstr ""
+"Quelques réseaux sociaux ne fournit pas l'utilisateur adresse e-mail dans le "
+"cadre des données de profil d'utilisateur. Voulez-vous les utilisateurs de "
+"fournir leur email avant de terminer le processus d'inscription?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:133
+msgid ""
+"Yes, get real email IDs from the users (Ask users to enter their email IDs "
+"in a pop-up) "
+msgstr ""
+"Oui, obtenir de vrais ID de messagerie des utilisateurs (Demandez aux "
+"utilisateurs d'entrer leurs identifiants de messagerie dans un pop-up)"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:134
+msgid "No, just auto-generate random email IDs for users"
+msgstr ""
+"Non, juste auto- générer des ID de messagerie aléatoires pour les "
+"utilisateurs"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:140
+msgid ""
+"Please enter the title of the pop-up asking users to enter their email "
+"address "
+msgstr ""
+"S'il vous plaît entrez le titre de la fenêtre pop-up demandant aux "
+"utilisateurs d'entrer leur adresse e-mail"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:140
+msgid "You may use @provider, it will be replaced by the Provider name."
+msgstr "You may use @provider, it will be replaced by the Provider name."
+
+#: ../admin/views/advance-settings/advance-settings-view.php:154
+msgid ""
+"Please enter the message to be shown to the user in case of an already "
+"registered email"
+msgstr ""
+"S'il vous plaît entrez le message à afficher à l'utilisateur dans le cas "
+"d'un e-mail déjà enregistré"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:171
+msgid "Social Login User Settings"
+msgstr "Connexion social Paramètres de l'utilisateur"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:176
+msgid ""
+"How would you like Username to be created? Select your desired composition "
+"rule for Username."
+msgstr ""
+"Comment aimeriez-vous Nom d'utilisateur à créer? Sélectionnez votre règle de "
+"composition souhaitée pour Nom d'utilisateur."
+
+#: ../admin/views/advance-settings/advance-settings-view.php:176
+msgid ""
+"During account creation, it automatically adds a separator between first "
+"name and last name of the user"
+msgstr ""
+"Lors de la création du compte , il ajoute automatiquement un séparateur "
+"entre le prénom et le nom de l'utilisateur"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:177
+msgid "Firstname-Lastname [Ex: John-Doe]"
+msgstr "Prénom Nom - [ Ex : John Doe - ]"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:178
+msgid "Firstname.Lastname [Ex: John.Doe]"
+msgstr "Prenom.nom [ Ex : John.Doe ]"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:179
+msgid "Firstname Lastname [Ex: John Doe]"
+msgstr "Prénom Nom [ Ex : John Doe ]"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:184
+msgid "Do you want to control user activation/deactivation?"
+msgstr "Voulez-vous commander l'activation d'utilisateur / désactivation?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:184
+msgid "You can enable/disable user from Status column on Users page in admin"
+msgstr ""
+"Vous pouvez activer / désactiver l'utilisateur de la colonne d'état à la "
+"page des utilisateurs dans l'admin"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:185
+msgid "Yes, display activate/deactivate option in the "
+msgstr "Oui, activer l'affichage / option dans le désactiver"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:185
+msgid "User list"
+msgstr "Liste des membres"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:192
+msgid ""
+"What would you like to set as the default status of the user when he/she "
+"registers to your website?"
+msgstr ""
+"Que voulez-vous définir comme l'état par défaut de l'utilisateur quand il / "
+"elle enregistre à votre site Web ?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:193
+msgid "Active"
+msgstr "actif"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:194
+msgid "Inactive"
+msgstr "inactif"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:200
+msgid ""
+"Do you want to display the social network that the user connected with, in "
+"the user list"
+msgstr ""
+"Voulez-vous afficher le réseau social que l'utilisateur connecté avec , dans "
+"la liste des utilisateurs"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:201
+msgid ""
+"Yes, display the social network that the user connected with, in the user "
+"list"
+msgstr ""
+"Oui, afficher le réseau social que l'utilisateur connecté avec , dans la "
+"liste des utilisateurs"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:202
+msgid ""
+"No, do not display the social network that the user connected with, in the "
+"user list"
+msgstr ""
+"Non, ne pas afficher le réseau social que l'utilisateur connecté avec , dans "
+"la liste des utilisateurs"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:208
+msgid ""
+"Do you want to update User Profile Data in your Wordpress database, every "
+"time user logs into your website?"
+msgstr ""
+"Voulez-vous mettre à jour le profil de l'utilisateur des données dans votre "
+"base de données Wordpress , chaque fois que l'utilisateur se connecte à "
+"votre site Web ?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:208
+msgid ""
+"If you disable this option, user profile data will be saved only once when "
+"user logs in first time at your website, user profile details will not be "
+"updated in your Wordpress database, even if user changes his/her social "
+"account details."
+msgstr ""
+"Si vous désactivez cette option, les données de profil utilisateur seront "
+"enregistrés qu'une seule fois quand l'utilisateur se connecte en premier "
+"temps à votre site Web, profil de l'utilisateur détails ne seront pas mis à "
+"jour dans votre base de données Wordpress, même si l'utilisateur change "
+"son / ses compte détails sociales."
+
+#: ../admin/views/advance-settings/advance-settings-view.php:219
+msgid ""
+"Do you want to let users use their social profile picture as an avatar on "
+"your website?"
+msgstr ""
+"Voulez-vous permettre aux utilisateurs d'utiliser leur photo de profil "
+"social comme un avatar sur votre site?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:231
+msgid ""
+"Do you want to automatically link your existing users' accounts to their "
+"social accounts if their WP account email address matches the email address "
+"associated with their social account?"
+msgstr ""
+"Voulez-vous lier automatiquement les comptes de vos utilisateurs existants à "
+"leurs comptes sociaux si leur WP adresse email correspond à l'adresse e-mail "
+"associée à leur compte de réseau social ?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:246
+msgid ""
+"Do you want to apply the same changes when you update plugin settings in the "
+"main blog of multisite network?"
+msgstr ""
+"Voulez-vous appliquer les mêmes modifications lorsque vous mettez à jour les "
+"paramètres de plug-in dans le blog principal de réseau multisite ?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:247
+msgid ""
+"Yes, apply the same changes to plugin settings of each blog in the multisite "
+"network when I update plugin settings."
+msgstr ""
+"Oui , appliquer les mêmes changements de paramètres du plugin de chaque blog "
+"dans le réseau multisite quand je mettre à jour les paramètres de plug-in ."
+
+#: ../admin/views/advance-settings/advance-settings-view.php:248
+msgid ""
+"No, do not apply the changes to other blogs when I update plugin settings."
+msgstr ""
+"Non, ne s'appliquent pas les modifications apportées à d'autres blogs quand "
+"je mettre à jour les paramètres de plug-in."
+
+#: ../admin/views/advance-settings/advance-settings-view.php:261
+msgid "Debug"
+msgstr "debug"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:266
+msgid "Do you want to enable debugging mode?"
+msgstr "Voulez-vous activer le mode de débogage ?"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:280
+msgid "Plug-in deletion options"
+msgstr "Plug-in options de suppression"
+
+#: ../admin/views/advance-settings/advance-settings-view.php:285
+msgid ""
+"Do you want to completely remove the plugin settings and options on plugin "
+"deletion ( If you choose Yes, then you will not be able to recover settings "
+"again ) ?"
+msgstr ""
+"Voulez-vous supprimer complètement les paramètres de plug-in et les options "
+"sur le plugin suppression ( Si vous choisissez Oui , vous ne serez pas en "
+"mesure de récupérer à nouveau les paramètres ) ?"
+
+#: ../admin/views/api-settings/api-settings-view.php:10
+msgid "API Key"
+msgstr "Clé API"
+
+#: ../admin/views/api-settings/api-settings-view.php:16
+msgid "API Secret"
+msgstr "API secret"
+
+#: ../admin/views/settings.php:43
+msgid "API Settings"
+msgstr "Paramètres de l'API"
+
+#: ../admin/views/settings.php:44
+msgid "Social Login"
+msgstr "social Login"
+
+#: ../admin/views/settings.php:45
+msgid "Social Sharing"
+msgstr "Partage social"
+
+#: ../admin/views/settings.php:46
+msgid "Social Commenting"
+msgstr "Commentant sociale"
+
+#: ../admin/views/settings.php:47
+msgid "Advance Settings"
+msgstr "Paramètres avancés"
+
+#: ../admin/views/settings.php:48
+msgid "Help"
+msgstr "aider"
+
+#: ../admin/views/settings.php:83
+msgid "Save Changes"
+msgstr "Enregistrer les modifications"
+
+#: ../admin/views/settings.php:84
+msgid "Preview"
+msgstr "avant-première"
+
+#: ../admin/views/social-commenting/social-commenting-view.php:11
+msgid "Social Commenting Settings"
+msgstr "Commentant sociale Paramètres"
+
+#: ../admin/views/social-commenting/social-commenting-view.php:16
+msgid "Do you want to enable social commenting for your website"
+msgstr "Voulez-vous permettre sociale commentant pour votre site web"
+
+#: ../admin/views/social-commenting/social-commenting-view.php:26
+msgid ""
+"Where do you want to display the Social login interface on the commenting "
+"form?"
+msgstr ""
+"Où voulez-vous pour afficher l'interface de connexion sociale sur le "
+"formulaire de commentaires ?"
+
+#: ../admin/views/social-commenting/social-commenting-view.php:27
+msgid "After the 'Leave a Reply' caption"
+msgstr "Después de la 'Deja un comentario' leyenda"
+
+#: ../admin/views/social-commenting/social-commenting-view.php:28
+msgid "At the very top of the comment form"
+msgstr "Tout en haut du formulaire de commentaire"
+
+#: ../admin/views/social-commenting/social-commenting-view.php:29
+msgid "At the very bottom of the comment form"
+msgstr "Au bas du formulaire de commentaire"
+
+#: ../admin/views/social-commenting/social-commenting-view.php:30
+msgid "Before the comment form input fields"
+msgstr "Avant que les champs de saisie de formulaire commentaire"
+
+#: ../admin/views/social-commenting/social-commenting-view.php:31
+msgid "Before the comment box"
+msgstr "Avant la boîte de commentaire"
+
+#: ../admin/views/social-login/social-login-view.php:11
+msgid "Redirection Settings"
+msgstr "Paramètres de redirection"
+
+#: ../admin/views/social-login/social-login-view.php:16
+msgid "Redirection settings after login "
+msgstr "Paramètres de redirection après la connexion"
+
+#: ../admin/views/social-login/social-login-view.php:17
+msgid "Redirect to the 'Same Page' where the user logged in"
+msgstr "Redirection vers le 'même page » où l'utilisateur connecté"
+
+#: ../admin/views/social-login/social-login-view.php:18
+#: ../admin/views/social-login/social-login-view.php:45
+msgid "Redirect to 'Home Page' of your WP site"
+msgstr "Redirection vers 'Page d'accueil' de votre site WP"
+
+#: ../admin/views/social-login/social-login-view.php:19
+#: ../admin/views/social-login/social-login-view.php:46
+msgid "Redirect to 'Account Dashboard'"
+msgstr "Redirection vers «Compte tableau de bord\""
+
+#: ../admin/views/social-login/social-login-view.php:23
+#: ../admin/views/social-login/social-login-view.php:50
+msgid "Redirect to Buddypress profile page"
+msgstr "Redirection vers BuddyPress page de profil"
+
+#: ../admin/views/social-login/social-login-view.php:27
+#: ../admin/views/social-login/social-login-view.php:54
+#: ../admin/views/social-login/social-login-view.php:73
+msgid "Redirect to 'Custom URL'"
+msgstr "Redirection vers 'URL personnalisée \""
+
+#: ../admin/views/social-login/social-login-view.php:43
+msgid "Redirection settings after registration"
+msgstr "Paramètres de redirection après inscription"
+
+#: ../admin/views/social-login/social-login-view.php:44
+msgid "Redirect to the 'Same page' where the user registered"
+msgstr "Redirection vers le 'même page'où l'utilisateur enregistré"
+
+#: ../admin/views/social-login/social-login-view.php:70
+msgid "Redirection settings after logging out"
+msgstr "Paramètres de redirection après la déconnexion"
+
+#: ../admin/views/social-login/social-login-view.php:71
+msgid ""
+"Note: Logout function works only when clicking 'logout' in the social login "
+"widget area. In all other cases, WordPress's default logout function will be "
+"applied."
+msgstr ""
+"Remarque: La fonction Déconnexion ne fonctionne que lorsque cliquant sur « "
+"déconnexion » dans la connexion sociale zone de widget . "
+
+#: ../admin/views/social-login/social-login-view.php:72
+msgid "Redirect to 'Home Page'"
+msgstr "Redirection vers 'Page d'accueil'"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:10
+msgid "Social Sharing Interface Selection"
+msgstr "Sélection d'une interface de partage social"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:15
+msgid ""
+"Please select the social sharing interface, horizontal and vertical "
+"interfaces can be enabled simultaneously."
+msgstr ""
+"S'il vous plaît sélectionner l'interface de partage social, horizontal et "
+"vertical interfaces peuvent être activées simultanément."
+
+#: ../admin/views/social-sharing/social-sharing-view.php:17
+msgid "Horizontal"
+msgstr "horizontal"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:17
+msgid "Vertical"
+msgstr "vertical"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:25
+msgid "Do you want to enable horizontal social sharing for your website?"
+msgstr ""
+"Voulez-vous activer le partage sociale horizontale pour votre site web ?"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:33
+#: ../admin/views/social-sharing/social-sharing-view.php:160
+msgid "Select your Social Sharing Interface:"
+msgstr "Choisissez votre interface de partage social :"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:100
+#: ../admin/views/social-sharing/social-sharing-view.php:196
+msgid ""
+"What sharing networks do you want to show in the sharing interface? ( All "
+"other sharing networks will be shown as part of LoginRadius sharing icon ) "
+msgstr ""
+"Quels sont les réseaux de partage voulez-vous montrer dans l'interface de "
+"partage? (Tous les autres réseaux de partage seront affichés dans le cadre "
+"de LoginRadius partage icône)"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:102
+#: ../admin/views/social-sharing/social-sharing-view.php:198
+msgid "You can select only nine providers"
+msgstr "Vous ne pouvez sélectionner que neuf fournisseurs"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:111
+#: ../admin/views/social-sharing/social-sharing-view.php:207
+msgid ""
+"What sharing network order do you prefer for your sharing interface? Drag "
+"the icons around to set the order"
+msgstr ""
+"Quel ordre réseau de partage préférez-vous pour votre interface de partage ? "
+
+#: ../admin/views/social-sharing/social-sharing-view.php:129
+#: ../admin/views/social-sharing/social-sharing-view.php:225
+msgid "Select the position of the social sharing interface"
+msgstr "Sélectionnez la position de l'interface de partage social"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:131
+msgid "Show at the top of content"
+msgstr "Voir au sommet de contenu"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:132
+msgid "Show at the bottom of content"
+msgstr "Voir en bas de contenu"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:135
+#: ../admin/views/social-sharing/social-sharing-view.php:242
+msgid "What location do you want to show the social sharing interface?"
+msgstr ""
+"Quel est l'endroit que vous voulez afficher l'interface de partage social ?"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:137
+#: ../admin/views/social-sharing/social-sharing-view.php:244
+msgid "Show on 'Home Page'"
+msgstr "Voir sur la 'Page d'accueil'"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:138
+#: ../admin/views/social-sharing/social-sharing-view.php:245
+msgid "Show on 'Posts'"
+msgstr "Afficher sur «Messages»"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:140
+#: ../admin/views/social-sharing/social-sharing-view.php:247
+msgid "Show on 'Pages'"
+msgstr "Afficher sur «Pages»"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:141
+msgid "Show on 'Post Excerpts' "
+msgstr "Voir sur la 'Post Extraits'"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:151
+msgid "Do you want to enable vertical social sharing for your website?"
+msgstr "Voulez-vous activer le partage social vertical pour votre site web ?"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:228
+msgid "Top left"
+msgstr "En haut à gauche"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:231
+msgid "Top Right"
+msgstr "En haut à droite"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:234
+msgid "Bottom Left"
+msgstr "En bas à gauche"
+
+#: ../admin/views/social-sharing/social-sharing-view.php:237
+msgid "Bottom Right"
+msgstr "En bas à droite"
+
+#: ../common/class-loginradius-common.php:208
+msgid "Account mapped successfully"
+msgstr "Compte mappé avec succès"
+
+#: ../common/class-loginradius-common.php:212
+msgid "This account is already mapped"
+msgstr "Ce compte est déjà mappé"
+
+#: ../common/class-loginradius-common.php:248
+#: ../common/class-loginradius-common.php:265
+#: ../common/class-loginradius-common.php:291
+msgid "Connected with"
+msgstr "connecté avec"
+
+#: ../common/class-loginradius-common.php:251
+#: ../common/class-loginradius-common.php:268
+#: ../common/class-loginradius-common.php:294
+msgid "Remove"
+msgstr "supprimer"
+
+#: ../public/inc/login/class-login-helper.php:50
+#: ../public/inc/login/class-login-helper.php:89
+#: ../public/inc/login/class-login-helper.php:206
+#: ../public/inc/login/class-social-login.php:484
+msgid ""
+"Your account is currently inactive. You will be notified through email, once "
+"Administrator activates your account."
+msgstr "Votre compte est actuellement inactif . "
+
+#: ../public/inc/login/class-login-helper.php:52
+msgid ""
+"Your email has been successfully verified. Now you can login into your "
+"account."
+msgstr "Votre e-mail a été vérifiée avec succès . "
+
+#: ../public/inc/login/class-login-helper.php:189
+msgid ""
+"Confirmation link has been sent to your email address. Please verify your "
+"email by clicking on confirmation link."
+msgstr "Lien de confirmation a été envoyé à votre adresse e-mail . "
+
+#: ../public/inc/login/class-social-login.php:156
+#: ../public/inc/login/class-social-login.php:172
+msgid "Please verify your email by clicking the confirmation link sent to you."
+msgstr ""
+"S'il vous plaît vérifier votre e-mail en cliquant sur le lien de "
+"confirmation qui vous est envoyé."
+
+#: ../public/inc/login/class-social-login.php:349
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: ../public/inc/shortcodes/class-shortcode.php:112
+#: ../public/inc/shortcodes/class-shortcode.php:117
+msgid ""
+"Your LoginRadius API key or secret is not valid, please correct it or "
+"contact LoginRadius support at <b><a href =\"http://www.loginradius.com\" "
+"target = \"_blank\">www.LoginRadius.com</a></b>"
+msgstr ""
+"Votre clé API de LoginRadius ou secrète n'est pas valide, s'il vous plaît "
+"corriger ou contacter le support LoginRadius à <b> <a href =\"http://www."
+"loginradius.com\" target = \"_blank\"> www.LoginRadius. com </a> </ b>"
+
+#: ../widgets/class-widgets-helper.php:61
+msgid "Log Out"
+msgstr "Déconnexion"
+
+#: ../widgets/loginradius-horizontal-share-widget.php:16
+#: ../widgets/loginradius-vertical-share-widget.php:16
+msgid "Share post/page with Facebook, Twitter, Yahoo, Google and many more"
+msgstr ""
+"Partager poste / page avec Facebook, Twitter, Yahoo, Google et bien d'autres"
+
+#: ../widgets/loginradius-horizontal-share-widget.php:70
+#: ../widgets/loginradius-social-linking-widget.php:67
+#: ../widgets/loginradius-social-login-widget.php:74
+msgid "Before widget content:"
+msgstr "Avant contenu widget:"
+
+#: ../widgets/loginradius-horizontal-share-widget.php:72
+#: ../widgets/loginradius-social-linking-widget.php:69
+#: ../widgets/loginradius-social-login-widget.php:76
+msgid "After widget content:"
+msgstr "Après contenu widget:"
+
+#: ../widgets/loginradius-horizontal-share-widget.php:75
+#: ../widgets/loginradius-social-login-widget.php:78
+#: ../widgets/loginradius-vertical-share-widget.php:50
+msgid "Hide for logged in users:"
+msgstr "Cacher pour les utilisateurs connectés :"
+
+#: ../widgets/loginradius-social-linking-widget.php:16
+msgid "Link your Social Accounts"
+msgstr "Lier vos comptes sociaux"
+
+#: ../widgets/loginradius-social-linking-widget.php:65
+#: ../widgets/loginradius-social-login-widget.php:72
+msgid "Title:"
+msgstr "Titre:"
+
+#: ../widgets/loginradius-social-login-widget.php:16
+msgid "Login or register with Facebook, Twitter, Yahoo, Google and many more"
+msgstr ""
+"Connectez-vous ou inscrivez-vous avec Facebook, Twitter, Yahoo, Google et "
+"bien d'autres"
+
+#~ msgid "Unexpected error occurred"
+#~ msgstr "Erreur inattendue s'est produite"
+
+#~ msgid ""
+#~ "Unfortunately, the Social Network did not provide your email address. "
+#~ "Please enter your email to proceed"
+#~ msgstr ""
+#~ "Malheureusement, le réseau social n'a pas fourni votre adresse email. "
+#~ "S'il vous plaît entrer votre e-mail de procéder"
+
+#~ msgid ""
+#~ "This email is already registered. Please choose another one or link this "
+#~ "account via account linking on your profile page"
+#~ msgstr "Cet e-mail est déjà enregistré . "
