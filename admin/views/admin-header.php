@@ -27,7 +27,7 @@ function render_admin_header() {
         </fieldset>
         <fieldset id = "plugin-details">
             <div style="margin:5px 0">
-                <strong>Plugin Version:</strong> 6.0.0<br/>
+                <strong>Plugin Version:</strong> 6.0<br/>
                 <strong>Author:</strong> LoginRadius<br/>
                 <strong>Website:</strong> <a href="https://www.loginradius.com" target="_blank">www.loginradius.com</a> <br/>
                 <strong>Community:</strong> <a href="http://community.loginradius.com" target="_blank">community.loginradius.com</a> <br/>

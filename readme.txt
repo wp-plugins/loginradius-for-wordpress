@@ -49,7 +49,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Highly reliable as it runs on Cloud Computing with failover server support
 * 24/7 community support, rich knowledge base, and active discussion forum
 * Available in 9 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese, Portuguese and German (Italian Language Translator: Michelangelo Giannino; Russian Language Translator: Rob; Spanish Language Translator: Daniel Iturbe; Chinese & Japanese Language Translator: Wenxuan; German language translatior: David Werth)
- 
+
 = VIP Features (Paid) =
 * Users can register by logging in with social ID such as Gmail, Twitter, Facebook etc and they will not require usernames/passwords
 * Add social login interface (the widget) on any page that supports up to 23 ID Providers. (Please see the list below)
@@ -85,7 +85,7 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Get extended user profile data and user's social network data
 * Get online/offline access to a user's social profile to post on user's profile
 * VIP social icon themes and VIP login interface designs
-* Supports HTTPS enabled website 
+* Supports HTTPS enabled website
 * Developer sandbox
 * Add multiple admins to LoginRadius account
 * Get 24/7 email support
@@ -178,7 +178,7 @@ Social login is an idea of letting users to log in to a website with their Faceb
 Social commenting means users can post their comments via their social networks and user avatar, name & link to his/her profile will appear with the comment, while social sharing allows users to share your web content on his/her social networks i.e. amongst his/her friends resulting in increased referral traffic!
 
 = How much do you charge for the plugin? =
-Our plugin is FREE to download and feel free to use it on your WordPress, BuddyPress, bbPress and any other WP based systems for Social Sharing feature. For Social login and Social Commenting features, enterprise level support and custom solutions, we offer premium packages. 
+Our plugin is FREE to download and feel free to use it on your WordPress, BuddyPress, bbPress and any other WP based systems for Social Sharing feature. For Social login and Social Commenting features, enterprise level support and custom solutions, we offer premium packages.
 
 = Can you help me set up Social Login, Sharing & Commenting on my website? =
 Yes, the LoginRadius Team can assist you with implementing these social features. Please contact us <a href="http://www.loginradius.com/company#contactus" target="_blank">here</a> and one of our experts will get back to you.
@@ -187,7 +187,7 @@ Yes, the LoginRadius Team can assist you with implementing these social features
 We offer 24/7 support, feel free to browse our knowledge base <a href="http://support.loginradius.com/hc/en-us/articles/201968907-Wordpress-Social-Login-instructions" target="_blank">here</a>.
 
 = My website is not in English, what should i do? =
-LoginRadius WordPress plugin is available in 9 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German and Portuguese Brazillian. So you can pick your own language. Please let us know at feedback@loginradius.com if you would like us to add any other language. 
+LoginRadius WordPress plugin is available in 9 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German and Portuguese Brazillian. So you can pick your own language. Please let us know at feedback@loginradius.com if you would like us to add any other language.
 
 = What is LoginRadius? =
 LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 120,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS, etc.
@@ -255,16 +255,16 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
 == Changelog ==
-= 6.0.0 =
+= 6.0 =
 * Restructured plugin for better performance.
-* UI improvement in notification popups 
+* UI improvement in notification popups
 * Simplified plugin settings text.
 * Improved PHP SDK, Started using wp_remote_get and wp_remote_post instead of CURL
 * Added plugin requirements checking on activation.
 * Added debugging option.
 * Separated settings as basic and advanced settings.
 * Improvement in widgets.
-* Fixed issues with multisite installation. 
+* Fixed issues with multisite installation.
 
 = 5.6.2 =
 * Updated the demo website link in details
@@ -460,10 +460,10 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 = 1.0 =
 This is the first version of the application.
 
-= 1.0.1 = 
+= 1.0.1 =
 Added js directory
 
-= 1.0.2 = 
+= 1.0.2 =
 Bug fixed - Email pop-up issue
 
 = 1.0.3 =
@@ -629,13 +629,13 @@ Bug fixed for popup in IE
 = 5.6.2 =
 * Updated the demo website link in details
 
-= 6.0.0 =
+= 6.0 =
 * Restructured plugin for better performance.
-* UI improvement in notification popups 
+* UI improvement in notification popups
 * Simplified plugin settings text.
 * Improved PHP SDK, Started using wp_remote_get and wp_remote_post instead of CURL
 * Added plugin requirements checking on activation.
 * Added debugging option.
 * Separated settings as basic and advanced settings.
 * Improvement in widgets.
-* Fixed issues with multisite installation. 
+* Fixed issues with multisite installation.
