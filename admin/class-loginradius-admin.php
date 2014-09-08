@@ -47,11 +47,16 @@ if ( !class_exists( 'Login_Radius_Admin' ) ) {
          */
 
         public function register_hook_callbacks() {
-
-            add_filter( 'plugin_action_links', array($this, 'plugin_action_links') );
+            global $loginRadiusSettings;
+            
+            add_filter( 'plugin_action_links', array($this, 'plugin_action_links'), 10, 2 );
             add_action( 'admin_menu', array($this, 'admin_menu') );
             add_action( 'admin_init', array($this, 'admin_init') );
             add_action( 'admin_notices', array($this, 'account_linking_info_on_profile_page') );
+            // Filter for changing default WordPress avatar
+            if ( isset( $loginRadiusSettings['LoginRadius_socialavatar'] ) && ( $loginRadiusSettings['LoginRadius_socialavatar'] == 'socialavatar' ) ) {
+                add_filter( 'get_avatar', array(&$this, 'get_social_avatar'), 10, 5 );
+            }
         }
 
         /*
@@ -70,13 +75,13 @@ if ( !class_exists( 'Login_Radius_Admin' ) ) {
          */
 
         public function load_scripts() {
-            $scriptLocation = apply_filters( 'LoginRadius_files_uri', LOGINRADIUS_PLUGIN_URL . 'assets/js/loginradius-options-page.js?t=6.0' );
+            $scriptLocation = apply_filters( 'LoginRadius_files_uri', LOGINRADIUS_PLUGIN_URL . 'assets/js/loginradius-options-page.js?t=6.0.1' );
             wp_enqueue_script( 'jquery' );
             wp_enqueue_script( 'jquery-ui-tabs' );
             wp_enqueue_script( 'thickbox' );
             wp_enqueue_script( 'jquery-ui-sortable' );
             wp_enqueue_script( 'LoginRadius_options_page_script', $scriptLocation, array(), false, false );
-            wp_enqueue_script( 'LoginRadius_options_page_script2', LOGINRADIUS_PLUGIN_URL . 'assets/js/loginRadiusAdmin.js?t=6.0', array(), false, false );
+            wp_enqueue_script( 'LoginRadius_options_page_script2', LOGINRADIUS_PLUGIN_URL . 'assets/js/loginRadiusAdmin.js?t=6.0.1', array(), false, false );
         }
 
         /*
@@ -206,17 +211,43 @@ if ( !class_exists( 'Login_Radius_Admin' ) ) {
             include_once "views/settings.php";
             Login_Radius_Admin_Settings:: render_options_page();
         }
+        
+        /**
+         * Replace default avatar with social avatar
+         */
+        public function get_social_avatar( $avatar, $avuser, $size, $default, $alt = '' ) {
+            $userId = null;
+            $default = null;
+            if ( is_numeric( $avuser ) ) {
+                if ( $avuser > 0 ) {
+                    $userId = $avuser;
+                }
+            } elseif ( is_object( $avuser ) ) {
+                if ( property_exists( $avuser, 'user_id' ) && is_numeric( $avuser->user_id ) ) {
+                    $userId = $avuser->user_id;
+                }
+            }
+            if ( !empty( $userId ) ) {
 
+                $currentSocialId = get_user_meta( $userId, 'loginradius_current_id', true );
+                if ( ( $userAvatar = get_user_meta( $userId, 'loginradius_picture', true ) ) !== false && strlen( trim( $userAvatar ) ) > 0 ) {
+                    return '<img alt="' . esc_attr( $alt ) . '" src="' . $userAvatar . '" class="avatar avatar-' . $size . ' " height="' . $size . '" width="' . $size . '" />';
+                } elseif ( ( $userAvatar = get_user_meta( $userId, 'loginradius_thumbnail', true ) ) !== false && strlen( trim( $userAvatar ) ) > 0 ) {
+                    return '<img alt="' . esc_attr( $alt ) . '" src="' . $userAvatar . '" class="avatar avatar-' . $size . ' " height="' . $size . '" width="' . $size . '" />';
+                }
+            }
+            return $avatar;
+        }
         /**
          * Add a settings link to the Plugins page, so people can go straight from the plugin page to
          * settings page.
          */
-        public function plugin_action_links( $links ) {
-            return array_merge(
-                    array(
-                'settings' => '<a href="admin.php?page=LoginRadius">' . __( 'Settings' ) . '</a>'
-                    ), $links
-            );
+        public function plugin_action_links( $links, $file ) {
+            $settings_link = '<a href="admin.php?page=LoginRadius">' . esc_html__( 'Settings', 'LoginRadius' ) . '</a>';
+            if ( $file == 'loginradius-for-wordpress/LoginRadius.php' )
+                array_unshift( $links, $settings_link );
+
+        return $links;
         }
 
         /**
@@ -281,7 +312,7 @@ if ( !class_exists( 'Login_Radius_Admin' ) ) {
                 'method' => 'POST',
                 'timeout' => 15,
                 'headers' => array('Content-Type' => 'application/x-www-form-urlencoded'),
-                'body' => array('addon' => 'WordPress', 'version' => '6.0', 'agentstring' => $_SERVER['HTTP_USER_AGENT'], 'clientip' => $_SERVER['REMOTE_ADDR'], 'configuration' => $string),
+                'body' => array('addon' => 'WordPress', 'version' => LOGINRADIUS_SOCIALLOGIN_VERSION, 'agentstring' => $_SERVER['HTTP_USER_AGENT'], 'clientip' => $_SERVER['REMOTE_ADDR'], 'configuration' => $string),
                 'cookies' => array(),
                     )
             );

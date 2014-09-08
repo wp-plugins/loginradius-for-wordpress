@@ -347,8 +347,8 @@ if ( !class_exists( 'Login_Helper' ) ) {
                         case 'custom':
                             if ( isset( $loginRedirect ) && strlen( $customRedirectUrl ) > 0 ) {
                                 $redirectionUrl = trim( $customRedirectUrl );
-                                if( !strpos($redirectionUrl, 'http' ) ) {
-                                    $redirectionUrl = 'http://' . $redirectionUrl;
+                                if( strpos($redirectionUrl, 'http' ) !== 0 ) {
+                                    $redirectionUrl = Login_Radius_Common:: get_protocol() . $redirectionUrl;
                                 }
 
                             } else {
@@ -547,7 +547,7 @@ if ( !class_exists( 'Login_Helper' ) ) {
 
                         if ( $_POST['LoginRadius_popupSubmit'] == 'Submit' ) {
                             // If submit button is clicked.
-                            $loginRadiusEmail = mysql_real_escape_string( trim( $_POST['email'] ) );
+                            $loginRadiusEmail = sanitize_email( $_POST['email'] );
                             $profileData = array();
                             $loginRadiusTempUserId = $wpdb->get_var( $wpdb->prepare( 'SELECT user_id FROM ' . $wpdb->usermeta . ' WHERE meta_key=\'tmpsession\' AND meta_value = %s', $_POST['session'] ) );
                             $profileData['UniqueId'] = get_user_meta( $loginRadiusTempUserId, 'tmpsession', true );
@@ -607,7 +607,7 @@ if ( !class_exists( 'Login_Helper' ) ) {
                         $profileData['Thumbnail'] = get_user_meta( $loginRadiusTempUserId, 'tmpthumbnail', true );
                         $profileData['Bio'] = get_user_meta( $loginRadiusTempUserId, 'tmpaboutme', true );
                         $profileData['ProfileUrl'] = get_user_meta( $loginRadiusTempUserId, 'tmpwebsite', true );
-                        $profileData['Email'] = mysql_real_escape_string( trim( $_POST['email'] ) );
+                        $profileData['Email'] = sanitize_email( $_POST['email'] );
                         return $profileData;
                     }
 

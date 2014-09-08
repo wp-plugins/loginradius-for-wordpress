@@ -4,7 +4,7 @@
  * Plugin Name:Social Login for wordpress
  * Plugin URI: http://www.LoginRadius.com
  * Description: Add Social Login and Social Sharing to your WordPress website and also get accurate User Profile Data and Social Analytics.
- * Version: 6.0
+ * Version: 6.0.1
  * Author: LoginRadius Team
  * Author URI: http://www.LoginRadius.com
  * License: GPL2+
@@ -29,19 +29,14 @@ if ( !class_exists( 'Login_Radius' ) ) {
          */
         private static $instance;
 
-        /**
-         * The Plug-in version.
-         *
-         * @var string
-         */
-        public static $version = "6.0";
+
 
         /**
          * Mininmum required version of WordPress for this plug-in to function correctly.
          *
          * @var string
          */
-        public static $wp_min_version = "2.8";
+        public static $wp_min_version = "3.4";
 
         /**
          * Get singleton object for class Login_Radius
@@ -105,7 +100,8 @@ if ( !class_exists( 'Login_Radius' ) ) {
          */
         private function define_constants() {
 
-            define( 'LOGINRADIUS_SOCIALLOGIN_VERSION', '6.0' );
+            define( 'LOGINRADIUS_SOCIALLOGIN_VERSION', '6.0.1' );
+            define( 'LOGINRADIUS_MIN_WP_VERSION', '3.4' );
             define( 'LOGINRADIUS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
             define( 'LOGINRADIUS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
             define( 'LOGINRADIUS_VALIDATION_API_URL', 'https://api.loginradius.com/api/v2/app/validate' );

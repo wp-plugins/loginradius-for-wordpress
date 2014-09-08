@@ -62,7 +62,7 @@ if ( !class_exists( 'Social_Login' ) ) {
             }
             //Filter for changing buddypress avatar.
             if ( isset( $loginRadiusSettings['LoginRadius_socialavatar'] ) && $loginRadiusSettings['LoginRadius_socialavatar'] == 'socialavatar' ) {
-                add_filter( 'bp_core_fetch_avatar', array('Login_Helper', 'change_buddypress_avatar'), 10, 2 );
+                add_filter( 'bp_core_fetch_avatar', array(&$this, 'change_buddypress_avatar'), 10, 2 );
             }
             add_action( 'bp_include', array('Login_Helper', 'set_budddy_press_status_variable') );
 
@@ -88,7 +88,7 @@ if ( !class_exists( 'Social_Login' ) ) {
          */
         public function social_login_init() {
 
-            if ( get_option( 'loginradius_version' ) != Login_Radius:: $version ) {
+            if ( get_option( 'loginradius_version' ) != LOGINRADIUS_SOCIALLOGIN_VERSION ) {
                 $this->update_plugin_meta_if_old_verison();
             }
             if ( Login_Radius_Common:: scripts_in_footer_enabled() ) {
@@ -245,7 +245,7 @@ if ( !class_exists( 'Social_Login' ) ) {
          */
         public function front_end_css() {
             $styleLocation = apply_filters( 'LoginRadius_files_uri', LOGINRADIUS_PLUGIN_URL . 'assets/css/loginRadiusStyle.css' );
-            wp_enqueue_style( 'LoginRadius-plugin-frontpage-css', $styleLocation . '?t=5.0.0' );
+            wp_enqueue_style( 'LoginRadius-plugin-frontpage-css', $styleLocation . '?t=6.0.1' );
         }
 
         /**
@@ -302,7 +302,7 @@ if ( !class_exists( 'Social_Login' ) ) {
             $wpdb->query( "update " . $wpdb->usermeta . " set meta_key = 'loginradius_thumbnail' where meta_key = 'thumbnail'" );
             $wpdb->query( "update " . $wpdb->usermeta . " set meta_key = 'loginradius_verification_key' where meta_key = 'loginRadiusVkey'" );
             $wpdb->query( "update " . $wpdb->usermeta . " set meta_key = 'loginradius_isVerified' where meta_key = 'loginRadiusVerified'" );
-            update_option( 'loginradius_version', Login_Radius:: $version );
+            update_option( 'loginradius_version', LOGINRADIUS_SOCIALLOGIN_VERSION );
         }
 
         /**
@@ -504,7 +504,7 @@ if ( !class_exists( 'Social_Login' ) ) {
             if ( !empty( $userId ) ) {
 
                 $currentSocialId = get_user_meta( $userId, 'loginradius_current_id', true );
-                if ( ( $userAvatar = get_user_meta( $userId, 'loginradius_' . $currentSocialId . '_picture', true ) ) !== false && strlen( trim( $userAvatar ) ) > 0 ) {
+                if ( ( $userAvatar = get_user_meta( $userId, 'loginradius_picture', true ) ) !== false && strlen( trim( $userAvatar ) ) > 0 ) {
                     return '<img alt="' . esc_attr( $alt ) . '" src="' . $userAvatar . '" class="avatar avatar-' . $size . ' " height="' . $size . '" width="' . $size . '" />';
                 } elseif ( ( $userAvatar = get_user_meta( $userId, 'loginradius_thumbnail', true ) ) !== false && strlen( trim( $userAvatar ) ) > 0 ) {
                     return '<img alt="' . esc_attr( $alt ) . '" src="' . $userAvatar . '" class="avatar avatar-' . $size . ' " height="' . $size . '" width="' . $size . '" />';

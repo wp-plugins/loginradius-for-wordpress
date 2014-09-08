@@ -9,7 +9,13 @@ class Login_Radius_Install {
      * Function for adding default plugin settings at activation
      */
     public static function set_default_options() {
-        if ( !get_option( 'loginradius_db_version' ) ) {
+        if ( version_compare( get_bloginfo('version'), LOGINRADIUS_MIN_WP_VERSION, '<') )  {
+            $message = "Plugin could not be activated because ";
+            $message .= "WordPress version is lower than ";
+            $message .= LOGINRADIUS_MIN_WP_VERSION;
+            die( $message );
+        }
+        if ( ! get_option( 'loginradius_db_version' ) || ! get_option( 'LoginRadius_settings' ) ) {
             // If plugin loginradius_db_version option not exist, it means plugin is not latest and update options.
             $options = array(
                 'LoginRadius_loginform' => '1',
@@ -44,9 +50,10 @@ class Login_Radius_Install {
                 'LoginRadius_sendemail' => 'notsendemail',
                 'LoginRadius_dummyemail' => 'notdummyemail'
             );
-            delete_option( 'LoginRadius_settings' );
-            add_option( 'LoginRadius_settings', $options );
-            add_option( 'loginradius_db_version', '6.0' );
+            update_option( 'LoginRadius_settings', $options );
+            update_option( 'loginradius_db_version', LOGINRADIUS_SOCIALLOGIN_VERSION );
+        } else if( LOGINRADIUS_SOCIALLOGIN_VERSION != get_option( 'loginradius_db_version' ) ) {
+            update_option( 'loginradius_db_version', LOGINRADIUS_SOCIALLOGIN_VERSION );
         }
     }
 

@@ -3,9 +3,9 @@ Contributors: loginradius
 Donate link: http://www.loginradius.com/
 Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage, ID provider linking, QQ, Renren, Github, MSN,
 single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
-Requires at least: 2.5.0
-Tested up to: 3.9.2
-Stable tag: 6.0
+Requires at least: 3.4
+Tested up to: 4.0
+Stable tag: 6.0.1
 License: GPLv2 or later
 
 Let your users log in, comment and share via their social accounts with Facebook, Google, Amazon, Twitter, LinkedIn, Vkontakte, QQ and over 25 more!
@@ -255,6 +255,11 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 <strong>Please share your comments and feedback at feedback@loginradius.com</strong>
 
 == Changelog ==
+= 6.0.1 =
+* Fixed issues in last version
+* Compatiblilty with Wordpress 4.0
+* Tweak: Removed hard-coded plugin version and stored it in database
+
 = 6.0 =
 * Restructured plugin for better performance.
 * UI improvement in notification popups
@@ -639,3 +644,8 @@ Bug fixed for popup in IE
 * Separated settings as basic and advanced settings.
 * Improvement in widgets.
 * Fixed issues with multisite installation.
+
+= 6.0.1 =
+* Fixed issues in last version
+* Compatiblilty with Wordpress 4.0
+* Tweak: Removed hard-coded plugin version and stored it in database
