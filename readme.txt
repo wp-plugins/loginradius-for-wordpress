@@ -2,10 +2,10 @@
 Contributors: loginradius
 Donate link: http://www.loginradius.com/
 Tags: Social login, Social share, social commenting, Wordpress plugin, BuddyPress, bbpress, social sharing, multisite, LoginRadius, comments, share post, OpenID integration, User Profile Data, Social Analytics, Online Identity, Social Profile storage, ID provider linking, QQ, Renren, Github, MSN,
-single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, differnet languages, social media tools, free social login, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
+single sign-on, Social Login Plug-in, Twitter, Google, Yahoo OpenID, Linkedin login, social media tools, free social sharing, post to social networks, social authentication, social api, social app, facebook connect, google connect, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology
 Requires at least: 3.4
 Tested up to: 4.0
-Stable tag: 6.0.1
+Stable tag: 6.1
 License: GPLv2 or later
 
 Let your users log in, comment and share via their social accounts with Facebook, Google, Amazon, Twitter, LinkedIn, Vkontakte, QQ and over 25 more!
@@ -36,11 +36,9 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 = Basic Features (FREE) =
 * Enable Social Sharing widget on your WordPress site
 * Options to add social sharing widget on homepage, posts, feeds, content pages, etc.
-* Users can share contents on over 90 social networks, can send contents in an email or can print!
+* Users can share contents on over 60 social networks, can send contents in an email or can print!
 * Choose social sharing interface designs
-* A nice and clean user friendly WP admin U/I with tab structure with various options for social login, sharing and commenting
 * Manage everything from your WP admin
-* UI to manage Customize Social Login interface position - embed in or beside wp login/register form
 * API connection check feature for error notification
 * No programming skills required
 * Its simple, secure and reliable
@@ -48,11 +46,12 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Compatible with Buddypress and bbPress
 * Highly reliable as it runs on Cloud Computing with failover server support
 * 24/7 community support, rich knowledge base, and active discussion forum
-* Available in 9 languages - English, French, Spanish, Russian, Italian, Chinese, Japanese, Portuguese and German (Italian Language Translator: Michelangelo Giannino; Russian Language Translator: Rob; Spanish Language Translator: Daniel Iturbe; Chinese & Japanese Language Translator: Wenxuan; German language translatior: David Werth)
 
-= VIP Features (Paid) =
+= Pro Features (Paid) =
+* A nice and clean user friendly WP admin U/I with tab structure with various options for social login, sharing and commenting
 * Users can register by logging in with social ID such as Gmail, Twitter, Facebook etc and they will not require usernames/passwords
 * Add social login interface (the widget) on any page that supports up to 23 ID Providers. (Please see the list below)
+* UI to manage Customize Social Login interface position - embed in or beside wp login/register form
 * Choose as many ID Providers as you want
 * Support legacy account mapping for your existing wordpress user accounts to social login
 * It automatically creates account for the users after logging in with their existing IDs
@@ -84,14 +83,14 @@ This plugin runs on <a href="http://www.loginradius.com" target="_blank">LoginRa
 * Full customization of login interface available with our subscription packages.
 * Get extended user profile data and user's social network data
 * Get online/offline access to a user's social profile to post on user's profile
-* VIP social icon themes and VIP login interface designs
+* Pro social icon themes and Pro login interface designs
 * Supports HTTPS enabled website
 * Developer sandbox
 * Add multiple admins to LoginRadius account
 * Get 24/7 email support
 * We also offer set-up service (installation, configuration, customization, quality assurance)
 
-Learn more about our VIP packages <a href="http://www.loginradius.com/pricing/" target="_blank">here</a>.
+Learn more about our Paid packages <a href="http://www.loginradius.com/pricing/" target="_blank">here</a>.
 
 = List of Integrated ID Providers =
 * Facebook
@@ -128,12 +127,12 @@ Learn more about our VIP packages <a href="http://www.loginradius.com/pricing/" 
 * SinaWeibo
 
 = Other Social Login plugins =
-We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart, vBulletin, BlogEngine and DotNetNuke! <a href="http://www.loginradius.com/developer" target="_blank">Learn more</a>.
+We also have similar social plugins for Joomla, Drupal, Magento, PrestaShop, Vanilla Forum, osCommerce, Zen Cart, X-cart, vBulletin, BlogEngine and DotNetNuke! <a href="http://www.loginradius.com/developers" target="_blank">Learn more</a>.
 
 = Important links =
-* Learn more about this plugin: http://www.loginradius.com/developer
+* Learn more about this plugin: http://www.loginradius.com/developers
 * LoginRadius website: http://www.loginradius.com
-* Live demo: http://demo.loginradius.com/
+* Live demo: http://demo.loginradius.com
 * Blog: http://blog.loginradius.com
 * Our video: http://www.youtube.com/loginradius
 
@@ -154,7 +153,7 @@ After downloading the plugin, please follow the step-by-step installation guide:
 = Settings =
 
 1. Go to 'Settings' section and click on 'LoginRadius' option.
-2. Click on LoginRadius link (or directly goto http://www.loginradius.com) and login using any provider. Then in the user account section, you can select the providers you want to use on your wodpress website and generate your unique API Key and API Secret.
+2. Click on LoginRadius link (or directly goto http://www.loginradius.com) and login using any provider. Then in the user account section, you can select the providers you want to use on your wordpress website and generate your unique API Key and API Secret.
 3. Copy and Paste API Key in LoginRadius plug-in box for 'API key'.
 
 = Comment setting =
@@ -163,12 +162,11 @@ If you want to allow only registered users to comment, go to Settings > Discussi
 = Display LoginRadius interface on other pages =
 You can enable social login, sharing and counter anywhere in your website page/post content using shortcodes. Just place following shortcodes where you want to show interface<br />
 Shortcode for Social Login: [LoginRadius_Login]<br />
-Shortcode for Social Sharing: [LoginRadius_Share]<br />
-Shortcode for Social Counter: [LoginRadius_Counter]<br />
+Shortcode for Social Sharing: [LoginRadius_Share]
 
 = Technical Support Questions =
 <a href="http://support.loginradius.com/hc/en-us/articles/201968907-Wordpress-Social-Login-instructions" target="_blank">How do I implement Social Login on my WordPress website?</a><br />
-<a href="http://support.loginradius.com/hc/en-us/articles/201968907-Wordpress-Social-Login-instructions" target="_blank">How do I implement Social Login on my WordPress Multisite?</a><br />
+<a href="http://support.loginradius.com/hc/en-us/articles/201968907-Wordpress-Social-Login-instructions#multisite" target="_blank">How do I implement Social Login on my WordPress Multisite?</a><br />
 
 == Frequently Asked Questions ==
 = What is Social Login and why do I need it? =
@@ -186,75 +184,24 @@ Yes, the LoginRadius Team can assist you with implementing these social features
 = Where can I get support? =
 We offer 24/7 support, feel free to browse our knowledge base <a href="http://support.loginradius.com/hc/en-us/articles/201968907-Wordpress-Social-Login-instructions" target="_blank">here</a>.
 
-= My website is not in English, what should i do? =
-LoginRadius WordPress plugin is available in 9 different languages - English, French, Spanish, Italian, Russian, Chinese, Japanese, German and Portuguese Brazillian. So you can pick your own language. Please let us know at feedback@loginradius.com if you would like us to add any other language.
-
 = What is LoginRadius? =
-LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 120,000 customers around the world. We are also partner with internet giants such as Mozilla, Microsoft, DynDNS, etc.
+LoginRadius is a Canadian Startup that offers Social Infrastructure to websites through its Software as a Service (SaaS). We are Canada's Top 50 Startups and our service is being used by over 120,000 customers around the world. We are also partner with internet giants such as Amazon.com, Mozilla, Microsoft, DynDNS, etc.
 
 == Screenshots ==
-1. **Social Login, Social Sharing and Social Counter**: This is an example presentation of these three social tools. There are multiple themes and wide range of customization available.
-2. **Social Commenting**: Users can post comments with their social account.
-3. **Social Login along traditiona login**: This is how it will be shown on your WordPress website. You can choose from plenty of social login themes in your LoginRadius account.
-4. **LoginRadius account**: This screenshot shows easy of social login management in your LoginRadius account.
-5. **Social Sharing**: Choose social sharing widget themes! It is showing all horizon themes (Vertical theme is also available)
-6. **Social Counter**: Choose horizonal social counter themes (Vertical theme is also available)
+1. **Social Login, Social Sharing and Social Commenting**: This is an example of these three social tools. There are multiple themes and wide range of customizations available.
 
-== Testimonials ==
-<em>Germany Installation and adjustment only took 30 minutes. LoginRadius is exactly what I was looking for in order to provide a comfortable access to our services.</em>
-<strong>Dustin Feld</strong><br>
-<em>CoachCompare</em><br>
+2. **Social Login with traditional login**: This is an example of Social Login on your Wordpress login page. You can choose from plenty of social login themes in your LoginRadius account.
 
-<em>LoginRadius the future of internet,the alternative to the custom login system. As the banking system is changing its ways of transaction from cheque to the Atm, in the same way websites are changing their login system from custom to LoginRadius.</em><br>
-<strong>Abdullah khan</strong><br>
-
-<em>"LoginRadius is by far the best one-click login solution for websites. You have a fast and friendly support team at your disposal 24/7."</em><br>
-<strong>Sinisa Juresic</strong><br>
-<em>Founder</em><br>
-<em>StreetsCrack</em><br>
-
-<em>Works like a charm - Thanks you so much!</em><br>
-<strong>John McKeever</strong><br>
-<em>Data Migrators</em><br>
-
-<em>Good doc. I like it when _everything_ is on _one_ page. Also I like that your info is very concise. Keep it small and straight so we can do our job instead of reading and reading and reading like I have to do in other web services! Good theming/design. The first social id provider knowing taste is important. Keep it up Apple! :) Good job! </em><br>
-<strong>Johnny Luu</strong><br>
-
-<em>"After spending 3 days searching for tutorials I wasnt able to find any help to connect my website with other social website such as facebook, twitter etc. but LoginRadius was my saviour after 20 min I had facebook, twitter and google connect with my wordpress. The best part is when that when I asked a question, 5 min later I received answer. So I can say that the "27/7 support" is true! If there are other people who need help to connect they sites with facebook or twitter or any other social website, give it a try. Im sure LoginRadius is the thing your searching for."</em><br>
-<strong>Kristian Tonev</strong><br>
-
-<em>"I want to say thanks to you guys for doing this, making it free and for helping me in many ways.In my businesses I want things to work simply, correctly and fast. For this, I didn't rtfm enough and thought I'd delete my account. The info about what will happen next was right in front of me, but I pressed delete anyway. On re-joining, I found I'd not entirely understood the impact.. the only domain I want - I cannot get.Frustrated, I sent a support request in 2 clicks, which was honestly answered in 2 minutes, telling me the steps they took and what steps I need to take.These guys knew exactly what I'd done and what was happening, they had total situational awareness of my issue. My issue was fixed immediately, and I like that. Well done guys."</em><br>
-<strong>Dr Gregory Uppington</strong><br>
-<em>Managing Director</em><br>
-<em>YouSoGetMe</em><br>
-
-<em>"Really impressed with the service and the customer service, really quick turn around on responses and is a perfect system for my website as customers can now register on my website using their social login details, saves a lot of time - well done guys - keep up the good work."</em><br>
-<strong> Ian Haney</strong><br>
-<em>Irh Media</em><br>
-
-<em>"We are very Happy with loginradius, it made the registration process on the web site hassle free,especially for novice users,Have a website ?you should have loginradius!"</em><br>
-<strong>Ahmad Shaarawy</strong><br>
-<em>Ass. Researcher</em><br>
-<em>Research Institute of Ophthalmology</em><br>
-
-<em>"Have you ever thought possible to achieve registration-free access for the visitors to your pages, but with the privileges of a member? The system designed by the people at LoginRadius is unbeatable, it will save to your customers and visitors a precious time, time surely they can invest more profitably for them and for you, checking your company catalog or browsing your site. And they will be surely very grateful for having you avoided them to fill out yet another form into their lives! Our warm and sincere congratulations for the impressive work and achievement, and our deepest gratitude for the tech support from LoginRadius, which helped us to implement their system on our site, providing us with accurate clues all the time to do it right!"</em><br>
-<strong>Diego A. De Giorgio</strong><br>
-<em>GeekTronix</em><br>
-
-<em>"I am a person who has a large collection of passwords and logins and constantly have to be checking my password program to access sites. If only I could use just a few that would work for a whole list of sites and forums I visit it would make things a lot easier. With browsers now allowing users to save password and sync between pcs has helped. And I'm now seeing more and more social sites letting users use logins for other sites like facebook and others. I know there are countless others that feel the same way I do.With an ap like what you provide at LoginRadius, I think you have taken it a step further by allowing users to have more choices. A use can decide which of their login is more appropriate, twitter, facebooks or any other. They can get away from the long drawn out process of a sign up page where ever your app is hosted. As a site owner I think making your site user friendly and easy to access with high security is a plus. I also think signup pages on some site could get a bit intrusive and I'm sure that I'm not the only person that thinks this way. Why should it be mandatory for a person to state if they are a male or female just to buy a product from your site or become a member? Signup pages are a big turn off for a lot of would be customers.Your ap is a welcome piece of software as I have been seriously considering making drastic changes to my signup page to make it more appealing. And I think I might still make the changes any way."</em><br>
-<strong>Rudy Rawlins</strong><br>
-<em>Caribprints</em><br>
-
-<em>"El modulo trabaja grandioso, aunque tuve algunos problemas porque al ingresar una cuenta el usuario permaneci'a conectado permanentemente sin poder cerrar sesio'n, contacte al servicio de soporte de loginradius y ra'pidamente se comunicaron conmigo da'ndome un par de soluciones, y no dejaron de comunicarse conmigo hasta que el problema fue resuelto, estoy muy satisfecho con el servicio y con el modulo."</em><br>
-<strong>Juan Luis Gomez'</strong><br>
-<em>Webmaster</em><br>
-<em>Delachona</em><br>
-
-Please view more here: https://www.loginradius.com/loginradius/testimonial
-
-<strong>Please share your comments and feedback at feedback@loginradius.com</strong>
+3. **Social Login Settings**: Wordpress admin panel for customization of Social Login, Social Sharing and Social Commenting interfaces.
 
 == Changelog ==
+= 6.1 =
+* Added new options for social login and social sharing
+* Released responsive interfaces for Social Login and Social Sharing
+* Revamp User interface and User Experience of Admin interface
+* Simple and easy to use admin options
+* Fixed some bugs related to social sharing
+
 = 6.0.1 =
 * Fixed issues in last version
 * Compatiblilty with Wordpress 4.0
@@ -357,7 +304,7 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 = 3.0 =
 * New layout for Social Commenting
 * Added Social Counter
-* Enhanced Socail Sharing with updates
+* Enhanced Social Sharing with updates
 * Wordpress admin UI improvement
 * Added a separate menu item - LoginRadius in admin panel
 * Username/password is not sent to user before email verification
@@ -439,7 +386,7 @@ Please view more here: https://www.loginradius.com/loginradius/testimonial
 * Stable release
 * Added foursquare social login in provider list
 * Redirect selection option in admin.
-* Existance of email validation.
+* Existence of email validation.
 * Popup design enhancements.
 * New interface on comment box for login.
 * Admin interface design enhancements.
@@ -480,7 +427,7 @@ Bug fixes and Admin interface enhancements
 = 2.1 =
 Enhancements:
 1. Redirect selection option in admin.
-2. Existance of email validation.
+2. Existence of email validation.
 3. Popup design enhancements.
 4. New interface on comment box for login.
 5. Admin interface design enhancements.
@@ -540,7 +487,7 @@ Bug fixed for popup in IE
 = 3.0 =
 * New layout for Social Commenting
 * Added Social Counter
-* Enhanced Socail Sharing with updates
+* Enhanced Social Sharing with updates
 * Wordpress admin UI improvement
 * Added a separate menu item - LoginRadius in admin panel
 * Username/password is not sent to user before email verification
@@ -649,3 +596,10 @@ Bug fixed for popup in IE
 * Fixed issues in last version
 * Compatiblilty with Wordpress 4.0
 * Tweak: Removed hard-coded plugin version and stored it in database
+
+= 6.1 =
+* Added new options for social login and social sharing
+* Released responsive interfaces for Social Login and Social Sharing
+* Revamp User interface and User Experience of Admin interface
+* Simple and easy to use admin options
+* Fixed some bugs related to social sharing

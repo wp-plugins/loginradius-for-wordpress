@@ -27,6 +27,9 @@ if( !is_multisite()) {
 function delete_loginradius_options() {
     global $wpdb;
     delete_option( 'LoginRadius_settings' );
+    delete_option( 'LoginRadius_API_settings' );
+    delete_option( 'LoginRadius_share_settings' );
     delete_option( 'loginradius_db_version' );
+    delete_option( 'loginradius_version' );
     $wpdb->query( "delete from $wpdb->usermeta where meta_key like 'loginradius%'" );
 }
