@@ -62,7 +62,7 @@ if ( !class_exists( 'Social_Login' ) ) {
             }
             //Filter for changing buddypress avatar.
             if ( isset( $loginRadiusSettings['LoginRadius_socialavatar'] ) && $loginRadiusSettings['LoginRadius_socialavatar'] == 'socialavatar' ) {
-                add_filter( 'bp_core_fetch_avatar', array('Login_Helper', 'change_buddypress_avatar'), 10, 2 );
+                add_filter( 'bp_core_fetch_avatar', array('Social_Login', 'change_buddypress_avatar'), 10, 2 );
             }
             add_action( 'bp_include', array('Login_Helper', 'set_budddy_press_status_variable') );
 
@@ -419,7 +419,7 @@ if ( !class_exists( 'Social_Login' ) ) {
         /**
          * Replace buddypress default avatar with social avatar.
          */
-        public function change_buddypress_avatar( $text, $args ) {
+        public static function change_buddypress_avatar( $text, $args ) {
             //Check arguments
             if ( is_array( $args ) ) {
                 if ( !empty( $args['object'] ) && strtolower( $args['object'] ) == 'user' ) {
