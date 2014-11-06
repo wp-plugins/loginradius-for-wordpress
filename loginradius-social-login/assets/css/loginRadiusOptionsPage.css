@@ -1,0 +1,25 @@
+
+/* CSS Document */
+.lr_property_title{
+	position: absolute;
+	margin-top: 10px;
+}
+#login_radius_api_key, #login_radius_api_secret{
+	width: 350px;
+	display: inline;
+	margin-left: 200px;
+}
+.lr-options-title {
+	width: 100%;
+	display: block;
+	padding: 0px 60px;
+}
+
+.lr-options-title h3 {
+	margin-bottom: 0px;
+	font-weight: 400;
+}
+.lr-wrap h4 {
+	margin-top: 30px;
+}
+
