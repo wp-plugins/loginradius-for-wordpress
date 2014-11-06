@@ -196,7 +196,7 @@ LoginRadius is a Canadian Startup that offers Social Infrastructure to websites 
 
 == Changelog ==
 
-= 6.1.2 =
+= 6.1.3 =
 * Disable sharing fix per page/post
 
 = 6.1.2 =
@@ -622,5 +622,5 @@ Bug fixed for popup in IE
 * Added Buddypress Login/Register Options
 * iOS login fix
 
-= 6.1.2 =
+= 6.1.3 =
 * Disable sharing fix per page/post
