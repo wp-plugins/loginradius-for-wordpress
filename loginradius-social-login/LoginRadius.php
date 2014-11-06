@@ -88,7 +88,7 @@ if ( !class_exists( 'Login_Radius' ) ) {
 		 */
 		private function define_constants() {
 
-			define( 'LOGINRADIUS_SOCIALLOGIN_VERSION', '6.1.2' );
+			define( 'LOGINRADIUS_SOCIALLOGIN_VERSION', '6.1.3' );
 			define( 'LOGINRADIUS_MIN_WP_VERSION', '3.4' );
 			define( 'LOGINRADIUS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 			define( 'LOGINRADIUS_PLUGIN_URL', plugin_dir_url( __FILE__ ) );

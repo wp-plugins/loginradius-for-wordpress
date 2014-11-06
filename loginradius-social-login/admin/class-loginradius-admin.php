@@ -83,13 +83,13 @@ if ( !class_exists( 'Login_Radius_Admin' ) ) {
 		 */
 
 		public function load_scripts() {
-			$scriptLocation = apply_filters( 'LoginRadius_files_uri', LOGINRADIUS_PLUGIN_URL . 'assets/js/loginradius-options-page.js?t=6.1.2' );
+			$scriptLocation = apply_filters( 'LoginRadius_files_uri', LOGINRADIUS_PLUGIN_URL . 'assets/js/loginradius-options-page.js?t=6.1.3' );
 			wp_enqueue_script( 'jquery' );
 			wp_enqueue_script( 'jquery-ui-tabs' );
 			wp_enqueue_script( 'thickbox' );
 			wp_enqueue_script( 'jquery-ui-sortable' );
 			wp_enqueue_script( 'LoginRadius_options_page_script', $scriptLocation, array(), false, false );
-			wp_enqueue_script( 'LoginRadius_options_page_script2', LOGINRADIUS_PLUGIN_URL . 'assets/js/loginRadiusAdmin.js?t=6.1.2', array(), false, false );
+			wp_enqueue_script( 'LoginRadius_options_page_script2', LOGINRADIUS_PLUGIN_URL . 'assets/js/loginRadiusAdmin.js?t=6.1.3', array(), false, false );
 		}
 
 		/*

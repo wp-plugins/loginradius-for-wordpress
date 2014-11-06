@@ -3,7 +3,7 @@
  * Plugin Name: Social Login for wordpress
  * Plugin URI: http://www.loginradius.com
  * Description: Let your users log in, comment and share via their social accounts with Facebook, Google, Amazon, Twitter, LinkedIn, Vkontakte, QQ and over 25 more!
- * Version: 6.1.2
+ * Version: 6.1.3
  * Author: LoginRadius Team
  * Author URI: http://www.loginradius.com
  * License: GPL2+

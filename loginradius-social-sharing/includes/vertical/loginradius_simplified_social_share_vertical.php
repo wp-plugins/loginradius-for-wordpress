@@ -88,12 +88,19 @@ function loginradius_share_get_vertical_sharing( $top, $right, $bottom, $left, $
  * Output Sharing for the content.
  */
 function loginradius_share_vertical_content( $content ) {
-	global $loginradius_share_settings;
+	global $post, $loginradius_share_settings;
 
 	$top_left = false;
 	$top_right = false;
 	$bottom_left = false;
 	$bottom_right = false;
+
+	$lrMeta = get_post_meta( $post->ID, '_login_radius_meta', true );
+
+	// if sharing disabled on this page/post, return content unaltered.
+	if ( isset( $lrMeta['sharing'] ) && $lrMeta['sharing'] == 1 && ! is_front_page() ) {
+		return $content;
+	}
 
 	if( isset($loginradius_share_settings['vertical_enable']) && $loginradius_share_settings['vertical_enable'] == '1' && loginradius_share_verify_apikey() ){
 
@@ -156,12 +163,19 @@ add_filter( 'the_content', 'loginradius_share_vertical_content' );
  * Output Sharing for the Front Page Posts content.
  */
 function loginradius_share_vertical_front_page_posts( $content ) {
-	global $loginradius_share_settings;
+	global $post, $loginradius_share_settings;
 	$return = "";
 	$top_left = false;
 	$top_right = false;
 	$bottom_left = false;
 	$bottom_right = false;
+
+	$lrMeta = get_post_meta( $post->ID, '_login_radius_meta', true );
+
+	// if sharing disabled on this page/post, return content unaltered.
+	if ( isset( $lrMeta['sharing'] ) && $lrMeta['sharing'] == 1 && ! is_front_page() ) {
+		return $content;
+	}
 
 	if( isset($loginradius_share_settings['vertical_enable']) && $loginradius_share_settings['vertical_enable'] == '1' && loginradius_share_verify_apikey() ){
 		

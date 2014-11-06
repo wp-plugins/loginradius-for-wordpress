@@ -87,6 +87,13 @@ function loginradius_share_horizontal_content( $content ) {
 	$top = false;
 	$bottom = false;
 
+	$lrMeta = get_post_meta( $post->ID, '_login_radius_meta', true );
+
+    // if sharing disabled on this page/post, return content unaltered.
+    if ( isset( $lrMeta['sharing'] ) && $lrMeta['sharing'] == 1 && ! is_front_page() ) {
+        return $content;
+    }
+
 	if( isset($loginradius_share_settings['horizontal_enable']) && $loginradius_share_settings['horizontal_enable'] == '1' && loginradius_share_verify_apikey() ){
 
 			// Show on Pages.
@@ -151,6 +158,13 @@ function loginradius_share_horizontal_excerpt( $content ) {
 	$return = '';
 	$top = false;
 	$bottom = false;
+
+	$lrMeta = get_post_meta( $post->ID, '_login_radius_meta', true );
+
+    // if sharing disabled on this page/post, return content unaltered.
+    if ( isset( $lrMeta['sharing'] ) && $lrMeta['sharing'] == 1 && ! is_front_page() ) {
+        return $content;
+    }
 
 	if( isset( $loginradius_share_settings['horizontal_enable'] ) && $loginradius_share_settings['horizontal_enable'] == '1' && loginradius_share_verify_apikey() ) {
 		// Show on Excerpts.
