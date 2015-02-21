@@ -6,8 +6,8 @@ if ( !defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 }
 
 if( !is_multisite()) {
-    $loginRadiusSettings = get_option( 'LoginRadius_settings' );
-    if ( $loginRadiusSettings['delete_options'] == 1 ) {
+    $loginradius_api_settings = get_option( 'LoginRadius_API_settings' );
+    if ( $loginradius_api_settings['delete_options'] == '1' ) {
         delete_loginradius_options();
     }
 } else {
@@ -16,8 +16,8 @@ if( !is_multisite()) {
     $original_blog_id = get_current_blog_id();
     foreach ( $blog_ids as $blog_id ) {
         switch_to_blog( $blog_id );
-        $loginRadiusSettings = get_option( 'LoginRadius_settings' );
-        if ( $loginRadiusSettings['delete_options'] == 1 ) {
+        $loginradius_api_settings = get_option( 'LoginRadius_API_settings' );
+        if ( $loginradius_api_settings['delete_options'] == '1' ) {
             delete_loginradius_options();
         }
     }
@@ -26,10 +26,13 @@ if( !is_multisite()) {
 
 function delete_loginradius_options() {
     global $wpdb;
-    delete_option( 'LoginRadius_settings' );
     delete_option( 'LoginRadius_API_settings' );
+    delete_option( 'LoginRadius_settings' );
     delete_option( 'LoginRadius_share_settings' );
+    delete_option( 'LR_Commenting_Settings' );
+    delete_option( 'LR_Custom_Interface_Settings' );
     delete_option( 'loginradius_db_version' );
     delete_option( 'loginradius_version' );
+    delete_option( 'LR_Raas_Settings' );
     $wpdb->query( "delete from $wpdb->usermeta where meta_key like 'loginradius%'" );
 }
