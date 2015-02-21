@@ -1,7 +1,7 @@
-﻿=== Social Login, Social Sharing and social data integrations! ===
+﻿=== Social Login, Social Sharing and Social Data Integration ===
 Contributors: loginradius
 Donate link: http://www.loginradius.com/
-Tags: Social login, Social share, social commenting, share post, facebook connect, OpenID integration, User Profile Data, Social Analytics, Online Identity, mailchimp, hubspot, user registration, captcha, widget, salesforce, data integtration, single sign-on, Twitter, Google, Yahoo OpenID, Linkedin login, social media tools, free social sharing, post to social networks, social authentication, social api, social app, google login, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology, BuddyPress, bbpress, social sharing, multisite, LoginRadius
+Tags: Social login, Social share, social commenting, share post, facebook connect, OpenID integration, user profile data, social analytics, online identity, mailchimp, hubspot, user registration, captcha, widget, salesforce, data integtration, single sign-on, twitter, yahoo openID, linkedin login, social media tools, free social sharing, post to social networks, social authentication, social api, social app, google login, capture social data, wordpress multisite, Social Sign-in, social plugins, SSO technology, buddypress, bbpress, social sharing, multisite, loginradius
 Requires at least: 3.5
 Tested up to: 4.1.1
 Stable tag: 6.5
@@ -10,17 +10,17 @@ License: GPLv2 or later
 Let users log in, comment and share via their social accounts with Facebook, Google, Amazon, Twitter, LinkedIn, Vkontakte, QQ and over 25 more!
 
 == Description ==
-This is a paid subscription plugin offered by <a href="http://www.loginradius.com/">LoginRadius</a> with a 30-day free trial period. A simplified Social Sharing is offered as a free plugin and can be found <a href="https://wordpress.org/plugins/simplified-social-share/">here</a>.
+<b>This is a paid subscription plugin offered by <a href="http://www.loginradius.com/">LoginRadius</a> with a 30-day free trial period. A simplified Social Sharing is offered as a free plugin and can be found <a href="https://wordpress.org/plugins/simplified-social-share/">here</a>.</b>
 
-This plugin enables Social Login, Social Sharing and data integrations on your WordPress site. Along with that it also captures users’ profile data, with their permission of course, and automatically creates a profile in your WP database. The plugin can also feed the data into your existing email software such as MailChimp or any other marketing, sales or analytics software.
+This plugin enables Social Login and Social Sharing. Along with that it also captures users’ profile data, with their permission of course, and automatically creates a profile in your WP database. The plugin can also feed the data into your existing email software such as MailChimp or any other marketing, sales or analytics software.
 
 See the <a href="http://wordpress.org/extend/plugins/loginradius-for-wordpress/screenshots">screenshot section</a> for visuals on social login, social sharing and features.
 
 Product Overview:
 = 1. <a href="http://www.loginradius.com/social-login">Social Login</a> = Social login reduces the barriers users face when attempting to register on your website by allowing them to log in with their existing social accounts, including Facebook, LinkedIn, Twitter, Google and <a href="http://support.loginradius.com/hc/en-us/articles/202078178-List-of-ID-providers-that-can-be-integrated-via-LoginRadius-API">30 other networks</a>. This eliminates the need to create yet another username and password.
 = 2. <a href="http://www.loginradius.com/social-sharing">Social Sharing</a> = Make your users your brand ambassadors and drive high quality referrals to your website - 82% of users consider buying or trying products and services based on their friends’ recommendations. With social share, you give users the tools to share your content, product details and other information with their own networks.
-= 3. <a href="http://www.loginradius.com/user-profile-data">User Profile Data</a> = Our solution allows websites to <a href="https://secure.loginradius.com/datapoints">collect more than 200 user data points </a>- such as demographics, name, education, verified email address and many more - in order to better understand users. This enables businesses to personalize users’ web experiences and then build long-term relationships with them.
-= 4. <a href="http://www.loginradius.com/social-data-integration">Data Integration</a> = Our solution can auto integrate social data into your existing softwares such as mailchimp, hubspot, salesforce, google analytics, etc.
+= 3. <a href="http://www.loginradius.com/user-profile-data">User Profile Data</a> = Our solution allows websites to <a href="http://www.loginradius.com/datapoints">collect more than 200 user data points </a>- such as demographics, name, education, verified email address and many more - in order to better understand users. This enables businesses to personalize users’ web experiences and then build long-term relationships with them.
+= 4. <a href="http://www.loginradius.com/social-data-integration">Social Data Integration</a> = Our solution can auto integrate social data into your existing softwares such as mailchimp, hubspot, salesforce, google analytics, etc.
 = 5. <a href="http://www.loginradius.com/social-analytics">Social Analytics</a> = With social analytics, website owners get access to far more data fields than traditional analytics - such as Google Analytics - because they include individual users' interests, gender, education, relationship status, age and also track their activities across websites.
 = 6. <a href="http://www.loginradius.com/single-sign-on">Single sign-on</a> = Single Sign-On creates a single authentication system for multiple web properties allowing users to navigate websites with a single account.
 
