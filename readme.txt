@@ -75,7 +75,7 @@ Please share your comments and feedback at feedback@loginradius.com
 == Installation ==
 
 = Walk-through video =
-http://loginradius.wistia.com/medias/qkofzeuqna?embedType=iframe&videoWidth=640
+<iframe src="//fast.wistia.net/embed/iframe/qkofzeuqna" style="display: block;" width="640" height="540"></iframe>
 
 = Step-by-step installation documents =
 After downloading the plugin, please follow the step-by-step installation guide:<br />
