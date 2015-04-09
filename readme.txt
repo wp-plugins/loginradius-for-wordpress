@@ -75,8 +75,7 @@ Please share your comments and feedback at feedback@loginradius.com
 == Installation ==
 
 = Walk-through video =
-<a href="//fast.wistia.net/embed/iframe/qkofzeuqna?popover=true" class="wistia-popover[height=327,playerColor=7b796a,width=640]"><img src="https://embed-ssl.wistia.com/deliveries/6dfa4c7e86f4c9c1ccd5135559e802943c6e64fa.jpg?image_play_button=true&image_play_button_color=7b796ae0&image_crop_resized=150x77" alt="WordPress Social Login and Social Sharing" /></a>
-<script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/popover-v1.js"></script>
+http://loginradius.wistia.com/medias/qkofzeuqna?embedType=iframe&videoWidth=640
 
 = Step-by-step installation documents =
 After downloading the plugin, please follow the step-by-step installation guide:<br />
