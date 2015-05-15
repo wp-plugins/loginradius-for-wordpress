@@ -16,6 +16,10 @@ This plugin enables Social Login and Social Sharing. Along with that it also cap
 
 See the <a href="http://wordpress.org/extend/plugins/loginradius-for-wordpress/screenshots">screenshot section</a> for visuals on social login, social sharing and features.
 
+Walk-through video:
+
+https://vimeo.com/127972308
+
 Product Overview:
 = 1. <a href="http://www.loginradius.com/social-login">Social Login</a> = Social login reduces the barriers users face when attempting to register on your website by allowing them to log in with their existing social accounts, including Facebook, LinkedIn, Twitter, Google and <a href="http://support.loginradius.com/hc/en-us/articles/202078178-List-of-ID-providers-that-can-be-integrated-via-LoginRadius-API">30 other networks</a>. This eliminates the need to create yet another username and password.
 = 2. <a href="http://www.loginradius.com/social-sharing">Social Sharing</a> = Make your users your brand ambassadors and drive high quality referrals to your website - 82% of users consider buying or trying products and services based on their friends’ recommendations. With social share, you give users the tools to share your content, product details and other information with their own networks.
