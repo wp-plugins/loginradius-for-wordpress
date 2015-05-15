@@ -1,4 +1,6 @@
-
+.lr_horizontal_interface > div {
+	  white-space: nowrap;
+}
 ul#loginRadiusHorizontalSortable, 
 ul.lr-static{
 	display: inline-block;

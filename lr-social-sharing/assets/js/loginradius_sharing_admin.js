@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 		var h_selected = $('input:radio[name="LoginRadius_share_settings[horizontal_share_interface]"]:checked').val();
 		var v_selected = $('input:radio[name="LoginRadius_share_settings[vertical_share_interface]"]:checked').val();
 
-		if(h_selected == "32-h" || h_selected == "16-h") {
+		if(h_selected == "32-h" || h_selected == "16-h" || h_selected == "responsive") {
 			$('#lr_hz_theme_options').show();
 			$('#lr_hz_hz_theme_options').show();
 			$('#lr_hz_ve_theme_options').hide();
@@ -65,7 +65,7 @@ jQuery(document).ready(function($) {
 	}
 
 	$('input:radio[name="LoginRadius_share_settings[horizontal_share_interface]"]').change( function(){
-		if(this.value == "32-h" || this.value == "16-h") {
+		if(this.value == "32-h" || this.value == "16-h" || this.value == "responsive") {
 			$('#lr_hz_theme_options').show();
 			$('#lr_hz_hz_theme_options').show();
 			$('#lr_hz_ve_theme_options').hide();

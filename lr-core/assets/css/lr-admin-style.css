@@ -88,6 +88,13 @@ body[class*="loginradius"] #wpwrap #wpcontent, body[class*="LoginRadius"] #wpwra
 	left: 0;
 	right: 0;
 }
+/*===============
+	Tabs
+================*/
+
+h2.nav-tab-wrapper, h3.nav-tab-wrapper {
+  padding-left: 0px;
+}
 
 /*============================
 Inputs
@@ -381,13 +388,7 @@ label .lr-text:before {
 	clear: both;
 	margin: 30px 0;
 	padding: 0;
-}
-
-.lr-advance p.submit {
-	clear: both;
-	margin: 0;
-	padding: 0;
-	text-align: center;
+	text-align: right;
 }
 
 .lr-wrap p.submit input[type="submit"], .lr-wrap input[name="reset"] {
@@ -407,10 +408,12 @@ label .lr-text:before {
 #lr_options_tab-3 {position: relative;}
 
 .lr-reset {
-	position: absolute;
 	bottom: 15px;
 	right: 60px;
 	z-index: 1;
+}
+.lr-reset-body{
+      padding: 16px 4px 40px 40px;
 }
 
 .lr-wrap input[name="reset"] {
@@ -559,6 +562,36 @@ textarea.lr-shortcode {
 	vertical-align: middle;
 	font-size: 25px;
 	color: #2299dd;
+	line-height: 44px;
+}
+
+/*==================
+        Warning box
+====================*/
+.lr-warning-box {
+	border: 1px solid #9F6000;
+	padding: 10px 15px;
+	border-radius: 5px;
+	background: #FEEFB3;
+	padding-left: 40px;
+	font-size: 14px;
+	position: relative;
+}
+
+.lr-warning-box:empty {
+	display: none;
+}
+
+.lr-warning-box:before {
+	content: "\f153";
+	font-family: dashicons;
+	position: absolute;
+	left: 7px;
+	top: 0;
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 25px;
+	color: #9F6000;
 	line-height: 44px;
 }
 
@@ -823,19 +856,12 @@ input.lr-toggle:checked + .lr-toggle-name:after, input.lr-toggle:checked + label
 		top: auto;
 	}
 
-	.lr-submit.lr-advance {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
 	.lr-reset {
 		right: 30px;
 	}
 }
 
 @media only screen and (max-width: 500px) {
-	.lr-submit.lr-advance {
-		padding-bottom: 90px;
-	}
 	.lr-reset {
 		right: auto;
 		left: 30px;
@@ -880,8 +906,4 @@ input.lr-toggle:checked + .lr-toggle-name:after, input.lr-toggle:checked + label
 
 .wp-picker-container input[type=text].wp-color-picker {
 	width: 120px !important;	
-}
-
-.wp-picker-holder {
-	position: absolute;
 }

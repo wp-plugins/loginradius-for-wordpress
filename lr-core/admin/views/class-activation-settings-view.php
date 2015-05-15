@@ -14,11 +14,6 @@ if ( ! class_exists( 'LR_Activation_Settings' ) ) {
         public static function render_options_page() {
             global $loginradius_api_settings;
             $loginradius_api_settings = get_option( 'LoginRadius_API_settings' );
-            if ( class_exists( 'LR_Social_Login' ) || class_exists( 'LR_Raas' ) ) { 
-                if ( !isset( $loginradius_api_settings['LoginRadius_apikey'] ) || !isset( $loginradius_api_settings['LoginRadius_secret'] ) || trim( $loginradius_api_settings['LoginRadius_apikey'] ) == '' || trim( $loginradius_api_settings['LoginRadius_secret'] ) == '' ) {
-                    Admin_Helper:: display_notice_to_insert_api_and_secret();
-                }
-            }
             ?>
             <!-- LR-wrap -->
             <div class="wrap lr-wrap cf">
@@ -40,7 +35,7 @@ if ( ! class_exists( 'LR_Activation_Settings' ) ) {
                             <div class="lr_options_container">
                                 <div class="lr-row">
                                     <?php if ( class_exists( 'LR_Social_Login' ) || class_exists( 'LR_Raas' ) ) { ?>
-                                    <h6>To activate Social Login, insert the LoginRadius API Key and Secret in the section below. If you don't have them, please follow these <a href="http://ish.re/INI1" target="_blank">instructions</a>.</h6>
+                                    <h6>To activate LoginRadius Plugin, insert the LoginRadius API Key and Secret in the section below. If you don't have them, please follow these <a href="http://ish.re/INI1" target="_blank">instructions</a>.</h6>
                                     <label >
                                         <span class="lr_property_title"><?php _e( 'LoginRadius Site Name', 'LoginRadius' ); ?>
                                             <span class="lr-tooltip" data-title="You can find the Site Name into your LoginRadius user account">
@@ -79,7 +74,7 @@ if ( ! class_exists( 'LR_Activation_Settings' ) ) {
                         </div>
                         <div id="lr_options_tab-2" class="lr-tab-frame">
                             <div class="lr_options_container">
-                                <div class="lr-row">
+                                <div class="lr-row" style="display: none;">
                                     <h3><?php _e( 'JavaScript options', 'LoginRadius' ); ?></h3>
                                     <label class="lr-toggle">
                                         <input type="checkbox" class="lr-toggle" name="LoginRadius_API_settings[scripts_in_footer]" value="1" <?php echo ( isset($loginradius_api_settings['scripts_in_footer'] ) && $loginradius_api_settings['scripts_in_footer'] == '1' ) ? 'checked' : ''; ?> />

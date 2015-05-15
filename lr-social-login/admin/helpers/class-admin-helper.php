@@ -3,29 +3,6 @@ if ( !class_exists( 'Admin_Helper' ) ) {
 
     class Admin_Helper {
 
-        /*
-         * Display notice on plugin page, if LR API Key and Secret are empty
-         */
-        public static function display_notice_to_insert_api_and_secret() {
-            ?>
-            <div id="loginRadiusKeySecretNotification" style="background-color: #FFFFE0; border:1px solid #E6DB55; padding:5px; margin-bottom:5px; width: 1050px;">
-                <?php _e( 'To activate the LoginRadius plugin, Please insert LoginRadius API Key and Secret in the API Settings section. [Tip: <a href="http://support.loginradius.com/hc/en-us/articles/201894526-How-do-I-get-a-LoginRadius-API-key-and-secret-" target="_blank">Follow these steps</a> to get API Key and Secret]', 'LoginRadius' ); ?>
-            </div>
-            <?php
-        }
-
-        /**
-         * Check if LoginRadius API Key and Secret are saved
-         *
-         * global $loginradius_api_settings
-         */
-        public static function loginradius_api_secret_saved() {
-            global $loginradius_api_settings;
-            if ( !isset( $loginradius_api_settings['LoginRadius_apikey'] ) || trim( $loginradius_api_settings['LoginRadius_apikey'] ) == '' || !isset( $loginradius_api_settings['LoginRadius_secret'] ) || trim( $loginradius_api_settings['LoginRadius_secret'] ) == '' ) {
-                return false;
-            }
-            return true;
-        }
         
         /**
          * Add provider column on users list page
@@ -37,7 +14,7 @@ if ( !class_exists( 'Admin_Helper' ) ) {
             if ( isset( $loginRadiusSettings['LoginRadius_noProvider'] ) && $loginRadiusSettings['LoginRadius_noProvider'] == '1' ) {
                 $columns['loginradius_provider'] = 'LoginRadius Provider';
             }
-            if ( isset( $loginRadiusSettings['LoginRadius_enableUserActivation'] ) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == '1' ) {
+            if ( isset( $loginRadiusSettings['LoginRadius_enableUserActivation'] ) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == '1' && !class_exists('LR_Raas')) {
                 // Add active/inactive Staus column on users list page
                 $columns['loginradius_status'] = 'Status';
             }
@@ -64,7 +41,7 @@ if ( !class_exists( 'Admin_Helper' ) ) {
                     }
                 }
             }
-            if( 'loginradius_status' ==  $columnName ) {
+            if( 'loginradius_status' ==  $columnName && !class_exists('LR_Raas') ) {
                 if ( isset( $loginRadiusSettings['LoginRadius_enableUserActivation'] ) && $loginRadiusSettings['LoginRadius_enableUserActivation'] == '1' ) {
                     if ( $userId == 1 ) {
                         return;
@@ -165,7 +142,7 @@ if ( !class_exists( 'Admin_Helper' ) ) {
                 'logoutUrl' => 'LoginRadius_loutRedirect'
             );
 
-            if ( $loginRadiusSettings[$tempArray[$settingName]] == $optionName ) {
+            if ( isset($loginRadiusSettings[$tempArray[$settingName]]) && $loginRadiusSettings[$tempArray[$settingName]] == $optionName ) {
                 return 'checked="checked"';
             } else {
                 return '';

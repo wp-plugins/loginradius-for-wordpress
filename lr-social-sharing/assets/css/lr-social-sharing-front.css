@@ -33,3 +33,6 @@ html {
 .lr-share-vertical-fix[style*="right:"] lr lrc:last-child div {
 	float: right;
 }
+.lr-share-vertical-fix .twitter-share-button{
+	width: 56px !important;
+}
